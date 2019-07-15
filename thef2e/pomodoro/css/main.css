@@ -163,6 +163,74 @@ body {
 
 .counter {
   margin-left: 100px;
+  margin-top: 30px;
+  color: #fff;
+}
+.counter .header {
+  border-bottom: rgba(255, 255, 255, 0.5) 2px solid;
+}
+.counter .header .date,
+.counter .header .calendar {
+  display: inline-block;
+}
+.counter .header .date {
+  font-size: 42px;
+}
+.counter .header .calendar {
+  font-size: 14px;
+}
+.counter .header .logo {
+  font-size: 18px;
+  padding-right: 10px;
+}
+.counter .clock {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  background-color: #fff;
+  margin: 50px auto;
+}
+.counter .play ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: center;
+  display: block;
+}
+.counter .play ul li {
+  display: inline-block;
+  margin: 0 -2px;
+}
+.counter .play ul li:first-child a {
+  border-radius: 20px 0 0 20px;
+}
+.counter .play ul li:last-child a {
+  border-radius: 0 20px 20px 0;
+}
+.counter .play ul li a {
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffc5c5+0,ff8f95+100 */
+  background: #ff8f95;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffc5c5 0%, #ff8f95 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffc5c5 0%, #ff8f95 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffc5c5 0%, #ff8f95 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffc5c5", endColorstr="#ff8f95", GradientType=0);
+  /* IE6-9 */
+  padding: 10px 30px;
+}
+.counter .play ul li.active a {
+  background: #ff8f95;
+}
+.counter .play ul li:hover a {
+  background: #f58086;
+}
+.counter .mission {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 24px;
 }
 
 /*# sourceMappingURL=main.css.map */
