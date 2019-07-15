@@ -1,0 +1,199 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+// nav css start
+.nav {
+    background-color: #474642;
+    height: 100%;
+    width: 70px;
+    position: fixed;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            padding: 10px 20px;
+
+            &.active {
+                background-color: #49B5FF;
+            }
+
+            &:hover {
+                background-color: #383734;
+            }
+
+            a {
+                color: #fff;
+                font-size: 30px;
+            }
+        }
+
+        &.user {
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 0;
+        }
+    }
+}
+
+// nav css end
+// main css start
+.main {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#47adff+0,a2cbe1+100 */
+    background: #47adff;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #47adff 0%, #a2cbe1 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #47adff 0%, #a2cbe1 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #47adff 0%, #a2cbe1 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#47adff', endColorstr='#a2cbe1', GradientType=0);
+    /* IE6-9 */
+    height: 100%;
+
+    .container-fluid {
+
+        &,
+        .row {
+
+            &,
+            .col-4 {
+
+                &,
+                .menu {
+                    height: 100%;
+                }
+            }
+        }
+
+        .menu {
+            background-color: #E5E8ED;
+            box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+        }
+    }
+
+}
+
+// main css end
+// schedule_list css start
+.schedule_list {
+    display: block;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-left: 100px;
+    width: 100%;
+    position: relative;
+    top: 100px;
+    margin-bottom: 100px;
+
+    .list_title {
+        border-radius: 10px 10px 0 0;
+        background-color: #FF8F95;
+        color: #fff;
+        font-weight: 700;
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+
+    .list_content {
+        max-height: 400px;
+        overflow-y: scroll;
+
+        .schedule_row {
+            padding: 10px;
+            border-bottom: #E5E8ED 3px solid;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:hover {
+                box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+                cursor: pointer;
+            }
+
+            .mission_icon {
+                display: inline-block;
+                height: 30px;
+                width: 30px;
+                border: #FFBFC3 5px solid;
+                border-radius: 15px;
+                vertical-align: middle;
+            }
+
+            .schedule_text {
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 10px;
+                font-size: 18px;
+            }
+        }
+    }
+
+    .add_mission {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        bottom: -30px;
+        left: 50%;
+        margin-left: -30px;
+        border-radius: 30px;
+        color: #fff;
+        padding: 11px 0 0 18px;
+        cursor: pointer;
+        font-size: 24px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffc5c5+0,ff8f95+100 */
+        background: #ff8f95;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #ffc5c5 0%, #ff8f95 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #ffc5c5 0%, #ff8f95 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #ffc5c5 0%, #ff8f95 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc5c5', endColorstr='#ff8f95', GradientType=0);
+        /* IE6-9 */
+
+        &:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+            background: #ff8f95;
+        }
+    }
+
+    &.complete {
+        .list_title {
+            background-color: #72D672;
+        }
+
+        .list_content {
+            max-height: 200px;
+
+            .schedule_row {
+                color: #999;
+
+                &:hover {
+                    box-shadow: none;
+                }
+
+                .mission_icon {
+                    border: #72D672 5px solid;
+                }
+            }
+        }
+    }
+}
+
+// schedule_list css end
