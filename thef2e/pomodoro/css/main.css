@@ -161,27 +161,29 @@ body {
   border: #72D672 5px solid;
 }
 
-.counter {
-  margin-left: 100px;
+.header {
   margin-top: 30px;
+  border-bottom: rgba(255, 255, 255, 0.5) 2px solid;
   color: #fff;
 }
-.counter .header {
-  border-bottom: rgba(255, 255, 255, 0.5) 2px solid;
-}
-.counter .header .date,
-.counter .header .calendar {
+.header .date,
+.header .calendar {
   display: inline-block;
 }
-.counter .header .date {
+.header .date {
   font-size: 42px;
 }
-.counter .header .calendar {
+.header .calendar {
   font-size: 14px;
 }
-.counter .header .logo {
+.header .logo {
   font-size: 18px;
   padding-right: 10px;
+}
+
+.counter {
+  margin-left: 100px;
+  color: #fff;
 }
 .counter .clock {
   width: 300px;
@@ -231,6 +233,63 @@ body {
   text-align: center;
   margin-top: 30px;
   font-size: 24px;
+}
+
+.analyze {
+  margin-left: 100px;
+}
+.analyze .analyze_block {
+  padding: 20px 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+.analyze .analyze_table .title {
+  font-size: 24px;
+  font-weight: 700;
+}
+.analyze .analyze_table .date {
+  color: #666;
+  font-size: 14px;
+}
+.analyze .analyze_table table {
+  margin-top: 30px;
+}
+.analyze .analyze_table table .static_data {
+  text-align: right;
+  padding-top: 0;
+  width: 60px;
+}
+.analyze .analyze_table table .static_data span {
+  margin-top: -3px;
+  vertical-align: middle;
+}
+.analyze .analyze_table table .static_data span:after {
+  content: "";
+  display: inline-block;
+  background-color: #dee2e6;
+  border-radius: 5px;
+  width: 10px;
+  height: 2px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.analyze .analyze_table table .analyze_dot {
+  display: block;
+  width: 70%;
+  height: 10px;
+  border-radius: 15px;
+  vertical-align: middle;
+  margin: 3px auto -3px;
+}
+.analyze .analyze_table table .analyze_dot.complete {
+  background-color: #72D672;
+}
+.analyze .analyze_table table .analyze_dot.undone {
+  background-color: #FF8F95;
+}
+.analyze .analyze_table table tr:nth-last-child(2) td {
+  padding-bottom: 8px;
 }
 
 /*# sourceMappingURL=main.css.map */

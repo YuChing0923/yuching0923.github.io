@@ -197,33 +197,36 @@ body {
 }
 
 // schedule_list css end
+// header css start
+.header {
+    margin-top: 30px;
+    border-bottom: rgba(255, 255, 255, .5) 2px solid;
+    color: #fff;
+
+    .date,
+    .calendar {
+        display: inline-block;
+    }
+
+    .date {
+        font-size: 42px;
+    }
+
+    .calendar {
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 18px;
+        padding-right: 10px;
+    }
+}
+
+// header css end
 // counter css start
 .counter {
     margin-left: 100px;
-    margin-top: 30px;
     color: #fff;
-
-    .header {
-        border-bottom: rgba(255, 255, 255, .5) 2px solid;
-
-        .date,
-        .calendar {
-            display: inline-block;
-        }
-
-        .date {
-            font-size: 42px;
-        }
-
-        .calendar {
-            font-size: 14px;
-        }
-
-        .logo {
-            font-size: 18px;
-            padding-right: 10px;
-        }
-    }
 
     .clock {
         width: 300px;
@@ -271,20 +274,97 @@ body {
                 padding: 10px 30px;
             }
 
-            &.active a{
-            	background: #ff8f95;
+            &.active a {
+                background: #ff8f95;
             }
 
-            &:hover a{
-            	background: #f58086;
+            &:hover a {
+                background: #f58086;
             }
         }
     }
-    .mission{
-    	text-align: center;
-    	margin-top: 30px;
-    	font-size: 24px;
+
+    .mission {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 24px;
     }
 }
 
 // counter css end
+// analyze css start
+.analyze {
+    margin-left: 100px;
+
+    .analyze_block {
+        padding: 20px 40px;
+        background-color: #fff;
+        border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+    }
+
+    .analyze_table {
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .date {
+            color: #666;
+            font-size: 14px;
+        }
+
+        table {
+            margin-top: 30px;
+
+            .static_data {
+                text-align: right;
+                padding-top: 0;
+                width: 60px;
+
+                span {
+                    margin-top: -3px;
+                        vertical-align: middle;
+
+                    &:after {
+                        content: '';
+                        display: inline-block;
+                        background-color: #dee2e6;
+                        border-radius: 5px;
+                        width: 10px;
+                        height: 2px;
+                        margin-left: 10px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+
+            .analyze_dot {
+                display: block;
+                width: 70%;
+                height: 10px;
+                border-radius: 15px;
+                vertical-align: middle;
+                margin: 3px auto -3px;
+
+                &.complete {
+                    background-color: #72D672;
+                }
+
+                &.undone {
+                    background-color: #FF8F95;
+                }
+            }
+
+            tr {
+                &:nth-last-child(2) {
+                    td {
+                        padding-bottom: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// analyze css end
