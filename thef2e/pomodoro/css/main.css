@@ -74,10 +74,10 @@ body {
   border-radius: 10px;
   background-color: #fff;
   margin-left: 100px;
+  margin-bottom: 100px;
   width: 100%;
   position: relative;
   top: 100px;
-  margin-bottom: 100px;
 }
 .schedule_list .list_title {
   border-radius: 10px 10px 0 0;
@@ -159,6 +159,10 @@ body {
 }
 .schedule_list.complete .list_content .schedule_row .mission_icon {
   border: #72D672 5px solid;
+}
+
+.counter {
+  margin-left: 100px;
 }
 
 /*# sourceMappingURL=main.css.map */

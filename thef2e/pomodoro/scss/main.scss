@@ -93,10 +93,10 @@ body {
     border-radius: 10px;
     background-color: #fff;
     margin-left: 100px;
+    margin-bottom: 100px;
     width: 100%;
     position: relative;
     top: 100px;
-    margin-bottom: 100px;
 
     .list_title {
         border-radius: 10px 10px 0 0;
@@ -197,3 +197,8 @@ body {
 }
 
 // schedule_list css end
+// counter css start
+.counter{
+	margin-left: 100px;
+}
+// counter css end
