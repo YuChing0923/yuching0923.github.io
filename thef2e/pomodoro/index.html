@@ -15,15 +15,15 @@
 
 <body>
     <div class="nav">
-        <ul>
-            <li>
-                <a href="#"><i class="far fa-clock"></i></a>
+        <ul id="main_menu">
+            <li id="counter_index" class="active">
+                <i class="far fa-clock"></i>
             </li>
-            <li class="active">
-                <a href="#"><i class="fas fa-align-left"></i></a>
+            <li id="schedule_list">
+                <i class="fas fa-align-left"></i>
             </li>
-            <li>
-                <a href="#"><i class="fas fa-chart-line"></i></a>
+            <li id="analyze_list">
+                <i class="fas fa-chart-line"></i>
             </li>
         </ul>
         <ul class="user">
@@ -152,52 +152,38 @@
                     </div>
                 </div>
             </div>
-            <div id="content"></div>
+            <div id="content" style="display: none;"></div>
         </div>
     </div>
     <!-- <script src="../html/bootstrap-4.3.1-dist/js/bootstrap.min.js" type="text/javascript"></script> -->
-    <script src="../html/js/jquery-3.4.1.min.js" type="text/javascript"></script>
-    <script src="../html/js/jquery-migrate-1.1.1.js" type="text/javascript"></script>
+    <script src="../html/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <!-- <script src="../html/js/jquery-3.4.1.min.js" type="text/javascript"></script> -->
+    <!-- <script src="../html/js/jquery-migrate-1.1.1.js" type="text/javascript"></script> -->
     <script src="../html/js/jquery.history.js" type="text/javascript"></script>
     <!-- <script src="../html/fontawesome-free-5.9.0-web/js/all.min.js" type="text/javascript"></script> -->
+    <script src="js/init_url.js" type="text/javascript"></script>
     <script>
-    var loadedUrl = '';
-    var index_url = "analyze";
-    $.ajaxSetup({
-        cache: false
-    });
-    $(document).ready(function() {
-        $(initPage());
-    });
-
-    function initPage() {
-        $.history.init(function(url) {
-            if (url == "" || undefined) {
-                loadPage(url == index_url);
-            } else {
-                loadPage(url);
-            }
-        });
+        console.log(template_url);
+    if (template_url == 'counter_index') {
+        $('#counter_main').show();
+        $('#content').hide();
+    } else {
+        $('#counter_main').hide();
+        $('#content').show();
     }
-
-    function loadPage(url) {
-        if (loadedUrl != url) {
-            $('#content').empty().load(url, function(response, status, xhr) {
-                loadedUrl = url;
-                $('html, body').scrollTop(0);
-            });
+    $('#main_menu li').on('click', function() {
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+        var tempForm = $(this).attr('id');
+        changeForm(tempForm);
+        if (tempForm == 'counter_index') {
+            $('#counter_main').show();
+            $('#content').hide();
         } else {
-            $.history.load('template/' + index_url + '.html');
+            $('#counter_main').hide();
+            $('#content').show();
         }
-    }
-
-    function changeForm(gotoPage, locationUrl) {
-        $.history.load('template/' + gotoPage + '.html' + '?judgmentUrl?' + locationUrl);
-    }
-
-    function goBack() {
-        window.history.back();
-    }
+    })
     </script>
 </body>
 
