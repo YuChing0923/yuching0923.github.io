@@ -76,12 +76,13 @@ body {
 .main .container-fluid .menu {
   background-color: #E5E8ED;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
 }
 .main .container-fluid .menu .schedule_list {
   border-radius: 10px;
   background-color: #fff;
   max-height: 50%;
-  overflow: hidden;
 }
 .main .container-fluid .menu .schedule_list.complete {
   max-height: 25%;
@@ -89,7 +90,11 @@ body {
 }
 .main .container-fluid .menu .schedule_list .list_content {
   max-height: 400px;
-  overflow-y: scroll;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.main .container-fluid .menu .schedule_list .list_content .schedule_row.last {
+  padding-bottom: 25px;
 }
 
 .schedule_list {
@@ -204,29 +209,57 @@ body {
   color: #fff;
 }
 .counter .clock {
-  width: 300px;
-  height: 300px;
-  border-radius: 150px;
-  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  max-width: 600px;
+  max-height: 600px;
+  border: 10px #fff solid;
+  border-radius: 300px;
+  background-color: #9CD2F5;
   margin: 50px auto;
+  position: relative;
 }
-.counter .play ul {
+.counter .clock #clock_timer {
+  font-size: 42px;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  transition-duration: 1s;
+}
+.counter .clock #clock_timer .clock_timer_data {
+  display: inline-block;
+}
+.counter .clock #clock_div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: rotate(6deg);
+}
+.counter .clock #clock_div .clock_pointer {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  margin: -15px auto;
+}
+.counter .clock_play ul {
   list-style: none;
   padding-left: 0;
   text-align: center;
   display: block;
 }
-.counter .play ul li {
+.counter .clock_play ul li {
   display: inline-block;
   margin: 0 -2px;
 }
-.counter .play ul li:first-child a {
+.counter .clock_play ul li:first-child a {
   border-radius: 20px 0 0 20px;
 }
-.counter .play ul li:last-child a {
+.counter .clock_play ul li:last-child a {
   border-radius: 0 20px 20px 0;
 }
-.counter .play ul li a {
+.counter .clock_play ul li a {
   color: #fff;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffc5c5+0,ff8f95+100 */
   background: #ff8f95;
@@ -241,10 +274,10 @@ body {
   /* IE6-9 */
   padding: 10px 30px;
 }
-.counter .play ul li.active a {
+.counter .clock_play ul li.active a {
   background: #ff8f95;
 }
-.counter .play ul li:hover a {
+.counter .clock_play ul li:hover a {
   background: #f58086;
 }
 .counter .mission {

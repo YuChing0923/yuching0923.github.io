@@ -16,7 +16,7 @@
 <body>
     <div class="nav">
         <ul id="main_menu">
-            <li id="counter_index" class="active">
+            <li id="counter_index">
                 <i class="far fa-clock"></i>
             </li>
             <li id="schedule_list">
@@ -71,7 +71,7 @@
                                     <span class="mission_icon"></span>
                                     <span class="schedule_text">title title title</span>
                                 </div>
-                                <div class="schedule_row">
+                                <div class="schedule_row last">
                                     <span class="mission_icon"></span>
                                     <span class="schedule_text">title title title</span>
                                 </div>
@@ -100,7 +100,7 @@
                                     <span class="mission_icon"></span>
                                     <span class="schedule_text">title title title</span>
                                 </div>
-                                <div class="schedule_row">
+                                <div class="schedule_row last">
                                     <span class="mission_icon"></span>
                                     <span class="schedule_text">title title title</span>
                                 </div>
@@ -124,21 +124,26 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="clock"></div>
-                        <div class="play">
+                        <div class="clock">
+                            <div id="clock_div">
+                                <div class="clock_pointer"></div>
+                            </div>
+                            <div id="clock_timer">25:00</div>
+                        </div>
+                        <div class="clock_play">
                             <ul>
-                                <li>
-                                    <a href="#">
+                                <li class="pause">
+                                    <a href="#" id="pause">
                                         <i class="fas fa-pause"></i>
                                     </a>
                                 </li>
-                                <li class="active">
-                                    <a href="#">
+                                <li class="play">
+                                    <a href="#" id="play">
                                         <i class="fas fa-play"></i>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">
+                                <li class="stop">
+                                    <a href="#" id="stop">
                                         <i class="fas fa-stop"></i>
                                     </a>
                                 </li>
@@ -163,27 +168,162 @@
     <!-- <script src="../html/fontawesome-free-5.9.0-web/js/all.min.js" type="text/javascript"></script> -->
     <script src="js/init_url.js" type="text/javascript"></script>
     <script>
-        console.log(template_url);
-    if (template_url == 'counter_index') {
-        $('#counter_main').show();
-        $('#content').hide();
-    } else {
-        $('#counter_main').hide();
-        $('#content').show();
+    $('#main_menu').find('#' + template_url).addClass('active');
+
+    function div_showHide(showContent, hideContent) {
+        $(showContent).show();
+        $(hideContent).hide();
     }
+
+    function scheduleHeight() {
+        $('#counter_main .schedule_list').each(function() {
+            var _listHeight = $(this).height();
+            $(this).find('.list_content').css('max-height', _listHeight - 50)
+        })
+    }
+
+    function clockSize() {
+        var clock = $('#counter_main .clock'),
+            _divHeight = $(window).height(),
+            _clockMaxHeight = _divHeight - 350;
+        if ($('.counter').width() > _divHeight) {
+            clock.css({
+                'height': _clockMaxHeight,
+                'width': _clockMaxHeight
+            });
+        } else {
+            clock.css({
+                'max-height': _clockMaxHeight,
+                'height': clock.width() + 20
+            });
+            if (_clockMaxHeight > 600) {
+                clock.css({
+                    'max-width': 600
+                });
+            } else {
+                clock.css({
+                    'max-width': _clockMaxHeight
+                });
+            }
+        }
+    }
+
+    if (template_url == 'counter_index') {
+        div_showHide('#counter_main', '#content')
+    } else {
+        div_showHide('#content', '#counter_main')
+    }
+
+    scheduleHeight();
+    clockSize();
+
+    $(window).resize(function() {
+        scheduleHeight();
+        clockSize();
+        // if (($(window).width() % 50 == 0)) {
+        //     var _rwdAlert = true;
+        //     if (_rwdAlert) {
+        //         alert('我的RWD有時候會自己爆掉，請輕一點');
+        //         _rwdAlert = false;
+        //     }
+        // }
+    })
+
     $('#main_menu li').on('click', function() {
         $(this).siblings().removeClass('active');
         $(this).addClass('active');
         var tempForm = $(this).attr('id');
         changeForm(tempForm);
         if (tempForm == 'counter_index') {
-            $('#counter_main').show();
-            $('#content').hide();
+            div_showHide('#counter_main', '#content')
+            scheduleHeight();
+            clockSize();
         } else {
-            $('#counter_main').hide();
-            $('#content').show();
+            div_showHide('#content', '#counter_main')
         }
     })
+
+    $('.clock_play li').on('click', function() {
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+        $('.clock_play .stop').removeClass('active');
+    })
+
+    // counter
+    var CountDown = (function($) {
+        // Length ms 
+        var TimeOut = 10000;
+        // Interval ms
+        var TimeGap = 1000;
+
+        var CurrentTime = (new Date()).getTime();
+        var EndTime = (new Date()).getTime() + TimeOut;
+
+        var counterTimer = $('#clock_timer');
+        var counterPause = $('#pause');
+        var counterPlay = $('#play');
+
+        var Running = false;
+
+        var UpdateTimer = function() {
+            // Run till timeout
+            if (CurrentTime + TimeGap < EndTime) {
+                setTimeout(UpdateTimer, TimeGap);
+            }
+            // Countdown if running
+            if (Running) {
+                CurrentTime += TimeGap;
+                if (CurrentTime >= EndTime) {
+                    counterTimer.css('color', 'red');
+                }
+            }
+            // Update counter
+            var Time = new Date();
+            Time.setTime(EndTime - CurrentTime);
+            var Minutes = Time.getMinutes();
+            var Seconds = Time.getSeconds();
+            var _pointerDeg = (60 - Seconds) * 6;
+
+            counterTimer.html(
+                (Minutes < 10 ? '0' : '') + Minutes +
+                ':' +
+                (Seconds < 10 ? '0' : '') + Seconds);
+            $('#clock_div').css('transform', 'rotate(' + _pointerDeg + 'deg)')
+        };
+
+        var Pause = function() {
+            Running = false;
+        };
+
+        var Play = function() {
+            Running = true;
+        };
+
+        var Stop = function() {
+            Running = false;
+        };
+
+        var Start = function(Timeout) {
+            TimeOut = Timeout;
+            CurrentTime = (new Date()).getTime();
+            EndTime = (new Date()).getTime() + TimeOut;
+            UpdateTimer();
+        };
+
+        return {
+            Pause: Pause,
+            Play: Play,
+            Stop: Stop,
+            Start: Start
+        };
+    })(jQuery);
+
+    jQuery('#pause').on('click', CountDown.Pause);
+    jQuery('#play').on('click', CountDown.Play);
+    jQuery('#stop').on('click', CountDown.Stop);
+
+    // ms
+    CountDown.Start(1500000);
     </script>
 </body>
 
