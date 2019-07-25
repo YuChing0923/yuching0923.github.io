@@ -20,8 +20,8 @@ function startGame() {
         dragCardNum,
         dropColNum,
         dropCardNum,
-        dropTempCardNum,
-        dropSortColNum,
+        dragNum,
+        dropNum,
         cardDragPlace,
         cardDropPlace,
         cardHtml;
@@ -72,7 +72,7 @@ function startGame() {
         } // 後4排6張
         //card_shuffle render
         function cardShuffleRender() {
-            console.log(cardContent);
+            // console.log(cardContent);
             $('#card_shuffle .card_column').html('');
             cardContent.forEach(function(cardColumn, cardColumnNum) {
                 cardColumn.forEach(function(cardNum, cardNumIndex) {
@@ -110,11 +110,17 @@ function startGame() {
         function dragStart(e) {
             // console.log('dragStart');
             // e.preventDefault();
-            cardNum = $(e.target).data('number');
-            dragColNum = $(e.target).parents('.card_column').index();
-            dragCardNum = $(e.target).parents('.card_block').index();
-            cardDragPlace = $(e.target).parents('.main_row').attr('id');
             console.log(e.target);
+            cardNum = $(e.target).data('number'); //被拖拉的卡片在陣列中的代號
+            cardDragPlace = $(e.target).parents('.main_row').attr('id'); //被拖拉物的區塊id
+            dragColNum = $(e.target).parents('.card_column').index(); //被拖拉物外層card_column的位子
+            dragCardNum = $(e.target).parents('.card_block').index(); //被拖拉物外層card_block的位子
+            dragNum = $(e.target).index(); //被拖拉物本身的位子
+            // console.log('cardNum = ' + cardNum);
+            // console.log('cardDragPlace = ' + cardDragPlace);
+            // console.log('dragColNum = ' + dragColNum);
+            // console.log('dragCardNum = ' + dragCardNum);
+            // console.log('dragNum = ' + dragNum);
             // $(e.target).parent('.card_block').css('cursor', 'grabbing');
             $(e.target).css('opacity', '.5')
         }
@@ -122,20 +128,11 @@ function startGame() {
         function dragEnter(e) {
             // console.log('dragEnter');
             // e.preventDefault();
-            // console.log(e.target);
-            cardDropPlace = $(e.target).parents('.main_row').attr('id');
-            switch (cardDropPlace) {
-                case 'card_shuffle':
-                    dropColNum = $(e.target).parents('.card_column').index();
-                    dropCardNum = $(e.target).parents('.card_block').index();
-                    break;
-                case 'card_temp':
-                    dropTempCardNum = $(e.target).index();
-                    break;
-                case 'card_sort':
-                    dropSortColNum = $(e.target).index();
-                    break;
-            }
+            console.log(e.target);
+            cardDropPlace = $(e.target).parents('.main_row').attr('id'); //放置的區塊id
+            dropColNum = $(e.target).parents('.card_column').index(); //放置物外層card_column的位子
+            dropCardNum = $(e.target).parents('.card_block').index(); //放置物外層card_block的位子
+            dropNum = $(e.target).index(); //放置物本身的位子
         }
 
         function dragLeave(e) {
@@ -149,30 +146,39 @@ function startGame() {
             // e.preventDefault();
             // console.log(e.target);
             $(e.target).css('opacity', '1');
-            // console.log(e.target);
-            // console.log(cardContent[dragColNum].length);
-            if (dragCardNum + 1 == cardContent[dragColNum].length) {
-                // Switch state
-                // console.log(cardDropPlace);
-                // console.log(cardDropPlace);
-                switch (cardDragPlace + "|" + cardDropPlace) {
-                    case 'card_shuffle|card_shuffle':
-                        cardContent[dragColNum].splice(dragCardNum, 1);
-                        cardContent[dropColNum].push(cardNum);
-                        break;
-                    case 'card_shuffle|card_temp':
-                        cardContent[dragColNum].splice(dragCardNum, 1);
-                        cardTemp[dropTempCardNum].push(cardNum);
-                        break;
-                    case 'card_shuffle|card_sort':
-                        cardContent[dragColNum].splice(dragCardNum, 1);
-                        cardSort[dropSortColNum].push(cardNum);
-                        console.log(dropSortColNum);
-                        break;
-                    default:
-                        break;
+            console.log('cardDropPlace = ' + cardDropPlace);
+            console.log('dropColNum = ' + dropColNum);
+            console.log('dropCardNum = ' + dropCardNum);
+            console.log('dropNum = ' + dropNum);
+            if (cardDragPlace == 'card_shuffle') {
+                if (dragCardNum + 1 == cardContent[dragColNum].length) {
+                    if (cardDropPlace == 'card_shuffle') {
+                        console.log(cardContent);
+                        if (dropColNum > -1) {
+                            cardContent[dragColNum].splice(dragCardNum, 1);
+                            cardContent[dropColNum].push(cardNum);
+                        } else {
+                            cardContent[dragColNum].splice(dragCardNum, 1);
+                            cardContent[dropNum].push(cardNum);
+                        }
+                    } else if (cardDropPlace == 'card_temp') {
+                        if (dropCardNum == -1) {
+                            cardContent[dragColNum].splice(dragCardNum, 1);
+                            cardTemp[dropNum].push(cardNum);
+                        }
+                    } else if (cardDropPlace == 'card_sort') {
+                        if (dropCardNum == -1 && cardNum % 13 == 1) {
+                            cardContent[dragColNum].splice(dragCardNum, 1);
+                            cardSort[dropNum].push(cardNum);
+                        } else if (cardNum - 1 == cardSort[dropCardNum][dropNum]) {
+                            console.log('cardSort[dropCardNum]=' + cardSort[dropCardNum][dropNum]);
+                            cardContent[dragColNum].splice(dragCardNum, 1);
+                            cardSort[dropCardNum].push(cardNum);
+                        }
+                    }
                 }
             }
+            // if (cardDragPlace == 'card_temp') {}
             cardRender();
         }
         $('#main').bind('dragstart', dragStart);
