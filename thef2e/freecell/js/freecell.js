@@ -116,12 +116,6 @@ function startGame() {
             dragColNum = $(e.target).parents('.card_column').index(); //被拖拉物外層card_column的位子
             dragCardNum = $(e.target).parents('.card_block').index(); //被拖拉物外層card_block的位子
             dragNum = $(e.target).index(); //被拖拉物本身的位子
-            // console.log('cardNum = ' + cardNum);
-            // console.log('cardDragPlace = ' + cardDragPlace);
-            // console.log('dragColNum = ' + dragColNum);
-            // console.log('dragCardNum = ' + dragCardNum);
-            // console.log('dragNum = ' + dragNum);
-            // $(e.target).parent('.card_block').css('cursor', 'grabbing');
             $(e.target).css('opacity', '.5')
         }
 
@@ -146,14 +140,9 @@ function startGame() {
             // e.preventDefault();
             // console.log(e.target);
             $(e.target).css('opacity', '1');
-            console.log('cardDropPlace = ' + cardDropPlace);
-            console.log('dropColNum = ' + dropColNum);
-            console.log('dropCardNum = ' + dropCardNum);
-            console.log('dropNum = ' + dropNum);
             if (cardDragPlace == 'card_shuffle') {
                 if (dragCardNum + 1 == cardContent[dragColNum].length) {
                     if (cardDropPlace == 'card_shuffle') {
-                        console.log(cardContent);
                         if (dropColNum > -1) {
                             cardContent[dragColNum].splice(dragCardNum, 1);
                             cardContent[dropColNum].push(cardNum);
@@ -171,7 +160,6 @@ function startGame() {
                             cardContent[dragColNum].splice(dragCardNum, 1);
                             cardSort[dropNum].push(cardNum);
                         } else if (cardNum - 1 == cardSort[dropCardNum][dropNum]) {
-                            console.log('cardSort[dropCardNum]=' + cardSort[dropCardNum][dropNum]);
                             cardContent[dragColNum].splice(dragCardNum, 1);
                             cardSort[dropCardNum].push(cardNum);
                         }
