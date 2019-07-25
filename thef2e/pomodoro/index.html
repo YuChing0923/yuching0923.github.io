@@ -217,16 +217,16 @@
     scheduleHeight();
     clockSize();
 
+    var _rwdAlert = true;
     $(window).resize(function() {
         scheduleHeight();
         clockSize();
-        // if (($(window).width() % 50 == 0)) {
-        //     var _rwdAlert = true;
-        //     if (_rwdAlert) {
-        //         alert('我的RWD有時候會自己爆掉，請輕一點');
-        //         _rwdAlert = false;
-        //     }
-        // }
+        if (($(window).width() % 50 == 0)) {
+            if (_rwdAlert) {
+                alert('我的RWD有時候會自己爆掉，請輕一點');
+                _rwdAlert = false;
+            }
+        }
     })
 
     $('#main_menu li').on('click', function() {

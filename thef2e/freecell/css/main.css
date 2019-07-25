@@ -1,0 +1,244 @@
+html,
+body {
+  height: 100%;
+  font-size: 16px;
+  color: #EEE9B5;
+  background-color: #2C2C2C;
+}
+
+#main {
+  height: 100%;
+  display: -ms-flex;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 40px;
+  align-content: flex-start;
+  max-width: 1170px;
+  margin: auto;
+}
+#main .main_row {
+  width: 100%;
+  padding: 0 15px;
+  display: -ms-flex;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  position: relative;
+}
+#main .main_row .card_block {
+  max-width: 92px;
+  width: 100%;
+  height: 143px;
+  background-color: #252424;
+  cursor: pointer;
+  border: 1px transparent solid;
+  border-radius: 7px;
+}
+#main .main_row.card_set {
+  width: 50%;
+}
+#main .main_row.card_set .card_block {
+  border: 1px #565656 solid;
+  border-radius: 7px;
+}
+#main .main_row#card_sort img {
+  position: absolute;
+}
+#main .main_row#card_shuffle {
+  display: -ms-flex;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  width: 100%;
+  padding-top: 30px;
+}
+#main .main_row#card_shuffle .card_column {
+  width: 100%;
+  position: relative;
+}
+#main .main_row#card_shuffle .card_column .card_block {
+  position: absolute;
+  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(1) {
+  top: 0px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(2) {
+  top: 35px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(3) {
+  top: 70px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(4) {
+  top: 105px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(5) {
+  top: 140px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(6) {
+  top: 175px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(7) {
+  top: 210px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(8) {
+  top: 245px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(9) {
+  top: 280px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(10) {
+  top: 315px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(11) {
+  top: 350px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(12) {
+  top: 385px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(13) {
+  top: 420px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(14) {
+  top: 455px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(15) {
+  top: 490px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(16) {
+  top: 525px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(17) {
+  top: 560px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(18) {
+  top: 595px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(19) {
+  top: 630px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(20) {
+  top: 665px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(21) {
+  top: 700px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(22) {
+  top: 735px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(23) {
+  top: 770px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(24) {
+  top: 805px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(25) {
+  top: 840px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(26) {
+  top: 875px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(27) {
+  top: 910px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(28) {
+  top: 945px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(29) {
+  top: 980px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(30) {
+  top: 1015px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(31) {
+  top: 1050px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(32) {
+  top: 1085px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(33) {
+  top: 1120px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(34) {
+  top: 1155px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(35) {
+  top: 1190px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(36) {
+  top: 1225px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(37) {
+  top: 1260px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(38) {
+  top: 1295px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(39) {
+  top: 1330px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(40) {
+  top: 1365px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(41) {
+  top: 1400px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(42) {
+  top: 1435px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(43) {
+  top: 1470px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(44) {
+  top: 1505px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(45) {
+  top: 1540px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(46) {
+  top: 1575px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(47) {
+  top: 1610px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(48) {
+  top: 1645px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(49) {
+  top: 1680px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(50) {
+  top: 1715px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(51) {
+  top: 1750px;
+}
+#main .main_row#card_shuffle .card_column .card_block:nth-child(52) {
+  top: 1785px;
+}
+#main .main_row#control {
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  max-width: 1170px;
+}
+#main .main_row#control #timer {
+  float: right;
+  margin-right: 30px;
+  font-size: 24px;
+}
+
+[draggable=true] {
+  /*
+   To prevent user selecting inside the drag source
+  */
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+/*# sourceMappingURL=main.css.map */

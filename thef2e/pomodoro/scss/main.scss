@@ -265,7 +265,7 @@ body {
             position: relative;
             top: 50%;
             transform: translateY(-50%);
-            transition-duration: 1s;
+            transition: 1s;
             .clock_timer_data{
             	display: inline-block;
             }

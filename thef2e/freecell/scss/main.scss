@@ -1,0 +1,124 @@
+html,
+body {
+    height: 100%;
+    // overflow: hidden;
+    font-size: 16px;
+    color: #EEE9B5;
+    background-color: #2C2C2C;
+}
+
+// main css start
+#main {
+    height: 100%;
+    display: -ms-flex;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 40px;
+    align-content: flex-start;
+    max-width: 1170px;
+    margin: auto;
+
+    .main_row {
+        width: 100%;
+        padding: 0 15px;
+        display: -ms-flex;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        position: relative;
+
+        // card_block css start
+        .card_block {
+            max-width: 92px;
+            // max-height: 143px;
+            width: 100%;
+            height: 143px;
+            background-color: #252424;
+            cursor: pointer;
+            border: 1px transparent solid;
+            border-radius: 7px;
+        }
+
+        // card_block css end
+
+        // card_set css start
+        &.card_set {
+            width: 50%;
+
+            .card_block {
+                border: 1px #565656 solid;
+                border-radius: 7px;
+            }
+        }
+        // card_set css end
+
+        // card_sort css start
+        &#card_sort {
+            img {
+                position: absolute;
+            }
+        }
+        // card_sort css start
+
+        // card_shuffle css start
+        &#card_shuffle {
+            display: -ms-flex;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            width: 100%;
+            padding-top: 30px;
+
+            .card_column {
+                width: 100%;
+                position: relative;
+
+                .card_block {
+                    position: absolute;
+                    margin: 0 auto;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color: transparent;
+
+                    @for $i from 1 through 52 {
+                        &:nth-child(#{$i}) {
+                            top: ($i - 1) * 35px;
+                        }
+                    }
+                }
+            }
+        }
+
+        // card_shuffle css end
+
+        // control css start
+        &#control {
+            display: block;
+            position: absolute;
+            bottom: 20px;
+            max-width: 1170px;
+
+            #timer {
+                float: right;
+                margin-right: 30px;
+                font-size: 24px;
+            }
+        }
+
+        // control css end
+    }
+
+}
+// draggable css start
+[draggable="true"] {
+  /*
+   To prevent user selecting inside the drag source
+  */
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+// draggable css end
+
+// main css end
