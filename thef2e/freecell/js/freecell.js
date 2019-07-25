@@ -2,15 +2,15 @@
 function startGame() {
     var card = [],
         cardTemp = [
-            [2],
-            [3],
-            [4],
+            [],
+            [],
+            [],
             []
         ],
         cardSort = [
-            [11, 12, 13],
             [],
-            [30, 31, 32],
+            [],
+            [],
             []
         ],
         cardContent = [],
@@ -115,6 +115,7 @@ function startGame() {
             dragCardNum = $(e.target).parents('.card_block').index();
             cardDragPlace = $(e.target).parents('.main_row').attr('id');
             console.log(e.target);
+            // $(e.target).parent('.card_block').css('cursor', 'grabbing');
             $(e.target).css('opacity', '.5')
         }
 
