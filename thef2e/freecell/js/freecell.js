@@ -15,6 +15,9 @@ function startGame() {
         ],
         cardContent = [],
         cardNum,
+        cardDropNum,
+        dragCardColor,
+        dropCardColor,
         cardCol,
         dragColNum,
         dragCardNum,
@@ -110,19 +113,27 @@ function startGame() {
         function dragStart(e) {
             // console.log('dragStart');
             // e.preventDefault();
-            console.log(e.target);
+            // console.log(e.target);
             cardNum = $(e.target).data('number'); //被拖拉的卡片在陣列中的代號
+            dragCardColor = Math.ceil(cardNum / 13); //被拖拉的卡片花色代號
             cardDragPlace = $(e.target).parents('.main_row').attr('id'); //被拖拉物的區塊id
             dragColNum = $(e.target).parents('.card_column').index(); //被拖拉物外層card_column的位子
             dragCardNum = $(e.target).parents('.card_block').index(); //被拖拉物外層card_block的位子
             dragNum = $(e.target).index(); //被拖拉物本身的位子
+            // console.log('cardNum =' + cardNum);
+            // console.log('cardDragPlace =' + cardDragPlace);
+            // console.log('dragColNum =' + dragColNum);
+            // console.log('dragCardNum =' + dragCardNum);
+            // console.log('dragNum =' + dragNum);
             $(e.target).css('opacity', '.5')
         }
 
         function dragEnter(e) {
             // console.log('dragEnter');
             // e.preventDefault();
-            console.log(e.target);
+            // console.log(e.target);
+            cardDropNum = $(e.target).data('number'); //放置的卡片在陣列中的代號
+            dropCardColor = Math.ceil(cardDropNum / 13); //放置的卡片花色代號
             cardDropPlace = $(e.target).parents('.main_row').attr('id'); //放置的區塊id
             dropColNum = $(e.target).parents('.card_column').index(); //放置物外層card_column的位子
             dropCardNum = $(e.target).parents('.card_block').index(); //放置物外層card_block的位子
@@ -140,12 +151,22 @@ function startGame() {
             // e.preventDefault();
             // console.log(e.target);
             $(e.target).css('opacity', '1');
+            // console.log('cardDropPlace =' + cardDropPlace);
+            // console.log('dropColNum =' + dropColNum);
+            // console.log('dropCardNum =' + dropCardNum);
+            // console.log('dropNum =' + dropNum);
+            //從card_shuffle拖拉卡片
             if (cardDragPlace == 'card_shuffle') {
+                //拖拉單張卡片
                 if (dragCardNum + 1 == cardContent[dragColNum].length) {
                     if (cardDropPlace == 'card_shuffle') {
                         if (dropColNum > -1) {
-                            cardContent[dragColNum].splice(dragCardNum, 1);
-                            cardContent[dropColNum].push(cardNum);
+                            console.log('cardNum =' + cardNum);
+                            console.log('cardDropNum =' + cardDropNum);
+                            if ((cardDropNum - 1) % 13 == cardNum % 13 && dragCardColor !== dropCardColor && dragCardColor + dropCardColor !== 5) {
+                                cardContent[dragColNum].splice(dragCardNum, 1);
+                                cardContent[dropColNum].push(cardNum);
+                            }
                         } else {
                             cardContent[dragColNum].splice(dragCardNum, 1);
                             cardContent[dropNum].push(cardNum);
@@ -159,14 +180,69 @@ function startGame() {
                         if (dropCardNum == -1 && cardNum % 13 == 1) {
                             cardContent[dragColNum].splice(dragCardNum, 1);
                             cardSort[dropNum].push(cardNum);
-                        } else if (cardNum - 1 == cardSort[dropCardNum][dropNum]) {
+                        } else if (cardSort[dropCardNum] !== undefined && cardNum - 1 == cardSort[dropCardNum][dropNum]) {
                             cardContent[dragColNum].splice(dragCardNum, 1);
                             cardSort[dropCardNum].push(cardNum);
                         }
                     }
+                } else { //拖拉多張卡片
+                    if (cardDropPlace == 'card_shuffle') {
+                        console.log('cardDropPlace == card_shuffle');
+                    }
                 }
             }
-            // if (cardDragPlace == 'card_temp') {}
+            //從card_temp拖拉卡片
+            if (cardDragPlace == 'card_temp') {
+                if (cardDropPlace == 'card_shuffle') {
+                    if (dropColNum > -1) {
+                        if ((cardDropNum - 1) % 13 == cardNum % 13 && dragCardColor !== dropCardColor && dragCardColor + dropCardColor !== 5) {
+                            cardTemp[dragCardNum].splice(dragNum, 1);
+                            cardContent[dropColNum].push(cardNum);
+                        }
+                    } else {
+                        cardTemp[dragCardNum].splice(dragNum, 1);
+                        cardContent[dropNum].push(cardNum);
+                    }
+                } else if (cardDropPlace == 'card_temp') {
+                    if (dropCardNum == -1) {
+                        cardTemp[dragCardNum].splice(dragNum, 1);
+                        cardTemp[dropNum].push(cardNum);
+                    }
+                } else if (cardDropPlace == 'card_sort') {
+                    if (dropCardNum == -1 && cardNum % 13 == 1) {
+                        cardTemp[dragCardNum].splice(dragNum, 1);
+                        cardSort[dropNum].push(cardNum);
+                    } else if (cardSort[dropCardNum] !== undefined && cardNum - 1 == cardSort[dropCardNum][dropNum]) {
+                        cardTemp[dragCardNum].splice(dragNum, 1);
+                        cardSort[dropCardNum].push(cardNum);
+                    }
+                }
+            }
+            //從card_sort拖拉卡片
+            if (cardDragPlace == 'card_sort') {
+                console.log('cardDragPlace == card_sort');
+                if (cardDropPlace == 'card_shuffle') {
+                    if (dropColNum > -1) {
+                        if ((cardDropNum - 1) % 13 == cardNum % 13 && dragCardColor !== dropCardColor && dragCardColor + dropCardColor !== 5) {
+                            cardSort[dragCardNum].splice(dragNum, 1);
+                            cardContent[dropColNum].push(cardNum);
+                        }
+                    } else {
+                        cardSort[dragCardNum].splice(dragNum, 1);
+                        cardContent[dropNum].push(cardNum);
+                    }
+                } else if (cardDropPlace == 'card_temp') {
+                    if (dropCardNum == -1) {
+                        cardSort[dragCardNum].splice(dragNum, 1);
+                        cardTemp[dropNum].push(cardNum);
+                    }
+                } else if (cardDropPlace == 'card_sort') {
+                    if (dropCardNum == -1 && cardNum % 13 == 1) {
+                        cardSort[dragCardNum].splice(dragNum, 1);
+                        cardSort[dropNum].push(cardNum);
+                    }
+                }
+            }
             cardRender();
         }
         $('#main').bind('dragstart', dragStart);
@@ -176,23 +252,23 @@ function startGame() {
     }
 
     cardDeal();
-    //restart
-    $('#restart').on('click', function() {
-        card = [];
-        cardTemp = [
-            [],
-            [],
-            [],
-            []
-        ];
-        cardSort = [
-            [],
-            [],
-            [],
-            []
-        ];
-        cardContent = [];
-        cardDeal();
-    })
 }
 startGame();
+//restart
+$('#restart').on('click', function() {
+    card = [];
+    cardTemp = [
+        [],
+        [],
+        [],
+        []
+    ];
+    cardSort = [
+        [],
+        [],
+        [],
+        []
+    ];
+    cardContent = [];
+    startGame();
+})
