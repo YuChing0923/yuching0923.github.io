@@ -100,6 +100,14 @@ body {
             bottom: 20px;
             max-width: 1170px;
 
+            button.control_button{
+            	background-color: #161616;
+            	border: none;
+            	padding: 7px 20px;
+            	border-radius: 30px;
+    			color: #EEE9B5;
+            }
+
             #timer {
                 float: right;
                 margin-right: 30px;
