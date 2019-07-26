@@ -234,6 +234,9 @@ body {
   border-radius: 30px;
   color: #EEE9B5;
 }
+#main .main_row#control button.control_button:focus {
+  outline: none;
+}
 #main .main_row#control #timer {
   float: right;
   margin-right: 30px;

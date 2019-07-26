@@ -27,6 +27,7 @@ function startGame() {
         dropNum,
         cardDragPlace,
         cardDropPlace,
+        step = [],
         cardHtml;
 
     //card array加52張牌
@@ -157,37 +158,64 @@ function startGame() {
             // console.log('dropNum =' + dropNum);
             //從card_shuffle拖拉卡片
             if (cardDragPlace == 'card_shuffle') {
-                //拖拉單張卡片
-                if (dragCardNum + 1 == cardContent[dragColNum].length) {
+                if (dragCardNum + 1 == cardContent[dragColNum].length) { //拖拉單張卡片
                     if (cardDropPlace == 'card_shuffle') {
-                        if (dropColNum > -1) {
-                            console.log('cardNum =' + cardNum);
-                            console.log('cardDropNum =' + cardDropNum);
-                            if ((cardDropNum - 1) % 13 == cardNum % 13 && dragCardColor !== dropCardColor && dragCardColor + dropCardColor !== 5) {
+                        if (dropColNum > -1) { //card_column有卡片
+                            if ((cardDropNum - 1) % 13 == cardNum % 13 && dragCardColor !== dropCardColor && dragCardColor + dropCardColor !== 5) { //花色不同 && 照排序可拖拉
                                 cardContent[dragColNum].splice(dragCardNum, 1);
                                 cardContent[dropColNum].push(cardNum);
                             }
-                        } else {
+                        } else { //card_column沒有卡片
                             cardContent[dragColNum].splice(dragCardNum, 1);
                             cardContent[dropNum].push(cardNum);
                         }
                     } else if (cardDropPlace == 'card_temp') {
-                        if (dropCardNum == -1) {
+                        if (dropCardNum == -1) { //card_block沒卡片
                             cardContent[dragColNum].splice(dragCardNum, 1);
                             cardTemp[dropNum].push(cardNum);
                         }
                     } else if (cardDropPlace == 'card_sort') {
-                        if (dropCardNum == -1 && cardNum % 13 == 1) {
+                        if (dropCardNum == -1 && cardNum % 13 == 1) { //card_block沒卡片 && 卡片數字是A
                             cardContent[dragColNum].splice(dragCardNum, 1);
                             cardSort[dropNum].push(cardNum);
-                        } else if (cardSort[dropCardNum] !== undefined && cardNum - 1 == cardSort[dropCardNum][dropNum]) {
+                        } else if (cardSort[dropCardNum] !== undefined && cardNum - 1 == cardSort[dropCardNum][dropNum]) { //card_block有卡片 && 卡片數字照順序
                             cardContent[dragColNum].splice(dragCardNum, 1);
                             cardSort[dropCardNum].push(cardNum);
                         }
                     }
                 } else { //拖拉多張卡片
                     if (cardDropPlace == 'card_shuffle') {
-                        console.log('cardDropPlace == card_shuffle');
+                        var tempCardQuant = 0,
+                            dragCardQuant = cardContent[dragColNum].length - dragCardNum;
+                        for (var i = 0; i < cardTemp.length; i++) {
+                            if (cardTemp[i].length == 0) {
+                                tempCardQuant++;
+                            }
+                        }
+                        if (tempCardQuant + 1 >= dragCardQuant) {
+                            var cardDragArr = cardContent[dragColNum].slice(dragCardNum, cardContent[dragColNum].length);
+                            cardDragArr.forEach(function(cardDragArrNum, cardDragArrIndex) {
+                                if (cardDragArrIndex + 1 < cardDragArr.length) {
+                                    if ((cardDragArr[cardDragArrIndex] - 1) % 13 == ((cardDragArr[cardDragArrIndex + 1] - 1) % 13) + 1 && (Math.ceil(cardDragArr[cardDragArrIndex] / 13)) !== (Math.ceil(cardDragArr[cardDragArrIndex + 1] / 13)) && (Math.ceil(cardDragArr[cardDragArrIndex] / 13)) + (Math.ceil(cardDragArr[cardDragArrIndex + 1] / 13)) !== 5) {
+                                        if (dropColNum > -1) { //card_column有卡片
+                                            cardContent[dropColNum].push(cardDragArrNum);
+                                            cardContent[dragColNum].pop(cardDragArrNum);
+                                            if (cardDragArrIndex + 2 == cardDragArr.length) {
+                                                cardContent[dropColNum].push(cardDragArr[cardDragArrIndex + 1]);
+                                                cardContent[dragColNum].pop(cardDragArr[cardDragArrIndex + 1]);
+                                            }
+                                        } else { //card_column沒卡片
+                                            cardContent[dropNum].push(cardDragArrNum);
+                                            cardContent[dragColNum].pop(cardDragArrNum);
+                                            if (cardDragArrIndex + 2 == cardDragArr.length) {
+                                                cardContent[dropNum].push(cardDragArr[cardDragArrIndex + 1]);
+                                                cardContent[dragColNum].pop(cardDragArr[cardDragArrIndex + 1]);
+                                            }
+                                        }
+                                    }
+                                }
+                            })
+                        }
                     }
                 }
             }
@@ -220,7 +248,6 @@ function startGame() {
             }
             //從card_sort拖拉卡片
             if (cardDragPlace == 'card_sort') {
-                console.log('cardDragPlace == card_sort');
                 if (cardDropPlace == 'card_shuffle') {
                     if (dropColNum > -1) {
                         if ((cardDropNum - 1) % 13 == cardNum % 13 && dragCardColor !== dropCardColor && dragCardColor + dropCardColor !== 5) {

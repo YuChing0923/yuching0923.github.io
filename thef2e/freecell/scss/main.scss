@@ -106,6 +106,9 @@ body {
             	padding: 7px 20px;
             	border-radius: 30px;
     			color: #EEE9B5;
+    			&:focus{
+    				outline: none;
+    			}
             }
 
             #timer {
