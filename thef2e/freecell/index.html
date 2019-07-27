@@ -14,6 +14,12 @@
 </head>
 
 <body>
+    <div id="modal" style="display: none;">
+        <p class="over">遊戲結束</p>
+        <p class="over" id="over_time"></p>
+        <button class="control_button" id="game_over" style="display: none;">restart</button>
+        <button class="control_button" id="play">play</button>
+    </div>
     <div id="main">
         <div class="main_row card_set" id="card_temp">
             <div class="card_block">
@@ -220,7 +226,7 @@
         <div class="main_row" id="control">
             <button class="control_button" id="restart">restart</button>
             <button class="control_button" id="undo">undo</button>
-            <!-- <button class="control_button" id="pause">pause</button> -->
+            <button class="control_button" id="pause">pause</button>
             <span id="timer">00:00</span>
         </div>
     </div>

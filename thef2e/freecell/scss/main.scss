@@ -34,7 +34,6 @@ body {
             width: 100%;
             height: 143px;
             background-color: #252424;
-            cursor: grab;
             border: 1px transparent solid;
             border-radius: 7px;
         }
@@ -50,14 +49,18 @@ body {
                 border-radius: 7px;
             }
         }
+
         // card_set css end
 
         // card_sort css start
         &#card_sort {
             img {
                 position: absolute;
+                transition: .2s;
+                opacity: 1;
             }
         }
+
         // card_sort css start
 
         // card_shuffle css start
@@ -72,7 +75,7 @@ body {
 
             .card_column {
                 width: 100%;
-            	min-height: 350px;
+                min-height: 350px;
                 position: relative;
 
                 .card_block {
@@ -84,7 +87,7 @@ body {
 
                     @for $i from 1 through 52 {
                         &:nth-child(#{$i}) {
-                            top: ($i - 1) * 35px;
+                            // top: ($i - 1) * 35px;
                         }
                     }
                 }
@@ -100,17 +103,6 @@ body {
             bottom: 20px;
             max-width: 1170px;
 
-            button.control_button{
-            	background-color: #161616;
-            	border: none;
-            	padding: 7px 20px;
-            	border-radius: 30px;
-    			color: #EEE9B5;
-    			&:focus{
-    				outline: none;
-    			}
-            }
-
             #timer {
                 float: right;
                 margin-right: 30px;
@@ -122,16 +114,78 @@ body {
     }
 
 }
+
+// button css start
+button.control_button {
+    background-color: #161616;
+    border: none;
+    padding: 7px 20px;
+    border-radius: 30px;
+    color: #EEE9B5;
+    transition: .2s;
+
+    &:hover {
+        background-color: #404040;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        transition: .2s;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+// button css end
+
 // draggable css start
 [draggable="true"] {
-  /*
+    /*
    To prevent user selecting inside the drag source
   */
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    cursor: grab;
 }
+
 // draggable css end
+
+// modal css start
+#modal {
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    padding-top: 30%;
+
+    .over {
+        display: block;
+        position: relative;
+        text-align: center;
+        font-size: 30px;
+        display: none;
+    }
+
+    button.control_button {
+        margin: auto;
+        display: block;
+        font-size: 42px;
+        padding: 30px 80px;
+        border-radius: 200px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, .7);
+        top: 50%;
+        transition: .2s;
+
+        &:hover {
+            background-color: #0c0c0c;
+            box-shadow: 0 0 30px rgba(0, 0, 0, .7);
+            transition: .2s;
+        }
+    }
+}
+
+// modal css end
 
 // main css end

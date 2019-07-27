@@ -13,7 +13,16 @@ function startGame() {
             [],
             []
         ],
-        cardContent = [],
+        cardContent = [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        ],
         cardNum,
         cardDropNum,
         dragCardColor,
@@ -28,7 +37,42 @@ function startGame() {
         cardDragPlace,
         cardDropPlace,
         step = [],
+        isPaused = false,
+        init = false,
         cardHtml;
+
+    $('#pause').on('click', function() {
+        $('#modal').show();
+        $('.card_block img').attr('draggable', 'true');
+        isPaused = true;
+    });
+    $('#play').on('click', function() {
+        $('#modal').hide();
+        $('#modal').find('.over').hide();
+        $('#modal').find('#game_over').hide();
+        $('#modal').find('#play').show();
+        isPaused = false;
+    });
+
+    function gameEnd() {
+        function cardContentEmpty(element) {
+            return element.length == 0;
+        }
+
+        function cardTempEmpty(element) {
+            return element.length == 0;
+        }
+        if (cardContent.every(cardContentEmpty) && cardTemp.every(cardTempEmpty)) {
+            isPaused = true;
+            $('#modal').find('.over').show();
+            $('#modal').css('padding-top', '20%').show();
+            var _over_time = $('#timer').text();
+            $('#over_time').html(_over_time);
+            $('#play').off('click');
+            $('#modal').find('#game_over').show();
+            $('#modal').find('#play').hide();
+        }
+    }
 
     //card array加52張牌
     function cardArray() {
@@ -63,33 +107,53 @@ function startGame() {
     //card array分別發到 cardContent的8個陣列
     function cardDeal() {
         cardShuffle(card);
-        var i, cardColumn;
-        for (i = 1; i <= 4; i++) {
-            cardColumn = card.slice(0, 7);
-            cardContent.push(cardColumn);
-            card.splice(0, 7);
-        } // 前4排7張
-        for (i = 1; i <= 4; i++) {
-            cardColumn = card.slice(0, 6);
-            cardContent.push(cardColumn);
-            card.splice(0, 6);
-        } // 後4排6張
+        console.log(card);
+        var i, j, cardColumn;
+        for (i = 0; i < 7; i++) {
+            for (j = 0; j < 8; j++) {
+                if ((i * 8) + j < 52) {
+                    cardContent[j].push(card[(i * 8) + j]);
+                }
+            }
+        }
+
         //card_shuffle render
         function cardShuffleRender() {
-            // console.log(cardContent);
+            var cardElement;
             $('#card_shuffle .card_column').html('');
             cardContent.forEach(function(cardColumn, cardColumnNum) {
                 cardColumn.forEach(function(cardNum, cardNumIndex) {
-                    $('#card_shuffle .card_column').eq(cardColumnNum).append(`<div class="card_block"><img src="images/${cardColor(cardNum)}_${cardNum % 13 == 0 ? 13 : cardNum % 13}.png" alt="" draggable="true" data-number="${cardNum}"></div>`);
+                    $('#card_shuffle .card_column').eq(cardColumnNum).append(`<div class="card_block"><img src="images/${cardColor(cardNum)}_${cardNum % 13 == 0 ? 13 : cardNum % 13}.png" alt="" class="draggable" draggable="true" data-number="${cardNum}"></div>`);
                 })
             })
+            card.forEach(function(cardNumber, cardIndex) {
+                if (!init) {
+                    $('#card_shuffle .card_block').css({
+                        'top': '-1000px',
+                        'left': '-1000px',
+                        'opacity': '0',
+                        'transition': '.4s'
+                    });
+                    setTimeout(function() {
+                        cardElement = $('#card_shuffle .card_block').find(`img[data-number='${cardNumber}']`).parent('.card_block');
+                        cardElement.css({
+                            'top': (Math.floor(cardIndex / 8)) * 35 + 'px',
+                            'left': '50%',
+                            'opacity': '1',
+                            'transition': '.4s'
+                        });
+                    }, cardIndex * 40);
+                }
+            })
+            init = true;
         }
+
         //card_temp render
         function cardTempRender() {
             $(' #card_temp .card_block').html('');
             cardTemp.forEach(function(cardTempArr, cardTempNum) {
                 cardTempArr.forEach(function(cardTempArrNum, cardTempIndex) {
-                    $('#card_temp .card_block').eq(cardTempNum).html(`<img src="images/${cardColor(cardTempArrNum)}_${cardTempArrNum % 13 == 0 ? 13 : cardTempArrNum % 13}.png" alt="" draggable="true" data-number="${cardTempArrNum}">`);
+                    $('#card_temp .card_block').eq(cardTempNum).html(`<img src="images/${cardColor(cardTempArrNum)}_${cardTempArrNum % 13 == 0 ? 13 : cardTempArrNum % 13}.png" alt="" class="draggable" draggable="true" data-number="${cardTempArrNum}">`);
                 })
             })
         }
@@ -98,7 +162,7 @@ function startGame() {
             $('#card_sort .card_block').html('');
             cardSort.forEach(function(cardSortCol, cardSortColNum) {
                 cardSortCol.forEach(function(cardSortNum, index) {
-                    $('#card_sort .card_block').eq(cardSortColNum).append(`<img src="images/${cardColor(cardSortNum)}_${cardSortNum % 13 == 0 ? 13 : cardSortNum % 13}.png" alt="" draggable="true" data-number="${cardSortNum}">`);
+                    $('#card_sort .card_block').eq(cardSortColNum).append(`<img src="images/${cardColor(cardSortNum)}_${cardSortNum % 13 == 0 ? 13 : cardSortNum % 13}.png" alt="" class="draggable" draggable="true" data-number="${cardSortNum}">`);
                 })
             })
         }
@@ -107,6 +171,7 @@ function startGame() {
             cardShuffleRender();
             cardTempRender();
             cardSortRender();
+            // body...
         }
         cardRender();
 
@@ -121,11 +186,6 @@ function startGame() {
             dragColNum = $(e.target).parents('.card_column').index(); //被拖拉物外層card_column的位子
             dragCardNum = $(e.target).parents('.card_block').index(); //被拖拉物外層card_block的位子
             dragNum = $(e.target).index(); //被拖拉物本身的位子
-            // console.log('cardNum =' + cardNum);
-            // console.log('cardDragPlace =' + cardDragPlace);
-            // console.log('dragColNum =' + dragColNum);
-            // console.log('dragCardNum =' + dragCardNum);
-            // console.log('dragNum =' + dragNum);
             $(e.target).css('opacity', '.5');
             if (cardDragPlace == 'card_shuffle') {
                 if (dragCardNum + 1 !== cardContent[dragColNum].length) { //拖拉多張卡片
@@ -147,21 +207,8 @@ function startGame() {
             dropNum = $(e.target).index(); //放置物本身的位子
         }
 
-        function dragLeave(e) {
-            // console.log('dragLeave');
-            // e.preventDefault();
-            // console.log(e.target);
-        }
-
         function dragEnd(e) {
-            // console.log('dragEnd');
-            // e.preventDefault();
-            // console.log(e.target);
             $(e.target).css('opacity', '1');
-            // console.log('cardDropPlace =' + cardDropPlace);
-            // console.log('dropColNum =' + dropColNum);
-            // console.log('dropCardNum =' + dropCardNum);
-            // console.log('dropNum =' + dropNum);
             var dragArr, dropArr, dragIndex, dropIndex, cardDragArr;
             switch (cardDragPlace) {
                 case 'card_shuffle':
@@ -215,7 +262,6 @@ function startGame() {
                             moveCard: cardNum
                         });
                     } else {
-                        console.log('card shuffle 拖拉多張');
                         if (cardDragArr[cardDragArr.length - 1] == cardNum) {
                             step.push({
                                 dragArr: dragArr,
@@ -235,7 +281,6 @@ function startGame() {
                         moveCard: cardNum
                     });
                 }
-                console.log(step);
             }
             //從card_shuffle拖拉卡片
             if (cardDragPlace == 'card_shuffle') {
@@ -332,10 +377,11 @@ function startGame() {
                 }
             }
             cardRender();
+            gameEnd();
         }
+
         $('#main').bind('dragstart', dragStart);
         $('#main').bind('dragenter', dragEnter);
-        $('#main').bind('dragleave', dragLeave);
         $('#main').bind('dragend', dragEnd);
 
         function stepUndo() {
@@ -362,31 +408,64 @@ function startGame() {
             }
         }
         $('#undo').on('click', stepUndo);
+
+        function timer() {
+            var time = 0,
+                min,
+                sec;
+            window.setInterval(function() {
+                if (!isPaused) {
+                    time++;
+                    min = Math.floor(time / 60);
+                    min < 10 && (min = '0' + min);
+                    sec = time % 60;
+                    sec < 10 && (sec = '0' + sec);
+                    $('#timer').text(min + ":" + sec);
+                }
+            }, 1000);
+
+        }
+        timer();
     }
 
     cardDeal();
 }
 startGame();
 //restart
-$('#restart').on('click', function() {
-    card = [];
-    cardTemp = [
-        [],
-        [],
-        [],
-        []
-    ];
-    cardSort = [
-        [],
-        [],
-        [],
-        []
-    ];
-    cardContent = [];
-    $('#main').unbind('dragstart');
-    $('#main').unbind('dragenter');
-    $('#main').unbind('dragleave');
-    $('#main').unbind('dragend');
-    $('#undo').off('click');
-    startGame();
-})
+function restart(element) {
+    $(element).on('click', function() {
+        card = [];
+        cardTemp = [
+            [],
+            [],
+            [],
+            []
+        ];
+        cardSort = [
+            [],
+            [],
+            [],
+            []
+        ];
+        cardContent = [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        ];
+        $('#main').unbind('dragstart');
+        $('#main').unbind('dragenter');
+        $('#main').unbind('dragend');
+        $('#undo').off('click');
+        $('#modal').hide();
+        $('#modal').find('#game_over').hide();
+        $('#modal').find('#play').show();
+        startGame();
+    });
+};
+restart('#restart');
+restart('#game_over');
