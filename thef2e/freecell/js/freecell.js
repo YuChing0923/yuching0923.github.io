@@ -62,7 +62,7 @@ function startGame() {
     }
     //card array分別發到 cardContent的8個陣列
     function cardDeal() {
-        cardShuffle(card)
+        cardShuffle(card);
         var i, cardColumn;
         for (i = 1; i <= 4; i++) {
             cardColumn = card.slice(0, 7);
@@ -126,7 +126,13 @@ function startGame() {
             // console.log('dragColNum =' + dragColNum);
             // console.log('dragCardNum =' + dragCardNum);
             // console.log('dragNum =' + dragNum);
-            $(e.target).css('opacity', '.5')
+            $(e.target).css('opacity', '.5');
+            if (cardDragPlace == 'card_shuffle') {
+                if (dragCardNum + 1 !== cardContent[dragColNum].length) { //拖拉多張卡片
+                    $(e.target).css('opacity', '.5');
+                    $(e.target).parents('.card_block').nextAll().find('img').css('opacity', '.5');
+                }
+            }
         }
 
         function dragEnter(e) {
@@ -156,31 +162,99 @@ function startGame() {
             // console.log('dropColNum =' + dropColNum);
             // console.log('dropCardNum =' + dropCardNum);
             // console.log('dropNum =' + dropNum);
+            var dragArr, dropArr, dragIndex, dropIndex, cardDragArr;
+            switch (cardDragPlace) {
+                case 'card_shuffle':
+                    dragArr = cardContent;
+                    dragIndex = dragColNum;
+                    break;
+                case 'card_temp':
+                    dragArr = cardTemp;
+                    dragIndex = dragCardNum;
+                    break;
+                case 'card_sort':
+                    dragArr = cardSort;
+                    dragIndex = dragCardNum;
+                    break;
+            }
+            switch (cardDropPlace) {
+                case 'card_shuffle':
+                    dropArr = cardContent;
+                    if (dropColNum == -1) { //card_column沒卡片
+                        dropIndex = dropNum;
+                    } else {
+                        dropIndex = dropColNum;
+                    }
+                    break;
+                case 'card_temp':
+                    dropArr = cardTemp;
+                    if (dropCardNum == -1) { //card_block沒卡片
+                        dropIndex = dropNum;
+                    }
+                    break;
+                case 'card_sort':
+                    dropArr = cardSort;
+                    if (dropCardNum == -1) { //card_block沒卡片
+                        dropIndex = dropNum;
+                    } else {
+                        dropIndex = dropCardNum;
+                    }
+                    break;
+            }
+
+            function moveCard() {
+                dropArr[dropIndex].push(cardNum);
+                dragArr[dragIndex].pop(cardNum);
+                if (cardDragPlace == 'card_shuffle' && cardDropPlace == 'card_shuffle') {
+                    if (cardDragArr == undefined) {
+                        step.push({
+                            dragArr: dragArr,
+                            dropArr: dropArr,
+                            dragIndex: dragIndex,
+                            dropIndex: dropIndex,
+                            moveCard: cardNum
+                        });
+                    } else {
+                        console.log('card shuffle 拖拉多張');
+                        if (cardDragArr[cardDragArr.length - 1] == cardNum) {
+                            step.push({
+                                dragArr: dragArr,
+                                dropArr: dropArr,
+                                dragIndex: dragIndex,
+                                dropIndex: dropIndex,
+                                moveCard: cardDragArr
+                            });
+                        }
+                    }
+                } else {
+                    step.push({
+                        dragArr: dragArr,
+                        dropArr: dropArr,
+                        dragIndex: dragIndex,
+                        dropIndex: dropIndex,
+                        moveCard: cardNum
+                    });
+                }
+                console.log(step);
+            }
             //從card_shuffle拖拉卡片
             if (cardDragPlace == 'card_shuffle') {
                 if (dragCardNum + 1 == cardContent[dragColNum].length) { //拖拉單張卡片
                     if (cardDropPlace == 'card_shuffle') {
-                        if (dropColNum > -1) { //card_column有卡片
-                            if ((cardDropNum - 1) % 13 == cardNum % 13 && dragCardColor !== dropCardColor && dragCardColor + dropCardColor !== 5) { //花色不同 && 照排序可拖拉
-                                cardContent[dragColNum].splice(dragCardNum, 1);
-                                cardContent[dropColNum].push(cardNum);
-                            }
-                        } else { //card_column沒有卡片
-                            cardContent[dragColNum].splice(dragCardNum, 1);
-                            cardContent[dropNum].push(cardNum);
+                        if (dropColNum == -1) { //card_column沒有卡片
+                            moveCard();
+                        } else if ((cardDropNum - 1) % 13 == cardNum % 13 && dragCardColor !== dropCardColor && dragCardColor + dropCardColor !== 5) { //card_column有卡片 花色不同 && 照排序可拖拉
+                            moveCard();
                         }
                     } else if (cardDropPlace == 'card_temp') {
                         if (dropCardNum == -1) { //card_block沒卡片
-                            cardContent[dragColNum].splice(dragCardNum, 1);
-                            cardTemp[dropNum].push(cardNum);
+                            moveCard();
                         }
                     } else if (cardDropPlace == 'card_sort') {
                         if (dropCardNum == -1 && cardNum % 13 == 1) { //card_block沒卡片 && 卡片數字是A
-                            cardContent[dragColNum].splice(dragCardNum, 1);
-                            cardSort[dropNum].push(cardNum);
+                            moveCard();
                         } else if (cardSort[dropCardNum] !== undefined && cardNum - 1 == cardSort[dropCardNum][dropNum]) { //card_block有卡片 && 卡片數字照順序
-                            cardContent[dragColNum].splice(dragCardNum, 1);
-                            cardSort[dropCardNum].push(cardNum);
+                            moveCard();
                         }
                     }
                 } else { //拖拉多張卡片
@@ -192,29 +266,29 @@ function startGame() {
                                 tempCardQuant++;
                             }
                         }
-                        if (tempCardQuant + 1 >= dragCardQuant) {
-                            var cardDragArr = cardContent[dragColNum].slice(dragCardNum, cardContent[dragColNum].length);
-                            cardDragArr.forEach(function(cardDragArrNum, cardDragArrIndex) {
-                                if (cardDragArrIndex + 1 < cardDragArr.length) {
-                                    if ((cardDragArr[cardDragArrIndex] - 1) % 13 == ((cardDragArr[cardDragArrIndex + 1] - 1) % 13) + 1 && (Math.ceil(cardDragArr[cardDragArrIndex] / 13)) !== (Math.ceil(cardDragArr[cardDragArrIndex + 1] / 13)) && (Math.ceil(cardDragArr[cardDragArrIndex] / 13)) + (Math.ceil(cardDragArr[cardDragArrIndex + 1] / 13)) !== 5) {
-                                        if (dropColNum > -1) { //card_column有卡片
-                                            cardContent[dropColNum].push(cardDragArrNum);
-                                            cardContent[dragColNum].pop(cardDragArrNum);
-                                            if (cardDragArrIndex + 2 == cardDragArr.length) {
-                                                cardContent[dropColNum].push(cardDragArr[cardDragArrIndex + 1]);
-                                                cardContent[dragColNum].pop(cardDragArr[cardDragArrIndex + 1]);
-                                            }
-                                        } else { //card_column沒卡片
-                                            cardContent[dropNum].push(cardDragArrNum);
-                                            cardContent[dragColNum].pop(cardDragArrNum);
-                                            if (cardDragArrIndex + 2 == cardDragArr.length) {
-                                                cardContent[dropNum].push(cardDragArr[cardDragArrIndex + 1]);
-                                                cardContent[dragColNum].pop(cardDragArr[cardDragArrIndex + 1]);
-                                            }
-                                        }
+                        if (tempCardQuant + 1 >= dragCardQuant) { //card_temp數量+1 大於等於 拖拉的卡片數量
+                            cardDragArr = cardContent[dragColNum].slice(dragCardNum, cardContent[dragColNum].length),
+                                sortCheck = 0;
+                            for (var i = cardDragArr.length - 1; i >= 0; i--) {
+                                if (i + 1 < cardDragArr.length) {
+                                    if ((cardDragArr[i] - 1) % 13 == ((cardDragArr[i + 1] - 1) % 13) + 1 && (Math.ceil(cardDragArr[i] / 13)) !== (Math.ceil(cardDragArr[i + 1] / 13)) && (Math.ceil(cardDragArr[i] / 13)) + (Math.ceil(cardDragArr[i + 1] / 13)) !== 5) {
+                                        sortCheck++;
                                     }
                                 }
-                            })
+                                if (cardDragArr.length - 1 == sortCheck) {
+                                    if (dropColNum == -1) { //card_column沒有卡片
+                                        cardDragArr.forEach(function(cardDragArrNum, cardDragArrIndex, array) {
+                                            cardNum = cardDragArrNum;
+                                            moveCard();
+                                        })
+                                    } else if ((cardDropNum - 1) % 13 == cardNum % 13 && dragCardColor !== dropCardColor && dragCardColor + dropCardColor !== 5) { //card_column有卡片 花色不同 && 照排序可拖拉
+                                        cardDragArr.forEach(function(cardDragArrNum, cardDragArrIndex, array) {
+                                            cardNum = cardDragArrNum;
+                                            moveCard();
+                                        })
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -222,51 +296,38 @@ function startGame() {
             //從card_temp拖拉卡片
             if (cardDragPlace == 'card_temp') {
                 if (cardDropPlace == 'card_shuffle') {
-                    if (dropColNum > -1) {
-                        if ((cardDropNum - 1) % 13 == cardNum % 13 && dragCardColor !== dropCardColor && dragCardColor + dropCardColor !== 5) {
-                            cardTemp[dragCardNum].splice(dragNum, 1);
-                            cardContent[dropColNum].push(cardNum);
-                        }
-                    } else {
-                        cardTemp[dragCardNum].splice(dragNum, 1);
-                        cardContent[dropNum].push(cardNum);
+                    if (dropColNum == -1) { //card_column沒有卡片
+                        moveCard();
+                    } else if ((cardDropNum - 1) % 13 == cardNum % 13 && dragCardColor !== dropCardColor && dragCardColor + dropCardColor !== 5) { //card_column有卡片 花色不同 && 照排序可拖拉
+                        moveCard();
                     }
                 } else if (cardDropPlace == 'card_temp') {
                     if (dropCardNum == -1) {
-                        cardTemp[dragCardNum].splice(dragNum, 1);
-                        cardTemp[dropNum].push(cardNum);
+                        moveCard();
                     }
                 } else if (cardDropPlace == 'card_sort') {
                     if (dropCardNum == -1 && cardNum % 13 == 1) {
-                        cardTemp[dragCardNum].splice(dragNum, 1);
-                        cardSort[dropNum].push(cardNum);
+                        moveCard();
                     } else if (cardSort[dropCardNum] !== undefined && cardNum - 1 == cardSort[dropCardNum][dropNum]) {
-                        cardTemp[dragCardNum].splice(dragNum, 1);
-                        cardSort[dropCardNum].push(cardNum);
+                        moveCard();
                     }
                 }
             }
             //從card_sort拖拉卡片
             if (cardDragPlace == 'card_sort') {
                 if (cardDropPlace == 'card_shuffle') {
-                    if (dropColNum > -1) {
-                        if ((cardDropNum - 1) % 13 == cardNum % 13 && dragCardColor !== dropCardColor && dragCardColor + dropCardColor !== 5) {
-                            cardSort[dragCardNum].splice(dragNum, 1);
-                            cardContent[dropColNum].push(cardNum);
-                        }
-                    } else {
-                        cardSort[dragCardNum].splice(dragNum, 1);
-                        cardContent[dropNum].push(cardNum);
+                    if (dropColNum == -1) { //card_column沒有卡片
+                        moveCard();
+                    } else if ((cardDropNum - 1) % 13 == cardNum % 13 && dragCardColor !== dropCardColor && dragCardColor + dropCardColor !== 5) { //card_column有卡片 花色不同 && 照排序可拖拉
+                        moveCard();
                     }
                 } else if (cardDropPlace == 'card_temp') {
                     if (dropCardNum == -1) {
-                        cardSort[dragCardNum].splice(dragNum, 1);
-                        cardTemp[dropNum].push(cardNum);
+                        moveCard();
                     }
                 } else if (cardDropPlace == 'card_sort') {
                     if (dropCardNum == -1 && cardNum % 13 == 1) {
-                        cardSort[dragCardNum].splice(dragNum, 1);
-                        cardSort[dropNum].push(cardNum);
+                        moveCard();
                     }
                 }
             }
@@ -276,6 +337,30 @@ function startGame() {
         $('#main').bind('dragenter', dragEnter);
         $('#main').bind('dragleave', dragLeave);
         $('#main').bind('dragend', dragEnd);
+
+        function stepUndo() {
+            if (step.length > -1) {
+                var stepFromArr = step[step.length - 1].dragArr,
+                    stepToArr = step[step.length - 1].dropArr,
+                    stepFromIndex = step[step.length - 1].dragIndex,
+                    stepToIndex = step[step.length - 1].dropIndex,
+                    stepMoveCard = step[step.length - 1].moveCard;
+                if (cardDragPlace == 'card_shuffle' && cardDropPlace == 'card_shuffle') {
+                    if (typeof stepMoveCard === 'number') {
+                        stepFromArr[stepFromIndex].push(stepMoveCard);
+                        stepToArr[stepToIndex].pop(stepMoveCard);
+                    } else {
+                        stepFromArr[stepFromIndex] = stepFromArr[stepFromIndex].concat(stepMoveCard);
+                        stepToArr[stepToIndex].splice((stepToArr[stepToIndex].length - stepMoveCard.length), stepMoveCard.length);
+                    }
+                } else {
+                    stepFromArr[stepFromIndex].push(stepMoveCard);
+                    stepToArr[stepToIndex].pop(stepMoveCard);
+                }
+                cardRender();
+            }
+        }
+        $('#undo').on('click', stepUndo);
     }
 
     cardDeal();
@@ -297,5 +382,10 @@ $('#restart').on('click', function() {
         []
     ];
     cardContent = [];
+    $('#main').unbind('dragstart');
+    $('#main').unbind('dragenter');
+    $('#main').unbind('dragleave');
+    $('#main').unbind('dragend');
+    $('#undo').off('click');
     startGame();
 })
