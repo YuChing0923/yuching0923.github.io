@@ -39,6 +39,7 @@ function startGame() {
         step = [],
         isPaused = false,
         init = false,
+        timerCount,
         cardHtml;
 
     $('#pause').on('click', function() {
@@ -52,6 +53,32 @@ function startGame() {
         $('#modal').find('#game_over').hide();
         $('#modal').find('#play').show();
         isPaused = false;
+    });
+
+    function timer() {
+        var time = 0,
+            min,
+            sec;
+        timerCount = window.setInterval(function() {
+            if (!isPaused) {
+                time++;
+                min = Math.floor(time / 60);
+                min < 10 && (min = '0' + min);
+                sec = time % 60;
+                sec < 10 && (sec = '0' + sec);
+                $('#timer').text(min + ":" + sec);
+                console.log(time);
+            }
+        }, 1000);
+    }
+    timer();
+    $('#restart').on('click', function() {
+        $('#timer').text("00:00");
+        clearInterval(timerCount);
+    });
+    $('#game_over').on('click', function() {
+        $('#timer').text("00:00");
+        clearInterval(timerCount);
     });
 
     function gameEnd() {
@@ -409,26 +436,10 @@ function startGame() {
         }
         $('#undo').on('click', stepUndo);
 
-        function timer() {
-            var time = 0,
-                min,
-                sec;
-            window.setInterval(function() {
-                if (!isPaused) {
-                    time++;
-                    min = Math.floor(time / 60);
-                    min < 10 && (min = '0' + min);
-                    sec = time % 60;
-                    sec < 10 && (sec = '0' + sec);
-                    $('#timer').text(min + ":" + sec);
-                }
-            }, 1000);
-
-        }
-        timer();
     }
 
     cardDeal();
+
 }
 startGame();
 //restart
