@@ -357,6 +357,7 @@ function startGame() {
                     stepFromArr[stepFromIndex].push(stepMoveCard);
                     stepToArr[stepToIndex].pop(stepMoveCard);
                 }
+                step.pop();
                 cardRender();
             }
         }
