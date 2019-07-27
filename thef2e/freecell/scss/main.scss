@@ -87,7 +87,7 @@ body {
 
                     @for $i from 1 through 52 {
                         &:nth-child(#{$i}) {
-                            // top: ($i - 1) * 35px;
+                            top: ($i - 1) * 35px;
                         }
                     }
                 }

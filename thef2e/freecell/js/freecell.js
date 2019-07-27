@@ -67,7 +67,6 @@ function startGame() {
                 sec = time % 60;
                 sec < 10 && (sec = '0' + sec);
                 $('#timer').text(min + ":" + sec);
-                console.log(time);
             }
         }, 1000);
     }
@@ -134,7 +133,6 @@ function startGame() {
     //card array分別發到 cardContent的8個陣列
     function cardDeal() {
         cardShuffle(card);
-        console.log(card);
         var i, j, cardColumn;
         for (i = 0; i < 7; i++) {
             for (j = 0; j < 8; j++) {
@@ -146,13 +144,13 @@ function startGame() {
 
         //card_shuffle render
         function cardShuffleRender() {
-            var cardElement;
             $('#card_shuffle .card_column').html('');
             cardContent.forEach(function(cardColumn, cardColumnNum) {
                 cardColumn.forEach(function(cardNum, cardNumIndex) {
                     $('#card_shuffle .card_column').eq(cardColumnNum).append(`<div class="card_block"><img src="images/${cardColor(cardNum)}_${cardNum % 13 == 0 ? 13 : cardNum % 13}.png" alt="" class="draggable" draggable="true" data-number="${cardNum}"></div>`);
                 })
             })
+            var cardElement;
             card.forEach(function(cardNumber, cardIndex) {
                 if (!init) {
                     $('#card_shuffle .card_block').css({
@@ -198,15 +196,11 @@ function startGame() {
             cardShuffleRender();
             cardTempRender();
             cardSortRender();
-            // body...
         }
         cardRender();
 
         //draggable
         function dragStart(e) {
-            // console.log('dragStart');
-            // e.preventDefault();
-            // console.log(e.target);
             cardNum = $(e.target).data('number'); //被拖拉的卡片在陣列中的代號
             dragCardColor = Math.ceil(cardNum / 13); //被拖拉的卡片花色代號
             cardDragPlace = $(e.target).parents('.main_row').attr('id'); //被拖拉物的區塊id
@@ -223,9 +217,6 @@ function startGame() {
         }
 
         function dragEnter(e) {
-            // console.log('dragEnter');
-            // e.preventDefault();
-            // console.log(e.target);
             cardDropNum = $(e.target).data('number'); //放置的卡片在陣列中的代號
             dropCardColor = Math.ceil(cardDropNum / 13); //放置的卡片花色代號
             cardDropPlace = $(e.target).parents('.main_row').attr('id'); //放置的區塊id
@@ -279,34 +270,25 @@ function startGame() {
             function moveCard() {
                 dropArr[dropIndex].push(cardNum);
                 dragArr[dragIndex].pop(cardNum);
-                if (cardDragPlace == 'card_shuffle' && cardDropPlace == 'card_shuffle') {
-                    if (cardDragArr == undefined) {
-                        step.push({
-                            dragArr: dragArr,
-                            dropArr: dropArr,
-                            dragIndex: dragIndex,
-                            dropIndex: dropIndex,
-                            moveCard: cardNum
-                        });
-                    } else {
-                        if (cardDragArr[cardDragArr.length - 1] == cardNum) {
-                            step.push({
-                                dragArr: dragArr,
-                                dropArr: dropArr,
-                                dragIndex: dragIndex,
-                                dropIndex: dropIndex,
-                                moveCard: cardDragArr
-                            });
-                        }
-                    }
-                } else {
+                function stepPush(moveCardVar) {
                     step.push({
                         dragArr: dragArr,
                         dropArr: dropArr,
                         dragIndex: dragIndex,
                         dropIndex: dropIndex,
-                        moveCard: cardNum
+                        moveCard: moveCardVar
                     });
+                }
+                if (cardDragPlace == 'card_shuffle' && cardDropPlace == 'card_shuffle') {
+                    if (cardDragArr == undefined) {
+                        stepPush(cardNum);
+                    } else {
+                        if (cardDragArr[cardDragArr.length - 1] == cardNum) {
+                            stepPush(cardDragArr);
+                        }
+                    }
+                } else {
+                    stepPush(cardNum);
                 }
             }
             //從card_shuffle拖拉卡片
