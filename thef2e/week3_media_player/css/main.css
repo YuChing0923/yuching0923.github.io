@@ -1,0 +1,344 @@
+html,
+body {
+  height: 100%;
+  font-family: "Roboto";
+  font-size: 16px;
+  color: #6C6E7F;
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Light.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Black.ttf");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ubunto";
+  src: url("../fonts/Ubuntu-R.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ubunto";
+  src: url("../fonts/Ubuntu-L.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ubunto";
+  src: url("../fonts/Ubuntu-B.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.img_responsive {
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  font-family: "Ubunto";
+  src: local("Ubunto");
+  src: url("../fonts/Ubuntu-R.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container-fluid {
+  height: 100%;
+}
+.container-fluid .main {
+  position: relative;
+}
+
+ul.menu {
+  border-bottom: 1px #F1F2F3 solid;
+  padding: 0 15px;
+  font-size: 18px;
+}
+ul.menu li {
+  margin-left: -15px;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: 0.2s;
+  border-left: 3px transparent solid;
+}
+ul.menu li:hover {
+  border-left-color: #6AC8D0;
+  transition: 0.2s;
+  font-size: 19px;
+}
+ul.menu.home img {
+  max-height: 20px;
+  margin-right: 10px;
+}
+
+.scroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.main_menu,
+.main_block,
+.music_list {
+  height: 100%;
+}
+
+.main_menu {
+  padding: 0;
+  position: relative;
+}
+.main_menu .logo {
+  padding: 0 15px;
+}
+.main_menu .logo img {
+  max-width: 72px;
+}
+.main_menu .logo_title {
+  font-size: 28px;
+  vertical-align: middle;
+  margin-left: 5px;
+  color: #A3A3A3;
+}
+.main_menu .list_title {
+  padding: 0 15px;
+}
+.main_menu .album_playing {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.main_block {
+  padding: 0;
+  border-right: 1px #F1F2F3 solid;
+  border-left: 1px #F1F2F3 solid;
+}
+.main_block .title {
+  font-weight: 700;
+  font-size: 22px;
+  padding: 20px 0;
+}
+.main_block .cover {
+  position: relative;
+  color: #fff;
+}
+.main_block .cover .img_info {
+  position: absolute;
+  top: 0;
+}
+.main_block .top_song,
+.main_block .new_album {
+  padding: 0 20px;
+  position: relative;
+}
+.main_block .top_song {
+  padding-right: 0;
+}
+.main_block .top_song ul.top_song_list {
+  max-height: 300px;
+  cursor: pointer;
+}
+.main_block .top_song ul.top_song_list li {
+  border-top: 1px #F1F2F3 solid;
+  border-bottom: 1px #F1F2F3 solid;
+  display: flex;
+  justify-content: space-between;
+}
+.main_block .top_song ul.top_song_list li.active {
+  color: #6AC8D0;
+}
+.main_block .top_song ul.top_song_list li span {
+  margin: auto;
+}
+.main_block .top_song ul.top_song_list li .album_sm {
+  margin-left: 0;
+}
+.main_block .top_song ul.top_song_list li .song_name {
+  width: 60%;
+  text-align: left;
+}
+.main_block .top_song ul.top_song_list li .song_time {
+  text-align: right;
+  margin-right: 10px;
+}
+.main_block .new_album {
+  padding: 0;
+}
+.main_block .new_album ul.ablum {
+  max-height: 300px;
+}
+.main_block .new_album ul.ablum li {
+  margin: 10px 0;
+}
+.main_block .new_album ul.ablum li:first-child {
+  margin-top: 0;
+}
+.main_block .new_album ul.ablum li .album_md {
+  display: inline-block;
+}
+.main_block .new_album ul.ablum li .album_info {
+  display: inline-block;
+}
+.main_block .new_album ul.ablum li .album_info .album_date {
+  font-size: 14px;
+}
+
+.music_list {
+  padding-right: 0;
+}
+.music_list .user {
+  padding: 20px 0 30px 0;
+}
+.music_list .user img {
+  max-width: 50px;
+  padding: 10px;
+  border: 1px #D3D3D3 solid;
+  border-radius: 25px;
+  display: inline-block;
+}
+.music_list .user .user_name {
+  display: inline-block;
+  font-size: 18px;
+  margin-left: 10px;
+}
+.music_list .music_list_main .menu {
+  padding-left: 0;
+  font-size: 16px;
+}
+
+.player {
+  background-color: #F1F2F3;
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  bottom: 0;
+}
+
+.jp-audio {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.jp-audio .jp-type-playlist .jp-interface {
+  padding: 10px;
+}
+.jp-audio .jp-type-playlist .jp-interface .jp-song-info {
+  position: relative;
+  top: 50%;
+  transform: translateY(-60%);
+}
+.jp-audio .jp-type-playlist .jp-interface .jp-song-info .singer {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.jp-audio .jp-type-playlist .jp-interface .jp-controls {
+  width: 100%;
+  position: relative;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.jp-audio .jp-type-playlist .jp-interface .jp-controls .jp-previous,
+.jp-audio .jp-type-playlist .jp-interface .jp-controls .jp-play,
+.jp-audio .jp-type-playlist .jp-interface .jp-controls .jp-next,
+.jp-audio .jp-type-playlist .jp-interface .jp-controls .jp-random,
+.jp-audio .jp-type-playlist .jp-interface .jp-controls .jp-replay {
+  background-image: none;
+  text-indent: 0;
+  text-align: center;
+  background-color: transparent;
+}
+.jp-audio .jp-type-playlist .jp-interface .jp-controls .jp-previous img,
+.jp-audio .jp-type-playlist .jp-interface .jp-controls .jp-play img,
+.jp-audio .jp-type-playlist .jp-interface .jp-controls .jp-next img,
+.jp-audio .jp-type-playlist .jp-interface .jp-controls .jp-random img,
+.jp-audio .jp-type-playlist .jp-interface .jp-controls .jp-replay img {
+  width: 15px;
+}
+.jp-audio .jp-type-playlist .jp-interface .jp-controls .jp-play {
+  border: 1px #707070 solid;
+  border-radius: 30px;
+}
+.jp-audio .jp-type-playlist .jp-interface .jp-controls .jp-play img {
+  left: 2px;
+  position: relative;
+  bottom: 2px;
+}
+.jp-audio .jp-type-playlist .jp-interface .jp-controls .jp-play #jp-pause-img {
+  left: 0;
+}
+.jp-audio .jp-type-playlist .jp-interface .jp-progress {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 5px;
+  border: 1px transparent solid;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.jp-audio .jp-type-playlist .jp-interface .jp-time-holder {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.jp-audio .jp-type-playlist .jp-interface .jp-volume-controls {
+  width: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-60%);
+  left: 0;
+}
+.jp-audio .jp-type-playlist .jp-interface .jp-volume-controls .jp-mute {
+  background-image: none;
+  text-indent: 0;
+  height: auto;
+  width: 30px;
+  position: relative;
+  padding: 0;
+  display: inline-block;
+}
+.jp-audio .jp-type-playlist .jp-interface .jp-volume-controls .jp-mute img {
+  width: 30px;
+}
+.jp-audio .jp-type-playlist .jp-interface .jp-volume-controls .jp-volume-bar {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: inline-block;
+}
+.jp-audio .jp-type-playlist .jp-interface .jp-toggles {
+  display: none;
+}
+.jp-audio .jp-playlist {
+  display: none;
+}
+
+/*# sourceMappingURL=main.css.map */
