@@ -35,22 +35,20 @@
                         <li>Singer</li>
                     </ul>
                 </div>
-                <div class="album_playing"><img src="images/album_8@2x.png" alt="album_playing" class="img_responsive"></div>
+                <div class="album_playing"><img src="" alt="album_playing" class="img_responsive"></div>
             </div>
             <div class="col-8 main_block">
                 <div class="row">
                     <div class="col-12">
                         <div class="cover">
                             <img src="images/cover.png" alt="cover" class="img_responsive">
-                            <div class="img_info">
-                                <div class="search">
-                                    <input type="search">
-                                </div>
-                                <div class="singer title">Taylor Swift</div>
-                                <div class="follower">
-                                    <span class="follow_number">Follower 38,896,322</span>
-                                    <button class="follow">Follow</button>
-                                </div>
+                            <div class="search">
+                                <input type="search" placeholder="search">
+                            </div>
+                            <div class="singer title">Taylor Swift</div>
+                            <div class="follower">
+                                <div class="follow_number">Follower 38,896,322</div>
+                                <button class="follow">Follow</button>
                             </div>
                         </div>
                     </div>
@@ -59,7 +57,7 @@
                         <div class="top_song">
                             <div class="top_song_title title">Top Song</div>
                             <ul class="top_song_list scroll" id="top_song_list">
-                                <li>
+                                <!-- <li>
                                     <span class="album_sm">
                                         <img src="images/album_2.png" alt="album cover">
                                     </span>
@@ -68,47 +66,7 @@
                                     <span class="song_name">song_name</span>
                                     <span class="menu_icon"></span>
                                     <span class="song_time">02:30</span>
-                                </li>
-                                <li>
-                                    <span class="album_sm">
-                                        <img src="images/album_3.png" alt="album cover">
-                                    </span>
-                                    <span class="num">2.</span>
-                                    <span class="like"></span>
-                                    <span class="song_name">song_name</span>
-                                    <span class="menu_icon"></span>
-                                    <span class="song_time">02:30</span>
-                                </li>
-                                <li>
-                                    <span class="album_sm">
-                                        <img src="images/album_4.png" alt="album cover">
-                                    </span>
-                                    <span class="num">3.</span>
-                                    <span class="like"></span>
-                                    <span class="song_name">song_name</span>
-                                    <span class="menu_icon"></span>
-                                    <span class="song_time">02:30</span>
-                                </li>
-                                <li>
-                                    <span class="album_sm">
-                                        <img src="images/album_5.png" alt="album cover">
-                                    </span>
-                                    <span class="num">4.</span>
-                                    <span class="like"></span>
-                                    <span class="song_name">song_name</span>
-                                    <span class="menu_icon"></span>
-                                    <span class="song_time">02:30</span>
-                                </li>
-                                <li>
-                                    <span class="album_sm">
-                                        <img src="images/album_6.png" alt="album cover">
-                                    </span>
-                                    <span class="num">5.</span>
-                                    <span class="like"></span>
-                                    <span class="song_name">song_name</span>
-                                    <span class="menu_icon"></span>
-                                    <span class="song_time">02:30</span>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </div>
@@ -136,16 +94,7 @@
                                 </li>
                                 <li>
                                     <div class="album_md">
-                                        <img src="images/album_3@2x.png" alt="album cover">
-                                    </div>
-                                    <div class="album_info">
-                                        <div class="album_name">album_name</div>
-                                        <div class="album_date">2019</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="album_md">
-                                        <img src="images/album_3@2x.png" alt="album cover">
+                                        <img src="images/album_4@2x.png" alt="album cover">
                                     </div>
                                     <div class="album_info">
                                         <div class="album_name">album_name</div>
@@ -164,26 +113,7 @@
                 </div>
                 <div class="music_list_title list_title title">Your Music List</div>
                 <ul class="music_list_main list menu scroll">
-                    <li>song_name</li>
-                    <li>song_name</li>
-                    <li>song_name</li>
-                    <li>song_name</li>
-                    <li>song_name</li>
-                    <li>song_name</li>
-                    <li>song_name</li>
-                    <li>song_name</li>
-                    <li>song_name</li>
-                    <li>song_name</li>
-                    <li>song_name</li>
-                    <li>song_name</li>
-                    <li>song_name</li>
-                    <li>song_name</li>
-                    <li>song_name</li>
-                    <li>song_name</li>
-                    <li>song_name</li>
-                    <li>song_name</li>
-                    <li>song_name</li>
-                    <li>song_name</li>
+                    <!-- <li>song_name</li> -->
                 </ul>
             </div>
         </div>
@@ -268,6 +198,177 @@
     <script src="js/jquery.jplayer.min.js"></script>
     <script src="js/jplayer.playlist.min.js"></script>
     <script>
+    /////////////////media player
+    var cssSelector = {
+            jPlayer: "#jquery_jplayer_1",
+            cssSelectorAncestor: "#jp_container_1"
+        },
+        playlist = [{
+                title: "Carol of the Bells",
+                artist: "Quincas Moreira",
+                mp3: "audio/Carol_of_the_Bells.mp3",
+                poster: 'images/album_2.png',
+                poster_lg: 'images/album_2@2x.png',
+                customduration: '01:58'
+            },
+            {
+                title: "Pink Horizon",
+                artist: "Chris Haugen",
+                mp3: "audio/Pink_Horizon.mp3",
+                poster: 'images/album_3.png',
+                poster_lg: 'images/album_3@2x.png',
+                customduration: '02:24'
+            },
+            {
+                title: "Marigold",
+                artist: "Quincas Moreira",
+                mp3: "audio/Marigold.mp3",
+                poster: 'images/album_4.png',
+                poster_lg: 'images/album_4@2x.png',
+                customduration: '03:54'
+            },
+            {
+                title: "Psychic Magic",
+                artist: "Unicorn Heads",
+                mp3: "audio/Psychic_Magic.mp3",
+                poster: 'images/album_5.png',
+                poster_lg: 'images/album_5@2x.png',
+                customduration: '05:22'
+            },
+            {
+                title: "Amazement",
+                artist: "Freedom Trail Studio",
+                mp3: "audio/Amazement.mp3",
+                poster: 'images/album_6.png',
+                poster_lg: 'images/album_6@2x.png',
+                customduration: '04:00'
+            },
+            {
+                title: "Cliffsides",
+                artist: "Dan Lebowitz",
+                mp3: "audio/Cliffsides.mp3",
+                poster: 'images/album_7.png',
+                poster_lg: 'images/album_7@2x.png',
+                customduration: '02:08'
+            },
+            {
+                title: "The Black Cat",
+                artist: "Aaron Kenny",
+                mp3: "audio/The_Black_Cat.mp3",
+                poster: 'images/album_8.png',
+                poster_lg: 'images/album_8@2x.png',
+                customduration: '02:22'
+            },{
+                title: "Anton",
+                artist: "Dan Bodan",
+                mp3: "audio/Anton.mp3",
+                poster: 'images/album_2.png',
+                poster_lg: 'images/album_2@2x.png',
+                customduration: '02:40'
+            },
+            {
+                title: "Acoustic Symphony",
+                artist: "Hanu Dixit",
+                mp3: "audio/Acoustic_Symphony.mp3",
+                poster: 'images/album_3.png',
+                poster_lg: 'images/album_3@2x.png',
+                customduration: '01:56'
+            },
+            {
+                title: "Bellissimo",
+                artist: "Doug Maxwell",
+                mp3: "audio/Bellissimo.mp3",
+                poster: 'images/album_4.png',
+                poster_lg: 'images/album_4@2x.png',
+                customduration: '01:55'
+            }
+        ],
+        options = {
+            swfPath: "js/",
+            supplied: "mp3",
+            wmode: "window",
+            useStateClassSkin: true,
+            autoBlur: false,
+            smoothPlayBar: true,
+            keyEnabled: true,
+            remainingDuration: true,
+            loopOnPrevious: true,
+            shuffleOnLoop: true
+        },
+        myPlaylist = new jPlayerPlaylist(cssSelector, playlist, options);
+    $(document).ready(function() {
+        myPlaylist;
+    });
+
+    $('.jp-play').on('click', function() {
+        if ($('#jquery_jplayer_1').data().jPlayer.status.paused) {
+            $(this).find('#jp-play-img').hide();
+            $(this).find('#jp-pause-img').show();
+        } else {
+            $(this).find('#jp-play-img').show();
+            $(this).find('#jp-pause-img').hide();
+        }
+    });
+    $('.jp-previous, .jp-next').on('click', function() {
+        $('.jp-play').find('#jp-play-img').hide();
+        $('.jp-play').find('#jp-pause-img').show();
+    });
+    $('.jp-random').on('click', function() {
+        myPlaylist.shuffle();
+    });
+
+    /////////////////rander top song
+    // $('#top_song_list').html('');
+    for (var i = 0; i < playlist.length; i++) {
+        var media_list_li = `<li>
+                    <span class="album_sm">
+                        <img src="${playlist[i].poster}" alt="album cover">
+                    </span>
+                    <span class="num">${i + 1}. </span>
+                    <span class="like"></span>
+                    <span class="song_name">${playlist[i].title}</span>
+                    <span class="menu_icon"></span>
+                   <span class="song_time">${playlist[i].customduration}</span>
+               </li>`,
+            music_list_li = `<li>${playlist[i].title}</li>`;
+        $('#top_song_list').append(media_list_li);
+        $('.music_list_main').append(music_list_li);
+    };
+    $('#top_song_list li').on('click', function() {
+        console.log($(this).index());
+        var _play_index = $(this).index();
+        myPlaylist.play(_play_index);
+        $('.jp-play').find('#jp-play-img').hide();
+        $('.jp-play').find('#jp-pause-img').show();
+    });
+    console.log(myPlaylist);
+
+    function playingSongInfo(title, artist, poster) {
+        $('#jp_container_1 .jp-song-info .song_name').html(title);
+        $('#jp_container_1 .jp-song-info .singer').html(artist);
+        $('.album_playing img').attr('src', poster);
+    }
+    playingSongInfo(playlist[0].title, playlist[0].artist, playlist[0].poster_lg);
+    $("#jquery_jplayer_1").bind($.jPlayer.event.play, function(event) {
+        // console.log(event);
+        var _song_title = event.jPlayer.status.media.title,
+            _song_artist = event.jPlayer.status.media.artist,
+            _song_poster = event.jPlayer.status.media.poster_lg,
+            _list_span = $('#top_song_list li').find('.song_name:contains(' + _song_title + ')');
+        playingSongInfo(_song_title, _song_artist, _song_poster);
+        $('#top_song_list li').removeClass('active');
+        _list_span.parents('li').addClass('active');
+    });
+
+    $("#jquery_jplayer_1").bind($.jPlayer.event.ended, function(event) {
+        var _song_title = event.jPlayer.status.media.title,
+            _last_song_index = $('#top_song_list li').length - 1,
+            _last_song = $('#top_song_list li').eq(_last_song_index).find('.song_name').html();
+        if (_song_title == _last_song) {
+            myPlaylist.play(0);
+        }
+    });
+
     ////////////// js style
     function jsHeight() {
         //main height
@@ -292,122 +393,6 @@
     }
     jsHeight();
     $(window).resize(jsHeight);
-
-    /////////////////media player
-    var cssSelector = {
-            jPlayer: "#jquery_jplayer_1",
-            cssSelectorAncestor: "#jp_container_1"
-        },
-        playlist = [{
-                title: "Carol of the Bells",
-                artist: "Quincas Moreira",
-                mp3: "audio/Carol_of_the_Bells.mp3",
-                poster: 'images/album_2.png',
-                customduration: '01:58'
-            },
-            {
-                title: "Pink Horizon",
-                artist: "Chris Haugen",
-                mp3: "audio/Pink_Horizon.mp3",
-                poster: 'images/album_3.png',
-                customduration: '02:24'
-            },
-            {
-                title: "Marigold",
-                artist: "Quincas Moreira",
-                mp3: "audio/Marigold.mp3",
-                poster: 'images/album_4.png',
-                customduration: '03:54'
-            },
-            {
-                title: "Psychic Magic",
-                artist: "Unicorn Heads",
-                mp3: "audio/Psychic_Magic.mp3",
-                poster: 'images/album_5.png',
-                customduration: '05:22'
-            }
-        ],
-        options = {
-            swfPath: "js/",
-            supplied: "mp3",
-            wmode: "window",
-            useStateClassSkin: true,
-            autoBlur: false,
-            smoothPlayBar: true,
-            keyEnabled: true,
-            remainingDuration: true,
-            loopOnPrevious: true,
-            shuffleOnLoop: true
-        },
-        myPlaylist = new jPlayerPlaylist(cssSelector, playlist, options)
-    $(document).ready(function() {
-        myPlaylist;
-    });
-
-    $('.jp-play').on('click', function() {
-        if ($('#jquery_jplayer_1').data().jPlayer.status.paused) {
-            $(this).find('#jp-play-img').hide();
-            $(this).find('#jp-pause-img').show();
-        } else {
-            $(this).find('#jp-play-img').show();
-            $(this).find('#jp-pause-img').hide();
-        }
-    });
-    $('.jp-previous, .jp-next').on('click', function() {
-        $('.jp-play').find('#jp-play-img').hide();
-        $('.jp-play').find('#jp-pause-img').show();
-    });
-    $('.jp-random').on('click', function() {
-        myPlaylist.shuffle();
-    });
-
-    /////////////////rander top song
-    $('#top_song_list').html('');
-    for (var i = 0; i < playlist.length; i++) {
-        var media_list = `<li>
-                    <span class="album_sm">
-                        <img src="${playlist[i].poster}" alt="album cover">
-                    </span>
-                    <span class="num">${i + 1}. </span>
-                    <span class="like"></span>
-                    <span class="song_name">${playlist[i].title}</span>
-                    <span class="menu_icon"></span>
-                   <span class="song_time">${playlist[i].customduration}</span>
-               </li>`;
-        $('#top_song_list').append(media_list);
-    };
-    $('#top_song_list li').on('click', function() {
-        console.log($(this).index());
-        var _play_index = $(this).index();
-        myPlaylist.play(_play_index);
-        $('.jp-play').find('#jp-play-img').hide();
-        $('.jp-play').find('#jp-pause-img').show();
-    });
-    console.log(myPlaylist);
-
-    function playingSongInfo(title, artist) {
-        $('#jp_container_1 .jp-song-info .song_name').html(title);
-        $('#jp_container_1 .jp-song-info .singer').html(artist);
-    }
-    playingSongInfo(playlist[0].title, playlist[0].artist);
-    $("#jquery_jplayer_1").bind($.jPlayer.event.play, function(event) {
-        // console.log(event);
-        var _song_title = event.jPlayer.status.media.title,
-            _song_artist = event.jPlayer.status.media.artist,
-            _list_span = $('#top_song_list li').find('.song_name:contains(' + _song_title + ')');
-        playingSongInfo(_song_title, _song_artist);
-        $('#top_song_list li').removeClass('active');
-        _list_span.parents('li').addClass('active');
-    });
-
-    $("#jquery_jplayer_1").bind($.jPlayer.event.ended, function(event) {
-        var _song_title = event.jPlayer.status.media.title,
-            _last_song_index = $('#top_song_list li').length - 1,
-            _last_song = $('#top_song_list li').eq(_last_song_index).find('.song_name').html();
-        if (_song_title == _last_song) {
-        	myPlaylist.play(0);
-        }
-    });
     </script>
 </body>
 

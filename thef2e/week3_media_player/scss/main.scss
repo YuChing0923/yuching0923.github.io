@@ -90,7 +90,7 @@ ul {
 ul.menu {
     border-bottom: 1px #F1F2F3 solid;
     padding: 0 15px;
-    font-size: 18px;
+    font-size: 16px;
 
     li {
         margin-left: -15px;
@@ -102,7 +102,7 @@ ul.menu {
         &:hover {
             border-left-color: #6AC8D0;
             transition: .2s;
-            font-size: 19px;
+            font-size: 17px;
         }
     }
 
@@ -121,6 +121,42 @@ ul.menu {
 .scroll {
     overflow-x: hidden;
     overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, .05);
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, .05);
+        display: none;
+        border-radius: 15px;
+    }
+
+    &::-webkit-scrollbar-button {
+        display: none;
+    }
+
+    &::-webkit-scrollbar-corner {
+        display: none;
+    }
+
+    &:hover {
+        &::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, .1);
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, .2);
+            display: block;
+        }
+    }
 }
 
 // scroll css end
@@ -152,7 +188,7 @@ ul.menu {
     }
 
     .list_title {
-        padding: 0 15px;
+        padding: 15px 15px 0;
     }
 
     .album_playing {
@@ -179,10 +215,52 @@ ul.menu {
         position: relative;
         color: #fff;
 
-        .img_info {
-            position: absolute;
-            top: 0;
-        }
+            .search {
+                position: absolute;
+                right: 0;
+                top: 0;
+                padding: 20px;
+
+                input{
+                	border-radius: 20px;
+                	padding: 3px 10px;
+
+                	&:focus{
+                		outline: none;
+                	}
+                }
+            }
+
+            .singer.title {
+                position: absolute;
+                bottom: 0;
+                font-size: 50px;
+                padding: 20px;
+            }
+
+            .follower {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                padding: 20px;
+                text-align: center;
+                .follow_number{
+                	padding-bottom: 10px;
+                }
+                button{
+                	background-color: rgba(255,255,255,.1);
+                	border: 1px #fff solid;
+                	border-radius: 15px;
+                	color: #fff;
+                	width: 100%;
+                	transition: .2s;
+
+                	&:hover{
+                	background-color: rgba(255,255,255,.3);
+                	transition: .2s;
+                	}
+                }
+            }
     }
 
     .top_song,
@@ -195,16 +273,22 @@ ul.menu {
         padding-right: 0;
 
         ul.top_song_list {
-            max-height: 300px;
-        	cursor: pointer;
+            cursor: pointer;
 
             li {
                 border-top: 1px #F1F2F3 solid;
                 border-bottom: 1px #F1F2F3 solid;
                 display: flex;
                 justify-content: space-between;
-                &.active{
-                	color: #6AC8D0;
+                	transition: .2s;
+
+                &:hover {
+                    box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.16);
+                	transition: .2s;
+                }
+
+                &.active {
+                    color: #6AC8D0;
                 }
 
                 span {
@@ -232,8 +316,6 @@ ul.menu {
         padding: 0;
 
         ul.ablum {
-            max-height: 300px;
-
             li {
                 margin: 10px 0;
 
@@ -306,10 +388,13 @@ ul.menu {
     position: absolute;
     bottom: 0;
     left: 0;
+    border: none;
+    // height: 100%;
 
     .jp-type-playlist {
         .jp-interface {
             padding: 10px;
+            height: 100%;
 
             .jp-song-info {
                 position: relative;
