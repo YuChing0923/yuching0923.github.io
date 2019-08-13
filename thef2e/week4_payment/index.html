@@ -83,6 +83,7 @@
     $(window).resize(width_heightSet);
 
     $(document).ajaxStop(function() {
+        width_heightSet();
         checkboxAutoID();
         radioAutoID();
         var judgmentUrl = location.href,

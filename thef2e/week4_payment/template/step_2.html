@@ -78,7 +78,82 @@
                 <a href="#" class="form_link">第三方支付金流平台服務條款</a>
             </div>
         </div>
-        <div class="pay_method union_pay" style="display: none;"></div>
+        <div class="pay_method union_pay" style="display: none;">
+            <div class="form_row">
+                <div data-bind="radioGroup" class="radio radio-success">
+                    <input id="" type="radio" name="">
+                    <label for="">一次付款</label>
+                    <input id="" type="radio" name="">
+                    <label for="">分期付款</label>
+                </div>
+            </div>
+            <div class="form_row">
+                <label class="form-label">信用卡號：</label>
+                <div class="inline_form">
+                    <input type="input" class="form-control" style="width: 65px;">
+                    <span>－</span>
+                    <input type="input" class="form-control" style="width: 65px;">
+                    <span>－</span>
+                    <input type="input" class="form-control" style="width: 65px;">
+                    <span>－</span>
+                    <input type="input" class="form-control" style="width: 65px;">
+                </div>
+            </div>
+            <div class="form_row">
+                <label class="form-label">有效月年：</label>
+                <div class="inline_form">
+                    <select class="form-control" style="width: 100px;">
+                        <option value="">請選擇</option>
+                        <option value="">01</option>
+                        <option value="">02</option>
+                        <option value="">03</option>
+                        <option value="">04</option>
+                        <option value="">05</option>
+                        <option value="">06</option>
+                        <option value="">07</option>
+                        <option value="">08</option>
+                        <option value="">09</option>
+                        <option value="">10</option>
+                        <option value="">11</option>
+                        <option value="">12</option>
+                    </select>
+                    <span>　/　</span>
+                    <select class="form-control" style="width: 100px;">
+                        <option value="">請選擇</option>
+                        <option value="">20</option>
+                        <option value="">21</option>
+                        <option value="">22</option>
+                        <option value="">23</option>
+                        <option value="">24</option>
+                        <option value="">25</option>
+                        <option value="">26</option>
+                        <option value="">27</option>
+                        <option value="">28</option>
+                        <option value="">29</option>
+                    </select>
+                    <span>　年</span>
+                </div>
+            </div>
+            <div class="form_row">
+                <label class="form-label">背面末3碼：</label>
+                <div class="inline_form">
+                    <input type="input" class="form-control" style="width: 65px;">
+                </div>
+            </div>
+            <div class="form_row">
+                <label class="form-label">填寫付款人信箱：</label>
+                <input type="input" class="form-control">
+            </div>
+            <div class="form_row">
+                <div class="checkGroup">
+                    <div class="checkbox check-success">
+                        <input id="" type="checkbox" value="">
+                        <label for="">請再次確認「訂單資訊」與「付款資訊」，付款完成後將發送通知信至您的 E-mail 信箱</label>
+                    </div>
+                </div>
+                <a href="#" class="form_link">第三方支付金流平台服務條款</a>
+            </div>
+        </div>
         <div class="pay_method shop" style="display: none;">
             <div class="form_row">
                 <label class="form-label">付款超商：</label>
