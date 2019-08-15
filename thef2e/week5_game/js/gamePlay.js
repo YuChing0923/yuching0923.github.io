@@ -10,6 +10,7 @@ const gamePlay = {
         this.load.spritesheet('phone_operator', 'images/char_phone_operator.png', { frameWidth: 120, frameHeight: 120 });
 
         this.gameStop = false; // 控制遊戲是否停止
+        this.isMove = true; // 控制是否可上下移動
     },
     create: function() {
         // 資源載入完成，加入遊戲物件及相關設定
@@ -42,18 +43,24 @@ const gamePlay = {
         // 啟動鍵盤事件
         let cursors = this.input.keyboard.createCursorKeys();
         if (cursors.up.isDown) {
-            console.log('up');
-            // console.log(this.player.y);
-            if (this.player.y == 300 || this.player.y == 350) {
-                this.player.y += -50;
-                this.player.setSize(16, 16, 8, 8);
+            if (this.isMove) {
+                this.isMove = false;
+                console.log('up');
+                if (this.player.y == 300 || this.player.y == 350) {
+                    this.player.y += -50;
+                }
             }
-        };
-        if (cursors.down.isDown) {
-            console.log('down');
-            if (this.player.y == 250 || this.player.y == 300) {
-                this.player.y += 50;
+        } else if (cursors.down.isDown) {
+            if (this.isMove) {
+                this.isMove = false;
+                console.log('down');
+                if (this.player.y == 250 || this.player.y == 300) {
+                    this.player.y += 50;
+                }
             }
+        } else {
+            this.isMove = true;
         }
+
     }
 }
