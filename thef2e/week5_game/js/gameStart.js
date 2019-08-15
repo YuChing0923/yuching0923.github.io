@@ -12,8 +12,6 @@ const gameStart = {
         this.load.image('btnUp', 'images/key_up.svg');
         this.load.image('btnDown', 'images/key_down.svg');
         this.load.image('stone', 'images/item_stone.svg');
-        this.stoneArr = []; // 存放所有石頭
-        this.masIdx = 0; // 石頭索引
 
         this.load.spritesheet('phone_operator', 'images/char_phone_operator.png', { frameWidth: 120, frameHeight: 120 });
     },
