@@ -45,7 +45,6 @@ const gamePlay = {
         if (cursors.up.isDown) {
             if (this.isMove) {
                 this.isMove = false;
-                console.log('up');
                 if (this.player.y == 300 || this.player.y == 350) {
                     this.player.y += -50;
                 }
@@ -53,7 +52,6 @@ const gamePlay = {
         } else if (cursors.down.isDown) {
             if (this.isMove) {
                 this.isMove = false;
-                console.log('down');
                 if (this.player.y == 250 || this.player.y == 300) {
                     this.player.y += 50;
                 }
