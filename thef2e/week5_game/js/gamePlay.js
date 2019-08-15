@@ -41,30 +41,19 @@ const gamePlay = {
 
         // 啟動鍵盤事件
         let cursors = this.input.keyboard.createCursorKeys();
-        // if (cursors.up.isDown) {
-        //     console.log('up');
-        //     // console.log(this.player.y);
-        //     if (this.player.y == 300 || this.player.y == 350) {
-        //         this.player.y += -50;
-        //         this.player.setSize(16, 16, 8, 8);
-        //     }
-        // };
-        // if (cursors.down.isDown) {
-        //     console.log('down');
-        //     if (this.player.y == 250 || this.player.y == 300) {
-        //         this.player.y += 50;
-        //     }
-        // }
-
-        upKey = this.input.keyboard.addKey(Phaser.Keyboard.up);
-        upKey.input.onDown.add(doSomething, this);
-
-        function doSomething() {
+        if (cursors.up.isDown) {
+            console.log('up');
+            // console.log(this.player.y);
+            if (this.player.y == 300 || this.player.y == 350) {
+                this.player.y += -50;
+                this.player.setSize(16, 16, 8, 8);
+            }
+        };
+        if (cursors.down.isDown) {
             console.log('down');
-
-            // will only ever be called once, when the the input is down
-
+            if (this.player.y == 250 || this.player.y == 300) {
+                this.player.y += 50;
+            }
         }
-
     }
 }
