@@ -12,17 +12,13 @@ const config = {
             gravity: {
                 y: 0
             },
-            // debug: true,
+            debug: true,
         },
     },
     scene: [
-        gameStart,
         gamePlay,
+        gameStart,
     ]
-};
-
-const getRandom = (max, min) =>{
-    return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 const game = new Phaser.Game(config);
