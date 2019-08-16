@@ -10,16 +10,19 @@ const gamePlay = {
         this.load.image('stone', 'images/item_stone.svg');
         this.load.image('coin', 'images/item_coin.svg');
         this.load.image('coin_bling', 'images/item_coin_bling.svg');
+        this.load.image('char_1450', 'images/char_1450.svg');
         this.load.image('finish_line', 'images/finish_line.svg');
         this.load.image('fa_da_tsai', 'images/fa_da_tsai.svg');
 
         this.load.spritesheet('phone_operator', 'images/char_phone_operator.png', { frameWidth: 120, frameHeight: 120 });
 
         this.gameStop = false; // 控制遊戲是否停止
+        this.gamePause = false; // 控制遊戲是否暫停（撞到敵人時）
         this.isMove = true; // 控制是否可上下移動
         this.pointIsCount = true; // 控制硬幣可加分1次
         this.coinCounter = 0; // 撿到金幣的數量
         this.timeCounter = 30; // 遊戲時間
+        this.lifeArr = []; // 左上所有生命
         this.stoneArr = []; // 存放所有金幣
         this.coinArr = []; // 存放所有金幣
         this.itemXArr = []; //物件隨機X軸
@@ -47,35 +50,39 @@ const gamePlay = {
 
         // 遊戲計時器
         let gametime = setInterval(() => {
-            this.timeCounter--;
-            //重新設定文字
-            this.timeText.setText(`TIME: ${this.timeCounter}`);
-            if (this.timeCounter < 20 && this.timeCounter > 10) {
-                // this.bgSpeed = 1.6;
-            } else if (this.timeCounter < 5 && this.timeCounter > 0) {
-                // this.finish_line = this.add.image(cw / 2, ch / 2 - 50, 'finish_line');
-                // this.bgSpeed = 3;
-            } else if (this.timeCounter <= 0) {
-                this.gameStop = true;
-                clearInterval(gametime);
-                this.scene.start('gameWin');
-                // this.physics.add.collider(this.player, this.finish_line, () => this.scene.start('gameStart'));
-                // let congratulations = this.add.image(cw / 2, ch / 2 - 50, 'congratulations');
-                // congratulations.setScale(0.8);
-                // let playAgainBtn = this.add.image(cw / 2, ch / 2 + 40, 'playAgainBtn');
-                // playAgainBtn.setScale(0.6);
-                // playAgainBtn.setInteractive();
-                // playAgainBtn.on('pointerdown', () => this.scene.start('gameStart'));
+            if (!this.gamePause) {
+                this.timeCounter--;
+                //重新設定文字
+                this.timeText.setText(`TIME: ${this.timeCounter}`);
+                if (this.timeCounter < 20 && this.timeCounter > 10) {
+                    // this.bgSpeed = 1.6;
+                } else if (this.timeCounter < 5 && this.timeCounter > 0) {
+                    // this.finish_line = this.add.image(cw / 2, ch / 2 - 50, 'finish_line');
+                    // this.bgSpeed = 3;
+                } else if (this.timeCounter <= 0) {
+                    this.gameStop = true;
+                    clearInterval(gametime);
+                    this.scene.start('gameWin');
+                }
             }
         }, 1000);
 
         //設定人物
         this.player = this.physics.add.sprite(150, 300, 'phone_operator');
-        this.player.depth = 1; //角色放置到最上層
+        this.player.depth = 2; //角色放置到最上層
         this.player.setCollideWorldBounds(true); //角色邊界限制
         this.player.setBounce(0); //設定彈跳值
         this.player.setSize(60, 30).setOffset(30, 80);
-        this.player.anims.play('run', true); //播放動畫
+        if (!this.gamePause) {
+            this.player.anims.play('run', true); //播放動畫
+        }
+
+        this.char_1450 = this.physics.add.sprite(1000, 300, 'char_1450'); ////////////////////test待改getRandom+Arr////////////////////
+        this.player.depth = 1; //敵人放置到物件上層
+        // this.char_1450.setCollideWorldBounds(true); //角色邊界限制
+        this.char_1450.setBounce(0); //設定彈跳值
+        this.char_1450.setSize(80, 60).setOffset(80, 200);
+        this.char_1450.setScale(0.5);
 
         // 物件陣列
         // 石頭
@@ -90,17 +97,22 @@ const gamePlay = {
             coin.setTexture('coin_bling');
             coin.body.moves = false;
             coin.body.setSize(60, 60);
-            console.log(this);
+            // console.log(this);
 
             setTimeout(() => {
                 if (coin.visible) {
                     this.coinCounter++;
                     this.score.setText(`${this.coinCounter}`);
-                    console.log(coin.visible);
                 }
                 coin.visible = false;
             }, 100);
         }
+
+        // const metEnemy = (player, enemy) => {
+        //     // player.anims.play('run', false);
+        //     console.log('metEnemy');
+        // }
+        // this.physics.add.collider(this.player, this.char_1450, metEnemy);
 
         // 金幣
         for (let i = 0; i < 5; i++) {
@@ -133,101 +145,127 @@ const gamePlay = {
         // 遊戲狀態更新
         if (this.gameStop) return;
 
-        this.bg_sky_poor.tilePositionX += 2;
-        this.bg_city.tilePositionX += 4;
-        this.bg_road.tilePositionX += 3;
+        //沒有撞到敵人時
+        if (!this.gamePause) {
+            this.bg_sky_poor.tilePositionX += 2;
+            this.bg_city.tilePositionX += 4;
+            this.bg_road.tilePositionX += 3;
 
-        for (let i = 0; i < this.stoneArr.length; i++) {
-            this.stoneArr[i].x -= 3;
-        }
-        for (let i = 0; i < this.coinArr.length; i++) {
-            this.coinArr[i].x -= 3;
-        }
-
-        // 啟動鍵盤事件
-        let cursors = this.input.keyboard.createCursorKeys();
-        if (this.timeCounter < 30 && this.timeCounter >= 5) {
-            // 檢測金幣是否超出邊界然後返回
-            for (let i = 0; i < this.coinArr.length; i++) {
-                if (this.coinArr[i].x <= -50) {
-                    let coinX = getRandom(8, 13);
-                    this.coinArr[i].setTexture('coin');
-                    this.coinArr[i].visible = true;
-                    this.coinArr[i].body.moves = false;
-                    this.coinArr[i].body.setSize(60, 60);
-                    this.coinArr[i].x = coinX * 100;
-                }
-            }
-        }
-        if (this.timeCounter > 5) {
-            // 檢測石頭是否超出邊界然後返回
             for (let i = 0; i < this.stoneArr.length; i++) {
-                if (this.stoneArr[i].x <= -50) {
-                    this.stoneArr[i].x = cw + 200;
+                this.stoneArr[i].x -= 3;
+            }
+            for (let i = 0; i < this.coinArr.length; i++) {
+                this.coinArr[i].x -= 3;
+            }
+            this.char_1450.setCollideWorldBounds(true); //角色邊界限制
+            this.char_1450.x -= 5;
+
+            // 啟動鍵盤事件
+            let cursors = this.input.keyboard.createCursorKeys();
+            if (this.timeCounter < 30 && this.timeCounter >= 5) {
+                // 檢測金幣是否超出邊界然後返回
+                for (let i = 0; i < this.coinArr.length; i++) {
+                    if (this.coinArr[i].x <= -50) {
+                        let coinX = getRandom(8, 13);
+                        this.coinArr[i].setTexture('coin');
+                        this.coinArr[i].visible = true;
+                        this.coinArr[i].body.moves = false;
+                        this.coinArr[i].body.setSize(60, 60);
+                        this.coinArr[i].x = coinX * 100;
+                    }
                 }
             }
+            if (this.timeCounter > 5) {
+                // 檢測石頭是否超出邊界然後返回
+                for (let i = 0; i < this.stoneArr.length; i++) {
+                    if (this.stoneArr[i].x <= -50) {
+                        this.stoneArr[i].x = cw + 200;
+                    }
+                }
 
-            //最後5秒前 可自由移動
-            if (cursors.up.isDown) {
-                if (this.isMove) {
-                    this.isMove = false;
-                    if ((this.player.y) / 50 >= 6 && (this.player.y) / 50 <= 7) {
-                        this.player.y += -50;
+                //最後5秒前 可自由移動
+                if (cursors.up.isDown) {
+                    if (this.isMove) {
+                        this.isMove = false;
+                        if ((this.player.y) / 50 >= 6 && (this.player.y) / 50 <= 7) {
+                            this.player.y += -50;
+                        }
                     }
-                }
-            } else if (cursors.down.isDown) {
-                if (this.isMove) {
-                    this.isMove = false;
-                    if ((this.player.y) / 50 >= 5 && (this.player.y) / 50 <= 6) {
-                        this.player.y += 50;
+                } else if (cursors.down.isDown) {
+                    if (this.isMove) {
+                        this.isMove = false;
+                        if ((this.player.y) / 50 >= 5 && (this.player.y) / 50 <= 6) {
+                            this.player.y += 50;
+                        }
                     }
-                }
-            } else if (cursors.left.isDown) {
-                if (this.isMove) {
-                    this.isMove = false;
-                    if ((this.player.x) / 50 >= 3 && (this.player.x) / 50 <= 13) {
-                        this.player.x += -50;
+                } else if (cursors.left.isDown) {
+                    if (this.isMove) {
+                        this.isMove = false;
+                        if ((this.player.x) / 50 >= 3 && (this.player.x) / 50 <= 13) {
+                            this.player.x += -50;
+                        }
                     }
-                }
-            } else if (cursors.right.isDown) {
-                if (this.isMove) {
-                    this.isMove = false;
-                    if ((this.player.x) / 50 >= 2 && (this.player.x) / 50 <= 12) {
-                        this.player.x += 50;
+                } else if (cursors.right.isDown) {
+                    if (this.isMove) {
+                        this.isMove = false;
+                        if ((this.player.x) / 50 >= 2 && (this.player.x) / 50 <= 12) {
+                            this.player.x += 50;
+                        }
                     }
+                } else {
+                    this.isMove = true;
                 }
             } else {
-                this.isMove = true;
+                //最後5秒 準備結束遊戲
+                this.finish_line.x -= 3;
+                this.fa_da_tsai.x -= 3;
+
+                if (this.player.x > 400) {
+                    //移動到定點 碰到終點線
+                    this.player.x -= 4;
+                } else if (this.player.x < 400) {
+                    //移動到定點 碰到終點線
+                    this.player.x += 4;
+                }
+                if (cursors.up.isDown) {
+                    if (this.isMove) {
+                        this.isMove = false;
+                        if ((this.player.y) / 50 >= 6 && (this.player.y) / 50 <= 7) {
+                            this.player.y += -50;
+                        }
+                    }
+                } else if (cursors.down.isDown) {
+                    if (this.isMove) {
+                        this.isMove = false;
+                        if ((this.player.y) / 50 >= 5 && (this.player.y) / 50 <= 6) {
+                            this.player.y += 50;
+                        }
+                    }
+                } else {
+                    this.isMove = true;
+                }
             }
         } else {
-            //最後5秒 準備結束遊戲
-            this.finish_line.x -= 3;
-            this.fa_da_tsai.x -= 3;
+            //撞到敵人時才會暫停
+            this.player.x -= 15;
+            this.player.y -= 10;
+            this.player.rotation -= 0.7;
+            this.player.setCollideWorldBounds(false); //角色邊界限制
 
-            if (this.player.x > 400) {
-                //移動到定點 碰到終點線
-                this.player.x -= 4;
-            } else if (this.player.x < 400) {
-                //移動到定點 碰到終點線
-                this.player.x += 4;
+            if (this.player.x < -50 && this.player.y < -50) {
+                this.char_1450.x = 1300; ////////////////////test待改 getRandom////////////////////
+                this.char_1450.setCollideWorldBounds(false); //角色邊界限制
+                this.player.x = 150;
+                this.player.y = 300;
+                this.player.rotation = 0;
+                this.player.setCollideWorldBounds(true); //角色邊界限制
+                this.gamePause = false;
             }
-            if (cursors.up.isDown) {
-                if (this.isMove) {
-                    this.isMove = false;
-                    if ((this.player.y) / 50 >= 6 && (this.player.y) / 50 <= 7) {
-                        this.player.y += -50;
-                    }
-                }
-            } else if (cursors.down.isDown) {
-                if (this.isMove) {
-                    this.isMove = false;
-                    if ((this.player.y) / 50 >= 5 && (this.player.y) / 50 <= 6) {
-                        this.player.y += 50;
-                    }
-                }
-            } else {
-                this.isMove = true;
-            }
+        }
+
+        //撞到敵人時控制暫停
+        if (isOverlapping(this, this.player, this.char_1450)) {
+            this.gamePause = true;
         }
 
     }

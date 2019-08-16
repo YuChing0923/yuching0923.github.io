@@ -46,19 +46,5 @@ const gameWin = {
     },
     update: function() {
         // 遊戲狀態更新
-        // this.bg_sky_fadatsai.tilePositionX += 2;
-        // this.bg_city.tilePositionX += 4;
-        // this.bg_road.tilePositionX += 3;
-
-        // this.stone1.x -= 3;
-        // this.stone2.x -= 3;
-
-        // 檢測石頭是否超出邊界然後返回
-        // if (this.stone1.x <= -50) {
-        //     this.stone1.x = cw + 200;
-        // }
-        // if (this.stone2.x <= -50) {
-        //     this.stone2.x = cw + 200;
-        // }
     }
 }
