@@ -1,4 +1,4 @@
-const cw = 768,
+var cw = 768,
     ch = 432;
     
 const config = {
