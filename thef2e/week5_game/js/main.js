@@ -18,6 +18,7 @@ const config = {
     scene: [
         gameStart,
         gamePlay,
+        gameWin,
     ]
 };
 

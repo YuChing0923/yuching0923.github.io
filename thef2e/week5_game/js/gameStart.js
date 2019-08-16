@@ -17,6 +17,10 @@ const gameStart = {
     },
     create: function() {
         // 資源載入完成，加入遊戲物件及相關設定
+
+        // 動畫影格
+        keyFrame(this);
+        
         this.bg_sky_poor = this.add.tileSprite(cw / 2, ch / 2 - 2, cw, ch, 'bg_sky_poor');
         this.bg_city = this.add.tileSprite(cw / 2, ch - 275, cw, 200, 'bg_city');
         this.bg_road = this.add.tileSprite(cw / 2, ch - 90, cw, 200, 'bg_road');
@@ -41,20 +45,6 @@ const gameStart = {
         //設定人物位置
         this.player = this.add.sprite(150, 300, 'phone_operator');
 
-        //設定動畫播放
-        this.anims.create({
-            key: 'run',
-            frames: this.anims.generateFrameNumbers('phone_operator', { start: 0, end: 1, suffix: '.png' }),
-            frameRate: 10,
-            repeat: -1
-        })
-
-        this.anims.create({
-            key: 'btnScale',
-            // frames: this.anims.generateFrameNumbers('phone_operator', { start: 0, end: 1, suffix: '.png' }),
-            frameRate: 10,
-            repeat: -1
-        })
         //播放動畫
         this.player.anims.play('run', true);
 

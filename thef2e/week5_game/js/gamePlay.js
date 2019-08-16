@@ -19,7 +19,7 @@ const gamePlay = {
         this.isMove = true; // 控制是否可上下移動
         this.pointIsCount = true; // 控制硬幣可加分1次
         this.coinCounter = 0; // 撿到金幣的數量
-        this.timeCounter = 90; // 遊戲時間
+        this.timeCounter = 30; // 遊戲時間
         this.stoneArr = []; // 存放所有金幣
         this.coinArr = []; // 存放所有金幣
         this.itemXArr = []; //物件隨機X軸
@@ -35,11 +35,11 @@ const gamePlay = {
         keyFrame(this);
 
         // 加入物理效果
-        const addPhysics = GameObject => {
-            this.physics.add.existing(GameObject);
-            GameObject.body.immovable = true;
-            GameObject.body.moves = false;
-        }
+        // const addPhysics = GameObject => {
+        //     this.physics.add.existing(GameObject);
+        //     GameObject.body.immovable = true;
+        //     GameObject.body.moves = false;
+        // }
 
         //設定文字
         this.timeText = this.add.text(cw / 2 - 50, 30, `TIME: ${this.timeCounter}`, { fontSize: '28px', fill: '#000000' })
@@ -58,7 +58,7 @@ const gamePlay = {
             } else if (this.timeCounter <= 0) {
                 this.gameStop = true;
                 clearInterval(gametime);
-                this.scene.start('gameStart');
+                this.scene.start('gameWin');
                 // this.physics.add.collider(this.player, this.finish_line, () => this.scene.start('gameStart'));
                 // let congratulations = this.add.image(cw / 2, ch / 2 - 50, 'congratulations');
                 // congratulations.setScale(0.8);
@@ -81,6 +81,7 @@ const gamePlay = {
         // 石頭
         this.stoneArr = [
             this.physics.add.sprite(cw / 3, ch - 50, 'stone').setScale(0.5),
+            this.physics.add.sprite(cw - 70, ch - 100, 'stone').setScale(0.5),
             this.physics.add.sprite(cw - 70, ch - 150, 'stone').setScale(0.5)
         ]
 
@@ -145,7 +146,7 @@ const gamePlay = {
 
         // 啟動鍵盤事件
         let cursors = this.input.keyboard.createCursorKeys();
-        if (this.timeCounter < 15 && this.timeCounter >= 5) {
+        if (this.timeCounter < 30 && this.timeCounter >= 5) {
             // 檢測金幣是否超出邊界然後返回
             for (let i = 0; i < this.coinArr.length; i++) {
                 if (this.coinArr[i].x <= -50) {
