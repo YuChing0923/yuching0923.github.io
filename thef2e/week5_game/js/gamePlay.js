@@ -157,7 +157,7 @@ const gamePlay = {
             for (let i = 0; i < this.coinArr.length; i++) {
                 this.coinArr[i].x -= 3;
             }
-            this.char_1450.setCollideWorldBounds(true); //角色邊界限制
+            // this.char_1450.setCollideWorldBounds(true); //角色邊界限制
             this.char_1450.x -= 5;
 
             // 啟動鍵盤事件
@@ -254,7 +254,7 @@ const gamePlay = {
 
             if (this.player.x < -50 && this.player.y < -50) {
                 this.char_1450.x = 1300; ////////////////////test待改 getRandom////////////////////
-                this.char_1450.setCollideWorldBounds(false); //角色邊界限制
+                // this.char_1450.setCollideWorldBounds(false); //角色邊界限制
                 this.player.x = 150;
                 this.player.y = 300;
                 this.player.rotation = 0;
