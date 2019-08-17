@@ -11,6 +11,8 @@ const gamePlay = {
         this.load.image('coin', 'images/item_coin.svg');
         this.load.image('coin_bling', 'images/item_coin_bling.svg');
         this.load.image('char_1450', 'images/char_1450.svg');
+        this.load.image('char_jelly', 'images/char_jelly.svg');
+        this.load.image('char_vegetable', 'images/char_vegetable.svg');
         this.load.image('finish_line', 'images/finish_line.svg');
         this.load.image('fa_da_tsai', 'images/fa_da_tsai.svg');
 
@@ -22,9 +24,11 @@ const gamePlay = {
         this.pointIsCount = true; // 控制硬幣可加分1次
         this.coinCounter = 0; // 撿到金幣的數量
         this.timeCounter = 30; // 遊戲時間
+        this.life = 3; // 左上所有生命
         this.lifeArr = []; // 左上所有生命
         this.stoneArr = []; // 存放所有金幣
         this.coinArr = []; // 存放所有金幣
+        this.enemyArr = []; // 存放所有金幣
         this.itemXArr = []; //物件隨機X軸
     },
     create: function() {
@@ -77,18 +81,26 @@ const gamePlay = {
             this.player.anims.play('run', true); //播放動畫
         }
 
-        this.char_1450 = this.physics.add.sprite(1000, 300, 'char_1450'); ////////////////////test待改getRandom+Arr////////////////////
-        this.player.depth = 1; //敵人放置到物件上層
-        // this.char_1450.setCollideWorldBounds(true); //角色邊界限制
-        this.char_1450.setBounce(0); //設定彈跳值
-        this.char_1450.setSize(80, 60).setOffset(80, 200);
-        this.char_1450.setScale(0.5);
+        this.enemyArr = [
+            ////////////////////test待改getRandom+Arr////////////////////
+            this.char_1450 = this.physics.add.sprite(cw + 100 * getRandom(3, 10), ch - 50 * getRandom(1, 5), 'char_1450'),
+            this.char_jelly = this.physics.add.sprite(cw + 100 * getRandom(3, 10), ch - 50 * getRandom(1, 5), 'char_jelly'),
+            this.char_vegetable = this.physics.add.sprite(cw + 100 * getRandom(3, 10), ch - 50 * getRandom(1, 5), 'char_vegetable'),
+        ]
+
+        for (let i = 0; i < this.enemyArr.length; i++) {
+            this.enemyArr[i].depth = 1; //敵人放置到物件上層
+            // this.enemyArr[i].setCollideWorldBounds(true); //角色邊界限制
+            this.enemyArr[i].setBounce(0); //設定彈跳值
+            this.enemyArr[i].setSize(80, 60).setOffset(80, 200);
+            this.enemyArr[i].setScale(0.5);
+        }
 
         // 物件陣列
         // 石頭
         this.stoneArr = [
             this.physics.add.sprite(cw / 3, ch - 50, 'stone').setScale(0.5),
-            this.physics.add.sprite(cw - 70, ch - 100, 'stone').setScale(0.5),
+            this.physics.add.sprite(cw - 20, ch - 100, 'stone').setScale(0.5),
             this.physics.add.sprite(cw - 70, ch - 150, 'stone').setScale(0.5)
         ]
 
@@ -158,7 +170,10 @@ const gamePlay = {
                 this.coinArr[i].x -= 3;
             }
             // this.char_1450.setCollideWorldBounds(true); //角色邊界限制
-            this.char_1450.x -= 5;
+
+            for (let i = 0; i < this.enemyArr.length; i++) {
+                this.enemyArr[i].x -= 5;
+            }
 
             // 啟動鍵盤事件
             let cursors = this.input.keyboard.createCursorKeys();
@@ -172,6 +187,15 @@ const gamePlay = {
                         this.coinArr[i].body.moves = false;
                         this.coinArr[i].body.setSize(60, 60);
                         this.coinArr[i].x = coinX * 100;
+                    }
+                }
+
+                for (let i = 0; i < this.enemyArr.length; i++) {
+                    this.enemyArr[i].x -= 5;
+                    if (this.enemyArr[i].x <= -50) {
+                        let enemyY = getRandom(1, 5);
+                        this.enemyArr[i].x = getRandom(8, 13) * 100; ////////////////////test待改 getRandom////////////////////
+                        this.enemyArr[i].y = ch - 50 * enemyY; ////////////////////test待改 getRandom////////////////////
                     }
                 }
             }
@@ -253,8 +277,14 @@ const gamePlay = {
             this.player.setCollideWorldBounds(false); //角色邊界限制
 
             if (this.player.x < -50 && this.player.y < -50) {
-                this.char_1450.x = 1300; ////////////////////test待改 getRandom////////////////////
-                // this.char_1450.setCollideWorldBounds(false); //角色邊界限制
+                if (this.timeCounter < 30 && this.timeCounter >= 5) {
+                    for (let i = 0; i < this.enemyArr.length; i++) {
+                        let enemyY = getRandom(1, 5);
+                        this.enemyArr[i].x = getRandom(8, 13) * 100; ////////////////////test待改 getRandom////////////////////
+                        this.enemyArr[i].y = ch - 50 * enemyY; ////////////////////test待改 getRandom////////////////////
+                        // this.enemyArr[i].setCollideWorldBounds(false); //角色邊界限制
+                    }
+                }
                 this.player.x = 150;
                 this.player.y = 300;
                 this.player.rotation = 0;
@@ -264,8 +294,10 @@ const gamePlay = {
         }
 
         //撞到敵人時控制暫停
-        if (isOverlapping(this, this.player, this.char_1450)) {
-            this.gamePause = true;
+        for (let i = 0; i < this.enemyArr.length; i++) {
+            if (isOverlapping(this, this.player, this.enemyArr[i])) {
+                this.gamePause = true;
+            }
         }
 
     }
