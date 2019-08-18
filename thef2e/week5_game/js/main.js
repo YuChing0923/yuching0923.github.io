@@ -19,6 +19,7 @@ const config = {
         gameStart,
         gamePlay,
         gameWin,
+        gameOver,
     ]
 };
 

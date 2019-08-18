@@ -154,10 +154,16 @@ const gamePlay = {
         this.fa_da_tsai.setScale(0.5);
 
         //結尾
-        this.lifeArr = []; // 左上所有生命
-        
-        this.life = this.add.image(40, 45, 'life');
-        this.life.setScale(0.5);
+        this.lifeArr = [
+            this.life1 = this.add.image(40, 45, 'life'),
+            this.life2 = this.add.image(80, 45, 'life'),
+            this.life3 = this.add.image(120, 45, 'life')
+        ]; // 左上所有生命
+
+
+        for (let i = 0; i < this.lifeArr.length; i++) {
+            this.lifeArr[i].setScale(0.5);
+        }
 
     },
     update: function() {
@@ -290,6 +296,13 @@ const gamePlay = {
                         this.enemyArr[i].x = getRandom(8, 13) * 100; ////////////////////test待改 getRandom////////////////////
                         this.enemyArr[i].y = ch - 50 * enemyY; ////////////////////test待改 getRandom////////////////////
                         // this.enemyArr[i].setCollideWorldBounds(false); //角色邊界限制
+                    }
+                }
+                if (this.life > 0) {
+                    this.life--;
+                    this.lifeArr[this.life].destroy();
+                    if (this.life == 0) {
+                        this.scene.start('gameOver');
                     }
                 }
                 this.player.x = 150;
