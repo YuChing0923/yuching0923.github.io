@@ -15,6 +15,7 @@ const gamePlay = {
         this.load.image('char_vegetable', 'images/char_vegetable.svg');
         this.load.image('finish_line', 'images/finish_line.svg');
         this.load.image('fa_da_tsai', 'images/fa_da_tsai.svg');
+        this.load.image('life', 'images/life.svg');
 
         this.load.spritesheet('phone_operator', 'images/char_phone_operator.png', { frameWidth: 120, frameHeight: 120 });
 
@@ -151,6 +152,12 @@ const gamePlay = {
         this.finish_line.setRotation(-10);
         this.fa_da_tsai = this.add.image(cw + 300, ch - 150, 'fa_da_tsai');
         this.fa_da_tsai.setScale(0.5);
+
+        //結尾
+        this.lifeArr = []; // 左上所有生命
+        
+        this.life = this.add.image(40, 45, 'life');
+        this.life.setScale(0.5);
 
     },
     update: function() {
