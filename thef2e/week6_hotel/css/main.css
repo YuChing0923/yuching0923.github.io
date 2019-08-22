@@ -1,5 +1,6 @@
 body {
   overflow-x: hidden;
+  color: #000;
 }
 
 .cover {
@@ -33,7 +34,7 @@ body {
   position: relative;
   text-align: right;
   padding-right: 50px;
-  flex: 0 0 40%;
+  width: 40%;
 }
 .main .hotel_info .social_icon svg {
   width: 10%;
@@ -44,7 +45,7 @@ body {
   position: relative;
   border-left: #fff 1px solid;
   padding-left: 50px;
-  flex: 0 0 60%;
+  width: 60%;
 }
 .main .hotel_info .contact .contact_info {
   padding: 5px 0;
@@ -80,7 +81,6 @@ body {
   height: 70px;
   bottom: 0;
   padding: 0 25px;
-  color: #000000;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -117,7 +117,6 @@ body {
   line-height: 31px;
 }
 .items .room_block .room_info .normal_day_price .weekday {
-  color: #000000;
   line-height: 18px;
 }
 .items .room_block .room_info .holiday_price {
@@ -137,6 +136,152 @@ body {
   top: 0;
   transform: translateY(0);
   transition: 0.3s;
+}
+
+.room_detail_img {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  height: 600px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+}
+.room_detail_img .sub_logo {
+  position: absolute;
+  z-index: 1;
+  padding: 50px;
+  cursor: pointer;
+}
+.room_detail_img .img_item {
+  position: relative;
+  overflow: hidden;
+}
+.room_detail_img .img_item img {
+  position: absolute;
+  bottom: 0;
+}
+.room_detail_img .img_bg {
+  width: 70%;
+}
+.room_detail_img .img_bg .img_item {
+  height: 100%;
+}
+.room_detail_img .img_bg .img_item img {
+  min-height: 600px;
+}
+.room_detail_img .img_sm {
+  width: 30%;
+}
+.room_detail_img .img_sm .img_item {
+  height: 50%;
+}
+.room_detail_img .img_sm .img_item img {
+  min-height: 300px;
+}
+
+.room_detail_info {
+  margin-top: 50px;
+}
+.room_detail_info .room_detail .room_name {
+  font-size: 36px;
+  letter-spacing: 3.76px;
+  font-weight: 600;
+}
+.room_detail_info .room_detail .room_spec {
+  padding: 30px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+.room_detail_info .room_detail .room_spec .text {
+  font-size: 14px;
+  letter-spacing: 1.46px;
+  line-height: 31px;
+  width: 100%;
+}
+.room_detail_info .room_detail .room_spec .text#description {
+  font-size: 12px;
+  letter-spacing: 1.25px;
+  text-align: justify;
+  line-height: 20px;
+}
+.room_detail_info .room_detail .room_spec .separation {
+  line-height: 70px;
+  width: 100%;
+}
+.room_detail_info .room_detail .room_spec .check_time {
+  width: 50%;
+}
+.room_detail_info .room_detail .room_spec .check_time .time {
+  font-size: 21px;
+  letter-spacing: 2.19px;
+}
+.room_detail_info .room_detail .room_amenities {
+  background: #F0F0F0;
+  padding: 20px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+.room_detail_info .room_detail .room_amenities .amenity_item {
+  width: 33.3333333333%;
+  vertical-align: middle;
+  padding: 10px 5px;
+}
+.room_detail_info .room_detail .room_amenities .amenity_item .amenity_icon {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.room_detail_info .room_detail .room_amenities .amenity_item .amenity_icon svg {
+  width: 100%;
+  height: auto;
+}
+.room_detail_info .room_detail .room_amenities .amenity_item .amenity_text {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 5px;
+  font-size: 13px;
+  letter-spacing: 1.25px;
+  max-width: 70%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.room_detail_info .room_detail .room_amenities .amenity_item.true .amenity_icon svg .st0 {
+  fill: #4B4B4B;
+}
+.room_detail_info .room_detail .room_amenities .amenity_item.false .amenity_icon svg .st0 {
+  opacity: 0.3;
+}
+.room_detail_info .room_detail .room_amenities .amenity_item.false .amenity_text {
+  opacity: 0.3;
+}
+.room_detail_info .room_price {
+  line-height: 27px;
+  text-align: right;
+}
+.room_detail_info .room_price .date_price {
+  padding: 5px 0;
+}
+.room_detail_info .room_price .weekday .price {
+  font-size: 30px;
+  letter-spacing: 3.13px;
+  padding-bottom: 5px;
+}
+.room_detail_info .room_price .holiday .price {
+  font-size: 16px;
+  letter-spacing: 1.67px;
+}
+.room_detail_info .room_price .date_type {
+  font-size: 14px;
+  color: #6D7278;
+  letter-spacing: 1.46px;
 }
 
 /*# sourceMappingURL=main.css.map */

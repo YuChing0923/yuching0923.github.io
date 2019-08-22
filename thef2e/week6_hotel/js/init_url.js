@@ -38,7 +38,7 @@ function initPage() {
         } else {
             tokenUrl = location.href.split('?room=')[1];
         }
-        $("#content").load('template/' + templateUrl + '.html');
+        $("#content").empty().load('template/' + templateUrl + '.html');
     }
 }
 
@@ -54,7 +54,7 @@ function hashChange() {
         templateUrl = location.href.split('#template/')[1].split('.html?room=')[0];
         tokenUrl = location.href.split('?room=')[1];
     }
-    $("#content").load('template/' + templateUrl + '.html');
+    $("#content").empty().load('template/' + templateUrl + '.html');
 }
 window.addEventListener('hashchange', hashChange, true);
 //************ajax load page.e************//

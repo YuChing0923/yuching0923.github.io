@@ -81,7 +81,7 @@
 <div class="items">
     <div class="container">
         <div class="row">
-            <!-- <div class="col-lg-4 col-sm-6 col-xs-12">
+            <!-- <div class="col-lg-4 col-sm-6 col-12">
                 <div class="room_block">
                     <img class="room_img" src="https://images.unsplash.com/photo-1515511856280-7b23f68d2996?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80" alt="">
                     <div class="room_info">
@@ -138,39 +138,27 @@ function loadAjax(roomData) {
     //房間資訊匯入.s
     var roomName_ch = ['單人房', '豪華單人房', '雙人房', '豪華雙人房', '四人房', '豪華四人房']
     for (var i = 0; i < roomData.items.length; i++) {
+    	var dataItems = roomData.items[i];
         $('.items').find('.row').append(
-            `<div class="col-lg-4 col-sm-6 col-xs-12">
-        		<div class="room_block" onclick="changeForm('room_info', '${roomData.items[i].id}')">
-        			<img class="room_img" src="${roomData.items[i].imageUrl}" alt="${roomData.items[i].name}">
+            `<div class="col-lg-4 col-sm-6 col-12">
+        		<div class="room_block" onclick="changeForm('room_info', '${dataItems.id}')">
+        			<img class="room_img" src="${dataItems.imageUrl}" alt="${dataItems.name}">
         			<div class="room_info">
-            			<div class="room_name">${roomData.items[i].name}</div>
+            			<div class="room_name">${dataItems.name}</div>
             			<div class="room_name sub_text detail">${roomName_ch[i]}</div>
             			<div class="normal_day_price detail">
-                			<span class="price">NT.${roomData.items[i].normalDayPrice} </span>
+                			<span class="price">NT.${dataItems.normalDayPrice} </span>
                 			<span class="weekday sub_text">平日</span>
             			</div>
-            			<div class="holiday_price sub_text detail">NT.${roomData.items[i].holidayPrice} 假日</div>
+            			<div class="holiday_price sub_text detail">NT.${dataItems.holidayPrice} 假日</div>
         			</div>
     			</div>
 			</div>`
         );
     }
     //房間資訊匯入.e
-}
-//************ajax load api.e************//
 
-//************css resize style.s************//
-var _winH = $(window).height(),
-    _winW = $(window).width();
-
-function resizeHW() {
-    if (_winW > 768) {
-        $('.cover, .main').height(_winH);
-    } else {
-        $('.cover, .main').height(_winW * 0.55);
-    }
-
-    $(document).ajaxStop(function() {
+    function roomImgSize() {
         var _imgH, _imgW;
         $('.room_img').each(function() {
             _imgH = $(this).height();
@@ -187,11 +175,30 @@ function resizeHW() {
                 });
             }
         });
+    }
+    $(document).ready(function() {
+        roomImgSize();
     });
 }
-resizeHW();
-$(window).resize(function() {
+//************ajax load api.e************//
+
+//************css resize style.s************//
+var _winH = $(window).height(),
+    _winW = $(window).width();
+
+function resizeHW() {
+    if (_winW > 768) {
+        $('.cover, .main').height(_winH);
+    } else {
+        $('.cover, .main').height(_winW * 0.55);
+    }
+}
+
+$(document).ready(function() {
     resizeHW();
-})
+    $(window).resize(function() {
+        resizeHW();
+    })
+});
 //************css resize style.e************//
 </script>
