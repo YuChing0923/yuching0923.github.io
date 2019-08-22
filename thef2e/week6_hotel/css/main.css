@@ -1,0 +1,142 @@
+body {
+  overflow-x: hidden;
+}
+
+.cover {
+  width: 100%;
+  background-color: #ccc;
+  background-size: cover;
+  background-position: center bottom;
+  height: auto;
+  position: absolute;
+}
+
+.main {
+  position: relative;
+  background: rgba(192, 192, 192, 0.2);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 100%);
+  font-size: 14px;
+  color: #FFFFFF;
+}
+.main .logo {
+  margin: 20% auto 0;
+  width: 162px;
+  position: relative;
+}
+.main .hotel_info {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .hotel_info .social_icon {
+  position: relative;
+  text-align: right;
+  padding-right: 50px;
+  flex: 0 0 40%;
+}
+.main .hotel_info .social_icon svg {
+  width: 10%;
+  height: auto;
+  margin-left: 15px;
+}
+.main .hotel_info .contact {
+  position: relative;
+  border-left: #fff 1px solid;
+  padding-left: 50px;
+  flex: 0 0 60%;
+}
+.main .hotel_info .contact .contact_info {
+  padding: 5px 0;
+}
+.main .hotel_info .contact .contact_info .contact_icon {
+  display: inline-block;
+}
+.main .hotel_info .contact .contact_info .contact_text {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.items {
+  margin: -100px 0 100px;
+}
+.items .room_block {
+  position: relative;
+  height: 350px;
+  margin: 0 10px 50px;
+  background: #F7F7F7;
+  box-shadow: 0px 2px 9px 0 rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  cursor: pointer;
+}
+.items .room_block .room_img {
+  position: absolute;
+  bottom: 0;
+}
+.items .room_block .room_info {
+  background: #F7F7F7;
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  bottom: 0;
+  padding: 0 25px;
+  color: #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  align-content: space-around;
+  transition: 0.3s;
+}
+.items .room_block .room_info .detail {
+  opacity: 0;
+  display: none;
+  transition: 0.3s;
+}
+.items .room_block .room_info .room_name {
+  font-size: 14px;
+  letter-spacing: 1.46px;
+  width: 100%;
+  position: relative;
+  top: 45%;
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+.items .room_block .room_info .sub_text {
+  font-size: 12px;
+  color: #6D7278;
+  letter-spacing: 1.25px;
+  line-height: 18px;
+}
+.items .room_block .room_info .normal_day_price {
+  display: inline-block;
+}
+.items .room_block .room_info .normal_day_price .price {
+  font-size: 21px;
+  letter-spacing: 2.19px;
+  line-height: 31px;
+}
+.items .room_block .room_info .normal_day_price .weekday {
+  color: #000000;
+  line-height: 18px;
+}
+.items .room_block .room_info .holiday_price {
+  display: inline-block;
+}
+.items .room_block:hover .room_info {
+  height: auto;
+  padding: 20px 25px;
+  transition: 0.3s;
+}
+.items .room_block:hover .room_info .detail {
+  opacity: 1;
+  display: block;
+  transition: 0.3s;
+}
+.items .room_block:hover .room_info .room_name {
+  top: 0;
+  transform: translateY(0);
+  transition: 0.3s;
+}
+
+/*# sourceMappingURL=main.css.map */

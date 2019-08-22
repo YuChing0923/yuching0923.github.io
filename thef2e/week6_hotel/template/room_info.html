@@ -1,0 +1,22 @@
+<div class="room_info">room_info</div>
+<script>
+	//************ajax load api.s************//
+	console.log(tokenUrl);
+var roomData;
+$.ajax({
+    url: 'https://challenge.thef2e.com/api/thef2e2019/stage6/room/' + tokenUrl,
+    type: 'GET',
+    headers: {
+        "Authorization": 'Bearer 2DFIVAEETX2rZO2kZlmRvKDbnxX91xRpzzGzIoxkT0T2FjTEUYBzynvVKSAP'
+    },
+    error: function() {
+        console.log('error');
+    },
+    success: function(data) {
+        roomData = data;
+        console.log(roomData);
+        // loadAjax(roomData);
+    }
+});
+	//************ajax load api.e************//
+</script>
