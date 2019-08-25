@@ -339,6 +339,14 @@ body {
 .ui-widget-content .ui-state-default.ui-state-active {
   color: #000;
 }
+.ui-widget-content .reserved {
+  background-color: #d4d8dc;
+  cursor: not-allowed;
+}
+.ui-widget-content .reserved .ui-state-default {
+  color: #a6a6a6;
+  cursor: not-allowed;
+}
 
 .modal .img_modal img {
   margin: auto;

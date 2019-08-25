@@ -427,6 +427,14 @@ body {
             color: #000;
         }
     }
+    .reserved{
+       background-color: #d4d8dc;
+       cursor: not-allowed;
+       .ui-state-default{
+       	color: #a6a6a6;
+       cursor: not-allowed;
+       }
+   }
 }
 
 .modal {

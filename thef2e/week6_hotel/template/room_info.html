@@ -309,33 +309,6 @@
 </div>
 <!-- Modal room_reserve_ckeck -->
 <script>
-$(function() {
-    $("#datepicker").datepicker({
-        dayNames: ["日", "一", "二", "三", "四", "五", "六"],
-        dayNamesShort: ["日", "一", "二", "三", "四", "五", "六"],
-        dayNamesMin: ["日", "一", "二", "三", "四", "五", "六"]
-    });
-    var today = new Date();
-    today.setDate(today.getDate() + 1);
-    $("#time_start").datepicker({
-        dayNames: ["日", "一", "二", "三", "四", "五", "六"],
-        dayNamesShort: ["日", "一", "二", "三", "四", "五", "六"],
-        dayNamesMin: ["日", "一", "二", "三", "四", "五", "六"],
-        dateFormat: "yy-mm-dd",
-        minDate: today,
-        onSelect: function(selectedDate) {
-            $("#time_end").datepicker("option", "minDate", selectedDate);
-        }
-    });
-    $("#time_end").datepicker({
-        dayNames: ["日", "一", "二", "三", "四", "五", "六"],
-        dayNamesShort: ["日", "一", "二", "三", "四", "五", "六"],
-        dayNamesMin: ["日", "一", "二", "三", "四", "五", "六"],
-        dateFormat: "yy-mm-dd"
-    })
-});
-
-
 //************ajax load api.s************//
 var roomData;
 $.ajax({
@@ -355,8 +328,8 @@ $.ajax({
 });
 
 function loadAjax(roomData) {
-    var dataArr = roomData.room[0];
-    console.log(dataArr);
+    var dataArr = roomData.room[0],
+        reservedArr = [];
     for (var i = 0; i < dataArr.imageUrl.length; i++) {
         $('.room_detail_img').find(`.img_item:eq(${i})`).find('img').attr('src', dataArr.imageUrl[i]);
     };
@@ -414,8 +387,50 @@ function loadAjax(roomData) {
     $(document).ready(function() {
         roomImgSize();
     });
+
+    var bookingData = roomData.booking;
+    $.each(bookingData, function() {
+        var bookingDate = new Date(this.date);
+        reservedArr.push(new Date(bookingDate.getFullYear(), bookingDate.getMonth(), bookingDate.getDate(), 0, 0, 0));
+        // body...
+    });
+    $(function() {
+        var today = new Date();
+        today.setDate(today.getDate() + 1);
+        $("#datepicker").datepicker({
+            dayNames: ["日", "一", "二", "三", "四", "五", "六"],
+            dayNamesShort: ["日", "一", "二", "三", "四", "五", "六"],
+            dayNamesMin: ["日", "一", "二", "三", "四", "五", "六"],
+            beforeShowDay: function(date) {
+                for (var i = 0; i < reservedArr.length; i++) {
+                    if (reservedArr[i].toString() == date.toString()) {
+                        return [true, 'reserved', ''];
+                    }
+                }
+                return [true, ''];
+            }
+        });
+        $("#time_start").datepicker({
+            dayNames: ["日", "一", "二", "三", "四", "五", "六"],
+            dayNamesShort: ["日", "一", "二", "三", "四", "五", "六"],
+            dayNamesMin: ["日", "一", "二", "三", "四", "五", "六"],
+            dateFormat: "yy-mm-dd",
+            minDate: today,
+            onSelect: function(selectedDate) {
+                $("#time_end").datepicker("option", "minDate", selectedDate);
+            }
+        });
+        $("#time_end").datepicker({
+            dayNames: ["日", "一", "二", "三", "四", "五", "六"],
+            dayNamesShort: ["日", "一", "二", "三", "四", "五", "六"],
+            dayNamesMin: ["日", "一", "二", "三", "四", "五", "六"],
+            dateFormat: "yy-mm-dd"
+        })
+    });
 }
 //************ajax load api.e************//
+
+
 
 var reserve_data = {};
 $('#reserve_check').on('click', function() {
@@ -441,13 +456,11 @@ $('#reserve_check').on('click', function() {
         reserve_time_date = reserve_year + '-' + (reserve_month < 10 ? '0' : '') + reserve_month + '-' + (reserve_date < 10 ? '0' : '') + reserve_date;
         reserve_time.push(reserve_time_date);
     }
-    console.log(reserve_time);
     reserve_data['name'] = reserve_name;
     reserve_data['tel'] = reserve_tel;
     for (var i = 0; i <= reserve_time.length - 1; i++) {
         reserve_data[`date[${i}]`] = reserve_time[i];
     }
-    console.log(reserve_data);
     $.ajax({
         url: 'https://challenge.thef2e.com/api/thef2e2019/stage6/room/' + tokenUrl,
         type: 'POST',
