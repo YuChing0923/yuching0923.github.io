@@ -28,15 +28,15 @@
     <!-- logo end -->
     <!-- room_detail_img start -->
     <div class="img_bg">
-        <div class="img_item">
+        <div class="img_item" data-toggle="modal" data-target="#roomImgModal">
             <img src="" alt="">
         </div>
     </div>
     <div class="img_sm">
-        <div class="img_item">
+        <div class="img_item" data-toggle="modal" data-target="#roomImgModal">
             <img src="" alt="">
         </div>
-        <div class="img_item">
+        <div class="img_item" data-toggle="modal" data-target="#roomImgModal">
             <img src="" alt="">
         </div>
     </div>
@@ -45,7 +45,7 @@
 <div class="room_detail_info">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-10">
+            <div class="col-lg-6 col-md-4 col-10">
                 <div class="room_detail">
                     <div class="room_name" id="room_name"></div>
                     <div class="room_spec">
@@ -197,7 +197,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2 col-2">
+            <div class="col-lg-2 col-md-3 col-2">
                 <div class="room_price">
                     <div class="weekday date_price">
                         <div class="price" id="weekday_price"></div>
@@ -209,13 +209,133 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-12">
-                <div class="reserve_date"></div>
+            <div class="col-lg-4 col-md-5 col-12">
+                <div class="reserve_date">
+                    <div class="datepicker" id="datepicker"></div>
+                    <button class="reserve" data-toggle="modal" data-target="#roomReserveModal">預約時段</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<!-- Modal room_img -->
+<div class="modal fade" id="roomImgModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog mw-100" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <h5 class="modal-title">Modal title</h5> -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="img_modal" id="img_modal"><img src="" alt=""></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal room_img -->
+<!-- Modal room_reserve -->
+<div class="modal fade bd-example-modal-lg" id="roomReserveModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">預約時段</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">電話</label>
+                        <input type="text" class="form-control" id="tel">
+                    </div>
+                    <div class="form-group">
+                        <label for="time_start">預約起訖</label>
+                        <div class="inline">
+                            <input type="text" class="form-control datepicker datepicker_reserve" id="time_start">
+                            <label for="time_end">~</label>
+                            <input type="text" class="form-control datepicker datepicker_reserve" id="time_end">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="reserve_check" data-dismiss="modal" data-toggle="modal" data-target="#roomReserveCheckModal">確定預約</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal room_reserve -->
+<!-- Modal room_reserve_ckeck -->
+<div class="modal fade bd-example-modal-lg" id="roomReserveCheckModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="room_reserve_ckeck_title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div id="reserve_success" style="display: none;">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="510px" height="510px" fill="#ade8c6" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                            <g id="check-circle-outline">
+                                <path d="M150.45,206.55l-35.7,35.7L229.5,357l255-255l-35.7-35.7L229.5,285.6L150.45,206.55z M459,255c0,112.2-91.8,204-204,204 S51,367.2,51,255S142.8,51,255,51c20.4,0,38.25,2.55,56.1,7.65l40.801-40.8C321.3,7.65,288.15,0,255,0C114.75,0,0,114.75,0,255 s114.75,255,255,255s255-114.75,255-255H459z" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div id="reserve_error">
+                        <p></p>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">回頁面</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal room_reserve_ckeck -->
 <script>
+$(function() {
+    $("#datepicker").datepicker({
+        dayNames: ["日", "一", "二", "三", "四", "五", "六"],
+        dayNamesShort: ["日", "一", "二", "三", "四", "五", "六"],
+        dayNamesMin: ["日", "一", "二", "三", "四", "五", "六"]
+    });
+    var today = new Date();
+    today.setDate(today.getDate() + 1);
+    $("#time_start").datepicker({
+        dayNames: ["日", "一", "二", "三", "四", "五", "六"],
+        dayNamesShort: ["日", "一", "二", "三", "四", "五", "六"],
+        dayNamesMin: ["日", "一", "二", "三", "四", "五", "六"],
+        dateFormat: "yy-mm-dd",
+        minDate: today,
+        onSelect: function(selectedDate) {
+            $("#time_end").datepicker("option", "minDate", selectedDate);
+        }
+    });
+    $("#time_end").datepicker({
+        dayNames: ["日", "一", "二", "三", "四", "五", "六"],
+        dayNamesShort: ["日", "一", "二", "三", "四", "五", "六"],
+        dayNamesMin: ["日", "一", "二", "三", "四", "五", "六"],
+        dateFormat: "yy-mm-dd"
+    })
+});
+
+
 //************ajax load api.s************//
 var roomData;
 $.ajax({
@@ -240,6 +360,18 @@ function loadAjax(roomData) {
     for (var i = 0; i < dataArr.imageUrl.length; i++) {
         $('.room_detail_img').find(`.img_item:eq(${i})`).find('img').attr('src', dataArr.imageUrl[i]);
     };
+
+    $('.img_item').on('click', function() {
+        var _imgModalSrc = $('.img_item').index(this);
+        $('#roomImgModal').on('shown.bs.modal', function() {
+            $(this).find('#img_modal').find('img').attr('src', dataArr.imageUrl[_imgModalSrc]);
+            $('#img_modal').find('img').css({
+                'max-height': $(window).height() * 0.8
+            });
+        });
+    })
+
+
     $('#room_name').html(dataArr.name);
     $('#guest_num').html(`房客人數限制： ${dataArr.descriptionShort.GuestMin}~${dataArr.descriptionShort.GuestMax} 人`);
     $('#bed_type').html(`床型：${dataArr.descriptionShort.Bed[0]}`);
@@ -253,7 +385,7 @@ function loadAjax(roomData) {
         var _amenity = $(this).attr('id');
         if (dataArr.amenities[_amenity]) {
             $(this).addClass('true');
-        } else{
+        } else {
             $(this).addClass('false');
         }
     });
@@ -262,7 +394,7 @@ function loadAjax(roomData) {
     $('#holiday_price').html(`NT.${dataArr.holidayPrice}`);
 
     function roomImgSize() {
-        var _imgH, _imgW;
+        var _imgH, _imgW, _imgBlockH, _imgBlockW;
         $('.img_item img').each(function() {
             _imgH = $(this).height();
             _imgW = $(this).width();
@@ -284,4 +416,61 @@ function loadAjax(roomData) {
     });
 }
 //************ajax load api.e************//
+
+var reserve_data = {};
+$('#reserve_check').on('click', function() {
+    $('#room_reserve_ckeck_title').html('');
+    $('#reserve_success').hide();
+    $('#reserve_error').hide();
+    $('#reserve_error p').html('');
+    var reserve_name = $('#name').val(),
+        reserve_tel = $('#tel').val(),
+        reserve_time = [],
+        reserve_time_start = $('#time_start').datepicker("getDate"),
+        reserve_time_start_date = $('#time_start').datepicker("getDate").getDate(),
+        reserve_time_end = $('#time_end').datepicker("getDate"),
+        reserve_time_end_date = $('#time_end').datepicker("getDate").getDate(),
+        reserve_date,
+        reserve_month,
+        reserve_year,
+        reserve_time_date;
+    for (var d = reserve_time_start; d <= reserve_time_end; d.setDate(d.getDate() + 1)) {
+        reserve_year = new Date(d).getFullYear();
+        reserve_month = new Date(d).getMonth() + 1;
+        reserve_date = new Date(d).getDate();
+        reserve_time_date = reserve_year + '-' + (reserve_month < 10 ? '0' : '') + reserve_month + '-' + (reserve_date < 10 ? '0' : '') + reserve_date;
+        reserve_time.push(reserve_time_date);
+    }
+    console.log(reserve_time);
+    reserve_data['name'] = reserve_name;
+    reserve_data['tel'] = reserve_tel;
+    for (var i = 0; i <= reserve_time.length - 1; i++) {
+        reserve_data[`date[${i}]`] = reserve_time[i];
+    }
+    console.log(reserve_data);
+    $.ajax({
+        url: 'https://challenge.thef2e.com/api/thef2e2019/stage6/room/' + tokenUrl,
+        type: 'POST',
+        data: reserve_data,
+        headers: {
+            "Authorization": 'Bearer 2DFIVAEETX2rZO2kZlmRvKDbnxX91xRpzzGzIoxkT0T2FjTEUYBzynvVKSAP',
+            'Accept': 'application/json'
+        },
+        error: function(msg) {
+            console.log('error');
+            $('#room_reserve_ckeck_title').html('預約失敗');
+            $('#reserve_success').hide();
+            $('#reserve_error').show();
+            $('#reserve_error p').html(msg.responseJSON.message);
+
+        },
+        success: function(data) {
+            roomData = data;
+            $('#room_reserve_ckeck_title').html('預約成功');
+            $('#reserve_success').show();
+            $('#reserve_error').hide();
+            console.log(roomData);
+        }
+    });
+})
 </script>

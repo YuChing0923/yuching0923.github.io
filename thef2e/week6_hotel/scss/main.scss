@@ -175,7 +175,7 @@ body {
 
     .sub_logo {
         position: absolute;
-        z-index: 1;
+        z-index: 2;
         padding: 50px;
         cursor: pointer;
     }
@@ -183,10 +183,20 @@ body {
     .img_item {
         position: relative;
         overflow: hidden;
+        width: 100%;
+        cursor: pointer;
+        transition: .2s;
+
+        &:hover {
+            box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            transition: .2s;
+        }
 
         img {
             position: absolute;
             bottom: 0;
+            min-width: 100%;
         }
     }
 
@@ -329,8 +339,8 @@ body {
         line-height: 27px;
         text-align: right;
 
-        .date_price{
-        	padding: 5px 0;
+        .date_price {
+            padding: 5px 0;
         }
 
         .weekday {
@@ -354,6 +364,147 @@ body {
             letter-spacing: 1.46px;
         }
 
+    }
+
+    .reserve_date {
+        .datepicker {
+            background: #F7F7F7;
+            box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+            transition: .2s;
+
+            &:hover {
+                box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+                transition: .2s;
+            }
+
+            .ui-widget-content {
+                .ui-state-default {
+                    &.ui-state-active {
+                        color: #000;
+                    }
+                }
+            }
+        }
+
+        .reserve {
+            background: #575757;
+            color: #fff;
+            font-size: 16px;
+            letter-spacing: 1.67px;
+            text-align: center;
+            padding: 10px;
+            border: none;
+            margin-top: 30px;
+            transition: .2s;
+
+            &:hover {
+                box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+                transition: .2s;
+            }
+        }
+    }
+}
+
+.ui-widget-content {
+    background: #F7F7F7;
+
+    &.ui-widget {
+        border: none;
+        padding: 20px 5px;
+        margin: auto;
+    }
+
+    .ui-widget-header {
+        background-color: transparent;
+        border: none;
+    }
+
+    .ui-state-default {
+        background-color: transparent;
+        border: none;
+
+        &.ui-state-active {
+            color: #000;
+        }
+    }
+}
+
+.modal {
+    .img_modal {
+        img {
+            margin: auto;
+            display: block;
+        }
+    }
+
+    .form-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        label {
+            font-size: 14px;
+            letter-spacing: 1.46px;
+            text-align: center;
+        }
+
+        input {
+            width: 80%;
+        }
+
+        .inline {
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            input {
+                width: 45%;
+                display: inline-block;
+            }
+        }
+    }
+
+    .btn {
+        font-size: 14px;
+        letter-spacing: 1.46px;
+        border-radius: 0;
+        border: none;
+
+        &.btn-primary {
+            background: #484848;
+            color: #FFFFFF;
+        }
+
+        &.btn-secondary {
+            background: #D8D8D8;
+            color: #6D7278;
+        }
+    }
+
+    &#roomReserveModal {
+        .modal-footer {
+            justify-content: space-between;
+        }
+    }
+
+    &#roomReserveCheckModal {
+        #reserve_success {
+            svg {
+                width: 60px;
+                height: 60px;
+                margin: 20px auto;
+                display: block;
+            }
+        }
+
+        #reserve_error {
+            p {
+                font-size: 14px;
+                letter-spacing: 1.46px;
+            }
+        }
     }
 }
 

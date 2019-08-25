@@ -136,9 +136,9 @@ function loadAjax(roomData) {
     //cover背景輪播.e
 
     //房間資訊匯入.s
-    var roomName_ch = ['單人房', '豪華單人房', '雙人房', '豪華雙人房', '四人房', '豪華四人房']
+    var roomName_ch = ['單人房', '豪華單人房', '雙人房', '豪華雙人房', '四人房', '豪華四人房'];
     for (var i = 0; i < roomData.items.length; i++) {
-    	var dataItems = roomData.items[i];
+        var dataItems = roomData.items[i];
         $('.items').find('.row').append(
             `<div class="col-lg-4 col-sm-6 col-12">
         		<div class="room_block" onclick="changeForm('room_info', '${dataItems.id}')">
@@ -183,10 +183,10 @@ function loadAjax(roomData) {
 //************ajax load api.e************//
 
 //************css resize style.s************//
-var _winH = $(window).height(),
-    _winW = $(window).width();
 
 function resizeHW() {
+    var _winH = $(window).height(),
+        _winW = $(window).width();
     if (_winW > 768) {
         $('.cover, .main').height(_winH);
     } else {
@@ -194,11 +194,9 @@ function resizeHW() {
     }
 }
 
-$(document).ready(function() {
+resizeHW();
+$(window).resize(function() {
     resizeHW();
-    $(window).resize(function() {
-        resizeHW();
-    })
-});
+})
 //************css resize style.e************//
 </script>
