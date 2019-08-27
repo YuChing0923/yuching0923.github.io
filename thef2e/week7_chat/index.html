@@ -94,8 +94,8 @@
         $('#sidebar').toggleClass('active');
     });
 
-    $('.chatroom_collapse').on('click', function() {
-        $(this).toggleClass('open');
+    $('.chatroom_title').on('click', function() {
+        $(this).find('.chatroom_collapse').toggleClass('open');
         $(this).parents('.chatroom_group').find('.chatroom_list').toggle('.chatroom_list');
     });
 
