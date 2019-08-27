@@ -206,5 +206,50 @@ body {
         max-width: 100%;
         flex-basis: 0;
         flex-grow: 1;
+
+        .message {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            margin: 5px 10px;
+
+            .comment_time {
+                width: 40px;
+                margin: 0 15px;
+                color: #707070;
+            }
+
+            .comment_text {
+                max-width: 100%;
+                flex-basis: 0;
+                flex-grow: 1;
+                .content_block{
+                	margin: 5px 0 5px 10px;
+                	padding-left: 10px;
+                	border-left: #707070 1px solid;
+                }
+
+                .tag {
+                    color: #707070;
+                }
+
+                .id {
+                    color: #499CD6;
+                }
+
+                .attribute {
+                    color: #9CDCFE;
+                }
+
+                .attr_data {
+                    color: #CE9178;
+                }
+
+                &.chat_self {
+                    color: #6A9955;
+                    margin-left: 50px;
+                }
+            }
+        }
     }
 }
