@@ -1,0 +1,124 @@
+body {
+  font-size: 16px;
+}
+body .bg_style#white {
+  color: #000;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.dashboard .user {
+  position: relative;
+}
+.dashboard .user .user_img {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.dashboard .user .user_img img {
+  width: 100%;
+  height: auto;
+}
+.dashboard .user .user_id {
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.dashboard .search {
+  width: 220px;
+  max-width: 220px;
+  position: relative;
+}
+.dashboard .search input {
+  border: 1px solid #000000;
+  border-radius: 24.5px;
+  position: relative;
+  width: 100%;
+  height: 40px;
+}
+.dashboard .search button {
+  position: absolute;
+  right: 5px;
+  top: 7px;
+  background-color: transparent;
+  border: none;
+}
+.dashboard .light {
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#content {
+  margin-top: 20px;
+}
+#content .main_control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#content .main_control button {
+  background-color: transparent;
+  border: none;
+}
+#content .main_control .star_mark {
+  background: #EEEEEE;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+#content .main_control .star_mark span {
+  font-size: 14px;
+}
+#content .main_control .arrangement {
+  font-size: 20px;
+}
+#content .main_control .arrangement button {
+  color: #999;
+}
+#content .main_control .arrangement button.active {
+  color: #000;
+}
+#content .bookshelf#block .note_block {
+  margin-top: 30px;
+  height: 200px;
+  max-width: 150px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  transition: 0.3s;
+  background-size: cover;
+}
+#content .bookshelf#block .note_block .star {
+  position: absolute;
+  bottom: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+#content .bookshelf#block .note_block.add_note {
+  box-shadow: none;
+  text-align: center;
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+#content .bookshelf#block .note_block.add_note .plus {
+  margin-top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+}
+#content .bookshelf#block .note_block.add_note .title {
+  transform: translateY(-50%);
+}
+#content .bookshelf#block .note_block:hover {
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+  transform: scale(1.03, 1.03);
+  transition: 0.3s;
+}
+
+/*# sourceMappingURL=main.css.map */
