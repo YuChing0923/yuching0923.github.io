@@ -84,15 +84,21 @@ body .bg_style#white {
 #content .main_control .arrangement button.active {
   color: #000;
 }
+#content .bookshelf {
+  display: none;
+}
+#content .bookshelf.active {
+  display: flex;
+}
 #content .bookshelf#block .note_block {
   margin-top: 30px;
+  padding: 20px;
   height: 200px;
   max-width: 150px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  padding: 20px;
   position: relative;
-  transition: 0.3s;
+  transition: 0.2s;
   background-size: cover;
 }
 #content .bookshelf#block .note_block .star {
@@ -118,7 +124,31 @@ body .bg_style#white {
 #content .bookshelf#block .note_block:hover {
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
   transform: scale(1.03, 1.03);
-  transition: 0.3s;
+  transition: 0.2s;
+}
+#content .bookshelf#list .note_list {
+  margin-top: 30px;
+  padding: 15px;
+  background: #F4F4F4;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.2s;
+}
+#content .bookshelf#list .note_list .star {
+  cursor: pointer;
+}
+#content .bookshelf#list .note_list.add_note {
+  border: 1px solid #000000;
+  box-shadow: none;
+  background-color: transparent;
+}
+#content .bookshelf#list .note_list:hover {
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+  transform: scale(1.03, 1.03);
+  transition: 0.2s;
 }
 
 /*# sourceMappingURL=main.css.map */

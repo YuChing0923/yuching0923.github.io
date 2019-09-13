@@ -6,17 +6,17 @@
                 <span>標記星號筆記</span>
             </button>
             <div class="arrangement">
-                <button class="list">
+                <button class="" value="list">
                     <i class="fas fa-list-ul"></i>
                 </button>
-                <button class="block active">
+                <button class="active" value="block">
                     <i class="fas fa-th-large"></i>
                 </button>
             </div>
         </div>
     </div>
 </div>
-<div class="row bookshelf" id="block">
+<div class="row bookshelf active" id="block">
     <div class="col-3">
         <div class="note_block add_note">
             <div class="plus">
@@ -25,44 +25,51 @@
             <div class="title">新增筆記</div>
         </div>
     </div>
-    <div class="col-3">
-        <div class="note_block" style="background-image: url(images/cover_1.jpg); background-image: linear-gradient(to bottom, rgba(255,255,255,0.40) 0%,rgba(255,255,255,0.40) 100%), url(images/cover_1.jpg);">
-            <div class="title">生活雜記</div>
-            <div class="star">
-                <i class="fas fa-star"></i>
-            </div>
-        </div>
-    </div>
-    <div class="col-3">
-        <div class="note_block" style="background-image: url(images/cover_2.jpg); background-image: linear-gradient(to bottom, rgba(255,255,255,0.40) 0%,rgba(255,255,255,0.40) 100%), url(images/cover_2.jpg);">
-            <div class="title">美式動態設計</div>
-            <div class="star">
-                <i class="fas fa-star"></i>
-            </div>
-        </div>
-    </div>
-    <div class="col-3">
-        <div class="note_block" style="background-image: url(images/cover_3.jpg); background-image: linear-gradient(to bottom, rgba(255,255,255,0.40) 0%,rgba(255,255,255,0.40) 100%), url(images/cover_3.jpg);">
-            <div class="title">永遠的小馬哥-周潤發</div>
-            <div class="star">
-                <i class="far fa-star"></i>
-            </div>
-        </div>
-    </div>
-    <div class="col-3">
-        <div class="note_block" style="background-image: url(images/cover_4.jpg); background-image: linear-gradient(to bottom, rgba(255,255,255,0.40) 0%,rgba(255,255,255,0.40) 100%), url(images/cover_4.jpg);">
-            <div class="title">TRPG DnD 5e 簡記</div>
-            <div class="star">
-                <i class="fas fa-star"></i>
-            </div>
-        </div>
-    </div>
-    <div class="col-3">
-        <div class="note_block" style="background-image: url(images/cover_5.jpg); background-image: linear-gradient(to bottom, rgba(255,255,255,0.40) 0%,rgba(255,255,255,0.40) 100%), url(images/cover_5.jpg);">
-            <div class="title">歌單</div>
-            <div class="star">
-                <i class="far fa-star"></i>
+</div>
+<div class="row bookshelf" id="list">
+    <div class="col-6">
+        <div class="note_list add_note">
+            <div class="title">新增筆記</div>
+            <div class="plus">
+                <i class="fas fa-plus"></i>
             </div>
         </div>
     </div>
 </div>
+<script>
+$('.arrangement button').on('click', function() {
+    var arrangementType = $(this).val();
+    $('.bookshelf, .arrangement button').removeClass('active');
+    $(this).add('#' + arrangementType).addClass('active');
+});
+console.log(note);
+function noteRender(data) {
+    $('#block').append(
+        `<div class="col-3">
+            <div class="note_block" style="background-image: url(${data.backgroundImg}); background-image: linear-gradient(to bottom, rgba(255,255,255,0.40) 0%,rgba(255,255,255,0.40) 100%), url(${data.backgroundImg});">
+                <div class="title">${data.noteTitle}</div>
+                <div class="star">${starMark(data)}</div>
+            </div>
+        </div>`
+    );
+    $('#list').append(
+        `<div class="col-6">
+            <div class="note_list">
+                <div class="title">${data.noteTitle}</div>
+                <div class="star">${starMark(data)}</div>
+            </div>
+        </div>`
+    );
+}
+function starMark(noteData) {
+    if (noteData.star) {
+        return '<i class="fas fa-star"></i>'
+    } else {
+        return '<i class="far fa-star"></i>'
+    }
+}
+for (var i = 0; i <= note.length - 1; i++) {
+    var noteData = note[i];
+    noteRender(noteData);
+}
+</script>

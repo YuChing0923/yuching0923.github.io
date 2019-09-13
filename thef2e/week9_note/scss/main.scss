@@ -110,31 +110,36 @@ body {
     }
 
     .bookshelf {
+        display: none;
+
+        &.active {
+            display: flex;
+        }
 
         &#block {
             .note_block {
-        		margin-top: 30px;
+                margin-top: 30px;
+                padding: 20px;
                 height: 200px;
                 max-width: 150px;
-                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
                 border-radius: 10px;
-                padding: 20px;
                 position: relative;
-                transition: .3s;
+                transition: .2s;
                 background-size: cover;
 
                 .star {
                     position: absolute;
                     bottom: 20px;
                     font-size: 20px;
-                	cursor: pointer;
+                    cursor: pointer;
                 }
 
                 &.add_note {
                     box-shadow: none;
                     text-align: center;
                     border: 1px solid #000000;
-                	cursor: pointer;
+                    cursor: pointer;
 
                     .plus {
                         margin-top: 50%;
@@ -150,7 +155,37 @@ body {
                 &:hover {
                     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
                     transform: scale(1.03, 1.03);
-                    transition: .3s;
+                    transition: .2s;
+                }
+            }
+        }
+
+        &#list {
+            .note_list {
+                margin-top: 30px;
+                padding: 15px;
+                background: #F4F4F4;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+                border-radius: 5px;
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                transition: .2s;
+
+                .star {
+                    cursor: pointer;
+                }
+
+                &.add_note {
+                    border: 1px solid #000000;
+                    box-shadow: none;
+                    background-color: transparent;
+                }
+
+                &:hover {
+                    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+                    transform: scale(1.03, 1.03);
+                    transition: .2s;
                 }
             }
         }
