@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3dddfb2a.chunk.css",
+    "main.js": "/static/js/main.7366c144.chunk.js",
+    "main.js.map": "/static/js/main.7366c144.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.9ac9de2a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.9ac9de2a.js.map",
+    "static/css/2.14169a37.chunk.css": "/static/css/2.14169a37.chunk.css",
+    "static/js/2.a44dbfcc.chunk.js": "/static/js/2.a44dbfcc.chunk.js",
+    "static/js/2.a44dbfcc.chunk.js.map": "/static/js/2.a44dbfcc.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.91c09177c364b9cf064d0e6c74372e57.js": "/precache-manifest.91c09177c364b9cf064d0e6c74372e57.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.14169a37.chunk.css.map": "/static/css/2.14169a37.chunk.css.map",
+    "static/css/main.3dddfb2a.chunk.css.map": "/static/css/main.3dddfb2a.chunk.css.map",
+    "static/media/envelope-solid.svg": "/static/media/envelope-solid.475ad199.svg",
+    "static/media/facebook-square-brands.svg": "/static/media/facebook-square-brands.7df7570f.svg",
+    "static/media/home-solid.svg": "/static/media/home-solid.1600889c.svg",
+    "static/media/info_icon-bar.svg": "/static/media/info_icon-bar.92950803.svg",
+    "static/media/info_icon-breakfast.svg": "/static/media/info_icon-breakfast.c4c2c972.svg",
+    "static/media/info_icon-breeze.svg": "/static/media/info_icon-breeze.410d1c42.svg",
+    "static/media/info_icon-crawling-baby-silhouette.svg": "/static/media/info_icon-crawling-baby-silhouette.c76c9ad5.svg",
+    "static/media/info_icon-dog.svg": "/static/media/info_icon-dog.6a06afa1.svg",
+    "static/media/info_icon-mountain-range.svg": "/static/media/info_icon-mountain-range.ad2b689a.svg",
+    "static/media/info_icon-no-smoke-symbol.svg": "/static/media/info_icon-no-smoke-symbol.74436c49.svg",
+    "static/media/info_icon-phone.svg": "/static/media/info_icon-phone.16543ec9.svg",
+    "static/media/info_icon-room_service.svg": "/static/media/info_icon-room_service.ef31df00.svg",
+    "static/media/info_icon-tick-inside-circle.svg": "/static/media/info_icon-tick-inside-circle.1874126e.svg",
+    "static/media/info_icon-wifi.svg": "/static/media/info_icon-wifi.7e9c444b.svg",
+    "static/media/instagram-brands.svg": "/static/media/instagram-brands.cc5e92b0.svg",
+    "static/media/logo_block.svg": "/static/media/logo_block.d4ac2160.svg",
+    "static/media/logo_white.svg": "/static/media/logo_white.2540fc08.svg",
+    "static/media/phone-alt-solid.svg": "/static/media/phone-alt-solid.6dbf65e5.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9ac9de2a.js",
+    "static/css/2.14169a37.chunk.css",
+    "static/js/2.a44dbfcc.chunk.js",
+    "static/css/main.3dddfb2a.chunk.css",
+    "static/js/main.7366c144.chunk.js"
+  ]
+}
