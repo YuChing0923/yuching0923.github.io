@@ -351,20 +351,21 @@
     playingSongInfo(playlist[0].title, playlist[0].artist, playlist[0].poster_lg);
     $("#jquery_jplayer_1").bind($.jPlayer.event.play, function(event) {
         // console.log(event);
-        var _song_title = event.jPlayer.status.media.title,
-            _song_artist = event.jPlayer.status.media.artist,
-            _song_poster = event.jPlayer.status.media.poster_lg,
-            _list_span = $('#top_song_list li').find('.song_name:contains(' + _song_title + ')');
-        playingSongInfo(_song_title, _song_artist, _song_poster);
+        var _song = event.jPlayer.status.media,
+            _songTitle = _song.title,
+            _songArtist = _song.artist,
+            _songPoster = _song.poster_lg,
+            _listSpan = $('#top_song_list li').find('.song_name:contains(' + _songTitle + ')');
+        playingSongInfo(_songTitle, _songArtist, _songPoster);
         $('#top_song_list li').removeClass('active');
-        _list_span.parents('li').addClass('active');
+        _listSpan.parents('li').addClass('active');
     });
 
     $("#jquery_jplayer_1").bind($.jPlayer.event.ended, function(event) {
-        var _song_title = event.jPlayer.status.media.title,
-            _last_song_index = $('#top_song_list li').length - 1,
-            _last_song = $('#top_song_list li').eq(_last_song_index).find('.song_name').html();
-        if (_song_title == _last_song) {
+        var _songTitle = event.jPlayer.status.media.title,
+            _lastSongIndex = $('#top_song_list li').length - 1,
+            _lastSong = $('#top_song_list li').eq(_lastSongIndex).find('.song_name').html();
+        if (_songTitle == _lastSong) {
             myPlaylist.play(0);
         }
     });
