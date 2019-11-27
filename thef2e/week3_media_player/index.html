@@ -172,10 +172,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="jp-toggles">
-                                    <button class="jp-repeat" role="button" tabindex="0">repeat</button>
-                                    <button class="jp-shuffle" role="button" tabindex="0">shuffle</button>
-                                </div>
                             </div>
                         </div>
                         <div class="jp-playlist">
@@ -315,6 +311,9 @@
     });
     $('.jp-random').on('click', function() {
         myPlaylist.shuffle();
+    });
+    $('.jp-random, .jp-replay').on('click', function() {
+        $(this).toggleClass('active');
     });
 
     /////////////////rander top song
