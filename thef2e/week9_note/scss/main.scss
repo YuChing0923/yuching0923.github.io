@@ -1,0 +1,195 @@
+body {
+    font-size: 16px;
+
+    // bg_style css start
+    .bg_style {
+        &#white {
+            color: #000;
+        }
+    }
+
+    // bg_style css end
+}
+
+// dashboard css start
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+
+    .user {
+        position: relative;
+
+        .user_img {
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            border-radius: 20px;
+            display: inline-block;
+            vertical-align: middle;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .user_id {
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+    }
+
+    .search {
+        width: 220px;
+        max-width: 220px;
+        position: relative;
+
+        input {
+            border: 1px solid #000000;
+            border-radius: 24.5px;
+            position: relative;
+            width: 100%;
+            height: 40px;
+        }
+
+        button {
+            position: absolute;
+            right: 5px;
+            top: 7px;
+            background-color: transparent;
+            border: none;
+        }
+    }
+
+    .light {
+        position: relative;
+        cursor: pointer;
+        font-size: 20px;
+    }
+}
+
+// dashboard css end
+
+// main css start
+#content {
+    margin-top: 20px;
+
+    .main_control {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            background-color: transparent;
+            border: none;
+        }
+
+        .star_mark {
+            background: #EEEEEE;
+            border-radius: 5px;
+            padding: 10px 15px;
+
+            span {
+                font-size: 14px;
+            }
+        }
+
+        .arrangement {
+            font-size: 20px;
+
+            button {
+                color: #999;
+
+                &.active {
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    .bookshelf {
+        display: none;
+
+        &.active {
+            display: flex;
+        }
+
+        &#block {
+            .note_block {
+                margin-top: 30px;
+                padding: 20px;
+                height: 200px;
+                max-width: 150px;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+                border-radius: 10px;
+                position: relative;
+                transition: .2s;
+                background-size: cover;
+
+                .star {
+                    position: absolute;
+                    bottom: 20px;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+
+                &.add_note {
+                    box-shadow: none;
+                    text-align: center;
+                    border: 1px solid #000000;
+                    cursor: pointer;
+
+                    .plus {
+                        margin-top: 50%;
+                        transform: translateY(-50%);
+                        font-size: 30px;
+                    }
+
+                    .title {
+                        transform: translateY(-50%);
+                    }
+                }
+
+                &:hover {
+                    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+                    transform: scale(1.03, 1.03);
+                    transition: .2s;
+                }
+            }
+        }
+
+        &#list {
+            .note_list {
+                margin-top: 30px;
+                padding: 15px;
+                background: #F4F4F4;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+                border-radius: 5px;
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                transition: .2s;
+
+                .star {
+                    cursor: pointer;
+                }
+
+                &.add_note {
+                    border: 1px solid #000000;
+                    box-shadow: none;
+                    background-color: transparent;
+                }
+
+                &:hover {
+                    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+                    transform: scale(1.03, 1.03);
+                    transition: .2s;
+                }
+            }
+        }
+    }
+}
+
+// main css end

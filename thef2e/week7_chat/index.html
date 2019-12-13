@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <title>chat room</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="../html/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../html/fontawesome-free-5.9.0-web/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="main_container">
+        <div id="sidebar" class="active">
+            <div class="title">
+                <span><i class="fas fa-users lobby_icon"></i> 聊天大廳</span>
+                <button class="none_border" id="collapse" style="float: right;">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+            <div class="inner scroll">
+                <div class="chat_type">
+                    <div class="type_button">
+                        <button>隨機1對1配對</button>
+                    </div>
+                    <div class="type_button">
+                        <button>隨機進入群組</button>
+                    </div>
+                </div>
+                <div class="search">
+                    <input type="text" placeholder="搜尋聊天室名稱或編號">
+                </div>
+                <div class="chatroom_group">
+                    <div class="chatroom_title">
+                        <span class="chatroom_collapse open">
+                            <i class="fas fa-sort-down"></i>
+                        </span>
+                        <span>公開聊天室</span>
+                        <span class="chatroom_quant">(11)</span>
+                    </div>
+                    <div class="chatroom_list">
+                        <div class="chatroom_item">
+                            <span class="chatroom_no">C001</span>
+                            <span class="chatroom_name">聊天室名字</span>
+                            <span class="chatroom_members">3 / 15</span>
+                        </div>
+                        <div class="chatroom_item">
+                            <span class="chatroom_no">C001</span>
+                            <span class="chatroom_name">聊天室名字</span>
+                            <span class="chatroom_members">3 / 15</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chatroom_group">
+                    <div class="chatroom_title">
+                        <span class="chatroom_collapse open">
+                            <i class="fas fa-sort-down"></i>
+                        </span>
+                        <span>公開聊天室</span>
+                        <span class="chatroom_quant">(11)</span>
+                    </div>
+                    <div class="chatroom_list">
+                        <div class="chatroom_item">
+                            <span class="chatroom_no">C001</span>
+                            <span class="chatroom_name">聊天室名字</span>
+                            <span class="chatroom_members">3 / 15</span>
+                        </div>
+                        <div class="chatroom_item">
+                            <span class="chatroom_no">C001</span>
+                            <span class="chatroom_name">聊天室名字</span>
+                            <span class="chatroom_members">3 / 15</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="inner" id="add_room">
+                <button>新增聊天室</button>
+            </div>
+        </div>
+        <div id="content"></div>
+    </div>
+    <script src="../html/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="../html/bootstrap-4.3.1-dist/popper.min.js" type="text/javascript"></script>
+    <script src="../html/bootstrap-4.3.1-dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../html/js/jquery-migrate-1.1.1.js" type="text/javascript"></script>
+    <script src="../html/js/jquery.history.js" type="text/javascript"></script>
+    <!-- <script src="../html/fontawesome-free-5.9.0-web/js/all.min.js" type="text/javascript"></script> -->
+    <script src="js/init_url.js" type="text/javascript"></script>
+    <script>
+    $('#collapse').on('click', function() {
+        $('#sidebar').toggleClass('active');
+    });
+
+    $('.chatroom_title').on('click', function() {
+        $(this).find('.chatroom_collapse').toggleClass('open');
+        $(this).parents('.chatroom_group').find('.chatroom_list').toggle('.chatroom_list');
+    });
+
+    function styleResize() {
+        var _winW = $(window).width(),
+            _winH = $(window).height(),
+            _addBtnH = $('#sidebar').find('#add_room').outerHeight(true),
+            _sideTitleH = $('#sidebar').find('.title').outerHeight(true);
+            console.log(_winH);
+            console.log(_sideTitleH);
+            console.log(_addBtnH);
+        $('.inner.scroll').height(_winH - _sideTitleH - _addBtnH);
+    }
+    styleResize();
+    $(window).resize(styleResize);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+html,
+body {
+    height: 100%;
+    // overflow: hidden;
+    font-size: 16px;
+    color: #EEE9B5;
+    background-color: #2C2C2C;
+}
+
+// main css start
+#main {
+    height: 100%;
+    display: -ms-flex;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 40px;
+    align-content: flex-start;
+    max-width: 1170px;
+    margin: auto;
+
+    .main_row {
+        width: 100%;
+        padding: 0 15px;
+        display: -ms-flex;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        position: relative;
+
+        // card_block css start
+        .card_block {
+            max-width: 92px;
+            // max-height: 143px;
+            width: 100%;
+            height: 143px;
+            background-color: #252424;
+            border: 1px transparent solid;
+            border-radius: 7px;
+        }
+
+        // card_block css end
+
+        // card_set css start
+        &.card_set {
+            width: 50%;
+
+            .card_block {
+                border: 1px #565656 solid;
+                border-radius: 7px;
+            }
+        }
+
+        // card_set css end
+
+        // card_sort css start
+        &#card_sort {
+            img {
+                position: absolute;
+                transition: .2s;
+                opacity: 1;
+            }
+        }
+
+        // card_sort css start
+
+        // card_shuffle css start
+        &#card_shuffle {
+            display: -ms-flex;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            width: 100%;
+            padding-top: 30px;
+            z-index: 1;
+
+            .card_column {
+                width: 100%;
+                min-height: 350px;
+                position: relative;
+
+                .card_block {
+                    position: absolute;
+                    margin: 0 auto;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color: transparent;
+
+                    @for $i from 1 through 52 {
+                        &:nth-child(#{$i}) {
+                            top: ($i - 1) * 35px;
+                        }
+                    }
+                }
+            }
+        }
+
+        // card_shuffle css end
+
+        // control css start
+        &#control {
+            display: block;
+            position: absolute;
+            bottom: 20px;
+            max-width: 1170px;
+
+            #timer {
+                float: right;
+                margin-right: 30px;
+                font-size: 24px;
+            }
+        }
+
+        // control css end
+    }
+
+}
+
+// button css start
+button.control_button {
+    background-color: #161616;
+    border: none;
+    padding: 7px 20px;
+    border-radius: 30px;
+    color: #EEE9B5;
+    transition: .2s;
+
+    &:hover {
+        background-color: #404040;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        transition: .2s;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+// button css end
+
+// draggable css start
+[draggable="true"] {
+    /*
+   To prevent user selecting inside the drag source
+  */
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    cursor: grab;
+}
+
+// draggable css end
+
+// modal css start
+#modal {
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    padding-top: 30%;
+
+    .over {
+        display: block;
+        position: relative;
+        text-align: center;
+        font-size: 30px;
+        display: none;
+    }
+
+    button.control_button {
+        margin: auto;
+        display: block;
+        font-size: 42px;
+        padding: 30px 80px;
+        border-radius: 200px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, .7);
+        top: 50%;
+        transition: .2s;
+
+        &:hover {
+            background-color: #0c0c0c;
+            box-shadow: 0 0 30px rgba(0, 0, 0, .7);
+            transition: .2s;
+        }
+    }
+}
+
+// modal css end
+
+// main css end

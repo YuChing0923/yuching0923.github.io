@@ -1,0 +1,558 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+// nav css start
+.nav {
+    background-color: #474642;
+    height: 100%;
+    width: 70px;
+    position: fixed;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            padding: 10px 20px;
+            color: #fff;
+            font-size: 30px;
+
+            &.active {
+                background-color: #49B5FF;
+
+                &:hover {
+                    background-color: #49B5FF;
+                }
+            }
+
+            &:hover {
+                background-color: #383734;
+            }
+        }
+
+        &.user {
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 0;
+        }
+    }
+}
+
+// nav css end
+// main css start
+.main {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#47adff+0,a2cbe1+100 */
+    background: #47adff;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #47adff 0%, #a2cbe1 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #47adff 0%, #a2cbe1 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #47adff 0%, #a2cbe1 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#47adff', endColorstr='#a2cbe1', GradientType=0);
+    /* IE6-9 */
+    height: 100%;
+
+    .container-fluid {
+
+        &,
+        #content,
+        #content .list,
+        #content .analyze {
+
+            &,
+            >.row,
+            >.row>div[class^="col"],
+            >.row>div[class^="col"] .menu {
+                height: 100%;
+            }
+        }
+
+        .menu {
+            background-color: #E5E8ED;
+            box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+            position: relative;
+            z-index: 1;
+
+            .schedule_list {
+                border-radius: 10px;
+                background-color: #fff;
+                max-height: 50%;
+
+                &.complete {
+                    max-height: 25%;
+                    top: 30px;
+                }
+
+                .list_content {
+                    max-height: 400px;
+                    overflow: hidden;
+                    overflow-y: auto;
+
+                    .schedule_row.last {
+                        padding-bottom: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+// main css end
+// schedule_list css start
+.schedule_list {
+    display: block;
+    margin-left: 100px;
+    margin-bottom: 100px;
+    width: 100%;
+    position: relative;
+    top: 50px;
+
+    .list_title {
+        border-radius: 10px 10px 0 0;
+        background-color: #FF8F95;
+        color: #fff;
+        font-weight: 700;
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+
+    .list_content {
+        .schedule_row {
+            padding: 10px;
+            border-bottom: #E5E8ED 3px solid;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:hover {
+                box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+                cursor: pointer;
+            }
+
+            .mission_icon {
+                display: inline-block;
+                height: 30px;
+                width: 30px;
+                border: #FF8F95 5px solid;
+                border-radius: 15px;
+                vertical-align: middle;
+            }
+
+            .schedule_text {
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 10px;
+                font-size: 18px;
+            }
+        }
+    }
+
+    &.complete {
+        .list_title {
+            background-color: #72D672;
+        }
+
+        .list_content {
+            max-height: 200px;
+
+            .schedule_row {
+                color: #999;
+
+                &:hover {
+                    box-shadow: none;
+                }
+
+                .mission_icon {
+                    border: #72D672 5px solid;
+                }
+            }
+        }
+    }
+}
+
+.add_mission {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    bottom: -30px;
+    left: 50%;
+    margin-left: -30px;
+    border-radius: 30px;
+    color: #fff;
+    padding: 11px 0 0 18px;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffc5c5+0,ff8f95+100 */
+    background: #ff8f95;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #ffc5c5 0%, #ff8f95 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffc5c5 0%, #ff8f95 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffc5c5 0%, #ff8f95 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc5c5', endColorstr='#ff8f95', GradientType=0);
+    /* IE6-9 */
+
+    &:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+        background: #ff8f95;
+    }
+}
+
+// schedule_list css end
+
+// header css start
+.header {
+    margin-top: 30px;
+    border-bottom: rgba(255, 255, 255, .5) 2px solid;
+    color: #fff;
+
+    .date,
+    .calendar {
+        display: inline-block;
+    }
+
+    .date {
+        font-size: 42px;
+    }
+
+    .calendar {
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 18px;
+        padding-right: 10px;
+    }
+}
+
+// header css end
+// counter css start
+.counter {
+    margin-left: 100px;
+    color: #fff;
+
+    .clock {
+        box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+        width: 80%;
+        max-width: 600px;
+        max-height: 600px;
+        border: 10px #fff solid;
+        border-radius: 300px;
+        background-color: #9CD2F5;
+        margin: 50px auto;
+        position: relative;
+
+        #clock_timer {
+            font-size: 42px;
+            text-align: center;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: 1s;
+            .clock_timer_data{
+            	display: inline-block;
+            }
+        }
+
+        #clock_div {
+        	width: 100%;
+        	height: 100%;
+        	position: absolute;
+            transform: rotate(6deg);
+            .clock_pointer {
+                width: 30px;
+                height: 30px;
+                background-color: #fff;
+                border-radius: 15px;
+                margin: -15px auto;
+            }
+        }
+    }
+
+    .clock_play ul {
+        list-style: none;
+        padding-left: 0;
+        text-align: center;
+        display: block;
+
+        li {
+            display: inline-block;
+            margin: 0 -2px;
+
+            &:first-child {
+                a {
+                    border-radius: 20px 0 0 20px;
+                }
+            }
+
+            &:last-child {
+                a {
+                    border-radius: 0 20px 20px 0;
+                }
+            }
+
+            a {
+                color: #fff;
+                /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffc5c5+0,ff8f95+100 */
+                background: #ff8f95;
+                /* Old browsers */
+                background: -moz-linear-gradient(top, #ffc5c5 0%, #ff8f95 100%);
+                /* FF3.6-15 */
+                background: -webkit-linear-gradient(top, #ffc5c5 0%, #ff8f95 100%);
+                /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom, #ffc5c5 0%, #ff8f95 100%);
+                /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc5c5', endColorstr='#ff8f95', GradientType=0);
+                /* IE6-9 */
+                padding: 10px 30px;
+            }
+
+            &.active a {
+                background: #ff8f95;
+            }
+
+            &:hover a {
+                background: #f58086;
+            }
+        }
+    }
+
+    .mission {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 24px;
+    }
+}
+
+// counter css end
+// analyze css start
+.analyze {
+    margin-left: 100px;
+    padding-right: 50px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+
+    .analyze_block {
+        padding: 20px 40px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+        margin-top: 30px;
+    }
+
+    .analyze_table {
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .date {
+            color: #666;
+            font-size: 14px;
+        }
+
+        table {
+            margin-top: 30px;
+
+            .statistics_data {
+                text-align: right;
+                padding-top: 0;
+                width: 60px;
+
+                span {
+                    margin-top: -3px;
+                    vertical-align: middle;
+
+                    &:after {
+                        content: '';
+                        display: inline-block;
+                        background-color: #dee2e6;
+                        border-radius: 5px;
+                        width: 10px;
+                        height: 2px;
+                        margin-left: 10px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+
+            .analyze_dot {
+                display: block;
+                width: 70%;
+                height: 10px;
+                border-radius: 15px;
+                vertical-align: middle;
+                margin: 3px auto -3px;
+
+                &.complete {
+                    background-color: #72D672;
+                }
+
+                &.undone {
+                    background-color: #FF8F95;
+                }
+            }
+
+            tr {
+                &:nth-last-child(2) {
+                    td {
+                        padding-bottom: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    .statistics {
+        .statistics_title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .statistics_content {
+            .statistics_span {
+                vertical-align: bottom;
+                display: inline-block;
+
+                &.statistics_count {
+                    font-size: 30px;
+                    font-weight: 700;
+                }
+
+                &.statistics_text {
+                    padding-bottom: 5px;
+                }
+            }
+        }
+    }
+}
+
+// analyze css end
+// list css start
+.list {
+    .menu {
+        .header {
+            margin-top: 0;
+            padding-left: 70px;
+            color: #474642;
+            border-color: #B6B8BA;
+        }
+
+        .date_menu {
+            padding-left: 55px;
+
+            ul {
+                list-style: none;
+                padding: 0;
+
+                li {
+                    padding: 10px 20px;
+                    position: relative;
+                    border-bottom: 2px #C5C9CC solid;
+
+                    &:last-child {
+                        border: none;
+                    }
+
+                    &.active {
+                        background-color: #C5C9CC;
+
+                        &:after {
+                            content: '';
+                            width: 0;
+                            height: 0;
+                            border-style: solid;
+                            border-width: 22px 0 22px 10px;
+                            border-color: transparent transparent transparent #C5C9CC;
+                            position: absolute;
+                            right: -10px;
+                            margin-top: -10px;
+                        }
+
+                        &:hover {
+                            background-color: #C5C9CC;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: #ddd;
+                    }
+                }
+            }
+        }
+
+        .add_mission {
+            margin-left: 0;
+            bottom: 5%;
+            right: -15px;
+            left: inherit;
+            z-index: 10;
+        }
+    }
+
+    .main_list {
+        .schedule_list {
+            margin-left: 0;
+            top: 0;
+            margin-bottom: 20px;
+
+            .list_title {
+                background-color: transparent;
+                color: #fff;
+            }
+
+            .list_content {
+                .schedule_row {
+                    border-bottom: none;
+                    background-color: #C7E2F5;
+                    border-radius: 10px;
+                    margin-bottom: 10px;
+                    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+
+                    &:hover {
+                        box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+                    }
+
+                    &.complete {
+                        background-color: #fff;
+
+                        .mission_icon {
+                            border: #72D672 5px solid;
+                        }
+
+                        .tomato_count {
+                            display: inline-block;
+                            height: 10px;
+                            width: 10px;
+                            border: #72D672 3px solid;
+                            border-radius: 5px;
+                            float: right;
+                            margin: 10px 0 0 5px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+// list css end
