@@ -1,3 +1,158 @@
+// menu fix JS start
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 50) {
+        $('.navbar-nav').addClass('fixed_header');
+    } else {
+        $('.navbar-nav').removeClass('fixed_header');
+    }
+});
+// menu fix JS end
+
+// owlCarousel js
+// banner owlCarousel start
+$('#banner_img').owlCarousel({
+    loop: true,
+    nav: true,
+    dots: true,
+    items: 1,
+    autoplay: true,
+    margin: 0,
+    autoplayTimeout: 5500,
+    navText: ["<", ">"]
+})
+// banner owlCarousel start
+
+// news JS start
+$('.news_main .content_title').matchHeight();
+// news JS end
+
+// video owlCarousel start
+$('#video_carousel').owlCarousel({
+    loop: true,
+    // nav: true,
+    items: 1,
+    autoplay: true,
+    margin: 0,
+    autoplayTimeout: 5500,
+    navText: ["<", ">"],
+    responsive: {
+        0: {
+            nav: false,
+            dots: true
+        },
+        320: {
+            nav: false,
+            dots: true
+        },
+        480: {
+            nav: false,
+            dots: true
+        },
+        850: {
+            nav: false,
+            dots: true
+        },
+        1400: {
+            nav: true,
+            dots: false
+        },
+    }
+})
+// video owlCarousel end
+
+// theme owlCarousel start
+$('#theme_carousel').owlCarousel({
+    loop: true,
+    // dots: true,
+    // autoplay: true,
+    autoplayHoverPause: true,
+    navText: ["<", ">"],
+    responsive: {
+        0: {
+            items: 1,
+            dots: true,
+            nav: false
+        },
+        320: {
+            items: 2,
+            dots: true,
+            nav: false
+        },
+        480: {
+            items: 3,
+            dots: true,
+            nav: true
+        },
+        850: {
+            items: 4,
+            nav: true,
+            margin: 15,
+            dots: false
+        },
+        1200: {
+            items: 4,
+            nav: false,
+            margin: 30
+        },
+        1400: {
+            items: 4,
+            nav: true,
+            margin: 30
+        },
+    }
+});
+// theme owlCarousel end
+
+// relativeLink owlCarousel start
+$('#owl_relative').owlCarousel({
+    loop: true,
+    dots: true,
+    autoplay: true,
+    // autoplayHoverPause: true,
+    navText: ["<", ">"],
+    responsive: {
+        0: {
+            items: 1,
+            nav: false
+        },
+        320: {
+            items: 2,
+            nav: false
+        },
+        480: {
+            items: 3,
+            nav: false
+        },
+        850: {
+            items: 4,
+            nav: true,
+            margin: 15
+        },
+        992: {
+            items: 4,
+            nav: false,
+            margin: 30
+        },
+        1170: {
+            items: 4,
+            nav: true,
+            margin: 30
+        },
+        1200: {
+            items: 4,
+            nav: false,
+            margin: 50
+        },
+        1400: {
+            items: 4,
+            nav: true,
+            margin: 100
+        },
+    }
+});
+// relativeLink owlCarousel end
+// owlCarousel js
+
 // footerNav JS start
 $(function () {
     $('.footer_click').click(function () {
@@ -9,151 +164,48 @@ $(function () {
 });
 // footerNav JS end
 
-// menu fix JS start
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 50) {
-        $('.navbar-nav').addClass('fixed_header');
-        // $(".recommend_link").css("position", "relative");
-    } else {
-        $('.navbar-nav').removeClass('fixed_header');
-        // $(".recommend_link").css("position", "absolute");
-    }
-});
-// menu fix JS end
-
-// window 
-$(window).on("load resize scroll", function() {
-    
-    
-
-});
-
-// f_index start
+// tweenMax JS start
 $(function () {
-    // datepicker
-    $('#date_start, #date_end').datepicker({
-        language: 'zh-TW',
-        format: 'yyyy-mm-dd',
-        todayHighlight: true,
-        autoclose: true,
+    // init controller
+    var controller = new ScrollMagic.Controller();
+
+    $('.news_main').show(function () {
+        var tl = new TimelineLite();
+        var tween = tl.staggerFrom([".block_img:eq(0)", ".block_img:eq(1)", ".block_img:eq(2)"], 0.3, {
+            autoAlpha: 0,
+            scaleX: 0.7,
+            x: -50
+        }, 0.2);
+        var scene = new ScrollMagic.Scene({
+                triggerElement: ".recommend_link",
+            })
+            .setTween(tween)
+            .addTo(controller);
+    });
+
+    $('.purpose_link').show(function () {
+        var tl = new TimelineLite();
+        var tween = tl.staggerFrom([".purpose_icon:eq(0)", ".purpose_icon:eq(1)", ".purpose_icon:eq(2)", ".purpose_icon:eq(3)", ".purpose_icon:eq(4)", ".purpose_icon:eq(5)"], 0.5, {
+            autoAlpha: 0,
+            scale: "-=0.5"
+        }, 0.1);
+        var scene = new ScrollMagic.Scene({
+                triggerElement: ".purpose_link",
+            })
+            .setTween(tween)
+            .addTo(controller);
+    });
+
+    $('.video_iframe iframe').show(function () {
+        var tween = TweenMax.from($(this), 0.5, {
+            autoAlpha: 0,
+            delay: 0.2,
+        });
+        var scene = new ScrollMagic.Scene({
+                triggerElement: ".video",
+            })
+            .setTween(tween)
+            .addTo(controller);
     });
 });
-
-// // pathCtrl parameter
-var menu_path_1 = "",
-    menu_path_2 = "",
-    menu_path_3 = "",
-    nav_target = "";
-var localPathArr = {
-    "nav_target": nav_target,
-    "menu_path_1": menu_path_1,
-    "menu_path_2": menu_path_2,
-    "menu_path_3": menu_path_3
-}
-
-// leftmenu 控制 active and 存麵包屑
-function leftMenuCtrl(localPathArr) {
-    var path1 = localPathArr.menu_path_1,
-        path2 = localPathArr.menu_path_2,
-        path3 = localPathArr.menu_path_3;
-    // path2 add active
-    if (path2) {
-        $("#left_menu_list").find("li.mainmenu_item").each(function (i, e) {
-            if ($(e).attr("title") == path2) {
-                $(e).siblings('li').removeClass('active');
-                $(e).addClass("active");
-            }
-        });
-    }
-    // path3 add active
-    if (path3) {
-        $("#left_menu_list").find("li.mainmenu_item").find("li.submenu_item").each(function (i, e) {
-            if ($(e).attr("title") == path3) {
-                $(e).siblings('li').removeClass('active');
-                $(e).addClass("active");
-            }
-        });
-    }
-
-    $("#left_menu_list").find("li").on("click", function (e) {
-        localPathArr.menu_path_1 = $(".left_menu_title").find("h2").html();
-        var is_submenu = $(this).hasClass("submenu_item");
-        var has_submenu = $(this).children("ul.submenu").length;
-        if (!has_submenu) {
-            // no submenu
-            if (!is_submenu) {
-                // not submenu item
-                localPathArr.menu_path_2 = $(this).attr("title");
-                localPathArr.menu_path_3 = null;
-                $(this).addClass("active")
-                $(this).siblings('li').removeClass('active');
-                // pathCtrl();
-            } else {
-                // submenu item
-                localPathArr.menu_path_2 = $(this).parents("li.mainmenu_item").attr("title");
-                localPathArr.menu_path_3 = $(this).attr("title");
-                $(this).addClass('active');
-                $(this).siblings('li.submenu_item').removeClass('active');
-                $(this).parents("li.mainmenu_item").addClass("active");
-                $(this).parents("li.mainmenu_item").siblings("li.mainmenu_item").removeClass("active");
-                // pathCtrl();
-                return false;
-            }
-        } else {
-            // has submenu
-            if ($(this).hasClass("open")) {
-                $(this).removeClass("open").addClass("closed");
-                $(this).removeClass("active");
-            } else if ($(this).hasClass("closed")) {
-                $(this).removeClass("closed").addClass("open");
-                $(this).siblings('li').removeClass('active');
-                $(this).toggleClass('active');
-            }
-            // pathCtrl();
-        }
-
-    });
-}
-
-// 取麵包屑
-// function // pathCtrl() {
-//     var path_1 = localPathArr.menu_path_1,
-//         path_2 = localPathArr.menu_path_2,
-//         path_3 = localPathArr.menu_path_3;
-
-//     $(".path_1.JQ").html(path_1);
-//     $(".main_content_title.JQ").html(path_1);
-
-//     if (path_1 == path_2) {
-//         $(".path_2_angle.JQ").hide();
-//         $(".path_2.JQ").hide();
-//         $(".path_3_angle.JQ").hide();
-//         $(".path_3.JQ").hide();
-//     }
-
-//     if (path_3) {
-//         $(".main_content_title.JQ").html(path_3);
-//         $(".path_3.JQ").html(path_3);
-//         $(".path_3_angle.JQ").show();
-//         $(".path_2.JQ").html(path_2);
-//     } else if (!path_3 && path_2) {
-//         $(".main_content_title.JQ").html(path_2);
-//         $(".path_2.JQ").html(path_2);
-//         $(".path_3_angle.JQ").hide();
-//         $(".path_3.JQ").hide();
-//     }
-// }
-
-function goBack() {
-    window.history.back();
-}
-
-function goTop() {
-    $('html, body').animate({
-        scrollTop: 0
-    }, 'slow');
-}
-// f_index end
-// s_index start
-
-// s_index end
+// tweenMax JS end
