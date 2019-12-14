@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <title>自來水全球資訊網</title>
+    <!-- Bootstrap Core CSS -->
+    <!-- <link href="css/animate.min.css" rel="stylesheet"> -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/owl.theme.default.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--Customize-->
+    <link href="css/main.css" rel="stylesheet">
+    <style>
+        .top{
+            background-color: #fff;
+            color: #383838;
+            font-weight: 600;
+        }
+        .top a {
+            color: #383838;
+            font-weight: 700;
+        }
+        .top_nav a {
+            font-weight: 400;
+        }
+        .top .searchInput{
+            border: solid 1px #adadad;
+        }
+        .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+            border-bottom: solid 6px #999;
+        }
+        .top .fixed_header {
+            background-color: #fff;
+        }
+        .recommend_link{
+            /*background-color: rgba(45, 18, 18, 0.7);*/
+        }
+        .tab-content .col-sm-4 .block_content {
+            border: solid 1px #999;
+        }
+        .tab-content .col-sm-4 .block_content:after {
+            background-color: #999;
+        }
+        .principal_main .principal_content .principal_content_more {
+            background-color: #666;
+        }
+        .principal_bg{
+            /*background-color: #f9ebeb;*/
+        }
+        .video{
+            background-color: #666;
+        }
+        .video_main .embed-responsive-70 {
+            /*background-color: rgba(115, 64, 64, 0.8);*/
+        }
+        .relative {
+           background-color: #bbb;
+        }
+        .relative h2{
+            color: #37474f;
+        }
+        footer{
+           background-color: #eee;
+        }
+        .footer_word{
+            color: #383838;
+            font-weight: 500;
+        }
+        .footer_list a{
+            color: #383838;
+        }
+        .footer_link{
+            background-color: #fff;
+        }
+        .footer_click{
+            background-color: #fff;
+        }
+        .footer_nav {
+            background-color: #fff;
+        }
+        .footer_nav_none .footer_click {
+            background-color: #eee;
+        }
+        .footer_nav_none .footer_click span{
+            border: 5px solid #424242;
+            border-top-color: transparent;
+            border-right-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <!-- top start -->
+    <header>
+        <div class="top">
+            <div class="container">
+                <div class="top_nav pull-right">
+                    <div class="top_link">
+                        <ul>
+                            <li><a href="#">回首頁</a></li>
+                            <li><a href="#">網站導覽</a></li>
+                            <li><a href="#">兒童版</a></li>
+                            <li><a href="#">English</a></li>
+                            <li><a href="#">會員登入/註冊</a></li>
+                        </ul>
+                    </div>
+                    <div class="font_size">
+                        <ul>字級：
+                            <li class="font_size_li big"><a href="#">大</a></li>
+                            <li class="font_size_li middle"><a href="#">中</a></li>
+                            <li class="font_size_li small"><a href="#">小</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="row">
+                    <div class="col-md-4"><img src="img/logo-2.png" alt=""></div>
+                    <div class="col-md-8">
+                        <div class="pull-right">
+                            <span class="search_adv"><a href="#">進階搜尋</a></span>
+                            <span class="search_hot">熱門關鍵字：<a href="#">一般過戶</a>、<a href="#">水費查詢</a></span>
+                            <span class="search"><input class="searchInput" type="search"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- nav start -->
+                <div id="navbar" class="navbar nav navbar-nav navbar-center" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-center">
+                            <li class="dropdown dropdown-submenu"><a href="#" data-toggle="dropdown">公告資訊</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">停水/減壓</a></li>
+                                    <li><a href="#">訊息公布欄</a></li>
+                                    <li><a href="#">區域hot新聞</a></li>
+                                    <li><a href="#">闢謠專區</a></li>
+                                    <li><a href="#">施工訊息</a></li>
+                                    <li><a href="#">重大政策</a></li>
+                                    <li><a href="#">本公司就業資訊</a></li>
+                                    <li><a href="#">招標資訊</a></li>
+                                    <li><a href="#">電子書專區</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown dropdown-submenu"><a href="#" data-toggle="dropdown">公司簡介</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown dropdown-submenu"><a href="#" data-toggle="dropdown">企業社會責任</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown dropdown-submenu"><a href="#" data-toggle="dropdown">公司治理</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown dropdown-submenu"><a href="#" data-toggle="dropdown">成果績效</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown dropdown-submenu"><a href="#" data-toggle="dropdown">用水宣導</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown dropdown-submenu"><a href="#" data-toggle="dropdown">政風園地</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown dropdown-submenu dropdown-submenu-last"><a href="#" data-toggle="dropdown">資訊公開</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown dropdown-submenu dropdown-submenu-last rwdTopNav"><a href="#"
+                                        data-toggle="dropdown">導覽連結</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                    <li><a href="#">XXXXX</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- nav end -->
+            </div>
+        </div>
+    </header>
+    <!-- top end -->
+    <!-- banner start -->
+    <div class="banner">
+        <div id="banner_img" class="owl-carousel">
+            <div class="item">
+                <img src="img/banner_1.png" alt="banner">
+            </div>
+            <div class="item">
+                <img src="img/banner_2.png" alt="banner">
+            </div>
+            <div class="item">
+                <img src="img/banner_3.png" alt="banner">
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    	<!-- recommend_link start -->
+        <div class="recommend_link">
+            <div class="container">
+                <a href="#" class="recommend_link_icon">
+                 	<img src="img/recommend_link_img_1.png" alt="" class="recommend_link_img">
+    				<div class="recommend_link_title">網路e櫃台</div>
+    			</a>
+                <a href="#" class="recommend_link_icon">
+    				<img src="img/recommend_link_img_2.png" alt="" class="recommend_link_img">
+    				<div class="recommend_link_title">電子帳單</div>
+    			</a>
+                <a href="#" class="recommend_link_icon">
+    				<img src="img/recommend_link_img_3.png" alt="" class="recommend_link_img">
+    				<div class="recommend_link_title">用戶服務</div>
+    			</a>
+                <a href="#" class="recommend_link_icon">
+    				<img src="img/recommend_link_img_4.png" alt="" class="recommend_link_img">
+    				<div class="recommend_link_title">民意交流</div>
+    			</a>
+                <a href="#" class="recommend_link_icon">
+    				<img src="img/recommend_link_img_5.png" alt="" class="recommend_link_img">
+    				<div class="recommend_link_title">開放資料</div>
+    			</a>
+                <a href="#" class="recommend_link_icon">
+    				<img src="img/recommend_link_img_6.png" alt="" class="recommend_link_img">
+    				<div class="recommend_link_title">政策宣導</div>
+    			</a>
+                <a href="#" class="recommend_link_icon">
+    				<img src="img/recommend_link_img_7.png" alt="" class="recommend_link_img">
+    				<div class="recommend_link_title">停水/減壓查詢系統</div>
+    			</a>
+            </div>
+        </div>
+        <!-- recommend_link end -->
+    </div>
+    <!-- banner end -->
+    <!-- news start -->
+    <div class="news">
+        <div class="container">
+            <h2 class="title">訊息公告</h2>
+            <div class="news_main">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item active">
+                        <a class="nav-link active" id="news_hot-tab" data-toggle="tab" href="#news_hot" role="tab" aria-controls="news_hot" aria-selected="true">區域HOT新聞</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="news_announcement-tab" data-toggle="tab" href="#news_announcement" role="tab" aria-controls="news_announcement" aria-selected="false">訊息公佈欄</a>
+                    </li>
+                   <li class="nav-item">
+                       <a class="nav-link" id="news_books-tab" data-toggle="tab" href="#news_books" role="tab" aria-controls="news_books" aria-selected="false">電子書專區</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade active in" id="news_hot" role="tabpanel" aria-labelledby="news_hot-tab">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="block_img"><img src="img/news_img_1.png" alt="">
+                                </div>
+                                <div class="block_content">
+                                    <div class="content_title">第五區管理處12月19日至第一屆「政府服務獎」得獎單位嘉義縣新港鄉公所觀摩。 </div>
+                                    <div class="content_main">本處12月19日由呂秘書繼賢率相關同仁至第一屆「政府服務獎」得獎單位嘉義縣...</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="block_img"><img src="img/news_img_2.png" alt="">
+                                </div>
+                                <div class="block_content">
+                                    <div class="content_title">第五區管理處民雄營運所於12月17日拜訪大林鎮明華里江里長志明 </div>
+                                    <div class="content_main">本處民雄所為提供偏鄉地區用戶優質用戶服務，於107年8月起至12月止為期5個月...</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="block_img"><img src="img/news_img_3.png" alt="">
+                                </div>
+                                <div class="block_content">
+                                    <div class="content_title">提升供水能量及品質 水公司辦理台南下營管線汰換</div>
+                                    <div class="content_main">台南市下營區中山路通往市區的自來水管線埋設多年，已達屆齡汰換年限，水公...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="news_announcement" role="tabpanel" aria-labelledby="news_announcement-tab">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="block_img"><img src="img/news_img_1.png" alt="">
+                                </div>
+                                <div class="block_content">
+                                    <div class="content_title">第五區管理處12月19日至第一屆「政府服務獎」得獎單位嘉義縣新港鄉公所觀摩。 </div>
+                                    <div class="content_main">本處12月19日由呂秘書繼賢率相關同仁至第一屆「政府服務獎」得獎單位嘉義縣...</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="block_img"><img src="img/news_img_2.png" alt="">
+                                </div>
+                            	<div class="block_content">
+                                	<div class="content_title">第五區管理處民雄營運所於12月17日拜訪大林鎮明華里江里長志明 </div>
+                                	<div class="content_main">本處民雄所為提供偏鄉地區用戶優質用戶服務，於107年8月起至12月止為期5個月...</div>
+                            	</div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="block_img"><img src="img/news_img_3.png" alt="">
+                                </div>
+                            	<div class="block_content">
+                                	<div class="content_title">提升供水能量及品質 水公司辦理台南下營管線汰換</div>
+                                	<div class="content_main">台南市下營區中山路通往市區的自來水管線埋設多年，已達屆齡汰換年限，水公...</div>
+                            	</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="news_books" role="tabpanel" aria-labelledby="news_books-tab">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="block_img"><img src="img/news_img_1.png" alt="">
+                                </div>
+                                <div class="block_content">
+                                    <div class="content_title">第五區管理處12月19日至第一屆「政府服務獎」得獎單位嘉義縣新港鄉公所觀摩。 </div>
+                                    <div class="content_main">本處12月19日由呂秘書繼賢率相關同仁至第一屆「政府服務獎」得獎單位嘉義縣...</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="block_img"><img src="img/news_img_2.png" alt="">
+                                </div>
+                            	<div class="block_content">
+                                	<div class="content_title">第五區管理處民雄營運所於12月17日拜訪大林鎮明華里江里長志明 </div>
+                                	<div class="content_main">本處民雄所為提供偏鄉地區用戶優質用戶服務，於107年8月起至12月止為期5個月...</div>
+                            	</div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="block_img"><img src="img/news_img_3.png" alt="">
+                                </div>
+                            	<div class="block_content">
+                                	<div class="content_title">提升供水能量及品質 水公司辦理台南下營管線汰換</div>
+                                	<div class="content_main">台南市下營區中山路通往市區的自來水管線埋設多年，已達屆齡汰換年限，水公...</div>
+                            	</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- news end -->
+    <!-- purpose_link start -->
+    <div class="purpose_link">
+    	<div class="container">
+    		<!-- <h2 class="title">訊息公告</h2> -->
+	    	<div class="row">
+    	    	<div class="col-sm-2">
+        	    	<a href="#" class="purpose_icon">
+    					<img src="img/purpose_icon_1.png" alt="">
+    					<div class="purpose_title">服務據點<br>Location</div>
+	    			</a>
+    	        </div>
+        	    <div class="col-sm-2">
+            	    <a href="#" class="purpose_icon">
+    					<img src="img/purpose_icon_2.png" alt="">
+    					<div class="purpose_title">雙語詞彙<br>Language</div>
+    				</a>
+        	    </div>
+        	    <div class="col-sm-2">
+            	    <a href="#" class="purpose_icon">
+    					<img src="img/purpose_icon_3.png" alt="">
+    					<div class="purpose_title">網網相連
+    					<br>Connect</div>
+    				</a>
+        	    </div>
+            	<div class="col-sm-2">
+                	<a href="#" class="purpose_icon">
+    					<img src="img/purpose_icon_4.png" alt="">
+    					<div class="purpose_title">常見問答<br>FAQ</div>
+    				</a>
+            	</div>
+            	<div class="col-sm-2">
+                	<a href="#" class="purpose_icon">
+    					<img src="img/purpose_icon_5.png" alt="">
+    					<div class="purpose_title">工作證申請專區<br>Work Permit</div>
+    				</a>
+            	</div>
+            	<div class="col-sm-2">
+            	    <a href="#" class="purpose_icon">
+    					<img src="img/purpose_icon_6.png" alt="">
+    					<div class="purpose_title">全民督工通報系統<br>Notification</div>
+    				</a>
+            	</div>
+        	</div>
+        </div>
+    </div>
+    <!-- purpose_link end -->
+    <!-- principal start -->
+    <div class="principal">
+        <div class="principal_bg"></div>
+        <div class="container">
+            <h2 class="title">首長最前線</h2>
+            <div class="principal_main">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="principal_img"><img src="img/principal_img.png" alt=""></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="principal_content">
+                            <div class="principal_content_title">董事長接待日本自來水業者前往板新給水廠參觀</div>
+                            <div class="principal_content_main">
+                                <div class="principal_content_time">活動時間：107年12月10日星期一下午</div>
+                                <div class="principal_content_place">活動地點：新北市板新給水廠</div>
+                                <div class="principal_content_info">說　　明：董事長接待日本來訪業者荏原商事株式會社代表取締役社長島田薰先生，參訪本公司板新給水廠、光復加壓站等簡報介紹影片，對台灣水資源技術暨供水調配印象深刻。</div>
+                            </div>
+                            <a href="#" class="principal_content_more content_more">更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- principal end -->
+    <!-- video start -->
+    <div class="video">
+        <div class="video_bg"></div>
+        <div class="container">
+            <h2 class="title">影音專區</h2>
+            <div class="video_main">
+                <div id="video_carousel" class="owl-carousel">
+                    <div class="item">
+                        <div class="col-md-4">
+                            <div class="video_content">
+                                <div class="video_content_title">台水節水宣導影片及微電影-逆襲的自來水手</div>
+                                <div class="video_content_main">殷實的水電工阿堂帶著妻子回娘家，希望能夠得到岳父母的肯定而做了許多努力，卻都不盡如人意，直到他發揮水電工的節水專長，終於獲得眾人的支持與肯定。</div>
+                                <a href="#" class="video_content_more content_more">更多</a>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="video_iframe videoMain embed-responsive embed-responsive-70">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/0naX_CocAxU" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="item">
+                        <div class="col-md-4">
+                            <div class="video_content">
+                                <div class="video_content_title">台水節水宣導影片及微電影-逆襲的自來水手</div>
+                                <div class="video_content_main">殷實的水電工阿堂帶著妻子回娘家，希望能夠得到岳父母的肯定而做了許多努力，卻都不盡如人意，直到他發揮水電工的節水專長，終於獲得眾人的支持與肯定。</div>
+                                <a href="#" class="video_content_more content_more">更多</a>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="video_iframe videoMain embed-responsive embed-responsive-70">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/0naX_CocAxU" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+               </div>
+           </div>
+        </div>
+    </div>
+    <!-- video end -->
+    <!-- theme start -->
+    <div class="theme">
+        <div class="container">
+            <h2 class="title">主題專區</h2>
+            <div class="theme_main">
+                <div id="theme_carousel" class="owl-carousel">
+                    <div class="item">
+                        <div class="theme_content">
+                            <img src="img/theme_1.png" alt="">
+                            <div class="theme_fliter"></div>
+                            <div class="theme_content_title">行動支付</div>
+                            <a href="" class="theme_content_link"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="theme_content">
+                            <img src="img/theme_2.png" alt="">
+                            <div class="theme_fliter"></div>
+                            <div class="theme_content_title">雲端發票</div>
+                            <a href="" class="theme_content_link"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="theme_content">
+                            <img src="img/theme_3.png" alt="">
+                            <div class="theme_fliter"></div>
+                            <div class="theme_content_title">新南向專區</div>
+                            <a href="" class="theme_content_link"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="theme_content">
+                            <img src="img/theme_4.png" alt="">
+                            <div class="theme_fliter"></div>
+                            <div class="theme_content_title">CEDAW性別平等</div>
+                            <a href="" class="theme_content_link"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="theme_content">
+                            <img src="img/theme_5.png" alt="">
+                            <div class="theme_fliter"></div>
+                            <div class="theme_content_title">災害防救資通訊系統</div>
+                            <a href="" class="theme_content_link"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="theme_content">
+                            <img src="img/theme_6.png" alt="">
+                            <div class="theme_fliter"></div>
+                            <div class="theme_content_title">特約優惠情報專區</div>
+                            <a href="" class="theme_content_link"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="theme_content">
+                            <img src="img/theme_1.png" alt="">
+                            <div class="theme_fliter"></div>
+                            <div class="theme_content_title">行動支付</div>
+                            <a href="" class="theme_content_link"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="theme_content">
+                            <img src="img/theme_2.png" alt="">
+                            <div class="theme_fliter"></div>
+                            <div class="theme_content_title">雲端發票</div>
+                            <a href="" class="theme_content_link"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="theme_content">
+                            <img src="img/theme_3.png" alt="">
+                            <div class="theme_fliter"></div>
+                            <div class="theme_content_title">新南向專區</div>
+                            <a href="" class="theme_content_link"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="theme_content">
+                            <img src="img/theme_4.png" alt="">
+                            <div class="theme_fliter"></div>
+                            <div class="theme_content_title">CEDAW性別平等</div>
+                            <a href="" class="theme_content_link"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="theme_content">
+                            <img src="img/theme_5.png" alt="">
+                            <div class="theme_fliter"></div>
+                            <div class="theme_content_title">災害防救資通訊系統</div>
+                            <a href="" class="theme_content_link"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="theme_content">
+                            <img src="img/theme_6.png" alt="">
+                            <div class="theme_fliter"></div>
+                            <div class="theme_content_title">特約優惠情報專區</div>
+                            <a href="" class="theme_content_link"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- theme end -->
+    <!-- relative start -->
+    <div class="relative">
+        <div class="container">
+            <h2 class="title">相關連結</h2>
+            <div id="owl_relative" class="owl-carousel relative_main">
+                <a class="relative_link item" href="#"><img src="img/relative_link_1.png" alt=""></a>
+                <a class="relative_link item" href="#"><img src="img/relative_link_2.png" alt=""></a>
+                <a class="relative_link item" href="#"><img src="img/relative_link_3.png" alt=""></a>
+                <a class="relative_link item" href="#"><img src="img/relative_link_4.png" alt=""></a>
+                <a class="relative_link item" href="#"><img src="img/relative_link_5.png" alt=""></a>
+                <a class="relative_link item" href="#"><img src="img/relative_link_6.png" alt=""></a>
+                <a class="relative_link item" href="#"><img src="img/relative_link_7.png" alt=""></a>
+                <a class="relative_link item" href="#"><img src="img/relative_link_8.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <!-- relative end -->
+    <!-- footer_nav start -->
+    <div class="footer_link">
+        <a class="footer_click" href="javascript:void();"><span></span></a>
+        <div class="footer_nav">
+            <div class="container">
+                <div class="FatFooter-Box Open">
+                    <label class="Open-Btn" for="toggle"></label>
+                    <div class="FatFooter-Data">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="footer_nav_block">
+                                    <div class="footer_nav_title">公告資訊</div>
+                                    <ul class="footer_nav_link">
+                                        <li><a href="#">停水/減壓</a></li>
+                                        <li><a href="#">訊息公佈欄</a></li>
+                                        <li><a href="#">區域hot新聞</a></li>
+                                        <li><a href="#">闢謠專區</a></li>
+                                        <li><a href="#">施工訊息</a></li>
+                                        <li><a href="#">重大政策</a></li>
+                                        <li><a href="#">本公司就業資訊</a></li>
+                                        <li><a href="#">招標專區</a></li>
+                                        <li><a href="#">電子書專區</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer_nav_block">
+                                    <div class="footer_nav_title">公司簡介</div>
+                                    <ul class="footer_nav_link">
+                                        <li><a href="#">公司簡介</a></li>
+                                        <li><a href="#">首長及經營團隊</a></li>
+                                        <li><a href="#">公司規章</a></li>
+                                        <li><a href="#">組織職掌</a></li>
+                                        <li><a href="#">總處聯絡資訊</a></li>
+                                        <li><a href="#">角色定位</a></li>
+                                        <li><a href="#">文化資產</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer_nav_block">
+                                    <div class="footer_nav_title">企業社會責任</div>
+                                    <ul class="footer_nav_link">
+                                        <li><a href="#">經營者承諾</a></li>
+                                        <li><a href="#">落實公司治理</a></li>
+                                        <li><a href="#">量足質優服務好</a></li>
+                                        <li><a href="#">友善環境</a></li>
+                                        <li><a href="#">和樂職場</a></li>
+                                        <li><a href="#">社會共榮</a></li>
+                                        <li><a href="#">推動企業化社會責任</a></li>
+                                        <li><a href="#">永續報告書下載</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer_nav_block">
+                                    <div class="footer_nav_title">公司治理</div>
+                                    <ul class="footer_nav_link">
+                                    </ul>
+                                </div>
+                                <div class="footer_nav_block">
+                                    <div class="footer_nav_title">成果績效</div>
+                                    <ul class="footer_nav_link">
+                                        <li><a href="#">首長活動</a></li>
+                                        <li><a href="#">計畫成果</a></li>
+                                        <li><a href="#">立法院各會期動態報告</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer_nav_block">
+                                    <div class="footer_nav_title">用水宣導</div>
+                                    <ul class="footer_nav_link">
+                                        <li><a href="#">用水須知</a></li>
+                                        <li><a href="#">宣導影片</a></li>
+                                        <li><a href="#">水質資訊</a></li>
+                                        <li><a href="#">平均水質</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer_nav_block">
+                                    <div class="footer_nav_title">政風園地</div>
+                                    <ul class="footer_nav_link">
+                                        <li><a href="#">陽光法案專區</a></li>
+                                        <li><a href="#">法令宣導專區</a></li>
+                                        <li><a href="#">檢舉窗口</a></li>
+                                        <li><a href="#">廉政會報專區</a></li>
+                                        <li><a href="#">機密與安全維護專區</a></li>
+                                        <li><a href="#">相關網站</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="footer_nav_block">
+                                    <div class="footer_nav_title">資訊公開</div>
+                                    <ul class="footer_nav_link">
+                                        <li><a href="#">內部控制制度...</a></li>
+                                        <li><a href="#">法規命令</a></li>
+                                        <li><a href="#">解釋性規定及...</a></li>
+                                        <li><a href="#">單位服務聯絡...</a></li>
+                                        <li><a href="#">行政指導有關...</a></li>
+                                        <li><a href="#">施政計畫、業...</a></li>
+                                        <li><a href="#">預算、決算書</a></li>
+                                        <li><a href="#">道路平整方案...</a></li>
+                                        <li><a href="#">請願之處理結...</a></li>
+                                        <li><a href="#">公共工程及採...</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer_nav_block">
+                                    <div class="footer_nav_title">資訊公開</div>
+                                    <ul class="footer_nav_link">
+                                        <li><a href="#">線上查詢</a></li>
+                                        <li><a href="#">線上繳費</a></li>
+                                        <li><a href="#">線上申辦</a></li>
+                                        <li><a href="#">1910通報無水漏水服務</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer_nav_block">
+                                    <div class="footer_nav_title">電子帳單</div>
+                                </div>
+                                <div class="footer_nav_block">
+                                    <div class="footer_nav_title">用戶服務</div>
+                                    <ul class="footer_nav_link">
+                                        <li><a href="#">服務據點</a></li>
+                                        <li><a href="#">電話業務</a></li>
+                                        <li><a href="#">申辦須知</a></li>
+                                        <li><a href="#">抄表計費</a></li>
+                                        <li><a href="#">下載專區</a></li>
+                                        <li><a href="#">常見問答</a></li>
+                                        <li><a href="#">相關法規</a></li>
+                                        <li><a href="#">陳情案件流程</a></li>
+                                        <li><a href="#">為民服務白皮書</a></li>
+                                        <li><a href="#">無線上網</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer_nav_block">
+                                    <div class="footer_nav_title">民意交流</div>
+                                    <ul class="footer_nav_link">
+                                        <li><a href="#">YouTube</a></li>
+                                        <li><a href="#">深溝園區(Facebook)</a></li>
+                                        <li><a href="#">公司臉書(Facebook)</a></li>
+                                        <li><a href="#">訂閱/取消電子報</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer_nav_block">
+                                    <div class="footer_nav_title">開放資料</div>
+                                    <ul class="footer_nav_link">
+                                        <li><a href="#">本公司開放資料專區</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer_nav_block">
+                                    <div class="footer_nav_title">政策宣導</div>
+                                    <ul class="footer_nav_link">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer_nav end -->
+    <!-- footer start -->
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="footer_list">
+                            <ul>
+                                <li><a href="#">隱私權宣告</a></li>
+                                <li><a href="#">政府資料開放宣告</a></li>
+                                <li><a href="#">位置圖</a></li>
+                                <li><a href="#">資訊安全政策</a></li>
+                                <li><a href="#">瀏覽人次：41853712</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-12 footer_word">
+                        <div class="footer_pic">
+                            <div><a href="#"><img src="img/footerGov.png" alt=""></a></div>
+                            <div><a href="#"><img src="img/footerAccess.png" alt=""></a></div>
+                            <div>24小時免費服務專線：1910(於台北市之本公司用戶用水諮詢，市話請改撥02-89780837，其他新北市地區市話可直撥1910。</div>
+                            <div>本公司供水轄區未包含台北市、新北市永和、新店全部，汐止、中和、三重部分地區。)</div>
+                            <div>TEL：04-2224-4191　FAX：04-2224-4201　地址：40455 台中市雙十路二段2-1號</div>
+                            <div>營業時間:上午8時-下午5時(中午不休息,除少數偏遠地區營運所中午不收費,詳細請連結服務據點)</div>
+                            <div>Copyright © 2018 版權所有 最佳瀏覽解析度為1024x768以上。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- <script src="js/wow.min.js"></script> -->
+    <script src="js/jquery.matchHeight-min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/scrollmagic/ScrollMagic.js"></script>
+    <script src="js/scrollmagic/plugins/animation.gsap.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- main_js -->
+    <script src="js/main.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

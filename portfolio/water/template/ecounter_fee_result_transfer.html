@@ -1,0 +1,83 @@
+<div class="main_content_header">
+    <div class="main_content_title JQ pull-left">
+        各項異動
+    </div>
+    <div class="pull-right">
+        <div class="main_content_path">
+            <p>
+                <span>首頁</span>
+                <span class="path_1_angle JQ">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </span>
+                <span class="path_1 JQ">網路E櫃檯</span>
+                <span class="path_2_angle JQ">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </span>
+                <span class="path_2 JQ">線上申辦</span>
+                <span class="path_3_angle JQ">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </span>
+                <span class="path_3 JQ">各項異動</span>
+            </p>
+        </div>
+        <div class="main_content_share">
+            <i class="RSS"></i>
+            <i class="print"></i>
+            <i class="fb"></i>
+            <i class="line"></i>
+            <i class="twitter"></i>
+            <i class="other"></i>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="inquiry_main_content">
+    <table class="inquiry_table apply">
+        <thead>
+            <tr>
+                <th>請輸入用戶(水號)檢查前期水費是否已繳</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div>
+                        <span class="text-danger">*</span> 台端前一期水費已繳納
+                    </div>
+                    <div style="display:inline-block">
+                        <span class="text-danger">*</span> 107年09月03日至107年11月22日之未開單水費是否同意於開單自行繳納？
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="inquiry_btn_group">
+        <button class="inquiry_btn Brown JQ_trans_confirm"
+            onclick="changeForm('ecounter_form_transfer_nocertify', 'ecounter');">同意</button>
+        <button class="inquiry_btn">不同意</button>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        this.transfer_certify_type = localStorage.getItem("transfer_certify_type");
+        switch (this.transfer_certify_type) {
+            case "不使用憑證":
+                $("button.JQ_trans_confirm").attr("onclick",
+                    "changeForm('ecounter_form_transfer_nocertify', 'ecounter');");
+                break;
+            case "使用自然人憑證":
+                $("button.JQ_trans_confirm").attr("onclick",
+                    "changeForm('ecounter_form_transfer_nature', 'ecounter');");
+                break;
+            case "使用工商憑證":
+                $("button.JQ_trans_confirm").attr("onclick",
+                    "changeForm('ecounter_form_transfer_business', 'ecounter');");
+                break;
+            default:
+                break;
+
+        }
+
+    });
+</script>

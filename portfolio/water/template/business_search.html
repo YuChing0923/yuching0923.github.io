@@ -1,0 +1,43 @@
+<!-- content start -->
+<div class="receipt_content">
+    <div class="receipt_form">
+        <div class="col-sm-6">
+            <h2 class="receipt_content_title" style="padding-top: 15px;">營業人查詢</h2>
+            <h3 class="receipt_info">以統編及水號查詢發票</h3>
+            <div class="receipt_form_row">
+                <label for="open_date" class="label_narrow">營業年月（5位）</label>
+                <input type="text" class="input_narrow" id="open_date">
+            </div>
+            <div class="receipt_form_row">
+                <label for="tax_ID" class="label_narrow">統一編號</label>
+                <input type="text" class="input_narrow" id="tax_ID">
+            </div>
+            <div class="receipt_form_row" id="receipt_form_JQ_1">
+                <label for="number_1" class="label_narrow">查詢水號（1）</label>
+                <input type="text" class="input_narrow" id="number_1">
+            </div>
+            <button id="JQ_addKeyword" style="margin: 10px 70px 0 0;"><i class="fa fa-plus fa-lg"></i></button>
+        </div>
+        <div class="col-sm-6">
+            <div class="receipt_img"><img src="img/receipt_img.png" alt=""></div>
+            <div class="clearfix"></div>
+            <div class="receipt_form_row verification_row pull-right" style="width: 100%;">
+                <label for="verification_code">請輸入驗證碼</label>
+                <input type="text" id="verification_code"><img src="img/receipt_code.png" alt="">
+                <button>送出</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+var maxAppend = 2;
+$("#JQ_addKeyword").click(function() {
+    if (maxAppend >= 11) return;
+    console.log(maxAppend);
+    var addinput = $(
+        '<div class="receipt_form_row" id="receipt_form_JQ_' + maxAppend + '"><label for="number_' + maxAppend + '" class="label_narrow">查詢水號（' + maxAppend + '）</label><input type="text" class="input_narrow" id="number_' + maxAppend + '"></div>');
+    $("#receipt_form_JQ_" + (maxAppend - 1)).after(addinput);
+    maxAppend++;
+});
+</script>
+<!-- content end -->

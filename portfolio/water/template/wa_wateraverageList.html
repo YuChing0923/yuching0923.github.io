@@ -1,0 +1,248 @@
+<script>
+    // pathCtrl();
+</script>
+<div class="main_content_header">
+    <div class="main_content_title JQ pull-left">
+        平均水質
+    </div>
+    <div class="pull-right">
+        <div class="main_content_path">
+            <p>
+                <span>首頁</span>
+                <span class="path_1_angle JQ">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </span>
+                <span class="path_1 JQ">用水宣導</span>
+                <span class="path_2_angle JQ">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </span>
+                <span class="path_2 JQ">平均水質</span>
+                <span class="path_3_angle JQ" style="display:none;">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </span>
+                <!-- <span class="path_3 JQ"></span> -->
+            </p>
+        </div>
+        <div class="main_content_share">
+            <i class="RSS"></i>
+            <i class="print"></i>
+            <i class="fb"></i>
+            <i class="line"></i>
+            <i class="twitter"></i>
+            <i class="other"></i>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="conSearch">
+    <form class="form-inline">
+        <div class="form-group regionSearch">
+            <label for="regionSearch" style="">選擇縣市：</label>
+            <select name="" class="form-control" id="regionSearch">
+                <option value="全部" selected>全部</option>
+                <option value="基隆市">基隆市</option>
+                <option value="新北市">新北市</option>
+                <option value="桃園市">桃園市</option>
+                <option value="新竹市">新竹市</option>
+                <option value="苗栗縣">苗栗縣</option>
+                <option value="台中市">台中市</option>
+                <option value="彰化縣">彰化縣</option>
+                <option value="雲林縣">雲林縣</option>
+            </select>
+            <div class="clearfix"></div>
+        </div>
+        <div class="form-group keySearch">
+            <label for="keySearch">關鍵字：</label>
+            <input type="text" class="form-control" id="keySearch" placeholder="">
+            <span class="searchBtn"><i role="button" type="submit" class="fa fa-search" aria-hidden="true"></i></span>
+            <div class="clearfix"></div>
+        </div>
+    </form>
+</div>
+<div class="perform_list">
+    <div class="perform_item" onclick="javascript:changeForm('wa_main_page_4.1', 'water');">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="perform_item_img ">
+                    <!-- 請插入新山淨水廠膠凝沉澱1、2號池.JPG -->
+                    <img src="img/front/images/wa_l_4.1.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="perform_item_content wa">
+                    <div class="perform_item_title">
+                        新山淨水場(Sinshan)
+                    </div>
+                    <div class="perform_item_date">
+                        2019/03/08
+                    </div>
+                    <div class="perform_item_info">
+                        <p>基隆市麥金路720號</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="perform_item_readmore"></div>
+    </div>
+    <div class="perform_item" onclick="javascript:changeForm('wa_main_page_4.1', 'water');">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="perform_item_img ">
+                    <!-- 請插入logo-06.3.png -->
+                    <img src="img/front/icon-waterAverage.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="perform_item_content wa ">
+                    <div class="perform_item_title">
+                        暖暖淨水場(Nuannuan)
+                    </div>
+                    <div class="perform_item_date">
+                        2019/03/08
+                    </div>
+                    <div class="perform_item_info">
+                        <p>基隆市水源路38號</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="perform_item_readmore"></div>
+    </div>
+    <div class="perform_item" onclick="javascript:changeForm('wa_main_page_4.1', 'water');">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="perform_item_img ">
+                    <!-- 請插入板新給水廠01.jpg -->
+                    <img src="img/front/images/wa_l_4.2.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="perform_item_content wa ">
+                    <div class="perform_item_title">
+                        板新淨水場(Bansin)
+                    </div>
+                    <div class="perform_item_date">
+                        2019/03/08
+                    </div>
+                    <div class="perform_item_info">
+                        <p>新北市三峽區中山路551號</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="perform_item_readmore"></div>
+    </div>
+    <div class="perform_item" onclick="javascript:changeForm('wa_main_page_4.1', 'water');">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="perform_item_img ">
+                    <!-- 請插入logo-06.3.png -->
+                    <img src="img/front/icon-waterAverage.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="perform_item_content wa ">
+                    <div class="perform_item_title">
+                        員山淨水場(Yuanshan)
+                    </div>
+                    <div class="perform_item_date">
+                        2019/03/08
+                    </div>
+                    <div class="perform_item_info">
+                        <p>新北市瑞芳區員山路19-1號</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="perform_item_readmore"></div>
+    </div>
+    <div class="perform_item" onclick="javascript:changeForm('wa_main_page_4.1', 'water');">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="perform_item_img ">
+                    <!-- 請插入logo-06.3.png -->
+                    <img src="img/front/icon-waterAverage.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="perform_item_content wa ">
+                    <div class="perform_item_title">
+                        坪林淨水場(Pinglin)
+                    </div>
+                    <div class="perform_item_date">
+                        2019/03/08
+                    </div>
+                    <div class="perform_item_info">
+                        <p>新北市坪林區坪林里國中路3號</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="perform_item_readmore"></div>
+    </div>
+    <div class="perform_item" onclick="javascript:changeForm('wa_main_page_4.1', 'water');">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="perform_item_img ">
+                    <!-- 請插入logo-06.3.png -->
+                    <img src="img/front/icon-waterAverage.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="perform_item_content wa ">
+                    <div class="perform_item_title">
+                        林莊淨水場(Linjhuang)
+                    </div>
+                    <div class="perform_item_date">
+                        2019/03/08
+                    </div>
+                    <div class="perform_item_info">
+                        <p>新北市金山區重合里林口28—2號</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="perform_item_readmore"></div>
+    </div>
+    <div class="perform_item" onclick="javascript:changeForm('wa_main_page_4.1', 'water');">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="perform_item_img ">
+                    <!-- 請插入logo-06.3.png -->
+                    <img src="img/front/icon-waterAverage.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="perform_item_content wa ">
+                    <div class="perform_item_title">
+                        老梅淨水場(Laomei)
+                    </div>
+                    <div class="perform_item_date">
+                        2019/03/08
+                    </div>
+                    <div class="perform_item_info">
+                        <p>新北市石門區老梅里七股33之2號</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="perform_item_readmore"></div>
+    </div>
+</div>
+<div class="main_content_page_border">
+    <div class="main_content_pageNumber">
+        <p>共<span>208</span>筆資料，第<span>2</span>/21頁
+        </p>
+    </div>
+    <div class="main_content_pagination">
+        <a class="pageBtn pageleft"></a>
+        <a href="">1</a>
+        <a href="" class="active">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">5</a>
+        <a href="">6</a>
+        <a class="pageBtn pagenext" href=""></a>
+        <a class="pageBtn pageforward" href=""></a>
+    </div>
+</div>

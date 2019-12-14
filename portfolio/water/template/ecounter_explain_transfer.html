@@ -1,0 +1,121 @@
+<div class="main_content_header">
+    <div class="main_content_title JQ pull-left">
+        各項異動
+    </div>
+    <div class="pull-right">
+        <div class="main_content_path">
+            <p>
+                <span>首頁</span>
+                <span class="path_1_angle JQ">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </span>
+                <span class="path_1 JQ">網路E櫃檯</span>
+                <span class="path_2_angle JQ">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </span>
+                <span class="path_2 JQ">線上申辦</span>
+                <span class="path_3_angle JQ">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </span>
+                <span class="path_3 JQ">各項異動</span>
+            </p>
+        </div>
+        <div class="main_content_share">
+            <i class="RSS"></i>
+            <i class="print"></i>
+            <i class="fb"></i>
+            <i class="line"></i>
+            <i class="twitter"></i>
+            <i class="other"></i>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="inquiry_main_content">
+    <table class="block_table inquiry_table explain">
+        <thead>
+            <tr>
+                <th style="width:33%">項目</th>
+                <th style="width:33%">作業說明</th>
+                <th style="width:33%">注意事項</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="JQ_trans_item" data-title="項目">變更用水人名義(過戶)</td>
+                <td class="JQ_trans_explain" data-title="作業說明">限以(前)用戶無舊欠水費可線上申請用水人名義變更，但應承擔前用戶之一切應負義務。</td>
+                <td class="JQ_trans_note" data-title="注意事項">
+                    一、水費單以開單日資料為主，申辦時如已過開單日仍為原用戶名稱，須俟下期水費單用戶名稱始更名。<br>
+                    二、經變更後如前用戶於六個月內提出異議時，本公司得取消後用戶之過戶。<br>
+                    三、若有未繳納水費，請至本公司服務(營運)所繳納後再申辦，亦可利用線上繳費或至超商、銀行機構繳費，需俟5日後(例假日除外)，超商或銀行向本公司完成結繳，再請上網申辦。
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <style>
+
+    </style>
+    <div class="inquiry_check_group JQ">
+        <label for="radio1" class="inquiry_radio">不使用憑證
+            <input id="radio1" type="radio" checked="checked" name="radio" value="不使用憑證">
+            <span class="radiocheck"></span>
+        </label>
+        <label for="radio2" class="inquiry_radio">使用自然人憑證
+            <input id="radio2" type="radio" name="radio" value="使用自然人憑證">
+            <span class="radiocheck"></span>
+        </label>
+        <label for="radio3" class="inquiry_radio">使用工商憑證
+            <input id="radio3" type="radio" name="radio" value="使用工商憑證">
+            <span class="radiocheck"></span>
+        </label>
+    </div>
+    <div class="inquiry_btn_group">
+        <button class="inquiry_btn Brown JQ_trans_confirm"
+            onclick="changeForm('ecounter_fee_check_transfer', 'ecounter');">同意</button>
+        <button class="inquiry_btn" onclick="location.href='index.html'">不同意</button>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        localStorage.setItem("transfer_certify_type", "不使用憑證");
+
+    });
+    $(".inquiry_check_group.JQ input[name=radio]").on('change', function () {
+        localStorage.setItem("transfer_certify_type", this.value);
+        switch (this.value) {
+            case "不使用憑證":
+                $(".JQ_trans_item").html("變更用水人名義(過戶)");
+                $(".JQ_trans_explain").html("限以(前)用戶無舊欠水費可線上申請用水人名義變更，但應承擔前用戶之一切應負義務。");
+                $(".JQ_trans_note").html("一、水費單以開單日資料為主，申辦時如已過開單日仍為原用戶名稱，須俟下期水費單用戶名稱始更名。<br>\
+                    二、經變更後如前用戶於六個月內提出異議時，本公司得取消後用戶之過戶。<br>\
+                    三、若有未繳納水費，請至本公司服務(營運)所繳納後再申辦，亦可利用線上繳費或至超商、銀行機構繳費，需俟5日後(例假日除外)，超商或銀行向本公司完成結繳，再請上網申辦。");
+                $("button.JQ_trans_confirm").attr("onclick",
+                    "changeForm('ecounter_fee_check_transfer', 'ecounter');");
+                break;
+            case "使用自然人憑證":
+                $(".JQ_trans_item").html("變更用水人名義(過戶)—自然人憑證");
+                $(".JQ_trans_explain").html("限自然人憑證用戶，限以(前)用戶無舊欠水費可線上申請用水人名義變更，但應承擔前用戶之一切應負義務。");
+                $(".JQ_trans_note").html("一、水費單以開單日資料為主，申辦時如已過開單日仍為原用戶名稱，須俟下期水費單用戶名稱始更名。<br>\
+                    二、經變更後如前用戶於六個月內提出異議時，本公司得取消後用戶之過戶。<br>\
+                    三、若有未繳納水費，請至本公司服務(營運)所繳納後再申辦，亦可利用線上繳費或至超商、銀行機構繳費，需俟5日後(例假日除外)，超商或銀行向本公司完成結繳，再請上網申辦。");
+                $("button.JQ_trans_confirm").attr("onclick",
+                    "changeForm('ecounter_fee_check_transfer', 'ecounter');");
+                break;
+            case "使用工商憑證":
+                $(".JQ_trans_item").html("變更用水人名義(過戶)—工商憑證");
+                $(".JQ_trans_explain").html("一、限使用工商憑證申請。<br>\
+                    二、申請用水人名義變更，新用戶為公司行號。<br>\
+                    三、可多筆水號變更用水人名義，限於變更至同一公司行號。<br>\
+                    四、限前用戶無舊欠水費可線上申請用水人名義變更，但應承擔前用戶之一切應負義務。");
+                $(".JQ_trans_note").html("一、水費單以開單日資料為主，申辦時如已過開單日仍為原用戶名稱，須俟下期水費單用戶名稱始更名。<br>\
+                    二、經變更後如前用戶於六個月內提出異議時，本公司得取消後用戶之過戶。<br>\
+                    三、若有未繳納水費，請至本公司服務(營運)所繳納後再申辦，亦可利用線上繳費或至超商、銀行機構繳費，需俟5日後(例假日除外)，超商或銀行向本公司完成結繳，再請上網申辦。");
+                $("button.JQ_trans_confirm").attr("onclick",
+                    "changeForm('ecounter_fee_check_transfer', 'ecounter');");
+                break;
+            default:
+                break;
+        }
+    });
+</script>
