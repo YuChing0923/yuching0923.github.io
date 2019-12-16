@@ -1,0 +1,581 @@
+body {
+    overflow-x: hidden;
+    color: #000;
+}
+
+// main css start
+.cover {
+    width: 100%;
+    background-color: #ccc;
+    background-size: cover;
+    background-position: center bottom;
+    height: auto;
+    position: absolute;
+}
+
+.main {
+    position: relative;
+    background: rgba(192, 192, 192, 0.20);
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.35) 100%);
+    font-size: 14px;
+    color: #FFFFFF;
+
+    .logo {
+        margin: 20% auto 0;
+        width: 162px;
+        position: relative;
+    }
+
+    .hotel_info {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .social_icon {
+            position: relative;
+            text-align: right;
+            padding-right: 50px;
+            width: 40%;
+
+            img {
+                width: 10%;
+                height: auto;
+                margin-left: 15px;
+            }
+        }
+
+        .contact {
+            position: relative;
+            border-left: #fff 1px solid;
+            padding-left: 50px;
+            width: 60%;
+
+            .contact_info {
+                padding: 5px 0;
+
+                .contact_icon {
+                    display: inline-block;
+
+                    img {
+                        height: 14px;
+                        width: 14px;
+                    }
+                }
+
+                .contact_text {
+                    display: inline-block;
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+}
+
+.items {
+    margin: -100px 0 100px;
+
+    .room_block {
+        position: relative;
+        display: block;
+        height: 350px;
+        margin: 0 10px 50px;
+        background: #F7F7F7;
+        box-shadow: 0px 2px 9px 0 rgba(0, 0, 0, 0.18);
+        overflow: hidden;
+        cursor: pointer;
+        transition: .3s;
+        color: #000;
+
+        .room_img {
+            position: absolute;
+            bottom: 0;
+
+            &.height_auto {
+                height: auto;
+                width: 100%;
+            }
+
+            &.width_auto {
+                width: auto;
+                height: 100%;
+            }
+        }
+
+        .room_info {
+            background: #F7F7F7;
+            position: absolute;
+            width: 100%;
+            height: 70px;
+            bottom: 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            align-content: space-around;
+            transition: .3s;
+
+            .detail {
+                opacity: 0;
+                display: none;
+                transition: .3s;
+            }
+
+            .room_name {
+                font-size: 14px;
+                letter-spacing: 1.46px;
+                width: 100%;
+                position: relative;
+                top: 45%;
+                transform: translateY(-50%);
+                transition: .3s;
+            }
+
+            .sub_text {
+                font-size: 12px;
+                color: #6D7278;
+                letter-spacing: 1.25px;
+                line-height: 18px;
+            }
+
+            .normal_day_price {
+                display: inline-block;
+
+                .price {
+                    font-size: 21px;
+                    letter-spacing: 2.19px;
+                    line-height: 31px;
+                }
+
+                .weekday {
+                    line-height: 18px;
+                }
+            }
+
+            .holiday_price {
+                display: inline-block;
+            }
+        }
+
+        &:hover {
+            transform: scale(1.05);
+            transition: .3s;
+
+            .room_info {
+                height: auto;
+                padding: 20px 25px;
+                transition: .3s;
+
+                .detail {
+                    opacity: 1;
+                    display: block;
+                    transition: .3s;
+                }
+
+                .room_name {
+                    top: 0;
+                    transform: translateY(0);
+                    transition: .3s;
+                }
+            }
+
+        }
+    }
+}
+
+// main css end
+
+// room_info css start
+.room_detail_img {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    height: 600px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+
+    .sub_logo {
+        position: absolute;
+        z-index: 2;
+        padding: 50px;
+        cursor: pointer;
+    }
+
+    .img_item {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        cursor: pointer;
+        transition: .2s;
+
+        &:hover {
+            box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            transform: scale(1.02);
+            transition: .2s;
+        }
+
+        img {
+            position: absolute;
+            bottom: 0;
+            min-width: 100%;
+        }
+    }
+
+    .img_bg {
+        width: 70%;
+
+        .img_item {
+            height: 100%;
+
+            img {
+                min-height: 600px;
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+
+    .img_sm {
+        width: 30%;
+
+        .img_item {
+            height: 50%;
+
+            img {
+                min-height: 300px;
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.room_detail_info {
+    margin-top: 50px;
+
+    .room_detail {
+        .room_name {
+            font-size: 36px;
+            letter-spacing: 3.76px;
+            font-weight: 600;
+        }
+
+        .room_spec {
+            padding: 30px 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: stretch;
+            align-content: flex-start;
+            flex-wrap: wrap;
+
+            .text {
+                font-size: 14px;
+                letter-spacing: 1.46px;
+                line-height: 31px;
+                width: 100%;
+
+                &#description {
+                    font-size: 12px;
+                    letter-spacing: 1.25px;
+                    text-align: justify;
+                    line-height: 20px;
+                }
+            }
+
+            .separation {
+                line-height: 70px;
+                width: 100%;
+            }
+
+            .check_time {
+                width: 50%;
+
+                .time {
+                    font-size: 21px;
+                    letter-spacing: 2.19px;
+                }
+            }
+        }
+
+        .room_amenities {
+            background: #F0F0F0;
+            padding: 20px;
+            margin-bottom: 100px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: flex-start;
+            flex-wrap: wrap;
+
+            .amenity_item {
+                width: 33.33333333333%;
+                vertical-align: middle;
+                padding: 10px 5px;
+
+                .amenity_icon {
+                    width: 25px;
+                    height: 25px;
+                    display: inline-block;
+                    vertical-align: bottom;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+
+                .amenity_text {
+                    display: inline-block;
+                    vertical-align: bottom;
+                    margin-left: 5px;
+                    font-size: 13px;
+                    letter-spacing: 1.25px;
+                    max-width: 70%;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+
+                &.true {
+                    .amenity_icon img {
+                        fill: #4B4B4B;
+                    }
+                }
+
+                &.false {
+                    .amenity_icon img {
+                        opacity: 0.3;
+                    }
+
+                    .amenity_text {
+                        opacity: 0.3;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .room_price {
+        line-height: 27px;
+        text-align: right;
+
+        .date_price {
+            padding: 5px 0;
+        }
+
+        .weekday {
+            .price {
+                font-size: 30px;
+                letter-spacing: 3.13px;
+                padding-bottom: 5px;
+            }
+        }
+
+        .holiday {
+            .price {
+                font-size: 16px;
+                letter-spacing: 1.67px;
+            }
+        }
+
+        .date_type {
+            font-size: 14px;
+            color: #6D7278;
+            letter-spacing: 1.46px;
+        }
+
+    }
+
+    .reserve_date {
+        .react-datepicker {
+            .react-datepicker__month-container {
+                background: #F7F7F7;
+                box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+                transition: .2s;
+
+                &:hover {
+                    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+                    transition: .2s;
+                }
+            }
+
+            .react-datepicker__day {
+                cursor: default;
+
+                &:hover {
+                    transform: scale(1);
+                    background-color: transparent;
+                    box-shadow: none;
+                    cursor: default;
+                }
+
+                &.reserved {
+                    cursor: not-allowed;
+                }
+            }
+        }
+
+        .reserve {
+            background: #575757;
+            color: #fff;
+            font-size: 16px;
+            letter-spacing: 1.67px;
+            text-align: center;
+            padding: 10px;
+            border: none;
+            margin-top: 30px;
+            transition: .2s;
+
+            &:hover {
+                box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+                transition: .2s;
+            }
+        }
+    }
+}
+
+.react-datepicker {
+    .react-datepicker__navigation--previous {
+        top: 30px;
+    }
+
+    .react-datepicker__navigation--next {
+        top: 30px;
+    }
+
+    .react-datepicker__month-container {
+        background: #F7F7F7;
+        border: none;
+        padding: 20px 5px;
+        margin: auto;
+
+        .react-datepicker__header {
+            background-color: transparent;
+            border: none;
+        }
+
+        .react-datepicker__day {
+            transition: .2s;
+            border-radius: 0;
+
+            &:hover {
+                transform: scale(1.05);
+                background-color: #fff;
+                box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+                transition: .2s;
+            }
+
+            &.react-datepicker__day--selected,
+            &.react-datepicker__day--keyboard-selected {
+                background-color: #575757;
+                border: none;
+                color: #fff;
+
+                &:hover {
+                    background-color: transparent;
+                    color: #000;
+                }
+            }
+
+            &.reserved {
+                background-color: #d4d8dc;
+                cursor: not-allowed;
+                color: #a6a6a6;
+
+                &:hover {
+                    transform: scale(1);
+                    background-color: #d4d8dc;
+                    box-shadow: none;
+                }
+            }
+        }
+
+    }
+}
+
+.modal {
+    .img_modal {
+        img {
+            margin: auto;
+            display: block;
+            max-width: 100%;
+        }
+    }
+
+    .form-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        label {
+            font-size: 14px;
+            letter-spacing: 1.46px;
+            text-align: center;
+        }
+
+        input {
+            width: 80%;
+        }
+
+        .inline {
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .react-datepicker-wrapper {
+                width: 45%;
+
+                input {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .btn {
+        font-size: 14px;
+        letter-spacing: 1.46px;
+        border-radius: 0;
+        border: none;
+
+        &.btn-primary {
+            background: #484848;
+            color: #FFFFFF;
+        }
+
+        &.btn-secondary {
+            background: #D8D8D8;
+            color: #6D7278;
+        }
+    }
+
+    .modal-dialog#reserveModal {
+        .modal-footer {
+            justify-content: space-between;
+        }
+    }
+
+    .modal-dialog#reserveCheckModal {
+        #reserve_success {
+            img {
+                width: 60px;
+                height: 60px;
+                margin: 20px auto;
+                display: block;
+            }
+        }
+
+        #reserve_error {
+            p {
+                font-size: 14px;
+                letter-spacing: 1.46px;
+            }
+        }
+    }
+}
+
+// room_info css end
