@@ -1,0 +1,918 @@
+{
+  "expireTime": 9007200845389961000,
+  "key": "gatsby-plugin-mdx-entire-payload-d34ceee6ec9397e83bd160e741e74792-/react-upgrade-sharing/public",
+  "val": {
+    "mdast": {
+      "type": "root",
+      "children": [
+        {
+          "type": "import",
+          "value": "import { Head, Notes } from 'mdx-deck';\nimport { defaultThemes } from '../theme';\nimport { CodeSurfer, Step, CodeSurferColumns } from \"code-surfer\";",
+          "position": {
+            "start": { "line": 1, "column": 1, "offset": 0 },
+            "end": { "line": 3, "column": 67, "offset": 148 },
+            "indent": [1, 1]
+          }
+        },
+        {
+          "type": "export",
+          "value": "export const themes = defaultThemes;",
+          "position": {
+            "start": { "line": 5, "column": 1, "offset": 150 },
+            "end": { "line": 5, "column": 37, "offset": 186 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<Head>\n  <title>React升版計畫</title>\n</Head>",
+          "position": {
+            "start": { "line": 7, "column": 1, "offset": 188 },
+            "end": { "line": 9, "column": 8, "offset": 229 },
+            "indent": [1, 1]
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 11, "column": 1, "offset": 231 },
+            "end": { "line": 11, "column": 4, "offset": 234 },
+            "indent": []
+          }
+        },
+        {
+          "type": "heading",
+          "depth": 1,
+          "children": [
+            {
+              "type": "text",
+              "value": "React 15.6.2 -> 16.12.0",
+              "position": {
+                "start": { "line": 13, "column": 3, "offset": 238 },
+                "end": { "line": 13, "column": 26, "offset": 261 },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": { "line": 13, "column": 1, "offset": 236 },
+            "end": { "line": 13, "column": 26, "offset": 261 },
+            "indent": []
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 15, "column": 1, "offset": 263 },
+            "end": { "line": 15, "column": 4, "offset": 266 },
+            "indent": []
+          }
+        },
+        {
+          "type": "heading",
+          "depth": 2,
+          "children": [
+            {
+              "type": "text",
+              "value": "過時的 Component 生命週期",
+              "position": {
+                "start": { "line": 17, "column": 4, "offset": 271 },
+                "end": { "line": 17, "column": 22, "offset": 289 },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": { "line": 17, "column": 1, "offset": 268 },
+            "end": { "line": 17, "column": 22, "offset": 289 },
+            "indent": []
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 19, "column": 1, "offset": 291 },
+            "end": { "line": 19, "column": 4, "offset": 294 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<CodeSurfer >",
+          "position": {
+            "start": { "line": 21, "column": 1, "offset": 296 },
+            "end": { "line": 21, "column": 14, "offset": 309 },
+            "indent": []
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": null,
+          "value": "1. componentWillMount()\n2. componentWillUpdate()\n3. componentWillReceiveProps()",
+          "position": {
+            "start": { "line": 23, "column": 1, "offset": 311 },
+            "end": { "line": 27, "column": 4, "offset": 400 },
+            "indent": [1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "code",
+          "lang": "diff",
+          "meta": "1 subtitle=\"在 mounting 發生前被呼叫\"",
+          "value": "",
+          "position": {
+            "start": { "line": 29, "column": 1, "offset": 402 },
+            "end": { "line": 30, "column": 4, "offset": 444 },
+            "indent": [1]
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "</CodeSurfer>",
+          "position": {
+            "start": { "line": 32, "column": 1, "offset": 446 },
+            "end": { "line": 32, "column": 14, "offset": 459 },
+            "indent": []
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 34, "column": 1, "offset": 461 },
+            "end": { "line": 34, "column": 4, "offset": 464 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<CodeSurfer>",
+          "position": {
+            "start": { "line": 36, "column": 1, "offset": 466 },
+            "end": { "line": 36, "column": 13, "offset": 478 },
+            "indent": []
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": null,
+          "value": "    componentWillMount() {\n\t\tnew Ajax({\n\t\t\turl: '/hrm2/api/company/picker/departments',\n\t\t\tmethod: 'get',\n\t\t\tonSuccess: (code, msg, data, xhr) => {\n\t\t\t\tthis.setState({\n\t\t\t\t\tdeps: data\n\t\t\t\t});\n\t\t\t}\n\t\t}).send();\n    }",
+          "position": {
+            "start": { "line": 38, "column": 1, "offset": 480 },
+            "end": { "line": 50, "column": 4, "offset": 705 },
+            "indent": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "code",
+          "lang": "diff",
+          "meta": "6:8",
+          "value": "    componentWillMount() {\n\t\tnew Ajax({\n\t\t\turl: '/hrm2/api/company/picker/departments',\n\t\t\tmethod: 'get',\n\t\t\tonSuccess: (code, msg, data, xhr) => {\n\t\t\t\tthis.setState({\n\t\t\t\t\tdeps: data\n\t\t\t\t});\n\t\t\t}\n\t\t}).send();\n    }",
+          "position": {
+            "start": { "line": 52, "column": 1, "offset": 707 },
+            "end": { "line": 64, "column": 4, "offset": 938 },
+            "indent": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "</CodeSurfer>",
+          "position": {
+            "start": { "line": 66, "column": 1, "offset": 940 },
+            "end": { "line": 66, "column": 14, "offset": 953 },
+            "indent": []
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 68, "column": 1, "offset": 955 },
+            "end": { "line": 68, "column": 4, "offset": 958 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<CodeSurfer>",
+          "position": {
+            "start": { "line": 70, "column": 1, "offset": 960 },
+            "end": { "line": 70, "column": 13, "offset": 972 },
+            "indent": []
+          }
+        },
+        {
+          "type": "code",
+          "lang": "markup",
+          "meta": null,
+          "value": "初始化 state\nsetState",
+          "position": {
+            "start": { "line": 72, "column": 1, "offset": 974 },
+            "end": { "line": 75, "column": 4, "offset": 1007 },
+            "indent": [1, 1, 1]
+          }
+        },
+        {
+          "type": "code",
+          "lang": "markup",
+          "meta": "diff 1:2",
+          "value": "初始化 state\n    - constructor()\nsetState",
+          "position": {
+            "start": { "line": 77, "column": 1, "offset": 1009 },
+            "end": { "line": 81, "column": 4, "offset": 1071 },
+            "indent": [1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "code",
+          "lang": "markup",
+          "meta": "diff 3:4",
+          "value": "初始化 state\n    - constructor()\nsetState\n    - componentDidMount()",
+          "position": {
+            "start": { "line": 83, "column": 1, "offset": 1073 },
+            "end": { "line": 88, "column": 4, "offset": 1161 },
+            "indent": [1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "</CodeSurfer>",
+          "position": {
+            "start": { "line": 90, "column": 1, "offset": 1163 },
+            "end": { "line": 90, "column": 14, "offset": 1176 },
+            "indent": []
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 92, "column": 1, "offset": 1178 },
+            "end": { "line": 92, "column": 4, "offset": 1181 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<CodeSurfer >",
+          "position": {
+            "start": { "line": 94, "column": 1, "offset": 1183 },
+            "end": { "line": 94, "column": 14, "offset": 1196 },
+            "indent": []
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": null,
+          "value": "1. componentWillMount()\n2. componentWillUpdate()\n3. componentWillReceiveProps()",
+          "position": {
+            "start": { "line": 96, "column": 1, "offset": 1198 },
+            "end": { "line": 100, "column": 4, "offset": 1287 },
+            "indent": [1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": "diff 2 subtitle=\"render 發生之前、state 更新之前、prop 更新之前\"",
+          "value": "1. componentWillMount()\n2. componentWillUpdate()\n3. componentWillReceiveProps()",
+          "position": {
+            "start": { "line": 102, "column": 1, "offset": 1289 },
+            "end": { "line": 106, "column": 4, "offset": 1429 },
+            "indent": [1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "</CodeSurfer>",
+          "position": {
+            "start": { "line": 108, "column": 1, "offset": 1431 },
+            "end": { "line": 108, "column": 14, "offset": 1444 },
+            "indent": []
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 110, "column": 1, "offset": 1446 },
+            "end": { "line": 110, "column": 4, "offset": 1449 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<CodeSurfer>",
+          "position": {
+            "start": { "line": 112, "column": 1, "offset": 1451 },
+            "end": { "line": 112, "column": 13, "offset": 1463 },
+            "indent": []
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": null,
+          "value": "componentWillUpdate(nextProps, nextState, nextContext) {\n    const {empId} = this.props;\n    if(empId != nextProps.empId)\n        this._loadPhoto(nextProps.empId);\n}",
+          "position": {
+            "start": { "line": 114, "column": 1, "offset": 1465 },
+            "end": { "line": 120, "column": 4, "offset": 1640 },
+            "indent": [1, 1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": "subtitle=\"通常可以用 componentDidUpdate() 取代\"",
+          "value": "\ncomponentWillUpdate(nextProps, nextState, nextContext) {\n    const {empId} = this.props;\n    if(empId != nextProps.empId)\n        this._loadPhoto(nextProps.empId);\n}\n\ncomponentDidUpdate(prevProps, prevState, snapshot) {\n    const {empId} = this.props;\n    if(empId != prevProps.empId)\n        this._loadPhoto(empId);\n}",
+          "position": {
+            "start": { "line": 122, "column": 1, "offset": 1642 },
+            "end": { "line": 135, "column": 4, "offset": 2012 },
+            "indent": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "</CodeSurfer>",
+          "position": {
+            "start": { "line": 137, "column": 1, "offset": 2014 },
+            "end": { "line": 137, "column": 14, "offset": 2027 },
+            "indent": []
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 139, "column": 1, "offset": 2029 },
+            "end": { "line": 139, "column": 4, "offset": 2032 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<CodeSurfer >",
+          "position": {
+            "start": { "line": 141, "column": 1, "offset": 2034 },
+            "end": { "line": 141, "column": 14, "offset": 2047 },
+            "indent": []
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": "diff 3",
+          "value": "1. componentWillMount()\n2. componentWillUpdate()\n3. componentWillReceiveProps()",
+          "position": {
+            "start": { "line": 143, "column": 1, "offset": 2049 },
+            "end": { "line": 147, "column": 4, "offset": 2145 },
+            "indent": [1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "</CodeSurfer>",
+          "position": {
+            "start": { "line": 149, "column": 1, "offset": 2147 },
+            "end": { "line": 149, "column": 14, "offset": 2160 },
+            "indent": []
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 151, "column": 1, "offset": 2162 },
+            "end": { "line": 151, "column": 4, "offset": 2165 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<CodeSurfer >",
+          "position": {
+            "start": { "line": 153, "column": 1, "offset": 2167 },
+            "end": { "line": 153, "column": 14, "offset": 2180 },
+            "indent": []
+          }
+        },
+        {
+          "type": "code",
+          "lang": "markup",
+          "meta": null,
+          "value": "componentWillReceiveProps()\n\n    * 需要在某個 prop 改變時 執行一個相對應的 side effect\n    * 在某個 prop 改變時「重置」某個 state",
+          "position": {
+            "start": { "line": 155, "column": 1, "offset": 2182 },
+            "end": { "line": 160, "column": 4, "offset": 2298 },
+            "indent": [1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "code",
+          "lang": "markup",
+          "meta": "diff 3:4",
+          "value": "componentWillReceiveProps()\n\n    * 需要在某個 prop 改變時 執行一個相對應的 side effect\n        - componentDidUpdate()\n    * 在某個 prop 改變時「重置」某個 state",
+          "position": {
+            "start": { "line": 162, "column": 1, "offset": 2300 },
+            "end": { "line": 168, "column": 4, "offset": 2456 },
+            "indent": [1, 1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "code",
+          "lang": "markup",
+          "meta": "diff 5:6",
+          "value": "componentWillReceiveProps()\n\n    * 需要在某個 prop 改變時 執行一個相對應的 side effect\n        - componentDidUpdate()\n    * 在某個 prop 改變時「重置」某個 state\n        - 建立一個完全被控制 的 component 或帶有 key 的完全被控制 component",
+          "position": {
+            "start": { "line": 170, "column": 1, "offset": 2458 },
+            "end": { "line": 177, "column": 4, "offset": 2671 },
+            "indent": [1, 1, 1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": "subtitle=\"完全被控制 的 component\"",
+          "value": "function EmailInput(props) {\n  return <input\n              onChange={props.onChange}\n              value={props.email}\n         />;\n}",
+          "position": {
+            "start": { "line": 179, "column": 1, "offset": 2673 },
+            "end": { "line": 186, "column": 4, "offset": 2845 },
+            "indent": [1, 1, 1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": "diff 3:4",
+          "value": "function EmailInput(props) {\n  return <input\n              onChange={props.onChange}\n              value={props.email}\n         />;\n}",
+          "position": {
+            "start": { "line": 188, "column": 1, "offset": 2847 },
+            "end": { "line": 195, "column": 4, "offset": 2999 },
+            "indent": [1, 1, 1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "</CodeSurfer>",
+          "position": {
+            "start": { "line": 196, "column": 1, "offset": 3000 },
+            "end": { "line": 196, "column": 14, "offset": 3013 },
+            "indent": []
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 198, "column": 1, "offset": 3015 },
+            "end": { "line": 198, "column": 4, "offset": 3018 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<CodeSurfer>",
+          "position": {
+            "start": { "line": 200, "column": 1, "offset": 3020 },
+            "end": { "line": 200, "column": 13, "offset": 3032 },
+            "indent": []
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": "subtitle=\"帶有 key 的完全被控制 component\"",
+          "value": "class EmailInput extends Component {\n  state = { email: this.props.defaultEmail };\n\n  handleChange = event => {\n    this.setState({ email: event.target.value });\n  };\n\n  render() {\n    return <input onChange={this.handleChange} value={this.state.email} />;\n  }\n}\n\n<EmailInput\n   defaultEmail={this.props.user.email}\n   key={this.props.user.id}\n />",
+          "position": {
+            "start": { "line": 202, "column": 1, "offset": 3034 },
+            "end": { "line": 219, "column": 4, "offset": 3426 },
+            "indent": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": "diff 2,14:15",
+          "value": "class EmailInput extends Component {\n  state = { email: this.props.defaultEmail };\n\n  handleChange = event => {\n    this.setState({ email: event.target.value });\n  };\n\n  render() {\n    return <input onChange={this.handleChange} value={this.state.email} />;\n  }\n}\n\n<EmailInput\n   defaultEmail={this.props.user.email}\n   key={this.props.user.id}\n />",
+          "position": {
+            "start": { "line": 221, "column": 1, "offset": 3428 },
+            "end": { "line": 238, "column": 4, "offset": 3798 },
+            "indent": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "</CodeSurfer>",
+          "position": {
+            "start": { "line": 240, "column": 1, "offset": 3800 },
+            "end": { "line": 240, "column": 14, "offset": 3813 },
+            "indent": []
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 242, "column": 1, "offset": 3815 },
+            "end": { "line": 242, "column": 4, "offset": 3818 },
+            "indent": []
+          }
+        },
+        {
+          "type": "heading",
+          "depth": 2,
+          "children": [
+            {
+              "type": "text",
+              "value": "memory leaks",
+              "position": {
+                "start": { "line": 244, "column": 4, "offset": 3823 },
+                "end": { "line": 244, "column": 16, "offset": 3835 },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": { "line": 244, "column": 1, "offset": 3820 },
+            "end": { "line": 244, "column": 16, "offset": 3835 },
+            "indent": []
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 246, "column": 1, "offset": 3837 },
+            "end": { "line": 246, "column": 4, "offset": 3840 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<CodeSurfer>",
+          "position": {
+            "start": { "line": 248, "column": 1, "offset": 3842 },
+            "end": { "line": 248, "column": 13, "offset": 3854 },
+            "indent": []
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": null,
+          "value": "Warning: Can't perform a React state update on an unmounted component.\nThis is a no-op, but it indicates a memory leak in your application.\nTo fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount method.\n\ncomponentDidMount() {\n    new Ajax({\n        url: '/hrm2/api/auth/module',\n        method: 'get',\n        onSuccess: (code, msg, data, xhr) => {\n            this.setState({ m4: data.includes(4) })\n        }\n    }).send();\n}",
+          "position": {
+            "start": { "line": 250, "column": 1, "offset": 3856 },
+            "end": { "line": 264, "column": 4, "offset": 4322 },
+            "indent": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": null,
+          "value": "Warning: Can't perform a React state update on an unmounted component.\nThis is a no-op, but it indicates a memory leak in your application.\nTo fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount method.\n\ncomponentDidMount() {\n    this.mounted = true;\n    new Ajax({\n        url: '/hrm2/api/auth/module',\n        method: 'get',\n        onSuccess: (code, msg, data, xhr) => {\n            if (this.mounted) {\n                this.setState({ m4: data.includes(4) })\n            }\n        }\n    }).send();\n}\n\ncomponentWillUnmount() {\n    this.mounted = false;\n}",
+          "position": {
+            "start": { "line": 266, "column": 1, "offset": 4324 },
+            "end": { "line": 287, "column": 4, "offset": 4919 },
+            "indent": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "</CodeSurfer>",
+          "position": {
+            "start": { "line": 289, "column": 1, "offset": 4921 },
+            "end": { "line": 289, "column": 14, "offset": 4934 },
+            "indent": []
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 291, "column": 1, "offset": 4936 },
+            "end": { "line": 291, "column": 4, "offset": 4939 },
+            "indent": []
+          }
+        },
+        {
+          "type": "heading",
+          "depth": 2,
+          "children": [
+            {
+              "type": "text",
+              "value": "常見錯誤",
+              "position": {
+                "start": { "line": 293, "column": 4, "offset": 4944 },
+                "end": { "line": 293, "column": 8, "offset": 4948 },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": { "line": 293, "column": 1, "offset": 4941 },
+            "end": { "line": 293, "column": 8, "offset": 4948 },
+            "indent": []
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 295, "column": 1, "offset": 4950 },
+            "end": { "line": 295, "column": 4, "offset": 4953 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<CodeSurfer>",
+          "position": {
+            "start": { "line": 297, "column": 1, "offset": 4955 },
+            "end": { "line": 297, "column": 13, "offset": 4967 },
+            "indent": []
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": null,
+          "value": "Warning: Expected `onClick` listener to be a function,\ninstead got a value of `string` type.\n\n// Before\nonClick={someHandler.bind(this, ...arguments)}",
+          "position": {
+            "start": { "line": 299, "column": 1, "offset": 4969 },
+            "end": { "line": 305, "column": 4, "offset": 5129 },
+            "indent": [1, 1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": null,
+          "value": "Warning: Expected `onClick` listener to be a function,\ninstead got a value of `string` type.\n\n// Before\nonClick={someHandler.bind(this, ...arguments)}\n\n// After\nonClick={() => someHandler(...arguments)}",
+          "position": {
+            "start": { "line": 307, "column": 1, "offset": 5131 },
+            "end": { "line": 316, "column": 4, "offset": 5343 },
+            "indent": [1, 1, 1, 1, 1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "</CodeSurfer>",
+          "position": {
+            "start": { "line": 318, "column": 1, "offset": 5345 },
+            "end": { "line": 318, "column": 14, "offset": 5358 },
+            "indent": []
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 320, "column": 1, "offset": 5360 },
+            "end": { "line": 320, "column": 4, "offset": 5363 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<CodeSurfer>",
+          "position": {
+            "start": { "line": 322, "column": 1, "offset": 5365 },
+            "end": { "line": 322, "column": 13, "offset": 5377 },
+            "indent": []
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": null,
+          "value": "Warning: Invalid value for prop `data-display` on <td> tag. \nEither remove it from the element, or pass a string or number value to keep it in the DOM.\n\n// Before\n<td width=\"20%\" data-display={function(data){...}}",
+          "position": {
+            "start": { "line": 324, "column": 1, "offset": 5379 },
+            "end": { "line": 330, "column": 4, "offset": 5602 },
+            "indent": [1, 1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": null,
+          "value": "Warning: Invalid value for prop `data-display` on <td> tag. \nEither remove it from the element, or pass a string or number value to keep it in the DOM.\n\n// Before\n<td width=\"20%\" data-display={function(data){...}}\n\n// After\n<td width=\"20%\" data-display={`function(data){...}`}",
+          "position": {
+            "start": { "line": 332, "column": 1, "offset": 5604 },
+            "end": { "line": 341, "column": 4, "offset": 5890 },
+            "indent": [1, 1, 1, 1, 1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "</CodeSurfer>",
+          "position": {
+            "start": { "line": 343, "column": 1, "offset": 5892 },
+            "end": { "line": 343, "column": 14, "offset": 5905 },
+            "indent": []
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 345, "column": 1, "offset": 5907 },
+            "end": { "line": 345, "column": 4, "offset": 5910 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<CodeSurfer>",
+          "position": {
+            "start": { "line": 348, "column": 1, "offset": 5913 },
+            "end": { "line": 348, "column": 13, "offset": 5925 },
+            "indent": []
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": null,
+          "value": "Warning: React does not recognize the `data-td-cssClass` prop on a DOM element.\nIf you intentionally want it to appear in the DOM as a custom attribute,\nspell it as lowercase `data-td-cssclass` instead\n\n// Before\n<td width=\"35%\" data-td-cssClass=\"'text-sm text-nowrap'\">",
+          "position": {
+            "start": { "line": 350, "column": 1, "offset": 5927 },
+            "end": { "line": 357, "column": 4, "offset": 6207 },
+            "indent": [1, 1, 1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": null,
+          "value": "Warning: React does not recognize the `data-td-cssClass` prop on a DOM element.\nIf you intentionally want it to appear in the DOM as a custom attribute,\nspell it as lowercase `data-td-cssclass` instead\n\n// Before\n<td width=\"35%\" data-td-cssClass=\"'text-sm text-nowrap'\">\n\n// After\n<td width=\"35%\" data-td-cssclass=\"'text-sm text-nowrap'\">",
+          "position": {
+            "start": { "line": 359, "column": 1, "offset": 6209 },
+            "end": { "line": 369, "column": 4, "offset": 6557 },
+            "indent": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "</CodeSurfer>",
+          "position": {
+            "start": { "line": 371, "column": 1, "offset": 6559 },
+            "end": { "line": 371, "column": 14, "offset": 6572 },
+            "indent": []
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 373, "column": 1, "offset": 6574 },
+            "end": { "line": 373, "column": 4, "offset": 6577 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<CodeSurfer>",
+          "position": {
+            "start": { "line": 375, "column": 1, "offset": 6579 },
+            "end": { "line": 375, "column": 13, "offset": 6591 },
+            "indent": []
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": null,
+          "value": "Failed to execute 'insertBefore' on 'Node':\nThe node before which the new node is to be inserted is not a child of this node.\n\nclass EmpPicker extends React.Component{\n\n\trender(){\n        // ...\n\t\treturn <div ref={ele => this._dom.root = ele} className={className + ' EmpPicker' + (advance ? ' adv' : '')}>\n\t\t\t{empty && loading ? <div className={'loading loading-md'} /> : null}\n\t\t\t{empty && !loading ? <div className={'notice ico ico-s ico-alert'}>無符合條件的員工</div> : null}\n\t\t\t<span ref={ele => this._dom.picker = ele} />\n\t\t\t{advance && !empty ? <span ref={ele => this._dom.advBtn = ele}\n\t\t\t\t\t\t\t\t\tclassName={'-adv btn btn-white btn-sm ico ico-search' + (adv ? ' active' : '')}\n\t\t\t\t\t\t\t\t\tonClick={_advMode} /> : null }\n\t\t\t{advance && !empty ? <_AdvPanel ref={ele => this.advPanel = ele} parent={this} api={url ? url : null} /> : null}\n\t\t</div>\n\t}\n}",
+          "position": {
+            "start": { "line": 377, "column": 1, "offset": 6593 },
+            "end": { "line": 396, "column": 4, "offset": 7447 },
+            "indent": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": "diff 1:2,4,11,18",
+          "value": "Failed to execute 'insertBefore' on 'Node':\nThe node before which the new node is to be inserted is not a child of this node.\n\nclass EmpPicker extends React.Component{\n\n\trender(){\n        // ...\n\t\treturn <div ref={ele => this._dom.root = ele} className={className + ' EmpPicker' + (advance ? ' adv' : '')}>\n\t\t\t{empty && loading ? <div className={'loading loading-md'} /> : null}\n\t\t\t{empty && !loading ? <div className={'notice ico ico-s ico-alert'}>無符合條件的員工</div> : null}\n\t\t\t<span ref={ele => this._dom.picker = ele} />\n\t\t\t{advance && !empty ? <span ref={ele => this._dom.advBtn = ele}\n\t\t\t\t\t\t\t\t\tclassName={'-adv btn btn-white btn-sm ico ico-search' + (adv ? ' active' : '')}\n\t\t\t\t\t\t\t\t\tonClick={_advMode} /> : null }\n\t\t\t{advance && !empty ? <_AdvPanel ref={ele => this.advPanel = ele} parent={this} api={url ? url : null} /> : null}\n\t\t</div>\n\t}\n}",
+          "position": {
+            "start": { "line": 398, "column": 1, "offset": 7449 },
+            "end": { "line": 417, "column": 4, "offset": 8320 },
+            "indent": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+          }
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "meta": "diff 1:2,11:12",
+          "value": "Failed to execute 'insertBefore' on 'Node':\nThe node before which the new node is to be inserted is not a child of this node.\n\nclass EmpPicker extends React.Component{\n\n\trender(){\n        // ...\n\t\treturn <div ref={ele => this._dom.root = ele} className={className + ' EmpPicker' + (advance ? ' adv' : '')}>\n\t\t\t{empty && loading ? <div className={'loading loading-md'} /> : null}\n\t\t\t{empty && !loading ? <div className={'notice ico ico-s ico-alert'}>無符合條件的員工</div> : null}\n            <div></div>\n\t\t\t<span ref={ele => this._dom.picker = ele} />\n\t\t\t{advance && !empty ? <span ref={ele => this._dom.advBtn = ele}\n\t\t\t\t\t\t\t\t\tclassName={'-adv btn btn-white btn-sm ico ico-search' + (adv ? ' active' : '')}\n\t\t\t\t\t\t\t\t\tonClick={_advMode} /> : null }\n\t\t\t{advance && !empty ? <_AdvPanel ref={ele => this.advPanel = ele} parent={this} api={url ? url : null} /> : null}\n\t\t</div>\n\t}\n}",
+          "position": {
+            "start": { "line": 418, "column": 1, "offset": 8321 },
+            "end": { "line": 438, "column": 4, "offset": 9214 },
+            "indent": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "</CodeSurfer>",
+          "position": {
+            "start": { "line": 440, "column": 1, "offset": 9216 },
+            "end": { "line": 440, "column": 14, "offset": 9229 },
+            "indent": []
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 442, "column": 1, "offset": 9231 },
+            "end": { "line": 442, "column": 4, "offset": 9234 },
+            "indent": []
+          }
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "thank you ~ ❤️",
+              "position": {
+                "start": { "line": 444, "column": 1, "offset": 9236 },
+                "end": { "line": 444, "column": 15, "offset": 9250 },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": { "line": 444, "column": 1, "offset": 9236 },
+            "end": { "line": 444, "column": 15, "offset": 9250 },
+            "indent": []
+          }
+        },
+        {
+          "type": "export",
+          "value": "export const _frontmatter = {}",
+          "position": {
+            "start": { "line": 449, "column": 1, "offset": 9255 },
+            "end": { "line": 449, "column": 31, "offset": 9285 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 1, "column": 1, "offset": 0 },
+        "end": { "line": 449, "column": 31, "offset": 9285 }
+      }
+    },
+    "scopeImports": [
+      "import { Head, Notes } from 'mdx-deck';",
+      "import { defaultThemes } from '../theme';",
+      "import { CodeSurfer, Step, CodeSurferColumns } from \"code-surfer\";",
+      "import * as React from 'react'"
+    ],
+    "scopeIdentifiers": [
+      "Head",
+      "Notes",
+      "defaultThemes",
+      "CodeSurfer",
+      "Step",
+      "CodeSurferColumns",
+      "React"
+    ],
+    "body": "function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }\n\nfunction _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }\n\nfunction _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }\n\n/* @jsx mdx */\nvar themes = defaultThemes;\nvar _frontmatter = {};\n\nvar makeShortcode = function makeShortcode(name) {\n  return function MDXDefaultShortcode(props) {\n    console.warn(\"Component \" + name + \" was not imported, exported, or provided by MDXProvider as global scope\");\n    return mdx(\"div\", props);\n  };\n};\n\nvar layoutProps = {\n  themes: themes,\n  _frontmatter: _frontmatter\n};\nvar MDXLayout = \"wrapper\";\nreturn function MDXContent(_ref) {\n  var components = _ref.components,\n      props = _objectWithoutProperties(_ref, [\"components\"]);\n\n  return mdx(MDXLayout, _extends({}, layoutProps, props, {\n    components: components,\n    mdxType: \"MDXLayout\"\n  }), mdx(Head, {\n    mdxType: \"Head\"\n  }, mdx(\"title\", null, \"React\\u5347\\u7248\\u8A08\\u756B\")), mdx(\"hr\", null), mdx(\"h1\", null, \"React 15.6.2 -> 16.12.0\"), mdx(\"hr\", null), mdx(\"h2\", null, \"\\u904E\\u6642\\u7684 Component \\u751F\\u547D\\u9031\\u671F\"), mdx(\"hr\", null), mdx(CodeSurfer, {\n    mdxType: \"CodeSurfer\"\n  }, mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\"\n  }), \"1. componentWillMount()\\n2. componentWillUpdate()\\n3. componentWillReceiveProps()\\n\")), mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"1\": true,\n    \"className\": \"language-diff\",\n    \"metastring\": \"1 subtitle=\\\"在 mounting 發生前被呼叫\\\"\",\n    \"subtitle\": \"\\\"在\",\n    \"mounting\": true,\n    \"發生前被呼叫\\\"\": true\n  }), \"\"))), mdx(\"hr\", null), mdx(CodeSurfer, {\n    mdxType: \"CodeSurfer\"\n  }, mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\"\n  }), \"    componentWillMount() {\\n        new Ajax({\\n            url: '/hrm2/api/company/picker/departments',\\n            method: 'get',\\n            onSuccess: (code, msg, data, xhr) => {\\n                this.setState({\\n                    deps: data\\n                });\\n            }\\n        }).send();\\n    }\\n\")), mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-diff\",\n    \"metastring\": \"6:8\",\n    \"6:8\": true\n  }), \"    componentWillMount() {\\n        new Ajax({\\n            url: '/hrm2/api/company/picker/departments',\\n            method: 'get',\\n            onSuccess: (code, msg, data, xhr) => {\\n                this.setState({\\n                    deps: data\\n                });\\n            }\\n        }).send();\\n    }\\n\"))), mdx(\"hr\", null), mdx(CodeSurfer, {\n    mdxType: \"CodeSurfer\"\n  }, mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-markup\"\n  }), \"\\u521D\\u59CB\\u5316 state\\nsetState\\n\")), mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-markup\",\n    \"metastring\": \"diff 1:2\",\n    \"diff\": true,\n    \"1:2\": true\n  }), \"\\u521D\\u59CB\\u5316 state\\n    - constructor()\\nsetState\\n\")), mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-markup\",\n    \"metastring\": \"diff 3:4\",\n    \"diff\": true,\n    \"3:4\": true\n  }), \"\\u521D\\u59CB\\u5316 state\\n    - constructor()\\nsetState\\n    - componentDidMount()\\n\"))), mdx(\"hr\", null), mdx(CodeSurfer, {\n    mdxType: \"CodeSurfer\"\n  }, mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\"\n  }), \"1. componentWillMount()\\n2. componentWillUpdate()\\n3. componentWillReceiveProps()\\n\")), mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"2\": true,\n    \"className\": \"language-js\",\n    \"metastring\": \"diff 2 subtitle=\\\"render 發生之前、state 更新之前、prop 更新之前\\\"\",\n    \"diff\": true,\n    \"subtitle\": \"\\\"render\",\n    \"發生之前、state\": true,\n    \"更新之前、prop\": true,\n    \"更新之前\\\"\": true\n  }), \"1. componentWillMount()\\n2. componentWillUpdate()\\n3. componentWillReceiveProps()\\n\"))), mdx(\"hr\", null), mdx(CodeSurfer, {\n    mdxType: \"CodeSurfer\"\n  }, mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\"\n  }), \"componentWillUpdate(nextProps, nextState, nextContext) {\\n    const {empId} = this.props;\\n    if(empId != nextProps.empId)\\n        this._loadPhoto(nextProps.empId);\\n}\\n\")), mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\",\n    \"metastring\": \"subtitle=\\\"通常可以用 componentDidUpdate() 取代\\\"\",\n    \"subtitle\": \"\\\"通常可以用\",\n    \"componentDidUpdate()\": true,\n    \"取代\\\"\": true\n  }), \"\\ncomponentWillUpdate(nextProps, nextState, nextContext) {\\n    const {empId} = this.props;\\n    if(empId != nextProps.empId)\\n        this._loadPhoto(nextProps.empId);\\n}\\n\\ncomponentDidUpdate(prevProps, prevState, snapshot) {\\n    const {empId} = this.props;\\n    if(empId != prevProps.empId)\\n        this._loadPhoto(empId);\\n}\\n\"))), mdx(\"hr\", null), mdx(CodeSurfer, {\n    mdxType: \"CodeSurfer\"\n  }, mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"3\": true,\n    \"className\": \"language-js\",\n    \"metastring\": \"diff 3\",\n    \"diff\": true\n  }), \"1. componentWillMount()\\n2. componentWillUpdate()\\n3. componentWillReceiveProps()\\n\"))), mdx(\"hr\", null), mdx(CodeSurfer, {\n    mdxType: \"CodeSurfer\"\n  }, mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-markup\"\n  }), \"componentWillReceiveProps()\\n\\n    * \\u9700\\u8981\\u5728\\u67D0\\u500B prop \\u6539\\u8B8A\\u6642 \\u57F7\\u884C\\u4E00\\u500B\\u76F8\\u5C0D\\u61C9\\u7684 side effect\\n    * \\u5728\\u67D0\\u500B prop \\u6539\\u8B8A\\u6642\\u300C\\u91CD\\u7F6E\\u300D\\u67D0\\u500B state\\n\")), mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-markup\",\n    \"metastring\": \"diff 3:4\",\n    \"diff\": true,\n    \"3:4\": true\n  }), \"componentWillReceiveProps()\\n\\n    * \\u9700\\u8981\\u5728\\u67D0\\u500B prop \\u6539\\u8B8A\\u6642 \\u57F7\\u884C\\u4E00\\u500B\\u76F8\\u5C0D\\u61C9\\u7684 side effect\\n        - componentDidUpdate()\\n    * \\u5728\\u67D0\\u500B prop \\u6539\\u8B8A\\u6642\\u300C\\u91CD\\u7F6E\\u300D\\u67D0\\u500B state\\n\")), mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-markup\",\n    \"metastring\": \"diff 5:6\",\n    \"diff\": true,\n    \"5:6\": true\n  }), \"componentWillReceiveProps()\\n\\n    * \\u9700\\u8981\\u5728\\u67D0\\u500B prop \\u6539\\u8B8A\\u6642 \\u57F7\\u884C\\u4E00\\u500B\\u76F8\\u5C0D\\u61C9\\u7684 side effect\\n        - componentDidUpdate()\\n    * \\u5728\\u67D0\\u500B prop \\u6539\\u8B8A\\u6642\\u300C\\u91CD\\u7F6E\\u300D\\u67D0\\u500B state\\n        - \\u5EFA\\u7ACB\\u4E00\\u500B\\u5B8C\\u5168\\u88AB\\u63A7\\u5236 \\u7684 component \\u6216\\u5E36\\u6709 key \\u7684\\u5B8C\\u5168\\u88AB\\u63A7\\u5236 component\\n\")), mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\",\n    \"metastring\": \"subtitle=\\\"完全被控制 的 component\\\"\",\n    \"subtitle\": \"\\\"完全被控制\",\n    \"的\": true,\n    \"component\\\"\": true\n  }), \"function EmailInput(props) {\\n  return <input\\n              onChange={props.onChange}\\n              value={props.email}\\n         />;\\n}\\n\")), mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\",\n    \"metastring\": \"diff 3:4\",\n    \"diff\": true,\n    \"3:4\": true\n  }), \"function EmailInput(props) {\\n  return <input\\n              onChange={props.onChange}\\n              value={props.email}\\n         />;\\n}\\n\"))), mdx(\"hr\", null), mdx(CodeSurfer, {\n    mdxType: \"CodeSurfer\"\n  }, mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\",\n    \"metastring\": \"subtitle=\\\"帶有 key 的完全被控制 component\\\"\",\n    \"subtitle\": \"\\\"帶有\",\n    \"key\": true,\n    \"的完全被控制\": true,\n    \"component\\\"\": true\n  }), \"class EmailInput extends Component {\\n  state = { email: this.props.defaultEmail };\\n\\n  handleChange = event => {\\n    this.setState({ email: event.target.value });\\n  };\\n\\n  render() {\\n    return <input onChange={this.handleChange} value={this.state.email} />;\\n  }\\n}\\n\\n<EmailInput\\n   defaultEmail={this.props.user.email}\\n   key={this.props.user.id}\\n />\\n\")), mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\",\n    \"metastring\": \"diff 2,14:15\",\n    \"diff\": true,\n    \"2,14:15\": true\n  }), \"class EmailInput extends Component {\\n  state = { email: this.props.defaultEmail };\\n\\n  handleChange = event => {\\n    this.setState({ email: event.target.value });\\n  };\\n\\n  render() {\\n    return <input onChange={this.handleChange} value={this.state.email} />;\\n  }\\n}\\n\\n<EmailInput\\n   defaultEmail={this.props.user.email}\\n   key={this.props.user.id}\\n />\\n\"))), mdx(\"hr\", null), mdx(\"h2\", null, \"memory leaks\"), mdx(\"hr\", null), mdx(CodeSurfer, {\n    mdxType: \"CodeSurfer\"\n  }, mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\"\n  }), \"Warning: Can't perform a React state update on an unmounted component.\\nThis is a no-op, but it indicates a memory leak in your application.\\nTo fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount method.\\n\\ncomponentDidMount() {\\n    new Ajax({\\n        url: '/hrm2/api/auth/module',\\n        method: 'get',\\n        onSuccess: (code, msg, data, xhr) => {\\n            this.setState({ m4: data.includes(4) })\\n        }\\n    }).send();\\n}\\n\")), mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\"\n  }), \"Warning: Can't perform a React state update on an unmounted component.\\nThis is a no-op, but it indicates a memory leak in your application.\\nTo fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount method.\\n\\ncomponentDidMount() {\\n    this.mounted = true;\\n    new Ajax({\\n        url: '/hrm2/api/auth/module',\\n        method: 'get',\\n        onSuccess: (code, msg, data, xhr) => {\\n            if (this.mounted) {\\n                this.setState({ m4: data.includes(4) })\\n            }\\n        }\\n    }).send();\\n}\\n\\ncomponentWillUnmount() {\\n    this.mounted = false;\\n}\\n\"))), mdx(\"hr\", null), mdx(\"h2\", null, \"\\u5E38\\u898B\\u932F\\u8AA4\"), mdx(\"hr\", null), mdx(CodeSurfer, {\n    mdxType: \"CodeSurfer\"\n  }, mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\"\n  }), \"Warning: Expected `onClick` listener to be a function,\\ninstead got a value of `string` type.\\n\\n// Before\\nonClick={someHandler.bind(this, ...arguments)}\\n\")), mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\"\n  }), \"Warning: Expected `onClick` listener to be a function,\\ninstead got a value of `string` type.\\n\\n// Before\\nonClick={someHandler.bind(this, ...arguments)}\\n\\n// After\\nonClick={() => someHandler(...arguments)}\\n\"))), mdx(\"hr\", null), mdx(CodeSurfer, {\n    mdxType: \"CodeSurfer\"\n  }, mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\"\n  }), \"Warning: Invalid value for prop `data-display` on <td> tag. \\nEither remove it from the element, or pass a string or number value to keep it in the DOM.\\n\\n// Before\\n<td width=\\\"20%\\\" data-display={function(data){...}}\\n\")), mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\"\n  }), \"Warning: Invalid value for prop `data-display` on <td> tag. \\nEither remove it from the element, or pass a string or number value to keep it in the DOM.\\n\\n// Before\\n<td width=\\\"20%\\\" data-display={function(data){...}}\\n\\n// After\\n<td width=\\\"20%\\\" data-display={`function(data){...}`}\\n\"))), mdx(\"hr\", null), mdx(CodeSurfer, {\n    mdxType: \"CodeSurfer\"\n  }, mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\"\n  }), \"Warning: React does not recognize the `data-td-cssClass` prop on a DOM element.\\nIf you intentionally want it to appear in the DOM as a custom attribute,\\nspell it as lowercase `data-td-cssclass` instead\\n\\n// Before\\n<td width=\\\"35%\\\" data-td-cssClass=\\\"'text-sm text-nowrap'\\\">\\n\")), mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\"\n  }), \"Warning: React does not recognize the `data-td-cssClass` prop on a DOM element.\\nIf you intentionally want it to appear in the DOM as a custom attribute,\\nspell it as lowercase `data-td-cssclass` instead\\n\\n// Before\\n<td width=\\\"35%\\\" data-td-cssClass=\\\"'text-sm text-nowrap'\\\">\\n\\n// After\\n<td width=\\\"35%\\\" data-td-cssclass=\\\"'text-sm text-nowrap'\\\">\\n\"))), mdx(\"hr\", null), mdx(CodeSurfer, {\n    mdxType: \"CodeSurfer\"\n  }, mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\"\n  }), \"Failed to execute 'insertBefore' on 'Node':\\nThe node before which the new node is to be inserted is not a child of this node.\\n\\nclass EmpPicker extends React.Component{\\n\\n    render(){\\n        // ...\\n        return <div ref={ele => this._dom.root = ele} className={className + ' EmpPicker' + (advance ? ' adv' : '')}>\\n            {empty && loading ? <div className={'loading loading-md'} /> : null}\\n            {empty && !loading ? <div className={'notice ico ico-s ico-alert'}>\\u7121\\u7B26\\u5408\\u689D\\u4EF6\\u7684\\u54E1\\u5DE5</div> : null}\\n            <span ref={ele => this._dom.picker = ele} />\\n            {advance && !empty ? <span ref={ele => this._dom.advBtn = ele}\\n                                    className={'-adv btn btn-white btn-sm ico ico-search' + (adv ? ' active' : '')}\\n                                    onClick={_advMode} /> : null }\\n            {advance && !empty ? <_AdvPanel ref={ele => this.advPanel = ele} parent={this} api={url ? url : null} /> : null}\\n        </div>\\n    }\\n}\\n\")), mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\",\n    \"metastring\": \"diff 1:2,4,11,18\",\n    \"diff\": true,\n    \"1:2,4,11,18\": true\n  }), \"Failed to execute 'insertBefore' on 'Node':\\nThe node before which the new node is to be inserted is not a child of this node.\\n\\nclass EmpPicker extends React.Component{\\n\\n    render(){\\n        // ...\\n        return <div ref={ele => this._dom.root = ele} className={className + ' EmpPicker' + (advance ? ' adv' : '')}>\\n            {empty && loading ? <div className={'loading loading-md'} /> : null}\\n            {empty && !loading ? <div className={'notice ico ico-s ico-alert'}>\\u7121\\u7B26\\u5408\\u689D\\u4EF6\\u7684\\u54E1\\u5DE5</div> : null}\\n            <span ref={ele => this._dom.picker = ele} />\\n            {advance && !empty ? <span ref={ele => this._dom.advBtn = ele}\\n                                    className={'-adv btn btn-white btn-sm ico ico-search' + (adv ? ' active' : '')}\\n                                    onClick={_advMode} /> : null }\\n            {advance && !empty ? <_AdvPanel ref={ele => this.advPanel = ele} parent={this} api={url ? url : null} /> : null}\\n        </div>\\n    }\\n}\\n\")), mdx(\"pre\", null, mdx(\"code\", _extends({\n    parentName: \"pre\"\n  }, {\n    \"className\": \"language-js\",\n    \"metastring\": \"diff 1:2,11:12\",\n    \"diff\": true,\n    \"1:2,11:12\": true\n  }), \"Failed to execute 'insertBefore' on 'Node':\\nThe node before which the new node is to be inserted is not a child of this node.\\n\\nclass EmpPicker extends React.Component{\\n\\n    render(){\\n        // ...\\n        return <div ref={ele => this._dom.root = ele} className={className + ' EmpPicker' + (advance ? ' adv' : '')}>\\n            {empty && loading ? <div className={'loading loading-md'} /> : null}\\n            {empty && !loading ? <div className={'notice ico ico-s ico-alert'}>\\u7121\\u7B26\\u5408\\u689D\\u4EF6\\u7684\\u54E1\\u5DE5</div> : null}\\n            <div></div>\\n            <span ref={ele => this._dom.picker = ele} />\\n            {advance && !empty ? <span ref={ele => this._dom.advBtn = ele}\\n                                    className={'-adv btn btn-white btn-sm ico ico-search' + (adv ? ' active' : '')}\\n                                    onClick={_advMode} /> : null }\\n            {advance && !empty ? <_AdvPanel ref={ele => this.advPanel = ele} parent={this} api={url ? url : null} /> : null}\\n        </div>\\n    }\\n}\\n\"))), mdx(\"hr\", null), mdx(\"p\", null, \"thank you ~ \\u2764\\uFE0F\"));\n}\n;\nMDXContent.isMDXComponent = true;",
+    "rawMDXOutput": "/* @jsx mdx */\nimport { mdx } from '@mdx-js/react';\n/* @jsx mdx */\nimport { Head, Notes } from 'mdx-deck';\nimport { defaultThemes } from '../theme';\nimport { CodeSurfer, Step, CodeSurferColumns } from \"code-surfer\";\nexport const themes = defaultThemes;\nexport const _frontmatter = {};\nconst makeShortcode = name => function MDXDefaultShortcode(props) {\n  console.warn(\"Component \" + name + \" was not imported, exported, or provided by MDXProvider as global scope\")\n  return <div {...props}/>\n};\n\nconst layoutProps = {\n  themes,\n_frontmatter\n};\nconst MDXLayout = \"wrapper\"\nexport default function MDXContent({\n  components,\n  ...props\n}) {\n  return <MDXLayout {...layoutProps} {...props} components={components} mdxType=\"MDXLayout\">\n\n\n    <Head mdxType=\"Head\">\n  <title>React升版計畫</title>\n    </Head>\n    <hr></hr>\n    <h1>{`React 15.6.2 -> 16.12.0`}</h1>\n    <hr></hr>\n    <h2>{`過時的 Component 生命週期`}</h2>\n    <hr></hr>\n    <CodeSurfer mdxType=\"CodeSurfer\">\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\"\n        }}>{`1. componentWillMount()\n2. componentWillUpdate()\n3. componentWillReceiveProps()\n`}</code></pre>\n      <pre><code parentName=\"pre\" {...{\n          \"1\": true,\n          \"className\": \"language-diff\",\n          \"metastring\": \"1 subtitle=\\\"在 mounting 發生前被呼叫\\\"\",\n          \"subtitle\": \"\\\"在\",\n          \"mounting\": true,\n          \"發生前被呼叫\\\"\": true\n        }}>{``}</code></pre>\n    </CodeSurfer>\n    <hr></hr>\n    <CodeSurfer mdxType=\"CodeSurfer\">\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\"\n        }}>{`    componentWillMount() {\n        new Ajax({\n            url: '/hrm2/api/company/picker/departments',\n            method: 'get',\n            onSuccess: (code, msg, data, xhr) => {\n                this.setState({\n                    deps: data\n                });\n            }\n        }).send();\n    }\n`}</code></pre>\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-diff\",\n          \"metastring\": \"6:8\",\n          \"6:8\": true\n        }}>{`    componentWillMount() {\n        new Ajax({\n            url: '/hrm2/api/company/picker/departments',\n            method: 'get',\n            onSuccess: (code, msg, data, xhr) => {\n                this.setState({\n                    deps: data\n                });\n            }\n        }).send();\n    }\n`}</code></pre>\n    </CodeSurfer>\n    <hr></hr>\n    <CodeSurfer mdxType=\"CodeSurfer\">\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-markup\"\n        }}>{`初始化 state\nsetState\n`}</code></pre>\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-markup\",\n          \"metastring\": \"diff 1:2\",\n          \"diff\": true,\n          \"1:2\": true\n        }}>{`初始化 state\n    - constructor()\nsetState\n`}</code></pre>\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-markup\",\n          \"metastring\": \"diff 3:4\",\n          \"diff\": true,\n          \"3:4\": true\n        }}>{`初始化 state\n    - constructor()\nsetState\n    - componentDidMount()\n`}</code></pre>\n    </CodeSurfer>\n    <hr></hr>\n    <CodeSurfer mdxType=\"CodeSurfer\">\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\"\n        }}>{`1. componentWillMount()\n2. componentWillUpdate()\n3. componentWillReceiveProps()\n`}</code></pre>\n      <pre><code parentName=\"pre\" {...{\n          \"2\": true,\n          \"className\": \"language-js\",\n          \"metastring\": \"diff 2 subtitle=\\\"render 發生之前、state 更新之前、prop 更新之前\\\"\",\n          \"diff\": true,\n          \"subtitle\": \"\\\"render\",\n          \"發生之前、state\": true,\n          \"更新之前、prop\": true,\n          \"更新之前\\\"\": true\n        }}>{`1. componentWillMount()\n2. componentWillUpdate()\n3. componentWillReceiveProps()\n`}</code></pre>\n    </CodeSurfer>\n    <hr></hr>\n    <CodeSurfer mdxType=\"CodeSurfer\">\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\"\n        }}>{`componentWillUpdate(nextProps, nextState, nextContext) {\n    const {empId} = this.props;\n    if(empId != nextProps.empId)\n        this._loadPhoto(nextProps.empId);\n}\n`}</code></pre>\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\",\n          \"metastring\": \"subtitle=\\\"通常可以用 componentDidUpdate() 取代\\\"\",\n          \"subtitle\": \"\\\"通常可以用\",\n          \"componentDidUpdate()\": true,\n          \"取代\\\"\": true\n        }}>{`\ncomponentWillUpdate(nextProps, nextState, nextContext) {\n    const {empId} = this.props;\n    if(empId != nextProps.empId)\n        this._loadPhoto(nextProps.empId);\n}\n\ncomponentDidUpdate(prevProps, prevState, snapshot) {\n    const {empId} = this.props;\n    if(empId != prevProps.empId)\n        this._loadPhoto(empId);\n}\n`}</code></pre>\n    </CodeSurfer>\n    <hr></hr>\n    <CodeSurfer mdxType=\"CodeSurfer\">\n      <pre><code parentName=\"pre\" {...{\n          \"3\": true,\n          \"className\": \"language-js\",\n          \"metastring\": \"diff 3\",\n          \"diff\": true\n        }}>{`1. componentWillMount()\n2. componentWillUpdate()\n3. componentWillReceiveProps()\n`}</code></pre>\n    </CodeSurfer>\n    <hr></hr>\n    <CodeSurfer mdxType=\"CodeSurfer\">\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-markup\"\n        }}>{`componentWillReceiveProps()\n\n    * 需要在某個 prop 改變時 執行一個相對應的 side effect\n    * 在某個 prop 改變時「重置」某個 state\n`}</code></pre>\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-markup\",\n          \"metastring\": \"diff 3:4\",\n          \"diff\": true,\n          \"3:4\": true\n        }}>{`componentWillReceiveProps()\n\n    * 需要在某個 prop 改變時 執行一個相對應的 side effect\n        - componentDidUpdate()\n    * 在某個 prop 改變時「重置」某個 state\n`}</code></pre>\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-markup\",\n          \"metastring\": \"diff 5:6\",\n          \"diff\": true,\n          \"5:6\": true\n        }}>{`componentWillReceiveProps()\n\n    * 需要在某個 prop 改變時 執行一個相對應的 side effect\n        - componentDidUpdate()\n    * 在某個 prop 改變時「重置」某個 state\n        - 建立一個完全被控制 的 component 或帶有 key 的完全被控制 component\n`}</code></pre>\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\",\n          \"metastring\": \"subtitle=\\\"完全被控制 的 component\\\"\",\n          \"subtitle\": \"\\\"完全被控制\",\n          \"的\": true,\n          \"component\\\"\": true\n        }}>{`function EmailInput(props) {\n  return <input\n              onChange={props.onChange}\n              value={props.email}\n         />;\n}\n`}</code></pre>\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\",\n          \"metastring\": \"diff 3:4\",\n          \"diff\": true,\n          \"3:4\": true\n        }}>{`function EmailInput(props) {\n  return <input\n              onChange={props.onChange}\n              value={props.email}\n         />;\n}\n`}</code></pre>\n    </CodeSurfer>\n    <hr></hr>\n    <CodeSurfer mdxType=\"CodeSurfer\">\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\",\n          \"metastring\": \"subtitle=\\\"帶有 key 的完全被控制 component\\\"\",\n          \"subtitle\": \"\\\"帶有\",\n          \"key\": true,\n          \"的完全被控制\": true,\n          \"component\\\"\": true\n        }}>{`class EmailInput extends Component {\n  state = { email: this.props.defaultEmail };\n\n  handleChange = event => {\n    this.setState({ email: event.target.value });\n  };\n\n  render() {\n    return <input onChange={this.handleChange} value={this.state.email} />;\n  }\n}\n\n<EmailInput\n   defaultEmail={this.props.user.email}\n   key={this.props.user.id}\n />\n`}</code></pre>\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\",\n          \"metastring\": \"diff 2,14:15\",\n          \"diff\": true,\n          \"2,14:15\": true\n        }}>{`class EmailInput extends Component {\n  state = { email: this.props.defaultEmail };\n\n  handleChange = event => {\n    this.setState({ email: event.target.value });\n  };\n\n  render() {\n    return <input onChange={this.handleChange} value={this.state.email} />;\n  }\n}\n\n<EmailInput\n   defaultEmail={this.props.user.email}\n   key={this.props.user.id}\n />\n`}</code></pre>\n    </CodeSurfer>\n    <hr></hr>\n    <h2>{`memory leaks`}</h2>\n    <hr></hr>\n    <CodeSurfer mdxType=\"CodeSurfer\">\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\"\n        }}>{`Warning: Can't perform a React state update on an unmounted component.\nThis is a no-op, but it indicates a memory leak in your application.\nTo fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount method.\n\ncomponentDidMount() {\n    new Ajax({\n        url: '/hrm2/api/auth/module',\n        method: 'get',\n        onSuccess: (code, msg, data, xhr) => {\n            this.setState({ m4: data.includes(4) })\n        }\n    }).send();\n}\n`}</code></pre>\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\"\n        }}>{`Warning: Can't perform a React state update on an unmounted component.\nThis is a no-op, but it indicates a memory leak in your application.\nTo fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount method.\n\ncomponentDidMount() {\n    this.mounted = true;\n    new Ajax({\n        url: '/hrm2/api/auth/module',\n        method: 'get',\n        onSuccess: (code, msg, data, xhr) => {\n            if (this.mounted) {\n                this.setState({ m4: data.includes(4) })\n            }\n        }\n    }).send();\n}\n\ncomponentWillUnmount() {\n    this.mounted = false;\n}\n`}</code></pre>\n    </CodeSurfer>\n    <hr></hr>\n    <h2>{`常見錯誤`}</h2>\n    <hr></hr>\n    <CodeSurfer mdxType=\"CodeSurfer\">\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\"\n        }}>{`Warning: Expected \\`onClick\\` listener to be a function,\ninstead got a value of \\`string\\` type.\n\n// Before\nonClick={someHandler.bind(this, ...arguments)}\n`}</code></pre>\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\"\n        }}>{`Warning: Expected \\`onClick\\` listener to be a function,\ninstead got a value of \\`string\\` type.\n\n// Before\nonClick={someHandler.bind(this, ...arguments)}\n\n// After\nonClick={() => someHandler(...arguments)}\n`}</code></pre>\n    </CodeSurfer>\n    <hr></hr>\n    <CodeSurfer mdxType=\"CodeSurfer\">\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\"\n        }}>{`Warning: Invalid value for prop \\`data-display\\` on <td> tag. \nEither remove it from the element, or pass a string or number value to keep it in the DOM.\n\n// Before\n<td width=\"20%\" data-display={function(data){...}}\n`}</code></pre>\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\"\n        }}>{`Warning: Invalid value for prop \\`data-display\\` on <td> tag. \nEither remove it from the element, or pass a string or number value to keep it in the DOM.\n\n// Before\n<td width=\"20%\" data-display={function(data){...}}\n\n// After\n<td width=\"20%\" data-display={\\`function(data){...}\\`}\n`}</code></pre>\n    </CodeSurfer>\n    <hr></hr>\n    <CodeSurfer mdxType=\"CodeSurfer\">\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\"\n        }}>{`Warning: React does not recognize the \\`data-td-cssClass\\` prop on a DOM element.\nIf you intentionally want it to appear in the DOM as a custom attribute,\nspell it as lowercase \\`data-td-cssclass\\` instead\n\n// Before\n<td width=\"35%\" data-td-cssClass=\"'text-sm text-nowrap'\">\n`}</code></pre>\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\"\n        }}>{`Warning: React does not recognize the \\`data-td-cssClass\\` prop on a DOM element.\nIf you intentionally want it to appear in the DOM as a custom attribute,\nspell it as lowercase \\`data-td-cssclass\\` instead\n\n// Before\n<td width=\"35%\" data-td-cssClass=\"'text-sm text-nowrap'\">\n\n// After\n<td width=\"35%\" data-td-cssclass=\"'text-sm text-nowrap'\">\n`}</code></pre>\n    </CodeSurfer>\n    <hr></hr>\n    <CodeSurfer mdxType=\"CodeSurfer\">\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\"\n        }}>{`Failed to execute 'insertBefore' on 'Node':\nThe node before which the new node is to be inserted is not a child of this node.\n\nclass EmpPicker extends React.Component{\n\n    render(){\n        // ...\n        return <div ref={ele => this._dom.root = ele} className={className + ' EmpPicker' + (advance ? ' adv' : '')}>\n            {empty && loading ? <div className={'loading loading-md'} /> : null}\n            {empty && !loading ? <div className={'notice ico ico-s ico-alert'}>無符合條件的員工</div> : null}\n            <span ref={ele => this._dom.picker = ele} />\n            {advance && !empty ? <span ref={ele => this._dom.advBtn = ele}\n                                    className={'-adv btn btn-white btn-sm ico ico-search' + (adv ? ' active' : '')}\n                                    onClick={_advMode} /> : null }\n            {advance && !empty ? <_AdvPanel ref={ele => this.advPanel = ele} parent={this} api={url ? url : null} /> : null}\n        </div>\n    }\n}\n`}</code></pre>\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\",\n          \"metastring\": \"diff 1:2,4,11,18\",\n          \"diff\": true,\n          \"1:2,4,11,18\": true\n        }}>{`Failed to execute 'insertBefore' on 'Node':\nThe node before which the new node is to be inserted is not a child of this node.\n\nclass EmpPicker extends React.Component{\n\n    render(){\n        // ...\n        return <div ref={ele => this._dom.root = ele} className={className + ' EmpPicker' + (advance ? ' adv' : '')}>\n            {empty && loading ? <div className={'loading loading-md'} /> : null}\n            {empty && !loading ? <div className={'notice ico ico-s ico-alert'}>無符合條件的員工</div> : null}\n            <span ref={ele => this._dom.picker = ele} />\n            {advance && !empty ? <span ref={ele => this._dom.advBtn = ele}\n                                    className={'-adv btn btn-white btn-sm ico ico-search' + (adv ? ' active' : '')}\n                                    onClick={_advMode} /> : null }\n            {advance && !empty ? <_AdvPanel ref={ele => this.advPanel = ele} parent={this} api={url ? url : null} /> : null}\n        </div>\n    }\n}\n`}</code></pre>\n      <pre><code parentName=\"pre\" {...{\n          \"className\": \"language-js\",\n          \"metastring\": \"diff 1:2,11:12\",\n          \"diff\": true,\n          \"1:2,11:12\": true\n        }}>{`Failed to execute 'insertBefore' on 'Node':\nThe node before which the new node is to be inserted is not a child of this node.\n\nclass EmpPicker extends React.Component{\n\n    render(){\n        // ...\n        return <div ref={ele => this._dom.root = ele} className={className + ' EmpPicker' + (advance ? ' adv' : '')}>\n            {empty && loading ? <div className={'loading loading-md'} /> : null}\n            {empty && !loading ? <div className={'notice ico ico-s ico-alert'}>無符合條件的員工</div> : null}\n            <div></div>\n            <span ref={ele => this._dom.picker = ele} />\n            {advance && !empty ? <span ref={ele => this._dom.advBtn = ele}\n                                    className={'-adv btn btn-white btn-sm ico ico-search' + (adv ? ' active' : '')}\n                                    onClick={_advMode} /> : null }\n            {advance && !empty ? <_AdvPanel ref={ele => this.advPanel = ele} parent={this} api={url ? url : null} /> : null}\n        </div>\n    }\n}\n`}</code></pre>\n    </CodeSurfer>\n    <hr></hr>\n    <p>{`thank you ~ ❤️`}</p>\n\n    </MDXLayout>;\n}\n\n;\nMDXContent.isMDXComponent = true;"
+  }
+}

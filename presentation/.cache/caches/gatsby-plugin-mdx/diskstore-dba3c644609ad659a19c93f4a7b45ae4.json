@@ -1,0 +1,151 @@
+{
+  "expireTime": 9007200845389961000,
+  "key": "gatsby-plugin-mdx-entire-payload-2956384591c25a59738c8effbe733ea4-/react-upgrade-sharing/public",
+  "val": {
+    "mdast": {
+      "type": "root",
+      "children": [
+        {
+          "type": "import",
+          "value": "import { Head, Notes } from 'mdx-deck';\nimport { defaultThemes } from '../theme';\nimport { CodeSurfer, Step, CodeSurferColumns } from \"code-surfer\";",
+          "position": {
+            "start": { "line": 1, "column": 1, "offset": 0 },
+            "end": { "line": 3, "column": 67, "offset": 148 },
+            "indent": [1, 1]
+          }
+        },
+        {
+          "type": "export",
+          "value": "export const themes = defaultThemes;",
+          "position": {
+            "start": { "line": 5, "column": 1, "offset": 150 },
+            "end": { "line": 5, "column": 37, "offset": 186 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<Head>\n  <title>React升版計畫</title>\n</Head>",
+          "position": {
+            "start": { "line": 7, "column": 1, "offset": 188 },
+            "end": { "line": 9, "column": 8, "offset": 229 },
+            "indent": [1, 1]
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 11, "column": 1, "offset": 231 },
+            "end": { "line": 11, "column": 4, "offset": 234 },
+            "indent": []
+          }
+        },
+        {
+          "type": "heading",
+          "depth": 1,
+          "children": [
+            {
+              "type": "text",
+              "value": "React 15.6.2 -> 16.12.0",
+              "position": {
+                "start": { "line": 13, "column": 3, "offset": 238 },
+                "end": { "line": 13, "column": 26, "offset": 261 },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": { "line": 13, "column": 1, "offset": 236 },
+            "end": { "line": 13, "column": 26, "offset": 261 },
+            "indent": []
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 15, "column": 1, "offset": 263 },
+            "end": { "line": 15, "column": 4, "offset": 266 },
+            "indent": []
+          }
+        },
+        {
+          "type": "heading",
+          "depth": 2,
+          "children": [
+            {
+              "type": "text",
+              "value": "Component 生命週期",
+              "position": {
+                "start": { "line": 17, "column": 4, "offset": 271 },
+                "end": { "line": 17, "column": 18, "offset": 285 },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": { "line": 17, "column": 1, "offset": 268 },
+            "end": { "line": 17, "column": 18, "offset": 285 },
+            "indent": []
+          }
+        },
+        {
+          "type": "thematicBreak",
+          "position": {
+            "start": { "line": 19, "column": 1, "offset": 287 },
+            "end": { "line": 19, "column": 4, "offset": 290 },
+            "indent": []
+          }
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "test",
+              "position": {
+                "start": { "line": 21, "column": 1, "offset": 292 },
+                "end": { "line": 21, "column": 5, "offset": 296 },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": { "line": 21, "column": 1, "offset": 292 },
+            "end": { "line": 21, "column": 5, "offset": 296 },
+            "indent": []
+          }
+        },
+        {
+          "type": "export",
+          "value": "export const _frontmatter = {}",
+          "position": {
+            "start": { "line": 25, "column": 1, "offset": 300 },
+            "end": { "line": 25, "column": 31, "offset": 330 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 1, "column": 1, "offset": 0 },
+        "end": { "line": 25, "column": 31, "offset": 330 }
+      }
+    },
+    "scopeImports": [
+      "import { Head, Notes } from 'mdx-deck';",
+      "import { defaultThemes } from '../theme';",
+      "import { CodeSurfer, Step, CodeSurferColumns } from \"code-surfer\";",
+      "import * as React from 'react'"
+    ],
+    "scopeIdentifiers": [
+      "Head",
+      "Notes",
+      "defaultThemes",
+      "CodeSurfer",
+      "Step",
+      "CodeSurferColumns",
+      "React"
+    ],
+    "body": "function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }\n\nfunction _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }\n\nfunction _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }\n\n/* @jsx mdx */\nvar themes = defaultThemes;\nvar _frontmatter = {};\n\nvar makeShortcode = function makeShortcode(name) {\n  return function MDXDefaultShortcode(props) {\n    console.warn(\"Component \" + name + \" was not imported, exported, or provided by MDXProvider as global scope\");\n    return mdx(\"div\", props);\n  };\n};\n\nvar layoutProps = {\n  themes: themes,\n  _frontmatter: _frontmatter\n};\nvar MDXLayout = \"wrapper\";\nreturn function MDXContent(_ref) {\n  var components = _ref.components,\n      props = _objectWithoutProperties(_ref, [\"components\"]);\n\n  return mdx(MDXLayout, _extends({}, layoutProps, props, {\n    components: components,\n    mdxType: \"MDXLayout\"\n  }), mdx(Head, {\n    mdxType: \"Head\"\n  }, mdx(\"title\", null, \"React\\u5347\\u7248\\u8A08\\u756B\")), mdx(\"hr\", null), mdx(\"h1\", null, \"React 15.6.2 -> 16.12.0\"), mdx(\"hr\", null), mdx(\"h2\", null, \"Component \\u751F\\u547D\\u9031\\u671F\"), mdx(\"hr\", null), mdx(\"p\", null, \"test\"));\n}\n;\nMDXContent.isMDXComponent = true;",
+    "rawMDXOutput": "/* @jsx mdx */\nimport { mdx } from '@mdx-js/react';\n/* @jsx mdx */\nimport { Head, Notes } from 'mdx-deck';\nimport { defaultThemes } from '../theme';\nimport { CodeSurfer, Step, CodeSurferColumns } from \"code-surfer\";\nexport const themes = defaultThemes;\nexport const _frontmatter = {};\nconst makeShortcode = name => function MDXDefaultShortcode(props) {\n  console.warn(\"Component \" + name + \" was not imported, exported, or provided by MDXProvider as global scope\")\n  return <div {...props}/>\n};\n\nconst layoutProps = {\n  themes,\n_frontmatter\n};\nconst MDXLayout = \"wrapper\"\nexport default function MDXContent({\n  components,\n  ...props\n}) {\n  return <MDXLayout {...layoutProps} {...props} components={components} mdxType=\"MDXLayout\">\n\n\n    <Head mdxType=\"Head\">\n  <title>React升版計畫</title>\n    </Head>\n    <hr></hr>\n    <h1>{`React 15.6.2 -> 16.12.0`}</h1>\n    <hr></hr>\n    <h2>{`Component 生命週期`}</h2>\n    <hr></hr>\n    <p>{`test`}</p>\n\n    </MDXLayout>;\n}\n\n;\nMDXContent.isMDXComponent = true;"
+  }
+}
