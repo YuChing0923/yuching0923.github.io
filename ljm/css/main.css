@@ -1,0 +1,244 @@
+@charset "UTF-8";
+html,
+body {
+  font-family: arial, "Microsoft JhengHei", "微軟正黑體", sans-serif;
+  height: 100%;
+  font-size: 16px;
+  color: #231815;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  box-sizing: border-box;
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.img_responsive {
+  width: 100%;
+  height: auto;
+}
+
+.text_content {
+  background-color: #A11F27;
+  text-align: center;
+  color: #fff;
+  padding: 20px 0;
+}
+
+header {
+  padding: 15px 20px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  height: 65px;
+  box-sizing: border-box;
+}
+header .container {
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+}
+header .main_title {
+  display: flex;
+  align-items: center;
+}
+header .main_title .logo {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+header .main_title .logo img {
+  height: 100%;
+}
+header .main_title .title {
+  vertical-align: middle;
+  color: #95202C;
+  font-size: 18px;
+  margin-left: 20px;
+}
+header .link .link_icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0 15px 0 0;
+  text-decoration: none;
+}
+header .link .link_icon img {
+  width: 100%;
+}
+
+.banner {
+  position: relative;
+  margin-top: 65px;
+  overflow: hidden;
+}
+.banner .main_banner {
+  position: relative;
+}
+.banner .main_banner .main_banner_slogan {
+  top: 40%;
+  left: 45%;
+  transform: translateY(-50%);
+  width: 400px;
+}
+.banner img {
+  position: relative;
+  width: 100%;
+}
+.banner .banner_slogan {
+  position: absolute;
+}
+.banner .banner_slogan .main_slogan {
+  color: #98D7F7;
+  font-size: 28px;
+}
+.banner .banner_slogan .sub_slogan {
+  color: #fff;
+  font-size: 15px;
+}
+.banner .sub_banner {
+  position: relative;
+  margin-top: 80px;
+}
+.banner .sub_banner .sub_banner_slogan {
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.story {
+  margin: 50px 0;
+}
+.story .container {
+  flex-wrap: wrap;
+}
+.story .story_block {
+  display: flex;
+  flex-wrap: no-wrap;
+  margin: 50px 0;
+  width: 100%;
+}
+.story .story_block .story_img {
+  width: 40%;
+}
+.story .story_block .story_img img {
+  width: 100%;
+  height: auto;
+}
+.story .story_block .story_content {
+  width: 60%;
+  margin-left: 30px;
+}
+.story .story_block .story_content .title {
+  color: #A11E29;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.join {
+  margin-top: 50px;
+}
+.join .container {
+  flex-wrap: wrap;
+}
+.join .join_info {
+  background: url(../img/join_bg.png) center no-repeat;
+  background-size: cover;
+  height: 250px;
+}
+.join .join_info .container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.join .join_info .container .join_text {
+  color: #fff;
+}
+.join .join_info .container .join_text.info_title {
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+.join .join_text {
+  width: 100%;
+  text-align: center;
+}
+.join .join_text.class_title, .join .join_text.class_info {
+  font-weight: 700;
+  margin: 60px 0 0;
+}
+.join .join_text.class_title {
+  color: #A11F27;
+  font-size: 19px;
+}
+.join .join_text.class_info {
+  color: #615F5F;
+  font-size: 18px;
+}
+.join img {
+  width: 100%;
+}
+.join .join_img {
+  margin: 50px 0;
+}
+.join .join_class_img {
+  width: 100px;
+  margin: 50px auto;
+}
+
+.course {
+  margin-top: 50px;
+}
+.course .container {
+  flex-wrap: wrap;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.course .course_info {
+  background: url(../img/course_bg.jpg) center no-repeat;
+  background-size: contain;
+  height: 400px;
+}
+.course .course_info .course_content {
+  padding: 30px 10px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.course .course_info .course_content .warning {
+  color: #A11F27;
+}
+
+/*# sourceMappingURL=main.css.map */

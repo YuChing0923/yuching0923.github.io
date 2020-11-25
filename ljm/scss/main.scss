@@ -1,0 +1,299 @@
+// common css start
+html,
+body {
+  font-family: arial, "Microsoft JhengHei", "微軟正黑體", sans-serif;
+  height: 100%;
+  font-size: 16px;
+  color: #231815;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.img_responsive {
+  width: 100%;
+  height: auto;
+}
+
+.text_content {
+  background-color: #A11F27;
+  text-align: center;
+  color: #fff;
+  padding: 20px 0;
+}
+
+// common css end
+
+// header css start
+header {
+  padding: 15px 20px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  height: 65px;
+  box-sizing: border-box;
+
+  .container {
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .main_title {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+      vertical-align: middle;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    .title {
+      vertical-align: middle;
+      color: #95202C;
+      font-size: 18px;
+      margin-left: 20px;
+    }
+  }
+
+  .link {
+    .link_icon {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin: 0 15px 0 0;
+      text-decoration: none;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// header css end
+
+// banner css start
+.banner {
+  position: relative;
+  margin-top: 65px;
+  overflow: hidden;
+
+  .main_banner {
+    position: relative;
+
+    .main_banner_slogan {
+      top: 40%;
+      left: 45%;
+      transform: translateY(-50%);
+      width: 400px;
+    }
+  }
+
+  img {
+    position: relative;
+    width: 100%;
+  }
+
+  .banner_slogan {
+    position: absolute;
+
+    .main_slogan {
+      color: #98D7F7;
+      font-size: 28px;
+    }
+
+    .sub_slogan {
+      color: #fff;
+      font-size: 15px;
+    }
+  }
+
+  .sub_banner {
+    position: relative;
+    margin-top: 80px;
+
+    .sub_banner_slogan {
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+    }
+  }
+}
+
+// banner css end
+
+// story css start
+.story {
+  margin: 50px 0;
+
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .story_block {
+    display: flex;
+    flex-wrap: no-wrap;
+    margin: 50px 0;
+    width: 100%;
+
+    .story_img {
+      width: 40%;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .story_content {
+      width: 60%;
+      margin-left: 30px;
+
+      .title {
+        color: #A11E29;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+// story css end
+
+// join css start
+.join {
+  margin-top: 50px;
+
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .join_info {
+    background: url(../img/join_bg.png) center no-repeat;
+    background-size: cover;
+    height: 250px;
+
+    .container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+
+      .join_text {
+        color: #fff;
+
+        &.info_title {
+          font-size: 19px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  .join_text {
+    width: 100%;
+    text-align: center;
+
+    &.class_title,
+    &.class_info {
+      font-weight: 700;
+      margin: 60px 0 0;
+    }
+
+    &.class_title {
+      color: #A11F27;
+      font-size: 19px;
+    }
+
+    &.class_info {
+      color: #615F5F;
+      font-size: 18px;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .join_img {
+    margin: 50px 0;
+  }
+
+  .join_class_img {
+    width: 100px;
+    margin: 50px auto;
+  }
+}
+
+// join css end
+
+// course css start
+.course {
+  margin-top: 50px;
+
+  .container {
+    flex-wrap: wrap;
+    position: relative;
+    top: 50%;
+      transform: translateY(-50%);
+  }
+
+  .course_info {
+    background: url(../img/course_bg.jpg) center no-repeat;
+    background-size: contain;
+    height: 400px;
+
+    .course_content {
+        padding: 30px 10px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.3);
+
+      .warning {
+        color: #A11F27;
+      }
+    }
+  }
+}
+
+// course css end
+
+// footer css start
+// footer css end
