@@ -47,6 +47,11 @@ ul {
   text-align: center;
   color: #fff;
   padding: 20px 0;
+
+  .title {
+    display: block;
+    font-size: 20px;
+  }
 }
 
 // common css end
@@ -55,7 +60,7 @@ ul {
 header {
   padding: 15px 20px;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   top: 0;
   left: 0;
   background-color: #fff;
@@ -273,7 +278,7 @@ header {
     flex-wrap: wrap;
     position: relative;
     top: 50%;
-      transform: translateY(-50%);
+    transform: translateY(-50%);
   }
 
   .course_info {
@@ -282,7 +287,7 @@ header {
     height: 400px;
 
     .course_content {
-        padding: 30px 10px;
+      padding: 30px 10px;
       text-align: center;
       background-color: rgba(255, 255, 255, 0.3);
 
@@ -295,5 +300,351 @@ header {
 
 // course css end
 
+// students css start
+.students {
+  .student_block {
+    text-align: center;
+    margin: 60px auto;
+
+    .photo {
+      width: 150px;
+      height: 150px;
+      margin: 30px auto;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 10px;
+
+      &.place {
+        color: #A11F27;
+      }
+
+      &.info {
+        color: #EA5863;
+      }
+    }
+  }
+}
+
+// students css end
+
+// video css start
+.video {
+  .video_block {
+    margin: 60px auto;
+  }
+}
+
+// video css end
+
+// lesson css start
+.lesson {
+
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .lesson_logo {
+    margin-top: 60px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .lesson_final {
+    width: 30%;
+    margin: 0 auto 60px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .lesson_block {
+    .lesson_img {
+      width: 40%;
+      margin: auto;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .lesson_step {
+      font-weight: 700;
+      vertical-align: middle;
+      position: relative;
+      left: 50%;
+      margin-left: -5px;
+      padding: 50px 0 60px;
+      width: 160px;
+
+      &:before {
+        content: "";
+        position: relative;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        vertical-align: middle;
+        margin: -2px 30px 0 0;
+        background-color: #fff;
+        z-index: 1;
+      }
+
+      &:after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 4px;
+        height: 100%;
+        top: -5px;
+        left: 7px;
+      }
+    }
+
+    &#step_1 {
+      color: #549742;
+
+      .lesson_step {
+        &:before {
+          border: 4px solid #549742;
+        }
+
+        &:after {
+          background-color: #549742;
+        }
+      }
+    }
+
+    &#step_2 {
+      color: #4098B1;
+
+      .lesson_step {
+        &:before {
+          border: 4px solid #4098B1;
+        }
+
+        &:after {
+          background-color: #4098B1;
+        }
+      }
+    }
+
+    &#step_3 {
+      color: #BE993B;
+
+      .lesson_step {
+        &:before {
+          border: 4px solid #BE993B;
+        }
+
+        &:after {
+          background-color: #BE993B;
+        }
+      }
+    }
+
+    &#step_4 {
+      color: #BA543F;
+
+      .lesson_step {
+        &:before {
+          border: 4px solid #BA543F;
+        }
+
+        &:after {
+          background-color: #BA543F;
+        }
+      }
+    }
+  }
+}
+
+// lesson css end
+
+// review css start
+.review {
+  .review_photo {
+    margin: 80px 0;
+    width: 33.33%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// review css end
+
+// teachers css start
+.teachers {
+  .teacher_block {
+    text-align: center;
+    margin: 60px auto;
+
+    .photo {
+      width: 170px;
+      height: 170px;
+      margin: 30px auto;
+      overflow: hidden;
+      border-radius: 100px;
+
+      img {
+        width: auto;
+        height: 100%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .title {
+      font-weight: 700;
+      margin-top: 10px;
+      color: #231816;
+
+      &.name {
+        font-size: 20px;
+      }
+
+      &.experience {
+        font-size: 16px;
+      }
+    }
+
+    .content {
+      font-size: 15px;
+      color: #626161;
+      font-weight: 700;
+      margin-top: 50px;
+      padding: 20px;
+      border: 1px solid #A11F27;
+    }
+  }
+}
+
+// teachers css end
+
+// books css start
+.books {
+  .container {
+    margin: 60px auto;
+    flex-wrap: wrap;
+  }
+
+  .book_block {
+    margin: 40px;
+    display: flex;
+    flex-wrap: no-wrap;
+    width: 100%;
+
+    .book_img {
+      width: 30%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .book_info {
+      width: 70%;
+      margin-left: 30px;
+      display: flex;
+      flex-wrap: wrap;
+
+      .title {
+        font-size: 18px;
+        font-weight: 700;
+        // margin: 10px 0 40px;
+        color: #A11F27;
+        width: 100%;
+      }
+
+      .content {
+        color: #EA5863;
+        width: 100%;
+      }
+
+      .buy_btn {
+        text-align: right;
+        width: 100%;
+
+        a {
+          text-decoration: none;
+          display: inline-block;
+          background-color: #EA5861;
+          color: #fff;
+          font-size: 14px;
+          padding: 5px 10px;
+          border: none;
+          // margin-top: 40px;
+        }
+      }
+    }
+  }
+}
+
+// books css end
+
+// wallpaper css start
+.wallpaper {
+  .wallpaper_block {
+    justify-content: space-between;
+    padding: 20px;
+    margin: 60px 0;
+
+    &.desktop {
+      width: 76%;
+    }
+
+    &.mobile {
+      width: 24%;
+    }
+
+    .wallpaper_img {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// wallpaper css end
+
+
+
 // footer css start
+footer {
+  .text_content {
+    background-color: transparent;
+    color: #606060;
+    font-weight: 700;
+  }
+
+  .icon {
+    margin-bottom: 50px;
+
+    a {
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      margin: 30px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
 // footer css end
