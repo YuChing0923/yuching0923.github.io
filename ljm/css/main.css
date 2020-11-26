@@ -289,6 +289,9 @@ header .link .link_icon img {
 .lesson .lesson_final img {
   width: 100%;
 }
+.lesson .lesson_block {
+  margin: -5px auto 0;
+}
 .lesson .lesson_block .lesson_img {
   width: 40%;
   margin: auto;
