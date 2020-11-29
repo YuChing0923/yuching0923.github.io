@@ -7,6 +7,7 @@ body {
   color: #231815;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -98,9 +99,34 @@ header .link .link_icon {
   height: 30px;
   margin: 0 15px 0 0;
   text-decoration: none;
+  position: relative;
 }
 header .link .link_icon img {
   width: 100%;
+}
+header .link .link_icon.menu:hover {
+  cursor: pointer;
+}
+header .link .menu_list {
+  position: absolute;
+  background-color: #fff;
+  right: 0;
+  padding: 15px 0;
+  box-shadow: 0px 0px 5px #000;
+  border-radius: 5px;
+  width: 110px;
+  margin-top: 17px;
+  display: none;
+}
+header .link .menu_list ul {
+  margin: 0;
+  text-align: center;
+}
+header .link .menu_list ul li {
+  padding: 5px 20px;
+}
+header .link .menu_list.active {
+  display: block;
 }
 
 .banner {
