@@ -38,7 +38,7 @@
                 <a class="link_icon" href="https://www.facebook.com/HMCZXY/" target="_block">
                     <img src="img/FB.png" alt="">
                 </a>
-                <span class="link_icon menu">
+                <span class="link_icon menu" onclick="clickMenu();">
                     <img src="img/menu.png" alt="">
                     <div class="menu_list">
                         <ul>
@@ -334,36 +334,102 @@
                 <img src="img/lesson_logo.jpg" alt="">
             </div>
             <div class="lesson_block" id="step_1">
-                <div class="lesson_img">
+                <div class="lesson_img" onclick="toggleLesson(this);">
                     <img src="img/lesson_1.png" alt="">
                 </div>
-                <div class="lesson_step">【阿含期】初階</div>
-                <div class="lesson_step">【阿含期】進階</div>
-                <div class="lesson_step">【阿含期】高階</div>
+                <div class="lesson_info">
+                    <ol class="lesson_session">
+                        <li>確立生命方向，皈依佛僧法三寶。</li>
+                        <li>以戒為生活的指引。</li>
+                        <li>以定來收攝心念，奠定基礎的佛法概要。</li>
+                        <li>以正確的生命觀，來培育完整的生命人格。</li>
+                    </ol>
+                    <div class="lesson_content">以建立正確佛法修行的基礎為主要目的，如何在生活中建立好的行為規則與思維方法，並且培養基本的定力，一方面以戒和定作為生命實踐的基礎，培養健全人格，則依循著四法印、四念處、37道品的教授，讓學員能夠明因果、斷惡修善、安定身心，由此而奠立學佛的良好根基，在生活中實踐「工作即修行，生活即福田」。</div>
+                    <div class="toggle_arrow" onclick="closeLesson(this);"></div>
+                </div>
+                <div class="lesson_step">
+                    <div class="recruit">
+                        <span class="warning">線上課程</span>
+                        <br />
+                        <span>招生中！</span>
+                    </div>
+                    <p>【阿含期】初階</p>
+                </div>
+                <div class="lesson_step">
+                    <p>【阿含期】進階</p>
+                </div>
+                <div class="lesson_step">
+                    <p>【阿含期】高階</p>
+                </div>
             </div>
             <div class="lesson_block" id="step_2">
-                <div class="lesson_img">
+                <div class="lesson_img" onclick="toggleLesson(this);">
                     <img src="img/lesson_2.png" alt="">
                 </div>
-                <div class="lesson_step">【阿含期】初階</div>
-                <div class="lesson_step">【阿含期】進階</div>
-                <div class="lesson_step">【阿含期】高階</div>
+                <div class="lesson_info">
+                    <ol class="lesson_session">
+                        <li>從阿含到般若，從止觀修行進入佛法核心</li>
+                        <li>般若即禪，禪即心</li>
+                        <li>從緣起性空到性空緣起</li>
+                    </ol>
+                    <div class="lesson_content">以般若思想為主，讓大眾明白不可執著於還不究競的小乘涅槃境界，應該以般若為智慧眼，而真正的「空」必須透過「禪」才能達到，因為，通過禪修實踐讓空性智慧能開顯而獲得自在。透過禪的實踐，回到心的原點，來引發般若智慧，由禪發慧、由慧顯禪，以觀照般若穿透生命中的一切人事物，讓生命自在無礙，成就智慧人生，並由此貫通一切佛法。</div>
+                    <div class="toggle_arrow" onclick="closeLesson(this);"></div>
+                </div>
+                <div class="lesson_step">
+                    <p>【般若期】初階</p>
+                </div>
+                <div class="lesson_step">
+                    <p>【般若期】進階</p>
+                </div>
+                <div class="lesson_step">
+                    <p>【般若期】高階</p>
+                </div>
             </div>
             <div class="lesson_block" id="step_3">
-                <div class="lesson_img">
+                <div class="lesson_img" onclick="toggleLesson(this);">
                     <img src="img/lesson_3.png" alt="">
                 </div>
-                <div class="lesson_step">【阿含期】初階</div>
-                <div class="lesson_step">【阿含期】進階</div>
-                <div class="lesson_step">【阿含期】高階</div>
+                <div class="lesson_info">
+                    <ol class="lesson_session">
+                        <li>發起菩提心大願，作立體性的生命結合</li>
+                        <li>乘歸一乘，建立成佛的架構</li>
+                        <li>授記成佛的傳承與願望景</li>
+                    </ol>
+                    <div class="lesson_content">以堅固不退、遍滿無礙的菩提心願力，運用一切善巧方便、廣結善緣，持續不斷的行菩薩道來廣度眾生。願力奉獻是成就福氣人生的關鍵，發菩提心大願能與法界的善能量感召，形成「生命服務生命，生命奉獻生命」的善緣連結，通過禪修的修持來鞏固菩提心。即以空性智慧為基礎，悲智雙運，以四無量心連結生生世世的福德善緣，終達致圓滿成佛。</div>
+                    <div class="toggle_arrow" onclick="closeLesson(this);"></div>
+                </div>
+                <div class="lesson_step">
+                    <p>【法華期】初階</p>
+                </div>
+                <div class="lesson_step">
+                    <p>【法華期】進階</p>
+                </div>
+                <div class="lesson_step">
+                    <p>【法華期】高階</p>
+                </div>
             </div>
             <div class="lesson_block" id="step_4">
-                <div class="lesson_img">
+                <div class="lesson_img" onclick="toggleLesson(this);">
                     <img src="img/lesson_4.png" alt="">
                 </div>
-                <div class="lesson_step">【阿含期】初階</div>
-                <div class="lesson_step">【阿含期】進階</div>
-                <div class="lesson_step">【阿含期】高階</div>
+                <div class="lesson_info">
+                    <ol class="lesson_session">
+                        <li>華嚴是圓滿佛果的呈現</li>
+                        <li>法界一心，多元和諧</li>
+                        <li>普賢十大願的無止盡生命實踐</li>
+                    </ol>
+                    <div class="lesson_content">華嚴是圓滿佛果的呈現，從心出發，透過多元和諧精神的領會，在自身生命內圓融阿含、般若、法華的踐履，轉凡成聖，開顯一即一切、一切即一的生命共同體的精神，落實「尊重每一個信仰、包容每一個族群、博愛每一個生命」的理念，進行跨領域、跨宗教、跨文化的實踐，向佛國境界的理想邁進，以達成和諧人生、圓滿無礙的華嚴生命理境。</div>
+                    <div class="toggle_arrow" onclick="closeLesson(this);"></div>
+                </div>
+                <div class="lesson_step">
+                    <p>【華嚴期】初階</p>
+                </div>
+                <div class="lesson_step">
+                    <p>【華嚴期】進階</p>
+                </div>
+                <div class="lesson_step">
+                    <p>【華嚴期】高階</p>
+                </div>
             </div>
             <div class="lesson_final">
                 <img src="img/lesson_final.png" alt="">
@@ -618,10 +684,21 @@
     <!-- <script src="js/index.js"></script> -->
     <script type="text/javascript">
     // click menu
-    var menuIcon = document.querySelector(".link_icon.menu");
-    menuIcon.onclick = function() {
+    function clickMenu() {
         var menuList = document.querySelector(".menu_list");
         menuList.classList.toggle("active");
+    };
+    // click lesson
+    function closeLesson(self) {
+        console.log(self);
+        var lessonInfoClass = self.parentNode.classList;
+        lessonInfoClass.contains("active") ? lessonInfoClass.remove("active") : lessonInfoClass.add("active");
+    };
+
+    function toggleLesson(self) {
+        console.log(self);
+        var lessonInfo = self.parentNode.querySelector(".lesson_info");
+        lessonInfo.classList.toggle("active");
     };
     // student owlCarousel
     $('#student_owlcarousel').owlCarousel({
