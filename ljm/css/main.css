@@ -453,7 +453,12 @@ header .link .menu_list.active {
 }
 .video .video_block iframe {
   width: 100%;
-  height: 315px;
+  height: 565px;
+}
+@media (min-width: 992px) {
+  .video .video_block iframe {
+    height: 215px;
+  }
 }
 @media (max-width: 592px) {
   .video .video_block iframe {
@@ -794,9 +799,9 @@ header .link .menu_list.active {
   width: 0px;
   height: 0px;
   position: absolute;
-  border-left: 19px solid transparent;
-  border-right: 19px solid transparent;
-  border-bottom: 19px solid #fff;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 25px solid #fff;
   top: -19px;
   transform: translateX(-50%);
 }
