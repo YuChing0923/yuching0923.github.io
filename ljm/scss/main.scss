@@ -498,6 +498,22 @@ header {
         iframe {
             width: 100%;
             height: 315px;
+
+            @media (max-width: 592px) {
+                height: 215px;
+            }
+            @media (max-width: 420px) {
+                height: 150px;
+            }
+        }
+    }
+
+    .owl-carousel .owl-nav {
+        @media (max-width: 592px) {
+            top: 40%;
+        }
+        @media (max-width: 420px) {
+            top: 35%;
         }
     }
 }
@@ -1010,12 +1026,13 @@ header {
 
 // wallpaper css start
 .wallpaper {
-    .container{
+    .container {
 
         @media (max-width: 480px) {
             flex-wrap: wrap;
         }
     }
+
     .wallpaper_block {
         justify-content: space-between;
         padding: 20px;

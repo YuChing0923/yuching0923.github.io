@@ -446,6 +446,26 @@ header .link .menu_list.active {
   width: 100%;
   height: 315px;
 }
+@media (max-width: 592px) {
+  .video .video_block iframe {
+    height: 215px;
+  }
+}
+@media (max-width: 420px) {
+  .video .video_block iframe {
+    height: 150px;
+  }
+}
+@media (max-width: 592px) {
+  .video .owl-carousel .owl-nav {
+    top: 40%;
+  }
+}
+@media (max-width: 420px) {
+  .video .owl-carousel .owl-nav {
+    top: 35%;
+  }
+}
 
 .lesson .container {
   flex-wrap: wrap;
