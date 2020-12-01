@@ -221,12 +221,23 @@ header {
         }
 
         .main_banner_slogan {
-            top: 45%;
+            top: 40%;
             left: 45%;
             transform: translateY(-50%);
-            width: 400px;
+            width: 40%;
+
+            @media (min-width: 1080px) {
+                .main_slogan {
+                    font-size: 38px;
+                }
+
+                .sub_slogan {
+                    font-size: 18px;
+                }
+            }
 
             @media (max-width: 768px) {
+                top: 45%;
                 left: 40%;
                 width: 300px;
             }
@@ -502,6 +513,7 @@ header {
             @media (max-width: 592px) {
                 height: 215px;
             }
+
             @media (max-width: 420px) {
                 height: 150px;
             }
@@ -512,6 +524,7 @@ header {
         @media (max-width: 592px) {
             top: 40%;
         }
+
         @media (max-width: 420px) {
             top: 35%;
         }

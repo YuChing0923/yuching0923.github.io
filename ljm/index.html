@@ -744,6 +744,24 @@
         navText: ["", ""]
     });
 
+    //banner resize
+    function bannerResize() {
+        var windowH = window.innerHeight;
+        var banner = document.querySelector(".main_banner");
+        var bannerSlogan = document.querySelector(".main_banner_slogan");
+        var bannerH = banner.offsetHeight;
+        console.log("windowH", windowH)
+        console.log("bannerH", bannerH)
+        if (bannerH > windowH) {
+            banner.style.marginTop = windowH - bannerH + "px";
+            bannerSlogan.style.marginTop = bannerH - windowH - 50 + "px";
+        } else {
+            banner.style.marginTop = 0;
+            bannerSlogan.style.marginTop = 0;
+        }
+    }
+    bannerResize();
+
     // review img resize
     function reviewPhotoResize() {
         var reviewPhoto = document.querySelector(".review_photo");
@@ -754,7 +772,9 @@
         });
     };
     reviewPhotoResize();
+    // window resize
     window.onresize = function() {
+        bannerResize();
         reviewPhotoResize();
     };
 
