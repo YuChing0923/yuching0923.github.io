@@ -140,11 +140,11 @@ header {
     }
 
     @media (max-width: 592px) {
-        height: 150px;
+        height: 140px;
     }
 
     @media (max-width: 370px) {
-        height: 145px;
+        height: 135px;
     }
 
     .container {
@@ -325,11 +325,11 @@ header {
     }
 
     @media (max-width: 592px) {
-        margin-top: 150px;
+        margin-top: 140px;
     }
 
     @media (max-width: 370px) {
-        margin-top: 145px;
+        margin-top: 135px;
     }
 
     .main_banner {
@@ -904,6 +904,7 @@ header {
 
                 @media (max-width: 380px) {
                     left: -30px;
+                    bottom: 20px;
                 }
 
                 .warning {

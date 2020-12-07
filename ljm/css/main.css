@@ -124,12 +124,12 @@ header {
 }
 @media (max-width: 592px) {
   header {
-    height: 150px;
+    height: 140px;
   }
 }
 @media (max-width: 370px) {
   header {
-    height: 145px;
+    height: 135px;
   }
 }
 header .container {
@@ -263,12 +263,12 @@ header .menu ul li a {
 }
 @media (max-width: 592px) {
   .banner {
-    margin-top: 150px;
+    margin-top: 140px;
   }
 }
 @media (max-width: 370px) {
   .banner {
-    margin-top: 145px;
+    margin-top: 135px;
   }
 }
 .banner .main_banner {
@@ -743,6 +743,7 @@ header .menu ul li a {
 @media (max-width: 380px) {
   .lesson .lesson_block .lesson_step .recruit {
     left: -30px;
+    bottom: 20px;
   }
 }
 .lesson .lesson_block .lesson_step .recruit .warning {
