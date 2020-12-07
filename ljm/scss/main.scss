@@ -890,6 +890,18 @@ header {
             padding: 20px 0 30px;
             width: 160px;
 
+            &.bold_text {
+                width: 200px;
+
+                @media (max-width: 480px) {
+                    width: 160px;
+
+                    .recruit {
+                        bottom: 45px;
+                    }
+                }
+            }
+
             .recruit {
                 padding: 15px 20px;
                 border-radius: 20px;
@@ -933,6 +945,17 @@ header {
                 position: relative;
                 left: 30px;
                 top: -20px;
+                vertical-align: middle;
+            }
+
+            .main_text {
+                color: #231815;
+                font-weight: 700;
+                font-size: 18px;
+
+                @media (max-width: 480px) {
+                    display: block;
+                }
             }
 
             &:before {
@@ -1304,6 +1327,7 @@ header {
     .container {
         margin: 60px auto;
         flex-wrap: wrap;
+        flex-direction: column;
     }
 
     .others_block {
@@ -1542,7 +1566,7 @@ footer {
 
 // footer css end
 
-// owl-carousel css end
+// owl-carousel css start
 .owl-carousel {
     .owl-nav {
         position: absolute;
@@ -1574,3 +1598,12 @@ footer {
 }
 
 // owl-carousel css end
+
+// lightbox css start
+.lb-details{
+    display: none;
+}
+.lb-nav{
+    display: none;
+}
+// lightbox css end

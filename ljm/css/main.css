@@ -728,6 +728,17 @@ header .menu ul li a {
   padding: 20px 0 30px;
   width: 160px;
 }
+.lesson .lesson_block .lesson_step.bold_text {
+  width: 200px;
+}
+@media (max-width: 480px) {
+  .lesson .lesson_block .lesson_step.bold_text {
+    width: 160px;
+  }
+  .lesson .lesson_block .lesson_step.bold_text .recruit {
+    bottom: 45px;
+  }
+}
 .lesson .lesson_block .lesson_step .recruit {
   padding: 15px 20px;
   border-radius: 20px;
@@ -769,6 +780,17 @@ header .menu ul li a {
   position: relative;
   left: 30px;
   top: -20px;
+  vertical-align: middle;
+}
+.lesson .lesson_block .lesson_step .main_text {
+  color: #231815;
+  font-weight: 700;
+  font-size: 18px;
+}
+@media (max-width: 480px) {
+  .lesson .lesson_block .lesson_step .main_text {
+    display: block;
+  }
 }
 .lesson .lesson_block .lesson_step:before {
   content: "";
@@ -1051,6 +1073,7 @@ header .menu ul li a {
 .others .container {
   margin: 60px auto;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 .others .others_block {
   width: 355px;
@@ -1265,6 +1288,14 @@ footer .icon a span {
 .owl-carousel .owl-nav .owl-next {
   border-left: 45px solid rgba(0, 0, 0, 0.3);
   right: 0;
+}
+
+.lb-details {
+  display: none;
+}
+
+.lb-nav {
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */
