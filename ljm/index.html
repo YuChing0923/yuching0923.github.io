@@ -997,7 +997,7 @@
     };
     // click join
     function toggleJoin(self) {
-        console.log(self);
+        // console.log(self);
         var readMore = document.querySelector(".class_info_content .more_content");
         self.classList.toggle("active");
         readMore.classList.toggle("active");
@@ -1006,13 +1006,13 @@
     };
     // click lesson
     function closeLesson(self) {
-        console.log(self);
+        // console.log(self);
         var lessonInfoClass = self.parentNode.classList;
         lessonInfoClass.contains("active") ? lessonInfoClass.remove("active") : lessonInfoClass.add("active");
     };
 
     function toggleLesson(self) {
-        console.log(self);
+        // console.log(self);
         var lessonInfo = self.parentNode.querySelector(".lesson_info");
         lessonInfo.classList.toggle("active");
     };
@@ -1067,8 +1067,8 @@
         var banner = document.querySelector(".main_banner");
         var bannerSlogan = document.querySelector(".main_banner_slogan");
         var bannerH = banner.offsetHeight;
-        console.log("windowH", windowH)
-        console.log("bannerH", bannerH)
+        // console.log("windowH", windowH)
+        // console.log("bannerH", bannerH)
         if (bannerH > windowH) {
             banner.style.marginTop = windowH - bannerH + "px";
             bannerSlogan.style.marginTop = bannerH - windowH - 50 + "px";
