@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Big from 'big.js';
+import Decimal from 'decimal.js';
 
 function App() {
   const [answer, setAnswer] = useState('0');
@@ -19,28 +19,26 @@ function App() {
       (clearAns || (answer === '0')) ? setAnswer(String(input)): setAnswer(answer + String(input));
       setClearAns(false);
     }
-    // const x = new Big(255.5)
-    // console.log(x.plus(5))
-    // console.log(x.toFixed(5))
-    // console.log(x.toPrecision(5))
   }
 
   const inputCaculate = (operator) => {
     setClearAns(true);
     if (calcTemp !== '') {
       let result;
+      const ans1 = new Decimal(Number(calcTemp));
+      const ans2 = new Decimal(Number(answer));
       switch (operatorTemp) {
         case '+':
-          result = Number(calcTemp) + Number(answer);
+          result = ans1.add(ans2).toNumber();
           break;
         case '-':
-          result = Number(calcTemp) - Number(answer);
+          result = ans1.sub(ans2).toNumber();
           break;
         case '*':
-          result = Number(calcTemp) * Number(answer);
+          result = ans1.mul(ans2).toNumber();
           break;
         case '/':
-          result = Number(calcTemp) / Number(answer);
+          result = ans1.div(ans2).toNumber();
           break;
         default:
           break;

@@ -37,10 +37,10 @@ body {
       display: inline-block;
       font-size: 40px;
       color: #666;
-      max-width: 245px;
-      overflow: hidden;
-      text-overflow : ellipsis;
-      white-space : nowrap;
+      max-width: 240px;
+      overflow: auto;
+      // text-overflow : ellipsis;
+      // white-space : nowrap;
   }
 }
 
