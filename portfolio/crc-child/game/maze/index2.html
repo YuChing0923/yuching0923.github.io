@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW" class="no-js" >
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>聯合國兒童權利公約兒童版-迷宮遊戲</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        .character, .pool , .grass ,.way, .destination ,.treasure{
+            width: 20%;
+            height: 20%;
+        }
+    
+    </style>
+<noscript>『您的瀏覽器不支援JavaScript功能，若網頁功能無法正常使用時，請開啟瀏覽器JavaScript狀態』</noscript></head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="stage_data">
+            <div class="data_box time_data">
+                <div class="wibg ">
+                    <span class="img"><img src="images/time.png" alt="時鐘插圖"></span>
+                    <span class="minutes" id="countSecondM2">0</span>
+                    <span class="minutes" id="countSecondM1">0</span>
+                    <span>:</span>
+                    <span class="seconds" id="countSecondS2">0</span>
+                    <span class="seconds" id="countSecondS1">0</span>
+                </div>
+            </div>
+            <div class="data_box heart_data">
+                <div class="wibg ">
+                    <ul>
+                        <li><img src="images/hart.png" alt="一顆心"></li>
+                        <li><img src="images/hart.png" alt="一顆心"></li>
+                        <li><img src="images/hart.png" alt="一顆心"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class='game_container'>
+           <!--遊戲說明.s-->
+           <div class="description_bg">
+              <div class="description_box">
+                    <h2>遊戲說明</h2>
+                    <a href="mp3/test.mp3" title="兒童權利公約發展歷程（點擊播放）" class="sm2_button video_btn">
+                          <span>語音說明</span>
+                        </a>
+                        <p>
+                          <span class="title">操作：</span>
+                          <span>選擇你喜歡的角色，來進行遊戲。</br>選擇我是低年級，問題比較簡單。  當對於閱讀有一定的能力時，就可以選擇我是高年級。</br>使用方向鍵盤上下左右鍵進行移動，目標為CRC旗幟的終點站！
+遇到關卡挑戰問題，只要答對就可以繼續前進。</span>  </p>
+                        <p><span class="title">得分：</span><span>計算看誰最快到達終點。</span>  </p>
+                        <p><span class="title">體力值：</span><span>右上角的愛心代表體力，若回答錯誤，扣一顆代表體力的愛心。  對了，小心別掉進水裡了呢！掉到水裡就要重新再來一次喔。</span>  </p>
+                    <div class="btn_ground">
+          <a href="javascript:ikonw()" id="ikonw" title="了解">
+                     了解！
+                   </a>
+        </div>
+               </div>
+           </div>
+           <!--遊戲說明.e-->
+            <!--遊戲預設.s-->
+            <div class="character_box" style="display:none;">
+                <div class="character_inline">
+                    <h2>請依照自己的年齡選擇角色進行遊戲 !</h2>
+                    <p>*闖關問答的題目難度會依照小朋友的年齡而有所不同，所以請選擇自己適合的角色喔！</p>
+                    <ul class="child">
+                        <li>
+                            <a href="#" class="characterpic st_1" title="選擇小朋友角色一">
+                                <img src="images/jie_bpic.png" alt="小朋友角色一">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="characterpic st_2" title="選擇小朋友角色二">
+                                <img src="images/jie2_bpic.png"  alt="小朋友角色二">
+                            </a>
+                        </li>
+                        <h3>我是低年級</h3>
+                    </ul>
+                    <ul class="youth">
+                        <li>
+                            <a href="#" class="characterpic st_1" title="選擇小朋友角色三">
+                                <img src="images/jie3_bpic.png"   alt="小朋友角色三">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="characterpic st_2" title="選擇小朋友角色四">
+                                <img src="images/jie4_bpic.png"   alt="小朋友角色四">
+                            </a>
+                        </li>
+                        <h3>我是高年級</h3>
+                    </ul>
+                    <div style="clear:both; display:block; content"";"></div>
+
+                </div>
+
+            </div>
+            <!--遊戲預設.e-->
+            <!--遊戲結束1 s-->
+            <div class="gameover2_bg" style="display: none;">
+                <div class="gameover_box2" >
+                    <div class="pic">
+                        <img src="images/gameover.png" alt="遊戲失敗">
+                    </div>
+                   <div class="text_box">
+                       <p>遊戲時間：<span class="fraction" id="passtime">00:10</span></p>
+                       <ul class="btn_ground">
+                          <li><a href='.' class="btn" title="再玩一次">再玩一次</a></li>
+                          <li><a class="btn" href="../../index.html" title="回首頁">回首頁</a></li>
+                      </ul>
+                   </div>
+                </div>
+            </div>
+            <!--遊戲結束1 e-->
+            <!--遊戲結束2 s-->
+            <div class="gameover_bg" style="display: none;">
+                <div class="gameover_box" >
+                    <h2>可惜，掉進水裡，挑戰失敗</h2>
+                    <ul class="btn_ground">
+                        <li><a href="." class="btn" title="再玩一次">再玩一次</a></li>
+                        <li><a class="btn" href="../../index.html" title="回首頁">回首頁</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--遊戲結束2 e-->
+            <!--過關 s-->
+            <div class="gamepass_bg" style="display: none;" >
+                <div class="gamepass_box">
+                    <div class="pic">
+                        <img src="images/gamepass.png" alt="恭喜你過關！">
+                    </div>
+                    <div class="text_box">
+                        <p>通關時間：<span class="fraction" id="passtime">01:00</span></p>
+                        <ul class="btn_ground">
+                           <li><a href='.' class="btn" title="再玩一次">再玩一次</a></li>
+                           <li><a class="btn" href="../../index.html" title="回首頁">回首頁</a></li>
+                       </ul>
+                    </div>
+
+                </div>
+            </div>
+            <!--過關 e-->
+            <!--答對 s-->
+            <div class="answer_bg" id="answer_bg" style="display: none;">
+                <div class="answer_box" >
+                    <div class="pic">
+                        <img src="images/answer_pic.png" alt="恭喜答對了！">
+                    </div>
+                    <ul class="btn_ground">
+                        <li style="display: block;  width: 100%; float: none;"><a  href="#" class="btn" id="answer_btn" title="繼續挑戰">繼續挑戰</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--答對 e-->
+
+            <!--答錯 s-->
+            <div class="answer_bg " id="wrong_answer" style="display: none;">
+                <div class="answer_box" >
+                    <div class="pic" style="text-align: center;">
+                        <img src="images/answer_pic2.png" alt="很抱歉答錯了！" style="max-width: 300px;">
+                        <p>很抱歉！你答錯了<br><span>（提示：小提示裡面或許可以給你一些想法哦！）</span></p>
+                    </div>
+                    <ul class="btn_ground">
+                        <li style="display: block;  width: 100%; float: none;"><a  href="#" class="btn" id="wrong_answer_btn" title="繼續挑戰">繼續挑戰</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--答錯 e-->
+            <div class="character">
+                <img src="images/jie.png" alt="角色大頭圖片">
+            </div>
+            <div class="stage" id="stage" style="display: none;">
+            </div>
+
+            <!--mobile key s-->
+            <div class="mobile_key_bg">
+                <div class="mobile_key_box">
+                    <div class="key_btn" id="up"></div>
+                    <div class="key_btn" id="down"></div>
+                    <div class="key_btn" id="left"></div>
+                    <div class="key_btn" id="right"></div>
+                </div>
+            </div>
+            <!--mobile key e-->
+        </div>
+        <div class="clear_fix"></div>
+
+    </div>
+    <script type='text/javascript' src="js/jquery.min.js"></script>
+    <script type='text/javascript' src="js/touchable.js"></script>
+    <script type="text/javascript" src="js/soundmanager2/soundmanager2.js"></script>
+    <script type="text/javascript" src="js/soundmanager2/mp3-player-button.js"></script>
+    <script type='text/javascript' src='game.js'></script>
+    <script>
+        //
+        function ikonw(){
+          $('.description_bg').fadeOut(300,function(){
+            $('.character_box').fadeIn(300);
+          });
+        }
+    </script>
+</body>
+
+</html>

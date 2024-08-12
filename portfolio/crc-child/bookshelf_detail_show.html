@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"  lang="zh_tw"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"  lang="zh_tw"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"  lang="zh_tw"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="zh-TW">
+<!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>聯合國兒童權利公約兒童版-小於18</title>
+	<meta name="viewport" content="width = 1050, user-scalable = no">
+	<meta name="keywords" content="聯合國兒童權利公約兒童版,兒童權利,兒權" />
+	<link rel="stylesheet" href="css/bookshelf.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery/extras/modernizr.2.5.3.min.js"></script>
+	<script type="text/javascript" src="jquery/extras/hash.js"></script>
+	<noscript>『您的瀏覽器不支援JavaScript功能，若網頁功能無法正常使用時，請開啟瀏覽器JavaScript狀態』</noscript>
+</head>
+
+<body>
+	<div class="ps_box">
+		<p>
+			<a href="#" onclick="javascript:$('.ps_box').fadeOut(); (function(){return false;}());" class="colse_btn" title="關閉提示視窗">X</a>
+			<span>電子書使用方式：</span>
+			<br> 1.將滑鼠移動到書本右上方書角，點擊之後向左拖拉翻頁，另一邊一樣方法，或是按下鍵盤左右鍵，控制翻頁。
+			<strong style="color:#b92b18;">
+				建議鍵盤操作者使用鍵盤左右鍵來操作翻頁功能，以上兩項為同一功能。
+			</strong>
+			<!-- <br> 2.對頁面的想放大的區塊點擊滑鼠左鍵，可以放大局部區塊。-->
+		</p>
+	</div>
+	<!--loading.s-->
+	<div class="loading_wrap">
+		<div class="loading_box">
+			<div class="sk-fading-circle">
+				<div class="sk-circle1 sk-circle"></div>
+				<div class="sk-circle2 sk-circle"></div>
+				<div class="sk-circle3 sk-circle"></div>
+				<div class="sk-circle4 sk-circle"></div>
+				<div class="sk-circle5 sk-circle"></div>
+				<div class="sk-circle6 sk-circle"></div>
+				<div class="sk-circle7 sk-circle"></div>
+				<div class="sk-circle8 sk-circle"></div>
+				<div class="sk-circle9 sk-circle"></div>
+				<div class="sk-circle10 sk-circle"></div>
+				<div class="sk-circle11 sk-circle"></div>
+				<div class="sk-circle12 sk-circle"></div>
+			</div>
+		</div>
+	</div>
+	<!--loading.e-->
+	<!--放大之後的左右按鍵.s-->
+	<div class="zoomin_right_btn zoomin_btn">
+		<a href="#" onclick="return false;" title="下一頁">
+			<img src="images/zoomin_right_btn.png" title="下一頁" alt="下一頁">
+		</a>
+	</div>
+	<div class="zoomin_left_btn zoomin_btn">
+		<a href="#" onclick="return false;" title="下一頁"></a>
+		<img src="images/zoomin_left_btn.png" title="下一頁" alt="下一頁">
+		</a>
+	</div>
+	<!--放大之後的左右按鍵.e-->
+	<div class="voice_introduction_btn">
+		<a href="mp3/development.mp3" title="語音檔案一（點擊播放）" class="sm2_button" id="sm2_button_1">
+			<span>語音一</span>
+		</a>
+		<a href="mp3/test.mp3" title="語音檔案一（點擊播放）" class="sm2_button" id="sm2_button_2">
+			<span>語音二</span>
+		</a>
+	</div>
+
+	<div id="canvas">
+
+		<div class="zoom-icon"></div>
+
+		<div class="magazine-viewport">
+			<div class="container">
+				<div class="magazine">
+
+					<!-- Previous button -->
+					<div ignore="1" class="previous-button">
+						<a href="#" onclick="return false;" title="點擊翻到上一頁" class="bookshelf_aLink">上一頁</a>
+					</div>
+
+					<!-- Next button -->
+					<div ignore="1" class="next-button">
+						<a href="#" onclick="return false;" title="點擊翻到下一頁" class="bookshelf_aLink">下一頁</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Thumbnails -->
+		<script type="text/javascript" src="js/soundmanager2/soundmanager2.js"></script>
+		<script type="text/javascript" src="js/soundmanager2/mp3-player-button.js"></script>
+		<div class="thumbnails"></div>
+
+		<script type="text/javascript">
+			var $loading_wrap = $('.loading_wrap');
+
+			$('.zoomin_right_btn').click(function () {
+				$loading_wrap.fadeIn(0);
+				$('.page').addClass('blur');
+				$('.next-button').click();
+			});
+			$('.zoomin_left_btn').click(function () {
+				$loading_wrap.fadeIn(0);
+				$('.page').addClass('blur');
+				$('.previous-button').click();
+			});
+
+
+			function loadApp() {
+
+				$('#canvas').fadeIn(1000);
+
+				var flipbook = $('.magazine');
+
+				// Check if the CSS was already loaded
+
+				if (flipbook.width() == 0 || flipbook.height() == 0) {
+					setTimeout(loadApp, 10);
+					return;
+				}
+
+				// Create the flipbook
+
+				flipbook.turn({
+
+					// Magazine width
+
+					width: 1000,
+
+					// Magazine height
+
+					height: 500,
+
+					// Duration in millisecond
+
+					duration: 1000,
+
+					// Hardware acceleration
+
+					acceleration: !isChrome(),
+
+					// Enables gradients
+
+					gradients: true,
+
+					// Auto center this flipbook
+
+					autoCenter: true,
+
+					// Elevation from the edge of the flipbook when turning a page
+
+					elevation: 50,
+
+					// The number of pages
+
+					pages: 85,
+
+					// Events
+
+					when: {
+						turning: function (event, page, view) {
+
+							var book = $(this),
+								currentPage = book.turn('page'),
+								pages = book.turn('pages');
+
+							// Update the current URI
+
+							Hash.go('text/' + page).update();
+
+							// Show and hide navigation buttons
+
+							disableControls(page);
+
+
+							$('.thumbnails .page-' + currentPage).
+								parent().
+								removeClass('current');
+
+							$('.thumbnails .page-' + page).
+								parent().
+								addClass('current');
+
+
+
+						},
+
+						turned: function (event, page, view) {
+
+							disableControls(page);
+
+							$(this).turn('center');
+
+							if (page == 1) {
+								$(this).turn('peel', 'br');
+							}
+							$loading_wrap.fadeOut(200);
+							$('.page').removeClass('blur');
+						},
+
+						missing: function (event, pages) {
+							// Add pages that aren't in the magazine
+
+							for (var i = 0; i < pages.length; i++)
+								addPage(pages[i], $(this));
+
+						}
+					}
+
+				});
+
+				// Zoom.js
+
+				$('.magazine-viewport').zoom({
+					flipbook: $('.magazine'),
+
+					max: function () {
+
+						return largeMagazineWidth() / $('.magazine').width();
+
+					},
+
+					when: {
+
+						swipeLeft: function () {
+
+							$(this).zoom('flipbook').turn('next');
+
+						},
+
+						swipeRight: function () {
+
+							$(this).zoom('flipbook').turn('previous');
+
+						},
+
+						resize: function (event, scale, page, pageElement) {
+
+							if (scale == 1) {
+								loadSmallPage(page, pageElement);
+							} else {
+								loadLargePage(page, pageElement);
+							}
+
+						},
+
+						zoomIn: function () {
+							$('.thumbnails').hide();
+							$('.made').hide();
+							$('.magazine').removeClass('animated').addClass('zoom-in');
+							$('.zoom-icon').removeClass('zoom-icon-in').addClass('zoom-icon-out');
+
+							if (!window.escTip && !$.isTouch) {
+								escTip = true;
+
+								// $('<div />', {'class': 'exit-message'}).
+								// 	html('<div>離開請按下Esc</div>').
+								// 		appendTo($('body')).
+								// 		delay(2000).
+								// 		animate({opacity:0}, 500, function() {
+								// 			$(this).remove();
+								// 		});
+							}
+							$('.zoomin_btn , .zoom-icon').show();
+							$('.voice_introduction_btn').hide();
+						},
+
+						zoomOut: function () {
+							$('.exit-message').hide();
+							$('.thumbnails').fadeIn();
+							$('.made').fadeIn();
+							$('.zoom-icon').removeClass('zoom-icon-out').addClass('zoom-icon-in');
+
+							setTimeout(function () {
+								$('.magazine').addClass('animated').removeClass('zoom-in');
+								resizeViewport();
+							}, 0);
+
+							$('.zoomin_btn , .zoom-icon').hide();
+							$('.voice_introduction_btn').show();
+						}
+					}
+				});
+
+				// Zoom event
+
+				if ($.isTouch)
+					$('.magazine-viewport').bind('zoom.doubleTap', zoomTo);
+				else
+					$('.magazine-viewport').bind('zoom.tap', zoomTo);
+
+
+				// Using arrow keys to turn the page
+
+				$(document).keydown(function (e) {
+
+					var previous = 37,
+						next = 39,
+						esc = 27;
+
+					switch (e.keyCode) {
+						case previous:
+
+							// left arrow
+							$('.magazine').turn('previous');
+							e.preventDefault();
+
+							break;
+						case next:
+
+							//right arrow
+							$('.magazine').turn('next');
+							e.preventDefault();
+
+							break;
+						case esc:
+
+							$('.magazine-viewport').zoom('zoomOut');
+							e.preventDefault();
+
+							break;
+					}
+				});
+
+				// URIs - Format #/page/1
+
+				Hash.on('^page\/([0-9]*)$', {
+					yep: function (path, parts) {
+						var page = parts[1];
+
+						if (page !== undefined) {
+							if ($('.magazine').turn('is'))
+								$('.magazine').turn('page', page);
+						}
+
+					},
+					nop: function (path) {
+
+						if ($('.magazine').turn('is'))
+							$('.magazine').turn('page', 1);
+					}
+				});
+
+
+				$(window).resize(function () {
+					resizeViewport();
+				}).bind('orientationchange', function () {
+					resizeViewport();
+				});
+
+				// Events for thumbnails
+
+				$('.thumbnails').click(function (event) {
+
+					var page;
+
+					if (event.target && (page = /page-([0-9]+)/.exec($(event.target).attr('class')))) {
+
+						$('.magazine').turn('page', page[1]);
+					}
+				});
+
+				$('.thumbnails li').
+					bind($.mouseEvents.over, function () {
+
+						$(this).addClass('thumb-hover');
+
+					}).bind($.mouseEvents.out, function () {
+
+						$(this).removeClass('thumb-hover');
+
+					});
+
+				if ($.isTouch) {
+
+					$('.thumbnails').
+						addClass('thumbanils-touch').
+						bind($.mouseEvents.move, function (event) {
+							event.preventDefault();
+						});
+
+				} else {
+
+					$('.thumbnails ul').mouseover(function () {
+
+						$('.thumbnails').addClass('thumbnails-hover');
+
+					}).mousedown(function () {
+
+						return false;
+
+					}).mouseout(function () {
+
+						$('.thumbnails').removeClass('thumbnails-hover');
+
+					});
+
+				}
+
+
+				// Regions
+
+				if ($.isTouch) {
+					$('.magazine').bind('touchstart', regionClick);
+				} else {
+					$('.magazine').click(regionClick);
+				}
+
+				// Events for the next button
+
+				$('.next-button').bind($.mouseEvents.over, function () {
+
+					$(this).addClass('next-button-hover');
+
+				}).bind($.mouseEvents.out, function () {
+
+					$(this).removeClass('next-button-hover');
+
+				}).bind($.mouseEvents.down, function () {
+
+					$(this).addClass('next-button-down');
+
+				}).bind($.mouseEvents.up, function () {
+
+					$(this).removeClass('next-button-down');
+
+				}).click(function () {
+
+					$('.magazine').turn('next');
+
+				});
+
+				// Events for the next button
+
+				$('.previous-button').bind($.mouseEvents.over, function () {
+
+					$(this).addClass('previous-button-hover');
+
+				}).bind($.mouseEvents.out, function () {
+
+					$(this).removeClass('previous-button-hover');
+
+				}).bind($.mouseEvents.down, function () {
+
+					$(this).addClass('previous-button-down');
+
+				}).bind($.mouseEvents.up, function () {
+
+					$(this).removeClass('previous-button-down');
+
+				}).click(function () {
+
+					$('.magazine').turn('previous');
+
+				});
+
+
+				resizeViewport();
+
+				$('.magazine').addClass('animated');
+
+			}
+
+			// Zoom icon
+
+			$('.zoom-icon').bind('mouseover', function () {
+
+				if ($(this).hasClass('zoom-icon-in'))
+					$(this).addClass('zoom-icon-in-hover');
+
+				if ($(this).hasClass('zoom-icon-out'))
+					$(this).addClass('zoom-icon-out-hover');
+
+			}).bind('mouseout', function () {
+
+				if ($(this).hasClass('zoom-icon-in'))
+					$(this).removeClass('zoom-icon-in-hover');
+
+				if ($(this).hasClass('zoom-icon-out'))
+					$(this).removeClass('zoom-icon-out-hover');
+
+			}).bind('click', function () {
+
+				if ($(this).hasClass('zoom-icon-in'))
+					$('.magazine-viewport').zoom('zoomIn');
+				else if ($(this).hasClass('zoom-icon-out'))
+					$('.magazine-viewport').zoom('zoomOut');
+
+			});
+
+			$('#canvas').hide();
+
+
+			// Load the HTML4 version if there's not CSS transform
+
+			yepnope({
+				test: Modernizr.csstransforms,
+				yep: ['jquery/extras/turn.js'],
+				nope: ['jquery/extras/turn.html4.min.js'],
+				both: ['jquery/extras/zoom.min.js', 'jquery/extras/magazine.js', 'css/magazine.css'],
+				complete: loadApp
+			});
+		</script>
+
+</body>
+
+</html>

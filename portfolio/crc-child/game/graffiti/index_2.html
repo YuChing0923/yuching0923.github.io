@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>聯合國兒童權利公約兒童版-繪圖板遊戲</title>
+  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+  <meta name="keywords" content="聯合國兒童權利公約兒童版,兒童權利,兒權" />
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  </style>
+<noscript>『您的瀏覽器不支援JavaScript功能，若網頁功能無法正常使用時，請開啟瀏覽器JavaScript狀態』</noscript></head>
+
+<body unselectable="on">
+  <div class="wrapper">
+    <div class="description_bg">
+      <div class="loading_box">
+          <p style="width: 100%;text-align: center;color: #828282;font-size: 18px;margin: 0px;padding: 0px;font-size: 22px;">載入中</p>
+          <div class="sk-fading-circle">
+              <div class="sk-circle1 sk-circle"></div>
+              <div class="sk-circle2 sk-circle"></div>
+              <div class="sk-circle3 sk-circle"></div>
+              <div class="sk-circle4 sk-circle"></div>
+              <div class="sk-circle5 sk-circle"></div>
+              <div class="sk-circle6 sk-circle"></div>
+              <div class="sk-circle7 sk-circle"></div>
+              <div class="sk-circle8 sk-circle"></div>
+              <div class="sk-circle9 sk-circle"></div>
+              <div class="sk-circle10 sk-circle"></div>
+              <div class="sk-circle11 sk-circle"></div>
+              <div class="sk-circle12 sk-circle"></div>
+          </div>
+      </div>
+      <div class="description_box" style="display: none;">
+        <h2>遊戲說明</h2>
+        <a href="mp3/test.mp3" title="語音說明（點擊播放）" class="sm2_button video_btn">
+          <span>語音說明</span>
+        </a>
+
+        <p>
+          <span class="title">畫畫：</span>
+          <span>使用滑鼠在中間畫布拖曳色塊點擊來進行塗鴉。本功能建議在桌機以滑鼠操作。</span>
+        </p>
+        <p>
+          <span class="title">調整筆畫大小：</span>
+          <span>左側功能區塊可以調整筆畫大小，可以按住灰色圓圈圈上下拖曳調整來調整，或是直接按+，-號按鈕來進行調整。</span>
+        </p>
+        <p>
+          <span class="title">選擇筆刷顏色：</span>
+          <span>右邊功能區塊點擊你想要的色塊，即可更換該筆畫顏色。</span>
+        </p>
+        <p>
+          <span class="title">清除：</span>
+          <span>按下上方清除鈕，清除全部畫面。</span>
+        </p>
+        <p>
+          <span class="title">下載：</span>
+          <span>將你的畫存成jpg檔案，並下載到自己的電腦裡。</span>
+        </p>
+        <p>
+          <span class="title">復原：</span>
+          <span>當你想返回上一步驟畫的圖，可以按下復原按鈕。</span>
+        </p>
+        <div class="btn_ground">
+          <a href="javascript:ikonw()" id="ikonw" title="了解">
+            了解！
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="prompt_box">
+      <div class="prompt">
+        <h2>塗鴉遊戲提示</h2>
+        <img src="images/prompt.png" alt="請轉為橫置螢幕">
+        <p>請轉為橫置螢幕</p>
+      </div>
+    </div>
+    <div class="control_box">
+      <ul>
+        <li>
+          <a href="index_2.html" title="清除按鈕">
+            <div class="icon">
+              <img src="images/btn_1.png" alt="清除按鈕">
+            </div>
+            <p>清除</p>
+          </a>
+        </li>
+        <li>
+          <a href="#" id="save" title="下載按鈕">
+            <div class="icon">
+              <img src="images/btn_4.png" alt="下載按鈕">
+            </div>
+            <p>下載</p>
+          </a>
+          <a id="linkto" style="display: none;" title="取消按鈕">取消按鈕</a>
+        </li>
+        <li>
+          <a href="#" id="save2" title="儲存">
+            <div class="icon">
+              <img src="images/btn_2.png" alt="儲存按鈕">
+            </div>
+            <p>儲存</p>
+          </a>
+          <a id="linkto" style="display: none;" title="取消按鈕">取消按鈕</a>
+        </li>
+        <li>
+          <a href="index_new.html" id="new_pic" title="空白畫布">
+            <div class="icon">
+              <img src="images/btn_5.png" alt="空白畫布按鈕">
+            </div>
+            <p>空白畫布</p>
+          </a>
+          <a id="linkto" style="display: none;" title="取消按鈕">取消按鈕</a>
+        </li>
+        <li>
+          <a href="#" id="back_evet" style="display: none;" title="復原按鈕">
+            <div class="icon">
+              <img src="images/btn_3.png" alt="復原按鈕">
+            </div>
+            <p>復原</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="dLine_box">
+      <div class="strokes">
+        <span>&nbsp;</span>
+      </div>
+      <a class="less_st" href="javascript:less_fun();" title="細">細</a>
+
+      <div id="progress">
+
+        <div class="bar">
+          <div class="hang"></div>
+          <span title="拖曳選擇筆畫大小" class="point"></span>
+        </div>
+        <a class="add_st" href="javascript:add_fun();" title="粗">粗</a>
+        <div class="pro-value" id="pro-value">1</div>
+        <p>筆畫粗細</p>
+      </div>
+    </div>
+    <div id="dCanvas">
+      <div id="dCanvas2">
+        <canvas id="cSketchPad2" width="100%" height="100%" />
+      </div>
+      <div id="true_strokes">&nbsp</div>
+      <div class="wireframes">
+        <img src="images/wireframes_bg.png" alt="背景圖片" id="wireframes">
+      </div>
+      <!-- <canvas id="cSketchPad2" width="100%" height="100%" /> -->
+      <canvas id="cSketchPad" width="100%" height="100%" />
+    </div>
+    <div id="dPallete"></div>
+  </div>
+  <img src="images/draw-01.png" alt="" id="tulip" style="display: none;">
+</body>
+<script type='text/javascript' src="js/jquery.min.js"></script>
+<script type='text/javascript' src="js/FileSaver/src/FileSaver.js" />
+<script type='text/javascript' src="js/touchable.js"></script>
+<script>
+  //
+  document.body.addEventListener('touchmove', function (event) {
+    event.preventDefault();
+  }, false);
+
+
+  function add_fun() {
+    var value_t = $('#pro-value').text(),
+      value_v = value_t * 1 + 1;
+
+    var progress_hegiht = $('#progress').find('.bar').height();
+
+
+    if (value_v > 30) {
+      value_v = 30;
+    }
+
+    $('#true_strokes').css({
+      width: value_v,
+      height: value_v
+    });
+    $('.strokes span').css({
+      width: value_v,
+      height: value_v
+    });
+
+
+    p_width = value_v;
+
+    $('#pro-value').text(value_t * 1 + 1);
+
+    var bar_height = ((progress_hegiht * 1) - (progress_hegiht * 1 * ((100 - value_v) * 0.01) - 6));
+
+    $('.hang').css("height", bar_height);
+    $('.point').css('top', bar_height);
+  }
+
+  function less_fun() {
+    var value_t = $('#pro-value').text(),
+      value_v = value_t * 1 - 1;
+
+    var progress_hegiht = $('#progress').find('.bar').height();
+    var bar_height = ((progress_hegiht * 1) - (progress_hegiht * 1 * ((100 - value_v * 1) * 0.01) - 6));
+
+
+
+    if (value_v <= 1) {
+      value_v = 1;
+      bar_height = 0
+    }
+
+    $('#true_strokes').css({
+      width: value_v,
+      height: value_v
+    });
+    $('.strokes span').css({
+      width: value_v,
+      height: value_v
+    });
+
+    p_width = value_v;
+
+    $('#pro-value').text(value_v);
+
+    $('.hang').css("height", bar_height);
+    $('.point').css('top', bar_height);
+
+  }
+
+
+
+
+
+
+  //描圖的背景請換這邊
+  // var imgurl = 'draw-01.png'
+
+  //預設筆刷大小
+  var penSize = 3
+  var p_width = penSize;
+
+  var canvasWidth, canvasHeight, canvaspoX, canvaspoY, imgHeight, $wireframes
+  //取得canvas context
+  var $canvas = $("#cSketchPad");
+  var $canvas2 = $("#cSketchPad2");
+  var $wireframes = $('#wireframes');
+
+
+  function wireframesSet() {
+    $wireframes = $('.wireframes')
+    $wireframes.css({
+      width: canvasWidth,
+      height: canvasHeight,
+      top: canvaspoY,
+      left: canvaspoX
+    });
+  }
+
+
+  function canvasSet() {
+    $canvas.css({
+      width: canvasWidth,
+      height: canvasHeight,
+      'background-color': '#fff',
+    });
+    $canvas.attr({
+      width: canvasWidth,
+      height: canvasHeight
+    })
+    $canvas2.css({
+      width: canvasWidth,
+      height: canvasHeight,
+      // 'background-color': '#111',
+    });
+    $canvas2.attr({
+      width: canvasWidth,
+      height: canvasHeight
+    })
+  }
+
+
+  function getDefaultval() {
+
+    canvasWidth = Math.round($('#dCanvas').width()),
+      canvasHeight = $('#dCanvas').height(),
+      canvaspoX = Math.round($('#dCanvas').position().left),
+      canvaspoY = $('#dCanvas').position().top
+    
+    $('#dCanvas2').show();
+
+    wireframesSet();
+    canvasSet();
+    canvasCreate();
+    
+  }
+
+
+
+
+
+  // //resize
+  // $(window).resize(function(event) {
+  //   location.reload();
+  // });
+  function canvasCreate() {
+    var ctx = $canvas[0].getContext("2d");
+    var ctx2 = $canvas2[0].getContext("2d");
+
+    var img = document.getElementById("tulip");
+
+    ctx.lineCap = "round";
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, $('#dCanvas').width(), $('#dCanvas').height());
+
+    ctx2.drawImage(img, 0, ($('#dCanvas').height() - $('#wireframes').height()) / 2, $('#wireframes').width(), $('#wireframes').height());
+
+    var drawMode = false;
+    var a = 0;
+    var urlarray = [];
+
+    //
+    urlarray[0] = $canvas[0].toDataURL();
+
+
+    $('.strokes span').css({
+      width: p_width,
+      height: p_width
+    });
+    $('#true_strokes').css({
+      width: p_width,
+      height: p_width
+    });
+
+
+    //
+
+
+  var colors =
+    "#fb3e3a;#ff532c;#ff9624;#ffbf2f;#8cc254;#009688;#00abf1;#3054b2;#9c2aad;#7b5449;#000000;#ffffff".split(';');
+  var sb = [];
+  $.each(colors, function (i, v) {
+    sb.push("<a href='#' class='option' style='background-color:" + v + "'></a>");
+  });
+  $("#dPallete").html(sb.join("\n"));
+
+  sb = [];
+  for (var i = 1; i <= 10; i++)
+    sb.push("<div class='option lw'>" +
+      "<div style='margin-top:#px;margin-left:#px;width:%px;height:%px'></div></div>"
+        .replace(/%/g, i).replace(/#/g, 10 - i / 2));
+  $("#dLine").html(sb.join('\n'));
+  var $clrs = $("#dPallete .option");
+  var $lws = $('.dLine_box');
+
+  $clrs.click(function () {
+    $clrs.removeClass("active");
+    $(this).addClass("active");
+    p_color = this.style.backgroundColor;
+    $('.strokes span').css("background-color", p_color);
+    $('#true_strokes').css("background-color", p_color);
+  }).first().click();
+
+  $lws.click(function () {
+    // $lws.removeClass("active");
+    // $(this).addClass("active");
+
+
+  }).click();
+
+
+
+  $canvas.mousedown(function (e) {
+
+    ctx.beginPath();
+    ctx.strokeStyle = p_color;
+    ctx.lineWidth = $('#true_strokes').width();
+    var ppp = ($(window).width() - $('body').width()) / 2;
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) // If Internet Explorer, return version number
+    {
+      ppp = 0;
+      ctx.moveTo(e.pageX - $canvas.position().left - ppp, e.pageY - $canvas.position().top);
+      drawMode = true;
+    }
+    else  // If another browser, return 0
+    {
+      ctx.moveTo(e.pageX - $canvas.position().left - ppp, e.pageY - $canvas.position().top);
+      drawMode = true;
+    }
+
+  })
+    .mousemove(function (e) {
+      var ppp = ($(window).width() - $('body').width()) / 2;
+      var ua = window.navigator.userAgent;
+      var msie = ua.indexOf("MSIE ");
+      if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) // If Internet Explorer, return version number
+      {
+        ppp = 0;
+
+        if (drawMode) {
+          ctx.lineTo(e.pageX - $canvas.position().left - ppp, e.pageY - $canvas.position().top);
+          ctx.stroke();
+        }
+      }
+      else {
+        if (drawMode) {
+          ctx.lineTo(e.pageX - $canvas.position().left - ppp, e.pageY - $canvas.position().top);
+          ctx.stroke();
+        }
+      }
+
+    })
+    .mouseup(function (e) {
+      drawMode = false;
+      a = a + 1
+      if (a > 0) {
+        $('#back_evet').show();
+      }
+
+      urlarray[a] = $canvas[0].toDataURL();
+      console.log(a);
+
+    })
+    .mouseover(function (e) {
+      drawMode = false;
+    })
+
+  $canvas.bind('touchstart', function (e, touch) {
+
+    ctx.beginPath();
+    ctx.strokeStyle = p_color;
+    ctx.lineWidth = $('#true_strokes').width();
+    ctx.moveTo(e.originalEvent.touches[0].pageX - $canvas.position().left, e.originalEvent.touches[0].pageY - $canvas.position().top);
+    drawMode = true;
+  })
+  $canvas.bind('touchmove', function (e, touch) {
+
+    if (drawMode) {
+      ctx.lineTo(e.originalEvent.touches[0].pageX - $canvas.position().left, e.originalEvent.touches[0].pageY - $canvas.position().top);
+      ctx.stroke();
+    }
+  })
+  $canvas.bind('touchend', function (e, touch) {
+
+    drawMode = false;
+    a = a + 1
+    if (a > 0) {
+      $('#back_evet').show();
+    }
+    urlarray[a] = $canvas[0].toDataURL();
+  })
+
+
+
+
+  $("#back_evet").click(function () {
+    a = a - 1
+
+    if (a <= 0) {
+      $('#back_evet').hide();
+      ctx.fillStyle = "white";
+      var img = new Image;
+      img.onload = function () {
+        ctx.drawImage(img, 0, 0);
+      };
+      img.src = urlarray[0];
+      a = 0;
+      // urlarray[0] = $canvas[0].toDataURL();
+      //console.log('最後一個');
+    } else {
+      var img = new Image;
+      img.onload = function () {
+        ctx.drawImage(img, 0, 0);
+      };
+      img.src = urlarray[a];
+      //console.log('超過一個');
+    }
+
+    //console.log(a);
+
+    return false;
+
+
+  });
+
+  //滑鼠
+  $(document).mousemove(function (e) {
+
+    var ppp = ($(window).width() - $('body').width()) / 2;
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) // If Internet Explorer, return version number
+    {
+      ppp = 0;
+      $('#true_strokes').css({
+        left: e.pageX - p_width / 2 - ppp,
+        top: e.pageY - p_width / 2
+      })
+    }
+    else {
+      $('#true_strokes').css({
+        left: e.pageX - p_width / 2 - ppp,
+        top: e.pageY - p_width / 2
+      })
+    }
+
+  });
+
+  //save
+  // $('#save').on('click', function() {
+  // var _url = ""
+
+  // function hr() {
+
+  //   var link = document.createElement('a');
+  //   ctx.drawImage(img,0,( $('#dCanvas').height()-$('#wireframes').height())/2, $('#wireframes').width(), $('#wireframes').height());
+  //   link.href = $canvas[0].toDataURL();
+  //   link.download = "mypainting.png";
+  //   link.click();
+  //   a = a+1
+  //   $("#back_evet").click();
+
+  // }
+  // hr();
+
+  //   // retrun false;
+  // });
+
+
+
+
+  $("#save").click(function () {
+    ctx.drawImage(img, 0, ($('#dCanvas').height() - $('#wireframes').height()) / 2, $('#wireframes').width(), $('#wireframes').height());
+    var canvas = document.getElementById("cSketchPad");
+    if (canvas.msToBlob) { //for IE
+      var blob = canvas.msToBlob();
+      window.navigator.msSaveBlob(blob, 'dicomimage.png');
+    } else {
+      canvas.toBlob(function (blob) { saveAs(blob, "dicomimage.png"); });
+    }
+    a = a + 1
+    $("#back_evet").click();
+  });
+
+  
+
+  }
+
+  //
+  window.onload = function () {
+
+    var progress = document.getElementById('progress');
+    var bar = progress.children[0];
+    var hang = bar.children[0];
+    var mask = bar.children[1];
+    var proValue = progress.children[2];
+
+    $('.point').bind('touchstart', function (e, touch) {
+      var event = event || window.event;
+
+
+      var initial = event.touches[0].clientY - mask.offsetTop;
+
+      $(this).bind('touchmove', function (e, touch) {
+
+        var event = event || window.event;
+
+
+        var distanceY = event.touches[0].clientY - initial;
+
+
+
+        if (distanceY < 0) {
+          distanceY = 0;
+        } else if (distanceY >= bar.offsetHeight - mask.offsetHeight) {
+          distanceY = bar.offsetHeight - mask.offsetHeight;
+        }
+
+        mask.style.top = distanceY + 'px';
+        hang.style.height = distanceY + 'px';
+
+        proValue.innerHTML = parseInt(distanceY / (bar.offsetHeight - mask.offsetHeight) * 100);
+
+        return false;
+      })
+
+      $(this).bind('touchend', function (e, touch) {
+        $(this).onmousemove = null;
+        $(this).onmouseup = null;
+        p_width = $('#pro-value').text() * 0.3 + penSize;
+        if (p_width < penSize) {
+          p_width = p_width + penSize;
+        }
+        $('.strokes span').css({
+          width: p_width,
+          height: p_width
+        });
+        $('#true_strokes').css({
+          width: p_width,
+          height: p_width
+        });
+      });
+      return false;
+    });
+
+
+    mask.onmousedown = function (event) {
+      var event = event || window.event;
+
+
+      var initial = event.clientY - mask.offsetTop;
+
+      document.onmousemove = function (event) {
+        var event = event || window.event;
+
+
+        var distanceY = event.clientY - initial;
+
+
+        if (distanceY < 0) {
+          distanceY = 0;
+        } else if (distanceY >= bar.offsetHeight - mask.offsetHeight) {
+          distanceY = bar.offsetHeight - mask.offsetHeight;
+        }
+
+        mask.style.top = distanceY + 'px';
+        hang.style.height = distanceY + 'px';
+
+        proValue.innerHTML = parseInt(distanceY / (bar.offsetHeight - mask.offsetHeight) * 100);
+
+        return false;
+
+      }
+
+      document.onmouseup = function () {
+        document.onmousemove = null;
+        document.onmouseup = null;
+        p_width = $('#pro-value').text() * 0.3 + penSize;
+        if (p_width < penSize) {
+          p_width = p_width + penSize;
+        }
+        $('.strokes span').css({
+          width: p_width,
+          height: p_width
+        });
+        $('#true_strokes').css({
+          width: p_width,
+          height: p_width
+        });
+      }
+
+      return false;
+    }
+  }
+
+
+
+
+
+  //
+  function ikonw() {
+    $('.description_bg').fadeOut(300);
+    getDefaultval();
+  }
+
+
+  //如果有參數
+  var parVaul = "某個參數"
+  
+  function ifhassParameter(){
+    $('.description_box').hide();
+    $('.loading_box').show(function(){
+      setTimeout(function(){
+        $('.loading_box').fadeOut(300);
+        $('.description_bg').fadeOut(300);
+        getDefaultval();
+      }, 2200);
+    }); 
+  }
+  
+  if ( parVaul == "XXXXX"){
+    ifhassParameter()
+  }
+
+  
+  //ifhassParameter();
+</script>
+
+</html>

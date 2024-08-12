@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="zh_tw">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>crc兒童權利公約-兒權小遊戲</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <meta name="keywords" content="聯合國兒童權利公約兒童版,兒童權利,兒權" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class='game_container'>
+        <!--遊戲說明.s-->
+        <div class="description_bg">
+            <div class="description_box">
+            <h2>遊戲說明</h2>
+            <a href="mp3/test.mp3" title="語音說明（點擊播放）" class="sm2_button video_btn">
+                <span>語音說明</span>
+            </a>
+            <p><span class="title">操作：</span><span>選擇你喜歡的角色，來進行遊戲 !<br>
+使用方向鍵盤左右移動，努力接住蘋果。
+</span>  </p>
+            <p><span class="title">得分：</span><span>接到蘋果得10分、接到CRC logo得30分。
+      遊戲時間到，計算看誰得到比較高的分數。
+</span>  </p>
+            <p><span class="title">體力值：</span><span>右下方蘋果代表體力，若接到被咬了一口的蘋果，扣一顆代表體力的蘋果。</span>  </p>
+            <div class="btn_ground">
+                   <a href="javascript:ikonw()" id="ikonw" title="了解">
+                     了解！
+                   </a>
+                </div>
+          </div>
+        </div>
+        <!--遊戲說明.e-->
+        <!--手機版按鈕 s-->
+        <div class="mobile_btn_group" style="display: none;">
+            <div class="mobile_btn  left_st">&nbsp;</div>
+            <div class="mobile_btn  right_st">&nbsp;</div>
+        </div>
+        <!--手機版按鈕 e-->
+        <!--選角色 s-->
+        <div class="character_box" style="display: none;" >
+            <ul>
+                <h2>請選擇你喜歡的角色，來進行遊戲 !</h2>
+
+                <li>
+                    <a href="" class="character st_1" title="選擇女生">
+                        <img src="images/jie.png" alt="女生的角色插圖">
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="character st_2" title="選擇男生">
+                        <img src="images/jie2.png" alt="男生的角色插圖">
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <!--選角色 e-->
+        <!--結束遊戲 s-->
+        <div class="gameover_bg" style="display: none;">
+            <div class="gameover_box">
+                <div class="pic">
+                    <img src="images/gameover.png" alt="遊戲結束！">
+                </div>
+                <div class="text_box">
+                    <p>遊戲分數：<span class="fraction">123</span></p>
+                    <ul class="btn_ground">
+                       <li><a href='.' class="btn" title="再玩一次">再玩一次</a></li>
+                       <li><a class="btn" href="../../index.html" title="回兒童權利公約兒童版首頁">回首頁</a></li>
+                   </ul>
+                </div>
+
+            </div>
+        </div>
+        <!--結束遊戲 e-->
+        <div class="control_box">
+            <button id='btnStart'>
+                <img src="images/start_button.png" alt="開始遊戲按鈕">
+            </button>
+        </div>
+        <!--遊戲資訊 start-->
+        <div class="time_box">
+            <span class="box_title">剩餘時間</span>
+            <span id="Minute">00</span>
+            <span>:</span>
+            <span id="second">59</span>
+        </div>
+        <div class="fraction_box">
+            <span class="box_title">分數</span>
+            <span id='gameCent'>0</span>
+        </div>
+        <div class="game_info">
+            <div id="lifeBar"></div>
+                <div id="life_unmber">
+                    <ul>
+                        <li>生命點數1點</li>
+                        <li>生命點數1點</li>
+              <!--           <li>生命點數1點</li>
+                        <li>生命點數1點</li>
+                        <li>生命點數1點</li>
+                        <li>生命點數1點</li>
+                        <li>生命點數1點</li>
+                        <li>生命點數1點</li> -->
+                    </ul>
+                </div>
+
+
+        </div>
+        <!--遊戲資訊 end-->
+
+        <!--遊戲畫面 start-->
+        <div id='game_box'>
+            <div class='bg_layer'></div>
+            <!--<span class='game_over_tip'>Game Over!</span>-->
+            <div class='car_bar'>
+                <div id='carBox' class='car'></div>
+            </div>
+        </div>
+        <!--遊戲畫面 end-->
+
+        <!--遊戲控制 start-->
+        <div id='game_control'>
+            <button id='btnPause' style="display: none;">
+                <img src="images/stop_button.png" alt="暫停遊戲按鈕">
+            </button>
+        </div>
+        <!--遊戲控制 end-->
+    </div>
+
+</div>
+
+<script type='text/javascript' src="js/jquery.min.js"></script>
+<script type='text/javascript' src="js/touchable.js"></script>
+<script type="text/javascript" src="js/soundmanager2/soundmanager2.js"></script>
+<script type="text/javascript" src="js/soundmanager2/mp3-player-button.js"></script>
+<script type='text/javascript' src='game.js'></script>
+<script type='text/javascript'>
+    function ikonw(){
+          $('.description_bg').fadeOut(300,function(){
+              $('.character_box').fadeIn(300);
+          });
+
+    }
+    $(function () {
+        //
+
+        // $('#carBox').css('left',$('.game_container').outerWidth(true)/2-55);
+        $('#btnStart').click(function () {
+            $(this).hide(700,function(){
+                $('.control_box').show(function(){
+                    $('.control_box').find('#btnStart').focus();
+                });
+            });
+
+            $('#btnPause').show(700);
+            FruitGame.Start();
+            if($(window).width()<780){
+                $('.mobile_btn_group').fadeIn(400);
+            }
+        });
+
+        $('#btnPause').click(function () {
+            $(this).hide(700);
+            $('#btnStart').show(700);
+            FruitGame.Pause();
+        });
+
+
+        $('.character').click(function(event) {
+
+            if($(this).hasClass('st_1')){}
+            else{
+                $('#carBox').addClass('st_2');
+            }
+            $('#carBox').fadeIn();
+            $('.character_box').css('z-index','86').hide();
+            return false;
+        });
+    });
+
+</script>
+</body>
+</html>
